@@ -1,0 +1,24 @@
+<div class="article-directory-header">
+    <h1>Articles Directory</h1>
+    <p>Search for the best articles to read. Find them on the #1 job site.</p>
+</div><!-- article-profile-header -->
+
+<div class="categories-body">
+  <ul class="category-list">
+    {% for category, article_list in article_data.items %}
+      <div class="column{{ forloop.counter }}">
+        <a href="{% url 'articles-url:category' category.slug %}" class="column-header">{{ category.title }}</a>
+        <ul class="article-list">
+        {% for article in article_list %}
+          <li class="article-item">
+            <a href="{% url 'articles-url:article' article.slug %}">{{ article.title }}</a>
+          </li>
+        {% endfor %}
+          <li class="article-item">
+            <a href="{% url 'articles-url:category' category.slug %}">See More...</a>
+          </li>
+        </ul>
+      </div> 
+    {% endfor %}
+  </ul>
+</div>

@@ -1,0 +1,92 @@
+{% extends "resume-base.html" %}
+
+{% load i18n %}
+{% load staticfiles %}
+
+{% block page_head_title %}Build a Resume{% endblock %}
+{% block page_body_id %}build_resume{% endblock %}
+{% block page_body_class %}build_resume{% endblock %}
+{% block page_body_content %}
+
+{% include "resume-default-header.html" %}
+
+<div id="sh_content" class="sh_content">
+	<h1>Build a Resume</h1>
+	<div class="main"> 
+	<form method="post" action="" id="edit_form">{% csrf_token %}
+	  <div class="lfloat">
+	    <div class="review_btns t">
+		  <input type="button" value="Back" onclick='document.location=".";'>
+		  <input type="button" value="Next" onclick='document.location=".";'>
+	    </div>	   
+		<h2>{% trans "Your resume" %}</h2>
+		<div class="section">
+			<div class="section_header">
+				<img src="{% static 'resume/images/collapse.gif' %}" class="collapse"/> <h3>{% trans "Summary and Contact Info" %}</h3> <a href="#" class="edit">{% trans "Edit" %}</a>
+			</div>
+			{% include "edit-contact.html" %}		
+		</div><!-- section -->
+		
+		<div  class="section">
+			<div class="section_header">
+				<img src="{% static 'resume/images/expand.gif' %}" class="collapse"/> <h3>{% trans "Work Experience" %}</h3> <a href="" class="edit">{% trans "Edit" %}</a>
+			</div>
+			<div class="details">
+			    {% include "edit-job.html" %}
+			</div><!-- details -->
+		</div><!-- section -->
+		
+		<div class="section">
+			<div class="section_header">
+				<img src="{% static 'resume/images/expand.gif' %}" class="collapse"/> <h3>{% trans "Education" %}</h3> <a href="" class="edit">{% trans "Edit" %}</a>
+			</div>
+			<div class="details">
+			    {% include "edit-education.html" %}
+			</div><!-- details -->
+		
+		</div><!-- section -->
+			<div class="section">
+				<div class="section_header">
+					<img src="{% static 'resume/images/expand.gif' %}" class="collapse"/> <h3>{% trans "Skills" %}</h3> <a href="" class="edit">{% trans "Edit" %}</a>
+				</div>
+				<div class="details">
+					{% include "edit-skill.html" %}
+			</div><!-- details -->
+	   </div><!-- section -->
+	   
+	   {% comment %}	<div class="section">
+			<div class="section_header">
+				<img src="{% static 'resume/images/expand.gif' %}" class="collapse"/> <h3>{% trans "Certifications" %}</h3> <a href="" class="edit">{% trans "Edit" %}</a>
+			</div>
+		</div><!-- section --> {% endcomment %}
+		
+		<div class="section">
+			<div class="section_header">
+				<img src="{% static 'resume/images/expand.gif' %}" class="collapse"/> <h3>{% trans "Awards" %}</h3> <a href="" class="edit">{% trans "Edit" %}</a>
+			</div>
+			<div class="details">
+				{% include "edit-award.html" %}
+			</div><!-- details -->
+			
+		</div><!-- section -->
+		<div class="section">
+			<div class="section_header">
+				<img src="{% static 'resume/images/expand.gif' %}" class="collapse"/> <h3>{% trans "Patents & Publications" %}</h3> <a href="" class="edit">{% trans "Edit" %}</a>
+			</div>
+			<div class="details">
+				{% include "edit-publication.html" %}
+			</div><!-- details -->
+		</div><!-- section -->
+		
+	<div class="review_btns">
+	  <input type="button" value="Back" onclick='document.location=".";'>
+	  <input type="button" value="Next" onclick='document.location=".";'>
+    </div>
+	</div><!-- lfloat -->
+    </form>
+	</div><!-- main -->
+</div> <!-- sh_content -->
+
+{% include "resume-default-footer.html" %}
+
+{% endblock %}

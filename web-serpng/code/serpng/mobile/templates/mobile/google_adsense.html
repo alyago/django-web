@@ -1,0 +1,31 @@
+{% if adsense_query %}
+<script src="//www.google.com/adsense/search/ads.js" type="text/javascript"></script>
+<script type="text/javascript" charset="utf-8">
+  var pageOptions = {
+    'adstyle' : 'hm',
+{% if enable_adsense_test_mode %}
+    'adtest' : 'on',
+{% endif %}
+    'channel' : 'Mobile-US-Results',
+    'colorBackground' : '#f6f9fc',
+    'detailedAttribution' : true,
+    'fontFamily' : 'helvetica, arial',
+    'fontSizeTitle' : '15px',
+    'fontSizeDescription' : '13px',
+    'fontSizeDomainLink' : '13px',
+    'hl' : 'en',
+    'ie' : 'utf8',
+    'oe' : 'utf8',
+    'lines' : '3',
+    'noTitleUnderline': true,
+    'pubId' : '{{ adsense_publisher_id }}',
+    'query' : '{{ adsense_query }}',
+  };
+    
+  var adblock1 = {
+    'container' : 'google_ads',
+  };
+    
+  new google.ads.search.Ads(pageOptions, {% if num_top_ads %}adblock0, {% endif %}adblock1);
+</script>
+{% endif %}

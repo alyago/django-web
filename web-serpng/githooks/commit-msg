@@ -1,0 +1,79 @@
+#!/usr/bin/python
+import re
+import sys
+
+def check_for_bug_references(msg):
+    """
+    Reject commit messages with no bug references
+    """
+    if re.search('(bugs?:? *[1-9][0-9]*|no bug)', msg, re.IGNORECASE):
+        return True
+
+    return False
+
+def append_bug_urls(msg):
+    """
+    Append Bugzilla URLs to the commit message
+    """
+    bug_numbers = set()
+
+    msg_lines = msg.split('\n')
+    for line in msg_lines:
+
+        # The following regex strips out all text before and after the list of
+        # bug numbers. For example, given text like:
+        #
+        #   "This commit fixes bugs 1, 2, and 3 by performing foobar."
+        #
+        # ...we get:
+        #
+        #   "1, 2, and 3"
+        #
+        bug_statement_matches = re.findall(r'\bbugs?:? *(\d+(?: *,? *(?:and)? *\d+)*)', line, re.IGNORECASE)
+        if not bug_statement_matches:
+            continue
+
+        for bug_statement in bug_statement_matches:
+
+            # This next statement replaces any sequence of nun-numeric
+            # characters with a single space, then splits it.
+            #
+            bugs = re.sub(r'\D+', ' ', bug_statement, flags=re.IGNORECASE).split(' ')
+
+            # Add all numbers (as ints, so they can be sorted numerically)
+            # into our set of bug_numbers.
+            #
+            for bug in bugs:
+                bug_numbers.add(int(bug))
+
+    if bug_numbers:
+
+        # If we extracted at least one bug number, then update the commit
+        # message with the Bugzilla URIs appended at the end.
+        #
+        msg = '%s\n%s' % (msg, '\n'.join(r'http://bugzilla.ksjc.sh.colo/show_bug.cgi?id=%s' % bug_number for bug_number in sorted(bug_numbers)))
+
+    return msg
+
+def main():
+    if len(sys.argv) < 2:
+        print("usage: %s <commit filename>" % sys.argv[0])
+        exit(1)
+
+    commit_filename = sys.argv[1]
+    with open(commit_filename, 'r+') as f:
+        msg = f.read()
+        if not check_for_bug_references(msg):
+            print("==========")
+            print(msg)
+            print("==========")
+            print("COMMIT REJECTED!!!!! PLEASE REFERENCE A BUG NUMBER IN YOUR COMMIT!!!!!!!!\n")
+            exit(2)
+    
+        f.seek(0)
+        new_msg = append_bug_urls(msg)
+        f.write(new_msg)
+        exit(0)
+
+if __name__ == "__main__":
+    main()

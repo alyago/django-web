@@ -1,0 +1,17 @@
+{% load absolute_http_url %}
+
+{% comment %}used with inclusion tag{% endcomment %}
+
+{% if related_searches %}
+  <div class="related_searches">
+    <div class="heading">{{ related_searches_heading_text }}</div>
+    {% for searches_col in related_searches %}
+      <ul class="searches">
+      {% for search_text, search_url in searches_col.items %}
+        <li class="search"><a class="evtc" data-event="related_searches_click" href="{% absolute_http_url search_url %}">{{ search_text }}</a></li>
+      {% endfor %}
+      </ul>
+    {% endfor %}
+  </div><!--related_searches-->
+{% endif %}
+

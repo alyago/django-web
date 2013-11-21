@@ -1,0 +1,33 @@
+{% load absolute_http_url %}
+
+{% if result.pagination.num_pages > 1 %}
+  <div class="pagination">
+    <div class="pages">
+      <!--previous-->
+      {% if result.pagination.prev_page_link_url %}
+        <a class="previous evtc" data-event="pagination_prev" rel="nofollow" href="{% absolute_http_url result.pagination.prev_page_link_url %}">&lt; {{ translations.previous_link_text }}</a>
+      {% else %}
+        <span class="previous unclickable">&lt; {{ translations.previous_link_text }}</span>
+      {% endif %}
+
+      {% for page_num, page_link in result.pagination.prev_page_numbered_links.items %}
+        <a rel="nofollow" class="page evtc" data-event="pagination_page" data-page-number="{{ page_num }}" href="{% absolute_http_url page_link %}">{{ page_num }}</a>
+      {% endfor %}
+
+      <!--current-->
+      <strong class="page current">{{ result.pagination.current_page }}</strong>
+
+      <!-- following page links -->
+      {% for page_num, page_link in result.pagination.next_page_numbered_links.items %}
+        <a rel="nofollow" class="page evtc" data-event="pagination_page" data-page-number="{{ page_num }}" href="{% absolute_http_url page_link %}">{{ page_num }}</a>
+      {% endfor %}
+
+      {% if result.pagination.next_page_link_url %}
+        <a class="next evtc" data-event="pagination_next" rel="nofollow" href="{% absolute_http_url result.pagination.next_page_link_url %}">{{ translations.next_link_text }} &gt;</a>
+      {% else %}
+        <span class="next unclickable">{{ translations.next_link_text }} &gt;</span>
+      {% endif %}
+    </div><!--pages-->
+  </div><!--pagination-->
+{% endif %}
+

@@ -1,0 +1,55 @@
+{% load i18n %}
+
+{% for key, filter in filters.items %}
+
+  <li id="{{ filter.get_parameter }}" class="filter {{ filter.state }}">
+
+    <div class="handle">
+      <a class="toggle" data-event="filter_toggle" data-type="{{ filter.filter_label_string }}">
+        <span class="icon"></span>{{ filter.filter_label_string }}
+      </a>
+    </div>
+
+    <ul>
+      {% for option in filter.filter_values_array %}
+        {% if option.value_label_string %}
+          <li
+            {% if option.is_selected %}
+              class="selected"
+            {% else %}
+              {% if forloop.counter > 5 %}
+                class="more"
+              {% endif %}
+            {% endif %}
+          >
+
+            {% if option.is_selected %}
+              <strong>{{ option.value_label_string }}</strong>
+              {% if filter.reset_filter_value %}
+                <a rel="nofollow" class="undo evtc" data-event="filter_clear" data-type="{{ filter.filter_label_string }}"  data-name="{{ option.value_label_string }}"
+                  href={% if show_link %}"{{ filter.reset_filter_value.url_path }}"{% else %}"#"{% endif %}>
+                  [X]
+                </a>
+              {% endif %}
+            {% else %}
+              <a rel="nofollow" class="evtc" data-event="filter_apply" data-type="{{ filter.filter_label_string }}" data-name="{{ option.value_label_string }}" href={% if show_link %}"{{ option.url_path }}"{% else %}"#"{% endif %}{% if key == 'sortable_title' or key == 'normalized_company' or key == 'ranked_list' %} title="{{ option.value_label_string }}"{% endif %}>
+                {{ option.value_label_string }}
+              </a>
+              {% if option.count %}<span class="count">{{ option.count }}</span>{% endif %}
+            {% endif %}
+          </li>
+        {% endif %}
+
+        {% if forloop.last and forloop.counter > 5 %}
+          <li class="see_more">
+            <a data-event="filter_see_more" data-type="{{ filter.filter_label_string }}">
+              {{ translations.see_more_filters_text }} &gt;
+            </a>
+          </li>
+        {% endif %}
+
+      {% endfor %}
+    </ul>
+  </li>
+
+{% endfor %}

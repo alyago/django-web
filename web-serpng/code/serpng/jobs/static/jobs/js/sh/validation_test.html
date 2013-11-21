@@ -1,0 +1,78 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+    "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>SH.validation</title>
+    <link rel="stylesheet" href="../test/qunit-1.11.0.css">
+  </head>
+  <body>
+    <!-- Sinon / QUnit boiler-plate -->
+    <h1 id="qunit-header">Tests for SH.validation</h1>
+    <h2 id="qunit-banner"></h2>
+    <h2 id="qunit-userAgent"></h2>
+    <ol id="qunit-tests"></ol>
+    <script type="text/javascript" src="../../../../../static/js/jquery-1.7.1.min.js"></script>
+    <script type="text/javascript" src="../test/qunit-1.11.0.js"></script>
+    <script type="text/javascript" src="../test/sinon-1.6.0.js"></script>
+    <script type="text/javascript" src="../test/sinon-qunit-1.0.0.js"></script>
+
+    <!-- Code to test -->
+    <script src="validation.js"></script>
+
+    <script>
+      function test_email(email, expected) {
+        equal(SH.validation.validate_email(email), expected, 'test email address: "' + email + '"');
+      }
+
+      test('SH.validation.validate_email - invalid email address', function() {
+        // test incomplete email address
+        test_email('test.email@testemail.', 'invalid-email'); 
+
+        // test invalid email address
+        test_email('abc', 'invalid-email');
+
+        // test email with special character
+        test_email('test!email@testemail.com', 'invalid-email');
+      });
+
+      test('SH.validation.validate_email - empty string', function() {
+        // test empty string
+        test_email('', 'blank-email');
+      });
+
+      test("SH.validation.validate_email - email address exceeds max length", function() {
+        // testing email address with length greater than the max (max = 256 characters)
+        var long_email = 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb@ccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc.com';
+
+        test_email(long_email, 'long-email');
+      });
+
+      test("SH.validation.validate_email - not a string", function() {
+        // test passing in a number instead of a string
+        test_email(2, 'not-a-string');
+
+        // test passing in null instead of a string
+        test_email(null, 'not-a-string');
+
+        // test passing in an undefined variable instead of a valid string
+        test_email(undefined, 'not-a-string');
+
+        // test passing in a boolean instead of a string
+        test_email(true, 'not-a-string');
+      });
+
+      test("SH.validation.validate_email - valid email address", function() {
+        // test a valid email address
+        test_email('test.email@testemail.com', false);
+
+        // test valid email address containing special character
+        test_email('test+email@testemail.com', false);
+
+        // test an email address preceded by whitespace
+        test_email(' test.email@testemail.com', false);
+      });
+
+    </script>
+  </body>
+</html>

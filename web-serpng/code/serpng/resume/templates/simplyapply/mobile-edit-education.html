@@ -1,0 +1,20 @@
+<span>
+{{ education_form.institution.label_tag }}
+{{ education_form.institution }}<span class="error">{% for err in education_form.institution.errors %}{{ err }}{% endfor %}</span>
+</span>
+<span>
+{{ education_form.degree.label_tag }}
+{{ education_form.degree }}<span class="error">{% for err in education_form.degree.errors %}{{ err }}{% endfor %}</span>
+</span>
+<span>
+{{ education_form.start_date.label_tag }}
+{{ education_form.start_date }}<span class="error">{% for err in education_form.start_date.errors %}{{ err }}{% endfor %}</span>
+</span>
+<span>
+{{ education_form.end_date }}<span class="error">{% for err in education_form.end_date.errors %}{{ err }}{% endfor %}</span>
+{{ education_form.current }}{{ education_form.current.label_tag }}
+</span>
+{{ education_form.DELETE }}{{ education_form.DELETE.label_tag }}
+{% for hidden in education_form.hidden_fields %}
+{{ hidden }}
+{% endfor %}

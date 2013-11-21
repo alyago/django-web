@@ -1,0 +1,254 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+    "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>placeholderFallback tests</title>
+    <link rel="stylesheet" href="../test/qunit-1.11.0.css">
+  </head>
+  <body>
+    <!-- Sinon / QUnit boiler-plate -->
+    <h1 id="qunit-header">Tests for placeholderFallback</h1>
+    <h2 id="qunit-banner"></h2>
+    <h2 id="qunit-userAgent"></h2>
+    <ol id="qunit-tests"></ol>
+    <script type="text/javascript" src="../../../../../static/js/jquery-1.7.1.min.js"></script>
+    <script type="text/javascript" src="../../../../../static/js/jquery-ui-1.10.3.core.widget.js"></script>
+    <script type="text/javascript" src="../test/qunit-1.11.0.js"></script>
+    <script type="text/javascript" src="../test/sinon-1.6.0.js"></script>
+    <script type="text/javascript" src="../test/sinon-qunit-1.0.0.js"></script>
+
+    <!-- Code to test -->
+    <script src="placeholderFallback.js"></script>
+
+    <div id="qunit-fixture"> <!-- Use qunit-fixture here to keep tests atomic and free from side-effects. -->
+      <input type="text" class="js-no-placeholder"></input>
+      <input type="text" class="js-with-placeholder" placeholder="placeholder text"></input>
+      <input type="text" class="js-with-placeholder" placeholder="different placeholder text"></input>
+    </div>
+
+    <script>
+      var PLACEHOLDER_ATTRIBUTE = 'placeholder';
+      var PLACEHOLDER_CLASS = 'placeholder';
+      var PLACEHOLDER_TEXT = 'placeholder text';
+      var PLACEHOLDER_TEXT_2 = 'different placeholder text';
+      var $elm;
+
+      //
+      // Helper methods
+      //
+      function mockModernizrPlaceholder(supported) {
+        window.Modernizr = {
+          input: {
+            placeholder: supported
+          }
+        };
+      }
+
+      //
+      // Placeholder fallback not needed.
+      //
+      module("placeholderFallback - fallback not needed", {
+        setup: function() {
+          $elm = $(".js-no-placeholder");
+        }
+      });
+
+      // Initialization tests
+      test("init without Modernizr", function() {
+        window.Modernizr = undefined;
+        $elm.placeholderFallback();
+        ok(!$elm.hasClass(PLACEHOLDER_CLASS));
+      });
+
+      test("init with input placeholder support", function() {
+        mockModernizrPlaceholder(true);
+        $elm.placeholderFallback();
+        ok(!$elm.hasClass(PLACEHOLDER_CLASS));
+      });
+
+      //
+      // Input without placeholder attribute.
+      //
+      module("placeholderFallback - no initial placeholder", {
+        setup: function() {
+          mockModernizrPlaceholder(false);
+          $elm = $(".js-no-placeholder");
+        }, teardown: function() {
+          $elm = undefined;
+        }
+      });
+
+      // Initialization tests
+      test("init", function() {
+        $elm.placeholderFallback();
+
+        deepEqual($elm.attr(PLACEHOLDER_ATTRIBUTE), undefined);
+        deepEqual($elm.val(), "");
+        ok($elm.hasClass(PLACEHOLDER_CLASS));
+      });
+
+      test("class option override", function() {
+        $elm.placeholderFallback({ placeholderClass: "test-class" });
+
+        ok($elm.hasClass("test-class"));
+      });
+
+      test("text option override", function() {
+        $elm.placeholderFallback({ placeholderText: "test text" });
+
+        deepEqual($elm.attr(PLACEHOLDER_ATTRIBUTE), undefined);
+        deepEqual($elm.val(), "test text");
+        ok($elm.hasClass(PLACEHOLDER_CLASS));
+      });
+
+      //
+      // Input with placeholder attribute.
+      //
+      module("placeholderFallback - with placeholder", {
+        setup: function() {
+          mockModernizrPlaceholder(false);
+          $elm = $(".js-with-placeholder").first();
+        }, teardown: function() {
+          $elm = undefined;
+        }
+      });
+
+      // Initialization tests
+      test("init", function() {
+        $elm.placeholderFallback();
+
+        deepEqual($elm.attr(PLACEHOLDER_ATTRIBUTE), PLACEHOLDER_TEXT);
+        deepEqual($elm.val(), PLACEHOLDER_TEXT);
+        ok($elm.hasClass(PLACEHOLDER_CLASS));
+      });
+
+      test("class option override", function() {
+        $elm.placeholderFallback({ placeholderClass: "test-class" });
+
+        ok($elm.hasClass("test-class"));
+      });
+
+      test("text option override", function() {
+        $elm.placeholderFallback({ placeholderText: "test text" });
+
+        deepEqual($elm.attr(PLACEHOLDER_ATTRIBUTE), PLACEHOLDER_TEXT);
+        deepEqual($elm.val(), "test text");
+        ok($elm.hasClass(PLACEHOLDER_CLASS));
+      });
+
+      // Interaction tests
+      test("focus test", function() {
+        $elm.placeholderFallback();
+        $elm.focus();
+
+        deepEqual($elm.val(), "");
+        ok(!$elm.hasClass(PLACEHOLDER_CLASS));
+      });
+
+      test("blur test", function() {
+        $elm.placeholderFallback();
+        $elm.focus();
+        $elm.val("");
+        $elm.blur();
+
+        deepEqual($elm.val(), PLACEHOLDER_TEXT);
+        ok($elm.hasClass(PLACEHOLDER_CLASS));
+      });
+
+      test("change test", function() {
+        $elm.placeholderFallback();
+        $elm.focus();
+        $elm.val("new value");
+        $elm.blur();
+
+        deepEqual($elm.val(), "new value");
+        ok(!$elm.hasClass(PLACEHOLDER_CLASS));
+      });
+
+      test("remove test", function() {
+        $elm.placeholderFallback();
+        $elm.blur();
+        $elm.placeholderFallback("remove");
+
+        deepEqual($elm.val(), "");
+        ok(!$elm.hasClass(PLACEHOLDER_CLASS));
+      });
+
+      //
+      // Multiple inputs with placeholder attribute.
+      //
+      module("placeholderFallback - multiple elements", {
+        setup: function() {
+          mockModernizrPlaceholder(false);
+          $elm = $(".js-with-placeholder");
+        }, teardown: function() {
+          $elm = undefined;
+        }
+      });
+
+      // Initialization tests
+      test("class option override", function() {
+        $elm.placeholderFallback({ placeholderClass: "test-class" });
+
+        ok($elm.eq(0).hasClass("test-class"));
+        ok($elm.eq(1).hasClass("test-class"));
+      });
+
+      test("text option override", function() {
+        $elm.placeholderFallback({ placeholderText: "test text" });
+
+        ok($elm.eq(0).hasClass(PLACEHOLDER_CLASS));
+        deepEqual($elm.eq(0).attr(PLACEHOLDER_ATTRIBUTE), PLACEHOLDER_TEXT);
+        deepEqual($elm.eq(0).val(), "test text");
+
+        ok($elm.eq(1).hasClass(PLACEHOLDER_CLASS));
+        deepEqual($elm.eq(1).attr(PLACEHOLDER_ATTRIBUTE), PLACEHOLDER_TEXT_2);
+        deepEqual($elm.eq(1).val(), "test text");
+      });
+
+      // Interaction tests
+      test("focus test", function() {
+        $elm.placeholderFallback();
+        $elm.eq(0).focus();
+
+        deepEqual($elm.eq(0).val(), "");
+        ok(!$elm.eq(0).hasClass(PLACEHOLDER_CLASS));
+        deepEqual($elm.eq(1).val(), PLACEHOLDER_TEXT_2);
+        ok($elm.eq(1).hasClass(PLACEHOLDER_CLASS));
+      });
+
+      test("blur test", function() {
+        $elm.placeholderFallback();
+        $elm.eq(0).focus();
+        $elm.eq(0).val("");
+        $elm.eq(0).blur();
+
+        deepEqual($elm.eq(0).val(), PLACEHOLDER_TEXT);
+        deepEqual($elm.eq(1).val(), PLACEHOLDER_TEXT_2);
+        ok($elm.eq(0).hasClass(PLACEHOLDER_CLASS));
+        ok($elm.eq(1).hasClass(PLACEHOLDER_CLASS));
+      });
+
+      test("change test", function() {
+        $elm.placeholderFallback();
+        $elm.focus();
+        $elm.eq(0).val("new value");
+        $elm.blur();
+
+        deepEqual($elm.eq(0).val(), "new value");
+        deepEqual($elm.eq(1).val(), PLACEHOLDER_TEXT_2);
+      });
+
+      test("remove test", function() {
+        $elm.placeholderFallback();
+        $elm.blur();
+        $elm.placeholderFallback("remove");
+
+        deepEqual($elm.val(), "");
+        ok(!$elm.hasClass(PLACEHOLDER_CLASS));
+      });
+
+    </script>
+  </body>
+</html>

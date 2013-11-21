@@ -1,0 +1,65 @@
+ERROR 2013-11-14 19:34:13,573 speed_logging_utils 16444 139935239862048 browser speed log HTTP request keys missing from JSON object
+None
+ERROR 2013-11-14 19:34:13,929 speed_logging_utils 16444 139935239862048 browser speed log HTTP request keys missing from JSON object
+None
+ERROR 2013-11-14 19:34:14,048 speed_logging_utils 16444 139935239862048 browser speed log HTTP request JSON parse failed
+Traceback (most recent call last):
+  File "/home/oleg/code/web-serpng/code/serpng/../serpng/lib/speed_logging_utils.py", line 93, in read_browser_speed_data
+    speed_data = json.loads(request.body)
+  File "/usr/lib64/python2.7/json/__init__.py", line 326, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib64/python2.7/json/decoder.py", line 360, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib64/python2.7/json/decoder.py", line 378, in raw_decode
+    raise ValueError("No JSON object could be decoded")
+ValueError: No JSON object could be decoded
+ERROR 2013-11-14 19:34:14,234 speed_logging_utils 16444 139935239862048 unable to retrieve timestamp from request object for speed logging (django_begins)
+Traceback (most recent call last):
+  File "/home/oleg/code/web-serpng/code/serpng/../serpng/lib/speed_logging_utils.py", line 35, in read
+    value = request.speed[name]
+AttributeError: 'Request' object has no attribute 'speed'
+ERROR 2013-11-14 19:34:14,373 speed_logging_utils 16444 139935239862048 unable to retrieve timestamp from request object for speed logging (php_bridge_begins)
+Traceback (most recent call last):
+  File "/home/oleg/code/web-serpng/code/serpng/../serpng/lib/speed_logging_utils.py", line 35, in read
+    value = request.speed[name]
+AttributeError: 'Request' object has no attribute 'speed'
+ERROR 2013-11-14 19:34:14,506 speed_logging_utils 16444 139935239862048 unable to retrieve timestamp from request object for speed logging (django_begins)
+Traceback (most recent call last):
+  File "/home/oleg/code/web-serpng/code/serpng/../serpng/lib/speed_logging_utils.py", line 35, in read
+    value = request.speed[name]
+KeyError: 'django_begins'
+ERROR 2013-11-14 19:34:14,636 speed_logging_utils 16444 139935239862048 unable to retrieve timestamp from request object for speed logging (php_bridge_begins)
+Traceback (most recent call last):
+  File "/home/oleg/code/web-serpng/code/serpng/../serpng/lib/speed_logging_utils.py", line 35, in read
+    value = request.speed[name]
+KeyError: 'php_bridge_begins'
+ERROR 2013-11-14 19:34:14,766 speed_logging_utils 16444 139935239862048 unable to retrieve timestamp from request object for speed logging (django_begins)
+Traceback (most recent call last):
+  File "/home/oleg/code/web-serpng/code/serpng/../serpng/lib/speed_logging_utils.py", line 35, in read
+    value = request.speed[name]
+AttributeError: 'Request' object has no attribute 'speed'
+ERROR 2013-11-14 19:34:14,900 speed_logging_utils 16444 139935239862048 unable to retrieve timestamp from request object for speed logging (django_ends)
+Traceback (most recent call last):
+  File "/home/oleg/code/web-serpng/code/serpng/../serpng/lib/speed_logging_utils.py", line 35, in read
+    value = request.speed[name]
+AttributeError: 'Request' object has no attribute 'speed'
+ERROR 2013-11-14 19:34:15,027 speed_logging_utils 16444 139935239862048 unable to retrieve timestamp from request object for speed logging (php_bridge_begins)
+Traceback (most recent call last):
+  File "/home/oleg/code/web-serpng/code/serpng/../serpng/lib/speed_logging_utils.py", line 35, in read
+    value = request.speed[name]
+AttributeError: 'Request' object has no attribute 'speed'
+ERROR 2013-11-14 19:34:15,165 speed_logging_utils 16444 139935239862048 unable to retrieve timestamp from request object for speed logging (php_bridge_ends)
+Traceback (most recent call last):
+  File "/home/oleg/code/web-serpng/code/serpng/../serpng/lib/speed_logging_utils.py", line 35, in read
+    value = request.speed[name]
+AttributeError: 'Request' object has no attribute 'speed'
+ERROR 2013-11-14 19:34:15,301 speed_logging_utils 16444 139935239862048 unable to retrieve timestamp from request object for speed logging (php_bridge_begins)
+Traceback (most recent call last):
+  File "/home/oleg/code/web-serpng/code/serpng/../serpng/lib/speed_logging_utils.py", line 35, in read
+    value = request.speed[name]
+KeyError: 'php_bridge_begins'
+ERROR 2013-11-14 19:34:15,428 speed_logging_utils 16444 139935239862048 unable to retrieve timestamp from request object for speed logging (php_bridge_ends)
+Traceback (most recent call last):
+  File "/home/oleg/code/web-serpng/code/serpng/../serpng/lib/speed_logging_utils.py", line 35, in read
+    value = request.speed[name]
+KeyError: 'php_bridge_ends'

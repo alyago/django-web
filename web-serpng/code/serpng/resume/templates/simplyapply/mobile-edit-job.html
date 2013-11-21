@@ -1,0 +1,31 @@
+<span>
+{{ job_form.title.label_tag }}
+{{ job_form.title }}<span class="error">{% for err in job_form.title.errors %}{{ err }}{% endfor %}</span>
+</span>
+<span>
+{{ job_form.employer.label_tag }}
+{{ job_form.employer }}<span class="error">{% for err in job_form.employer.errors %}{{ err }}{% endfor %}</span>
+</span>
+<span>
+{{ job_form.city.label_tag }}
+{{ job_form.city }}<span class="error">{% for err in job_form.city.errors %}{{ err }}{% endfor %}</span>
+</span>
+<span>
+{{ job_form.state }}<span class="error">{% for err in job_form.state.errors %}{{ err }}{% endfor %}</span>
+{{ job_form.start_date.label_tag }}
+</span>
+<span>
+{{ job_form.start_date }} <span class="error">{% for err in job_form.start_date.errors %}{{ err }}{% endfor %}</span>
+{{ job_form.end_date }}<span class="error">{% for err in job_form.end_date.errors %}{{ err }}{% endfor %}</span>
+<span>
+{{ job_form.current }}{{ job_form.current.label_tag }}
+</span>
+<span>
+{{ job_form.description.label_tag }}
+{{ job_form.description }}<span class="error">{% for err in job_form.description.errors %}{{ err }}{% endfor %}</span>
+</span>
+{{ job_form.DELETE }}{{ job_form.DELETE.label_tag }}
+
+{% for hidden in job_form.hidden_fields %}
+{{ hidden }}
+{% endfor %}

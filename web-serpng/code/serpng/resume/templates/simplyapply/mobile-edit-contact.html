@@ -1,0 +1,13 @@
+<span>
+{{ forms_manager.contact_form.email.label_tag }}{{ forms_manager.contact_form.email }}
+<span class="error">{% if not resume.contact.email %}Please enter your email{% endif %}</span>
+</span>
+<span>
+{{ forms_manager.contact_form.cell_phone.label_tag }}{{ forms_manager.contact_form.cell_phone }}
+</span>
+<span>
+{{ forms_manager.contact_form.home_phone.label_tag }}{{ forms_manager.contact_form.home_phone }}
+</span>
+<span>
+{{ forms_manager.address_form.as_p }}
+</span>

@@ -1,0 +1,24 @@
+<ul class="menu-signup-confirm">
+  <li class="title">
+    <div class="sprite-icon-account"></div>
+    Account: Sign Up
+    <button class="cancel-button btn btn-mini">Cancel</button>
+  </li>
+  <li class="confirm-message">
+    <div class='headline'><%= headline %></div>
+<% if (!!email) { %>
+    <div>To activate your account, please click the link in the email we just sent to <span class="email"><%= email %></span></div>
+<% } else { %>
+    <div>To activate your account, please click the link in the email we sent to you.</div>
+<% } %>
+  </li>
+<% if (include_resend_link) { %>
+  <li>
+    <span class="small-text">Don't see it in your inbox? <span class="resend-confirmation-link soft-link">Resend email</span></span>
+  </li>
+<% } %>
+  <li class="goto-signin-signup-message">
+    <span class="small-text">Already have an account?</span>
+    <button class="goto-signin-button btn">Sign In</button>
+  </li>
+</ul>

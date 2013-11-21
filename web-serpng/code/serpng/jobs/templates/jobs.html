@@ -1,0 +1,80 @@
+{% extends "base/base.html" %}
+{% load autocomplete %}
+
+{% comment %} ***** Head ***** {% endcomment %}
+
+{% block page_title %}
+  {% if myresume %}{{ keywords }}{% else %}{{ result.page_title }}{% endif %}
+{% endblock page_title %}
+
+{% block css %}
+  {% include "css_support.html" %}
+  
+{% endblock %}
+
+{% comment %} ***** Body ***** {% endcomment %}
+
+{% block body_id %}"results"{% endblock body_id %} 
+
+{% block body_class %}
+  "jobs{% if linkedin_login %} contacts{% endif %}"
+{% endblock body_class %}
+
+{% comment %} ***** Visible HTML ***** {% endcomment %}
+      
+  {% block content %}
+    {% include "jobs_content.html" %}
+  {% endblock content %}
+
+{% comment %} ***** Hidden HTML ***** {% endcomment %}
+
+  {% block hidden %}
+    {% include "email_alert_tooltip_content.html" %}
+    <div class="email_alert_dialog_content_placeholder"></div>
+
+    {% comment %}  
+      Include "jobs_content_left_email_alerts.html" for interstitial form and
+      #email-subscribe functionality (see Bug 2108)
+    {% endcomment %}
+    {% include "jobs_content_left_email_alerts.html" %}
+
+    {% include "save_search_dialog.html" %}
+
+    {% include "signin_dialog.html" %}
+  {% endblock hidden %}
+
+{% comment %} ***** IDA ***** {% endcomment %}
+  {% block ida %}
+    {% include "sh_ida_js.html" %}
+  {% endblock ida %}
+
+{% comment %} ***** Javascript Support ***** {% endcomment %}
+
+  {% block js_support %}
+    {% include "jobs_content_right_wdik_js.html" %}
+    {% include "js_support.html" %}
+  {% endblock js_support %}
+
+{% comment %} ***** Tracking ***** {% endcomment %}
+
+  {% block tracking %}
+    {% include "sh_error_ping_url.html" %}
+
+    {% include "triggit.html" with triggit_page_type='product' triggit_product_id=onet %}
+
+    {% include "google_analytics.html" %}
+
+    {% if request.configs.ENABLE_CRAZYEGG %}
+      {% include "crazyegg_analytics.html" %}
+    {% endif %}
+
+    {% include "quantcast.html" %}
+
+    {% include "comscore.html" with noscript="True" %}
+  {% endblock tracking %}
+
+{% comment %} ***** Autocomplete Support ***** {% endcomment %}
+  {% block ac_support %}
+    {% autocomplete %}
+  {% endblock ac_support %}
+

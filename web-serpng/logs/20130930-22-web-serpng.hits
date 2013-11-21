@@ -1,0 +1,5 @@
+ERROR 2013-10-01 05:00:00,002 speed_logging_utils 10774 140718947858208 unable to retrieve timestamp from request object for speed logging (php_bridge_ends)
+Traceback (most recent call last):
+  File "/home/oleg/code/web-serpng/code/serpng/../serpng/lib/speed_logging_utils.py", line 34, in read
+    value = request.speed[name]
+KeyError: 'php_bridge_ends'

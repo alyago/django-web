@@ -1,0 +1,22 @@
+{% comment %} !!!!! Replaced by base/search_form.html !!!!! {% endcomment %}
+
+{% load absolute_http_url %}
+
+<div class='search'>
+  <form {% if form_id %}id="{{ form_id }}"{% endif %} action="{% absolute_http_url "/a/jobs/search" %}" method="get" class="search_form evtc_submit" data-event="{{ data_event }}">
+    {% if miles_radius %}
+      {% ifnotequal miles_radius '25' %}
+        <input type="hidden" name="mi" class="id_f_miles" value="{{ miles_radius }}">
+      {% endifnotequal %}
+    {% endif %}
+    <label class="search_keywords_label">
+      {{ translations.keywords_text }}
+      <input type="text" name="q" class="id_f_keywords search_keywords" value="{{ keywords }}" placeholder="{{ translations.keywords_instructions_text }}" autocomplete="off" />
+    </label>
+    <label class="search_location_label">
+      {{ translations.location_text }}
+      <input type="text" name="l" class="id_f_location search_location" value="{{ result.formatted_location }}" placeholder="{{ translations.location_instructions_text }}" autocomplete="off" />
+    </label>
+    <input type="submit" class="search_button" value="{{ translations.search_button_text }}" />
+  </form>
+</div>

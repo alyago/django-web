@@ -1,0 +1,158 @@
+ERROR 2013-11-15 20:44:15,451 middleware 30319 140589157218048 Uncaught exception: No module named linkedin
+Traceback (most recent call last):
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/core/handlers/base.py", line 115, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "/home/oleg/code/web-serpng/code/serpng/employer_pages/views/directory.py", line 39, in directory
+    'us_states_list': us_states_list,
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/shortcuts/__init__.py", line 53, in render
+    return HttpResponse(loader.render_to_string(*args, **kwargs),
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 177, in render_to_string
+    return t.render(context_instance)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/base.py", line 140, in render
+    return self._render(context)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/base.py", line 134, in _render
+    return self.nodelist.render(context)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/base.py", line 830, in render
+    bit = self.render_node(node, context)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/debug.py", line 74, in render_node
+    return node.render(context)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader_tags.py", line 124, in render
+    return compiled_parent._render(context)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/base.py", line 134, in _render
+    return self.nodelist.render(context)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/base.py", line 830, in render
+    bit = self.render_node(node, context)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/debug.py", line 74, in render_node
+    return node.render(context)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/base.py", line 830, in render
+    bit = self.render_node(node, context)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/debug.py", line 74, in render_node
+    return node.render(context)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader_tags.py", line 156, in render
+    return self.render_template(self.template, context)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader_tags.py", line 138, in render_template
+    output = template.render(context)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/base.py", line 140, in render
+    return self._render(context)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/base.py", line 134, in _render
+    return self.nodelist.render(context)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/base.py", line 830, in render
+    bit = self.render_node(node, context)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/debug.py", line 74, in render_node
+    return node.render(context)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/defaulttags.py", line 188, in render
+    nodelist.append(node.render(context))
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/defaulttags.py", line 284, in render
+    return nodelist.render(context)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/base.py", line 830, in render
+    bit = self.render_node(node, context)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/debug.py", line 74, in render_node
+    return node.render(context)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/defaulttags.py", line 411, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=context.current_app)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/core/urlresolvers.py", line 467, in reverse
+    app_list = resolver.app_dict[ns]
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/core/urlresolvers.py", line 311, in app_dict
+    self._populate()
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/core/urlresolvers.py", line 274, in _populate
+    for name in pattern.reverse_dict:
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/core/urlresolvers.py", line 297, in reverse_dict
+    self._populate()
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/core/urlresolvers.py", line 286, in _populate
+    lookups.appendlist(pattern.callback, (bits, p_pattern, pattern.default_args))
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/core/urlresolvers.py", line 230, in callback
+    self._callback = get_callable(self._callback_str)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/utils/functional.py", line 29, in wrapper
+    result = func(*args)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/core/urlresolvers.py", line 97, in get_callable
+    mod = import_module(mod_name)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/utils/importlib.py", line 35, in import_module
+    __import__(name)
+  File "/home/oleg/code/web-serpng/code/serpng/../serpng/jobs/views/__init__.py", line 2, in <module>
+    from jobs import jobs
+  File "/home/oleg/code/web-serpng/code/serpng/../serpng/jobs/views/jobs.py", line 17, in <module>
+    import serpng.jobs.services.linkedin_api
+  File "/home/oleg/code/web-serpng/code/serpng/../serpng/jobs/services/linkedin_api.py", line 21, in <module>
+    from linkedin import linkedin
+ImportError: No module named linkedin
+ERROR 2013-11-15 20:53:20,206 middleware 30732 139844403590912 Uncaught exception: cannot import name linkedin
+Traceback (most recent call last):
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/core/handlers/base.py", line 115, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "/home/oleg/code/web-serpng/code/serpng/employer_pages/views/directory.py", line 39, in directory
+    'us_states_list': us_states_list,
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/shortcuts/__init__.py", line 53, in render
+    return HttpResponse(loader.render_to_string(*args, **kwargs),
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 177, in render_to_string
+    return t.render(context_instance)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/base.py", line 140, in render
+    return self._render(context)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/base.py", line 134, in _render
+    return self.nodelist.render(context)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/base.py", line 830, in render
+    bit = self.render_node(node, context)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/debug.py", line 74, in render_node
+    return node.render(context)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader_tags.py", line 124, in render
+    return compiled_parent._render(context)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/base.py", line 134, in _render
+    return self.nodelist.render(context)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/base.py", line 830, in render
+    bit = self.render_node(node, context)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/debug.py", line 74, in render_node
+    return node.render(context)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/base.py", line 830, in render
+    bit = self.render_node(node, context)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/debug.py", line 74, in render_node
+    return node.render(context)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader_tags.py", line 156, in render
+    return self.render_template(self.template, context)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader_tags.py", line 138, in render_template
+    output = template.render(context)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/base.py", line 140, in render
+    return self._render(context)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/base.py", line 134, in _render
+    return self.nodelist.render(context)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/base.py", line 830, in render
+    bit = self.render_node(node, context)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/debug.py", line 74, in render_node
+    return node.render(context)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/defaulttags.py", line 188, in render
+    nodelist.append(node.render(context))
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/defaulttags.py", line 284, in render
+    return nodelist.render(context)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/base.py", line 830, in render
+    bit = self.render_node(node, context)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/debug.py", line 74, in render_node
+    return node.render(context)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/defaulttags.py", line 411, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=context.current_app)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/core/urlresolvers.py", line 467, in reverse
+    app_list = resolver.app_dict[ns]
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/core/urlresolvers.py", line 311, in app_dict
+    self._populate()
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/core/urlresolvers.py", line 274, in _populate
+    for name in pattern.reverse_dict:
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/core/urlresolvers.py", line 297, in reverse_dict
+    self._populate()
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/core/urlresolvers.py", line 286, in _populate
+    lookups.appendlist(pattern.callback, (bits, p_pattern, pattern.default_args))
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/core/urlresolvers.py", line 230, in callback
+    self._callback = get_callable(self._callback_str)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/utils/functional.py", line 29, in wrapper
+    result = func(*args)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/core/urlresolvers.py", line 97, in get_callable
+    mod = import_module(mod_name)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/utils/importlib.py", line 35, in import_module
+    __import__(name)
+  File "/home/oleg/code/web-serpng/code/serpng/../serpng/jobs/views/__init__.py", line 2, in <module>
+    from jobs import jobs
+  File "/home/oleg/code/web-serpng/code/serpng/../serpng/jobs/views/jobs.py", line 17, in <module>
+    import serpng.jobs.services.linkedin_api
+  File "/home/oleg/code/web-serpng/code/serpng/../serpng/jobs/services/linkedin_api.py", line 21, in <module>
+    from linkedin import linkedin
+ImportError: cannot import name linkedin

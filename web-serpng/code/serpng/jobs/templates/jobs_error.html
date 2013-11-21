@@ -1,0 +1,51 @@
+{% extends "base/base.html" %}
+{% load autocomplete %}
+
+{% comment %} ***** Head ***** {% endcomment %}
+
+{% block page_title %}
+  {% if myresume %}{{ keywords }}{% else %}{{ error_page_title }}{% endif %}
+{% endblock page_title %}
+
+{% block css %}
+  {% include "css_support.html" %}
+  
+{% endblock %}
+
+{% comment %} ***** Body ***** {% endcomment %}
+
+{% block body_id %}"error"{% endblock body_id %} 
+
+{% block body_class %}
+  "jobs"
+{% endblock body_class %}
+
+{% comment %} ***** Visible HTML ***** {% endcomment %}
+      
+  {% block content %}
+    {% include "content_error.html" %}
+  {% endblock content %}
+
+{% comment %} ***** Hidden HTML ***** {% endcomment %}
+
+{% comment %} ***** Javascript Support ***** {% endcomment %}
+
+  {% block js_support %}
+    {% include "js_support.html" %}
+  {% endblock js_support %}
+
+{% comment %} ***** Tracking ***** {% endcomment %}
+
+  {% block tracking %}
+    {% include "sh_error_ping_url.html" %}
+
+    {% include "google_analytics.html" %}
+
+    {% include "quantcast.html" %}
+  {% endblock tracking %}
+
+{% comment %} ***** Autocomplete Support ***** {% endcomment %}
+  {% block ac_support %}
+    {% autocomplete %}
+  {% endblock ac_support %}
+

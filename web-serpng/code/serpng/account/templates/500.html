@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% load compressed %}
+
+{% block css %}
+  {% compressed_css 'base' %}
+{% endblock %}
+
+{% block content %}
+  <div class="span6">
+    <h4>Oops!  Something went wrong!</h4>
+    <p>We're not sure what happened, but you may want to come back in a little bit!</p>
+  </div>
+{% endblock %}

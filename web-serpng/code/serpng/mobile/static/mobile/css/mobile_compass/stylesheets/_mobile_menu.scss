@@ -1,0 +1,237 @@
+@import "global";
+@import "mobile_variables";
+
+// Menu-related variables
+//
+$mobile-menu-background-color:#424242;
+$mobile-menu-width:260px;
+
+#menu {
+  @include animated;
+  background-color:$mobile-menu-background-color;
+  min-height:inherit;
+  position:absolute;
+  width:$mobile-menu-width;
+
+  // Enable vertical touch scrolling. To hide the scrollbar, we add padding to the
+  // right, causing the menu to sit behind the page content (given the z-index order).
+  // The overflow-x property is set to hidden to avoid a horizontal scrollbar.
+  //
+  overflow-x:hidden;
+  overflow-y:scroll;
+  padding-right:2*$mobile-padding;
+  z-index:$z-index-menu;
+
+  // Explicitly hide the menu on page load; otherwise, there's a flicker while the menu
+  // gets rendered and immediately hidden (due to z-index ordering).
+  //
+  display:none;
+
+  .removeSavedItem {
+    display:none;
+
+    &.active {
+      display:inline-block;
+
+      + a {
+        margin-left:25px;
+
+      }
+    }
+  }
+
+  > ul {
+    list-style-type:none;
+
+    // Bootstrap sets margins for <ul> and <ol> elements to 10px by default, so we
+    // need to manually set the margin back to 0 until Bootstrap is removed.
+    //
+    margin:0;
+
+    // Explicitly set the width to be 1px less than the menu width, and the height to
+    // 100% of the menu height, so that the border is shown correctly.
+    //
+    border-right:solid 1px black;
+    height:100%;
+    width:$mobile-menu-width - 1;
+
+    .sprite-icon-close-x {
+      position:absolute;
+      top:50%;
+      margin-top:-9px // image is 18px tall
+    }
+
+    .sprite-chevron-white {
+      position:absolute;
+      right:$mobile-padding;
+      top:50%;
+      margin-top:-7px // image is 15px tall
+    }
+
+    > li {
+      color:white;
+      line-height:20px;
+      padding:$mobile-padding;
+      position:relative;
+
+      > a {
+        color:white;
+        display:block;
+        margin-right:25px;
+        vertical-align:top;
+      }
+
+      // Make sure that the total width (including padding) of each <li> element fits
+      // exactly within the menu width, so that we can size things properly.
+      //
+      -moz-box-sizing:border-box;
+      -webkit-box-sizing:border-box;
+      box-sizing:border-box;
+
+      &.title {
+        height:35px;
+        font-size:13px;
+        background-color:black;
+
+        img {
+          vertical-align:text-top;
+        }
+      }
+
+      &.goto-signin-signup-message {
+        line-height:30px;
+      }
+
+      // Bootstrap overrides the height for <input> elements, so we need to we need to
+      // restate the height here.
+      //
+      input {
+        height:28px;
+      }
+    }
+  }
+
+  * {
+    font:13px sans-serif;
+  }
+
+  a {
+    color:$sh-light-link-blue;
+  }
+
+  form {
+    margin:0;
+
+    &:not(:first-child) {
+      margin-top:2*$mobile-padding;
+    }
+  }
+
+  //
+  // GENERIC CLASS SELECTORS
+  //
+
+  :not(input).email {
+    font-style:italic;
+  }
+
+  .btn {
+    line-height:23px;
+  }
+
+  .btn-mini {
+    font:bold 12px sans-serif;
+    line-height:10px;
+  }
+
+  .headline {
+    font:bold 14px sans-serif;
+    margin-bottom:$mobile-padding;
+  }
+
+  .small-text {
+    color:$sh-light-grey;
+    font-size:12px;
+    vertical-align:middle;
+
+    a {
+      font-size:inherit;
+    }
+  }
+
+  // Fake anchor tags (used when there should be no page change)
+  .soft-link {
+    color:$sh-light-link-blue;
+    cursor:pointer;
+  }
+
+  //
+  // SELECTORS FOR SPECIFIC ELEMENT NODES
+  //
+
+  // Account upsell text (on menu when you're logged out).
+  .account-upsell-text {
+    > ul {
+      list-style-type:disc;
+      margin-left:20px;
+      margin-top:$mobile-padding;
+    }
+  }
+
+   // Edit buttons for Recent Searches, Saved Jobs, and Email Alerts
+  .btn-edit {
+    background-color:$sh-dark-grey;
+    float:right;
+
+    &.active {
+      background-color:$sh-red;
+      color:white;
+    }
+
+    &:disabled {
+      color:$sh-light-grey;
+    }
+  }
+
+  // Cancel button at the upper right corner of the title bar
+  .cancel-button {
+    background-color:$sh-dark-grey;
+    color:$sh-light-grey;
+    float:right;
+    font-size:12px;
+    line-height:10px;
+  }
+
+  // Dividers between non-title <li> elements -- only for the main menu.
+  .menu-main > li:not(.title) + li:not(.title) {
+    border-top:1px solid $sh-grey;
+  }
+
+  // Help text to the right of the password label on the sign in and sign up pages
+  .password-help-text {
+    float:right;
+  }
+
+  // Account activation required headline on the signin page.
+  .menu-signin headline {
+    margin-top:$mobile-padding;
+  }
+
+  // Buttons for navigating between sign-in / sign-out pages
+  .menu-signin, .menu-signup, .menu-signup-confirm {
+    .btn.goto-signin-button, .btn.goto-signup-button {
+      float:right;
+    }
+  }
+
+  // Sign out button
+  .signout-button {
+    margin-top:$mobile-padding;
+  }
+
+  // Submit buttons for the various sign in and sign up pages
+  .submit-button {
+    margin:2*$mobile-padding auto 0 auto;
+    display:block;
+  }
+}

@@ -1,0 +1,52 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>{% block page_head_title %}{% endblock %}  | Simply Hired</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="description" content="{{ page_head_meta_description }}" />
+<meta name="keywords" content="{{ page_head_meta_keywords }}" />
+<link rel="shortcut icon" type="image/x-icon" href="{% static 'resume/images/favicon.ico' %}" />
+<link href="http://www.simplyhired.com/c/sh/styles/common-min.css,site.css" type="text/css" rel="stylesheet">
+
+<link rel="stylesheet" type="text/css" href="{% static 'resume/styles/resume.css' %}" />
+<link href="{% static 'resume/styles/bootstrap.css' %}" type="text/css" rel="stylesheet">
+
+</head>
+<body data-spy="scroll" id="{% block page_body_id %}{% endblock %}" class="{% block page_body_class %}{% endblock %}">
+<div id="container">
+{% block page_body_content %}{% endblock %}
+</div><!--container-->
+
+
+{% block page_js_script %}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js"></script>
+<script src="{% static 'resume/js/bootstrap.js' %}"></script>
+<script src="{% static 'resume/js/resume.js' %}"></script>
+<script type="text/javascript">
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+    var sh_pageTracker = _gat._getTracker("UA-1039096-6");
+    sh_pageTracker._initData();
+    sh_pageTracker._trackPageview();
+</script>
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-1039096-6']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+{% endblock %}
+{% block page_specific_js_script %}
+{% endblock %}
+</body>
+</html>

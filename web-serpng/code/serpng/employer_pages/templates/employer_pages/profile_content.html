@@ -1,0 +1,210 @@
+{% load static %}
+{% load get_config %}
+
+<div class="employer-profile-header"
+     style="padding: 10px 0;">
+  <div style="float: left; position: relative; overflow: hidden;">
+    <h1 style="font-size: 3rem; font-weight: normal; line-height: 3.4rem;">
+      {{ emp.name }}
+    </h1>
+  </div>
+  <div style="float: right; position: relative; overflow: hidden;">
+    <a href="{% url 'employer-pages-url:directory' %}">
+      Back to employers directory >
+    </a>
+  </div>
+  <div class="employer-clear-float"></div>
+</div><!-- employer-profile-header -->
+
+
+<!-- employer-3column-left -->
+<div class="employer-3column-left">
+
+  <div class="employer-description">
+    {% for paragraph in emp_description %}
+      <p>
+        {{ paragraph }}
+      </p>
+    {% endfor %}
+  </div><!-- employer-description -->
+  
+</div><!-- employer-3column-left -->
+
+
+<!-- employer-3column-right -->
+<div class="employer-3column-right">
+  
+  {% if employer_names_top_cities_jobs %}
+  <div class="employer-section-header">
+    <h2>Jobs at {{ emp.get_display_name }}</h2>
+  </div>
+  
+  <div class="employer-section-body">
+    {% for name in employer_names_top_cities_jobs %}
+      <div class="employer-section-body-item">
+        <h4><span style="color: #007f00;">{{ name.normalized_company_name }}</span> jobs</h4>
+        <div class="employer-top-cities-jobs-list">
+          {% for city in name.top_cities_jobs %}
+            <div style="width: 50%; float: left; overflow: hidden;">
+              <a href="{{ city.serp_url }}">{{ city.name }}</a> ({{ city.count }})
+            </div>
+          {% endfor %}
+          <div class="employer-clear-float"></div>
+        </div><!-- employer-top-cities-jobs-list -->
+      </div><!-- employer-section-body-item -->
+    {% endfor %}
+  </div><!-- employer-section-body -->
+  {% else %}
+  <div class="employer-section-header">
+    <h2>Jobs by State</h2>
+  </div>
+  
+  
+  <div class="employer-section-body">
+    <div class="employer-section-body-item">
+      
+      <div style="width: 50%; float: left; overflow: hidden;">
+        {% for state in us_states_list|slice:":28" %}
+          <div style="padding-bottom: 5px;">
+            <a href="{% url 'jobs-url:jobs-query' state.get_link %}">
+              {{ state.name }} ({{ state.code }})
+            </a>
+          </div>
+        {% endfor %}
+      </div>
+      
+      <div style="width: 50%; float: left; overflow: hidden;">
+        {% for state in us_states_list|slice:"28:" %}
+          <div style="padding-bottom: 5px;">
+            <a href="{% url 'jobs-url:jobs-query' state.get_link %}">
+              {{ state.name }} ({{ state.code }})
+            </a>
+          </div>
+        {% endfor %}
+      </div>
+      
+      <div class="employer-clear-float"></div>
+      
+    </div><!-- employer-section-body-item -->
+  </div><!-- employer-section-body -->
+  {% endif %}
+
+</div><!-- employer-3column-right -->
+
+
+<!-- employer-3column-middle -->
+<div class="employer-3column-middle">
+
+  <div class="employer-section-header">
+    <h2>{{ emp.get_display_name }} snapshot</h2>
+  </div>
+  
+  <div class="employer-section-body">
+    <div class="employer-snapshot" 
+         style="padding: 0 10px 10px 10px; background-color: #e6e6e6;">
+      
+      {% if emp.get_main_website %}
+        <div class="employer-section-body-item">
+          <div class="employer-snapshot-cat">
+            Main Website
+          </div>
+          <div class="employer-snapshot-txt">
+            <a href="{{ emp.get_main_website.website.url }}" rel="nofollow" target="_blank">
+              {{ emp.get_main_website.website.txt }}
+            </a>
+          </div>
+          <div class="employer-clear-float"></div>
+        </div>
+      {% endif %}
+      
+      {% if emp.get_ciq_industry %}
+        <div class="employer-section-body-item">
+          <div class="employer-snapshot-cat">
+            Industry
+          </div>
+          <div class="employer-snapshot-txt">
+            {{ emp.get_ciq_industry }}
+          </div>
+          <div class="employer-clear-float"></div>
+        </div>
+      {% endif %}
+    
+      {% if stock_charts %}
+        <div class="employer-section-body-item">
+          {% for stock_chart in stock_charts %}
+            <div class="employer-stock-chart">
+              <img src="{{ stock_chart.src_url }}"
+                   alt="Stock Chart for {{ emp.name }} ({{ stock_chart.src_symbol }}),
+                        source: {{ stock_chart.src_name }}">
+            </div>
+          {% endfor %}
+        </div>
+      {% endif %}
+      
+      {% for emp_sf in employer_snapshot_facts %}
+        <div class="employer-section-body-item">
+          <div class="employer-snapshot-cat">
+            {{ emp_sf.snapshot_fact_type.title }}
+          </div>
+          <div class="employer-snapshot-txt">
+            {{ emp_sf.txt | safe }}
+          </div>
+          <div class="employer-clear-float"></div>
+        </div>
+      {% endfor %}
+  
+      {% if employer_websites %}
+        <div class="employer-section-body-item">
+          <div class="employer-snapshot-cat">
+            Other Website{{ employer_websites|length|pluralize }}
+          </div>
+          <div class="employer-snapshot-txt">
+            {% for emp_ws in employer_websites %}
+            <a href="{{ emp_ws.url }}" rel="nofollow" target="_blank">{{ emp_ws.txt }}</a><br/>
+            {% endfor %}
+          </div>
+          <div class="employer-clear-float"></div>
+        </div>
+      {% endif %}
+  
+      {% if employer_webprofiles %}
+        <div class="employer-section-body-item">
+          <div class="employer-snapshot-cat">
+            Web Profile{{ employer_webprofiles|length|pluralize }}
+          </div>
+          <div class="employer-snapshot-txt">
+          {% for emp_wp_list in employer_webprofiles %}
+            <div class="employer-social-row">
+              {% for emp_wp in emp_wp_list %}
+                <div style="width: 24px; height: 24px; margin: 0 5px 5px 0;
+                            float: left; overflow: hidden;">
+                  <a href="#" class="employer-soc-{{ emp_wp.webprofile_type.code }}{{ forloop.counter0 }}" rel="nofollow" target="_blank"
+                     style="display: block; text-align: center;">
+                    <img src="{% static 'images/social-icons/' %}{{ emp_wp.webprofile_type.code }}-icon.png?{% get_config "DEPLOY_TAG" %}"
+                              width="24" height="24" alt="" border="0" />
+                  </a>
+                </div>
+              {% endfor %}
+              <div class="employer-clear-float"></div>
+            </div>
+            {% if forloop.counter == 1 and has_social_page %}
+              <div class="employer-social-link" style="margin-bottom: 5px;">
+                <a href="{% url 'employer-pages-url:social' emp_link %}">See what's going on...</a>
+              </div>
+            {% endif %}
+          {% endfor %}
+          </div>
+          <div class="employer-clear-float"></div>
+        </div>
+      {% endif %}
+    
+    
+    </div><!-- employer-snapshot -->
+  </div><!-- employer-section-body -->
+</div><!-- employer-3column-middle -->
+
+<div class="employer-clear-float"></div>
+
+<script type="text/javascript">
+  var emp_link = "{{ emp_link | safe }}";
+</script>

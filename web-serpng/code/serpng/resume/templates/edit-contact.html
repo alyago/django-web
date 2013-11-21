@@ -1,0 +1,42 @@
+<div class="row">
+  <div class="row span7">
+    <label>Name (required)</label>
+    <div class="span2" style="width: 120px; margin-left: 0px;">
+      {{ forms_manager.contact_form.first_name }}
+      <span class="error">{% for err in forms_manager.contact_form.first_name.errors %}{{ err }}{% endfor %}</span>
+    </div>
+    <div class="span" style="margin-left: 0px">
+      {{ forms_manager.contact_form.middle_name }}
+      <span class="error">{% for err in forms_manager.contact_form.middle_name.errors %}{{ err }}{% endfor %}</span>
+    </div>
+    <div class="span2">
+      {{ forms_manager.contact_form.last_name }}
+      <span class="error">{% for err in forms_manager.contact_form.last_name.errors %}{{ err }}{% endfor %}</span>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="span4">
+    <label>Address</label>
+    {{ forms_manager.address_form.street }}<span class="error">{% for err in forms_manager.address_form.street.errors %}{{ err }}{% endfor %}</span>
+    {{ forms_manager.address_form.street2 }}<span class="error">{% for err in forms_manager.address_form.street2.errors %}{{ err }}{% endfor %}</span>
+    {{ forms_manager.address_form.postcode }}<span class="error">{% for err in forms_manager.address_form.postcode.errors %}{{ err }}{% endfor %}</span>
+    {{ forms_manager.address_form.city.as_hidden }}
+    {{ forms_manager.address_form.state.as_hidden }}
+  </div>
+  <div class="span3">
+    <label>Phone Number</label>
+    {{ forms_manager.contact_form.home_phone }}<span class="error">{% for err in forms_manager.contact_form.home_phone.errors %}{{ err }}{% endfor %}</span>
+    {{ forms_manager.contact_form.cell_phone }}<span class="error">{% for err in forms_manager.contact_form.cell_phone.errors %}{{ err }}{% endfor %}</span>
+  </div>
+</div>
+
+<div class="row">
+  <div class="span4">
+    <label>Email Address (required)</label>
+    {{ forms_manager.contact_form.email }}<span class="error">{% for err in forms_manager.contact_form.email.errors %}{{ err }}{% endfor %}</span>
+  </div>
+</div>
+
+{% include "edit-form-buttons.html" %}

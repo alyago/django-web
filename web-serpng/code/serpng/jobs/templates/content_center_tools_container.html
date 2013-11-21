@@ -1,0 +1,92 @@
+{% load absolute_http_url %}
+{% load clip_and_highlite %}
+{% load get_config %}
+{% load hash_filter %}
+{% load i18n %}
+{% load math_filter %}
+{% load permalink %}
+{% load staticfiles %}
+
+
+{# Show different sets of job tools for different countries #}
+{% if current_country_code == 'us' %}
+  {% if request.save_job_abtest_group != 'a' %}
+    <div class="rate box">
+      <ul>
+        <li class="label">{{ translations.saved_to_text }} <a rel="nofollow" class="myjobs">{{ translations.my_jobs_text }}</a></li>
+        <li class="tab tab_note">
+          {% if job.refind_key in user_data.saved_jobs.keys %}
+            {% with rk=job.refind_key %}
+              {% with comment=user_data.saved_jobs|get_val_by_key:rk %}
+                {% if comment %}
+                  <a rel="nofollow" class="note">{{ translations.edit_notes_text }}</a>
+                  <strong>{% if comment|length > 10 %}{{ comment|slice:"10" }}...{% else %}{{ comment }}{% endif %}</strong>
+                {% else %}
+                  <a rel="nofollow" class="note">{{ translations.add_notes_text }}</a>
+                {% endif %}
+              {% endwith %}
+            {% endwith %}
+          {% else %}
+            <a rel="nofollow" class="note">{{ translations.add_notes_text }}</a>
+          {% endif %}
+        </li>
+      </ul>
+    </div><!--rate-->
+  {% endif %}
+{% endif %}
+
+<div class="send box">
+  <a class="box_close" onclick="SH.jobs.send(this)" >
+    <span class="icon-close-small"></span>
+  </a>
+  <ul><li class="tab tab_email"><a class="email">{{ translations.email_text }}</a></li>
+    {% for share_site in sharing_sites %}
+      <li class="tab tab_{{ share_site|lower }}"><a rel="nofollow" class="{{ share_site|lower }}">{{ share_site }}</a></li>
+    {% endfor %}
+  </ul>
+</div><!--send-->
+
+{% if current_country_code == 'us' %}
+  <div class="block box">
+    <a class="box_close" onclick="SH.jobs.block(this)">
+      <span class="icon-close-small"></span>
+    </a>
+    {% if user and user.is_logged_in %}
+      {% with job.hide_job_urls as hide_job_urls %}
+        <ul class="links">
+          <li>
+            <a rel="nofollow" href="{% absolute_http_url hide_job_urls.company %}" class="evtc" data-event="hide_jobs_company">{{ translations.hide_jobs_company_text }} ({{ job.company|safe }})</a>
+          </li>
+          <li>
+            <a rel="nofollow" href="{% absolute_http_url hide_job_urls.source %}" class="evtc" data-event="hide_jobs_source">{{ translations.hide_jobs_site_text }} ({{ job.source|safe }})</a>
+          </li>
+        </ul>
+        <p>
+          <a rel="nofollow" href="{% absolute_http_url "/a/jobs/preferences" %}" class="evtc" data-event="hide_jobs_view_hidden">{{ translations.view_hidden_jobs_text }}</a>
+        </p>
+      {% endwith %}
+    {% else %}
+      <p>
+        {{ translations.tired_of_jobs_text }}
+        <br>
+        <a rel="nofollow" class="login" href="{% absolute_http_url "/a/accounts/login" %}">{{ translations.sign_in_link_text }}</a>
+        {{ translations.or_text }}
+        <a rel="nofollow" class="create" href="{% absolute_http_url "/a/accounts/create-account" %}">{{ translations.create_account_link_text }}</a>
+        {{ translations.to_hide_jobs_text }}
+      </p>
+    {% endif %}
+  </div><!--block-->
+
+  <div class="flag box">
+    <a class="box_close" onclick="SH.jobs.flag(this)">
+      <span class="icon-close-small"></span>
+    </a>
+    <ul>
+      <li class="label">{{ translations.report_this_job_text }}</li>
+      <li class="tab"><a rel="nofollow" class="spam">{{ translations.scam_spam_link_text }}</a></li>
+      <li class="tab"><a rel="nofollow" class="expired">{{ translations.expired_link_text }}</a></li>
+      <li class="tab"><a rel="nofollow" class="duplicate">{{ translations.duplicate_link_text }}</a></li>
+      <li class="tab"><a rel="nofollow" class="inaccurate">{{ translations.inaccurate_link_text }}</a></li>
+    </ul>
+  </div><!--flag-->
+{% endif %}

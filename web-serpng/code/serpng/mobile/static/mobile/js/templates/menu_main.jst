@@ -1,0 +1,72 @@
+<ul class="menu-main">
+  <li class="title">
+    <div class="sprite-icon-account"></div>
+    Account
+  </li>
+<%
+  if (isLoggedIn) {
+%>
+  <li class="row-fluid">
+    <div><%= username %></div>
+    <div class="signout-button btn">Sign Out</div>
+  </li>
+  <li class="title"><div class="sprite-icon-recent"></div> Recent Searches<button id="edit-recent-searches-button" listType="RecentSearches" class="btn btn-mini btn-edit <%= editRecentSearchesMode ? 'active' : '' %>" <%= recentSearches.length ? '' : 'disabled' %>>Edit</button></li>
+<%
+    if (recentSearches.length) {
+       _.each(recentSearches, function(recentSearch) {
+%>
+  <li><div class="sprite-icon-close-x removeSavedItem edit-recent-searches-button <%= editRecentSearchesMode ? 'active' : '' %>" data-query="<%= recentSearch.query %>"></div><a href="<%= recentSearch.path %>"><%= recentSearch.title %></a><div class="sprite-chevron-white"></div></li>
+<%
+       });
+     } else {
+%>
+  <li>No Recent Searches yet.</li>
+<%
+     }
+%>
+  <li class="title"><div class="sprite-icon-saved"></div> Saved Jobs</span><button class="btn btn-edit btn-mini <%= editSavedJobsMode ? 'active' : '' %>" listType="SavedJobs" id="edit-saved-jobs-button" <%= savedJobs.length ? '' : 'disabled' %>>Edit</button></li>
+<%
+    if (savedJobs.length) {
+      _.each(savedJobs, function(savedJobs) {
+%>
+  <li><div refindKey="<%= savedJobs.refindkey %>" class="sprite-icon-close-x removeSavedItem edit-saved-jobs-button <%= editSavedJobsMode ? 'active' : '' %>"></div><a href="<%= savedJobs.path %>"><%= savedJobs.title %> - <%= savedJobs.location %></a><div class="sprite-chevron-white"></div></li>
+<%
+      });
+    } else {
+%>
+  <li>No Saved Jobs yet.</li>
+<%
+    }
+%>
+  <li class="title"><div class="sprite-icon-email"></div> Email Alerts<button id="edit-email-alerts-button" listType="EmailAlerts" class="btn btn-mini btn-edit <%= editEmailAlertsMode ? 'active' : '' %>" <%= emailAlerts.length ? '' : 'disabled' %>>Edit</button></li>
+<%
+    if (emailAlerts.length) {
+      _.each(emailAlerts, function(emailAlert) {
+%>
+  <li><div class="sprite-icon-close-x removeSavedItem edit-email-alerts-button <%= editEmailAlertsMode ? 'active' : '' %>" data-id="<%= emailAlert.id %>"></div><a href="<%= emailAlert.path %>"><%= emailAlert.title %></a><div class="sprite-chevron-white"></div></li>
+<%
+      });
+    } else {
+%>
+  <li>No Email Alerts yet.</li>
+<%
+    }
+  } else {
+%>
+  <li>
+    <span class="goto-signup-button btn">Sign Up</span> or <span class="goto-signin-button btn">Sign In</span>
+  </li>
+  <li>
+    <div class="account-upsell-text">
+      Sign in or sign up to manage the following features:
+      <ul>
+        <li>Email Alerts</li>
+        <li>Recent Searches</li>
+        <li>Saved Jobs</li>
+      </ul>
+    </div>
+  </li>
+<%
+  }
+%>
+</ul>

@@ -1,0 +1,10 @@
+{% comment %} !!!!! Replaced by base/top_search.html !!!!! {% endcomment %}
+
+{% load absolute_http_url %}
+{% load get_config %}
+{% load staticfiles %}
+
+<div class="sh_header_search" class="noborder">
+  <div class="sh_logo"><a href="{% absolute_http_url "/" %}" class="evtc" data-event="header_logo"><img src="{% static 'images/sh-logo-217x40.png' %}?{% get_config "DEPLOY_TAG" %}" width="217" height="40" alt="{{ translations.logo_alt_text }}" border="0" /></a></div>
+  {% include "search_form.html" with data_event="header_search_form" form_id="search" %}
+</div>

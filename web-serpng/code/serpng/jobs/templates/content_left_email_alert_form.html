@@ -1,0 +1,12 @@
+{% load get_config %}
+{% load staticfiles %}
+
+{% if not is_email_alerts_in_maintenance %}
+  <div class="email_alert_container">
+    <p class="email_alert_instruction">
+      <span class="icon-envelope-small"></span>
+      {{ translations.email_alert_form_cta_text }}
+    </p>
+    {% include "base_email_alert_form.html" %}
+  </div>
+{% endif %}

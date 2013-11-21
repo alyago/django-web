@@ -1,0 +1,119 @@
+{% load compressed %}
+{% load get_config %}
+{% load staticfiles %}
+
+<!DOCTYPE html>
+
+<!--[if IE 7 ]>
+<html lang="en" class="ie7">
+<![endif]-->
+<!--[if IE 8 ]>
+<html lang="en" class="ie8">
+<![endif]-->
+<!--[if IE 9 ]>
+<html lang="en" class="ie9">
+<![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!-->
+<html lang="en">
+<!--<![endif]-->
+  <head>
+    {% block title %}<title>Simply Hired</title>{% endblock %}
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />
+    {% block css %}{% endblock %}
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body id="{{ page_id }}">
+    <div class="container">
+
+      <div class="row">
+{% block header %}
+        <div id="header" class="span12">
+  {% if not page_header_no_menu %}
+            <div class="header_links pull-right">
+    {% if not has_resume %}
+              <a class="resume" href="http://www.simplyhired.com/myresume/landing">Post Your Resume</a>
+              <span class="s hs">&bull;</span>
+    {% endif %}
+    {% if user and user.is_logged_in %}
+              <div class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#">{{ user.username|escape }}<b class="caret"></b></a>
+                <ul class="dropdown-menu" role="menu">
+                  <li><a href="/a/accounts/logout">Sign Out</a></li>
+                </ul>
+              </div><!--dropdown-->
+    {% else %}
+              <a class="login" href="/account/signin">Sign In</a>
+    {% endif %}
+            </div><!--header_links-->
+            <div class="clearfix"></div>
+  {% endif %}
+
+          <div class="header_logo pull-left">
+            <a href="/"><img width="255" height="47" alt="Simply Hired" src="{% static 'images/sh-logo-217x40.png' %}?{% get_config "DEPLOY_TAG" %}" /></a>
+          </div>
+
+  {% if not page_header_no_search_boxes %}
+            <div>
+              <form class="search" action="/a/jobs/search" method="get">
+                <div class="element">
+                  <label for="f_keywords">Keywords</label>
+                  <input id="f_keywords" type="text" name="q" value="" placeholder="Enter job title, skills or company" />
+                </div>
+                <div class="element">
+                  <label for="f_location">Location</label>
+                  <input id="f_location" type="text" name="l" value="" placeholder="Enter city, state or zip" />
+                </div>
+                <div class="element">
+                  <button type="submit" class="btn">Search All Jobs</button>
+                </div>
+              </form>
+            </div>
+  {% endif %}
+        </div><!--header-->
+{% endblock%}
+      </div>
+
+      <div class="row">
+        {% block navbar %}
+        {% endblock %}
+      </div>
+
+      <div class="row">
+        {% block content %}
+        {% endblock %}
+      </div>
+
+      <div class="row">
+        {% block footer %}
+        <div id="footer" class="span12">
+          <div class="footer_links">
+            <span class="copyright">&copy; {% now "Y" %} Simply Hired, Inc.</span>
+            <a href="http://www.simplyhired.com/a/legal/privacy">Privacy</a>
+            <a href="http://www.simplyhired.com/a/legal/terms-of-service">Terms</a>
+          </div>
+        </div>
+        {% endblock%}
+      </div>
+
+      <script type="text/javascript">
+        {% block inline_js %}
+        {% endblock %}
+      </script>
+
+      <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script><script type="text/javascript">if(typeof jQuery === 'undefined') {document.write('<script type="text/javascript" src="{% static 'js/jquery-1.7.1.min.js' %}?{% get_config "DEPLOY_TAG" %}"><\/script>');}</script>
+
+      {% block external_js %}
+      {% endblock %}
+
+      {% block tracking %}
+        {% include "trackings/google_analytics.html" %}
+        {% include "trackings/quantcast.html" %}
+        {% include "trackings/comscore.html" %}
+      {% endblock %}
+    </div>
+  </body>
+</html>

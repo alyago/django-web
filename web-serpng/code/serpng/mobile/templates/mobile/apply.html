@@ -1,0 +1,43 @@
+{% extends "mobile/base.html" %}
+
+{% load i18n %}
+
+{% block "content" %}
+  <div class="job-info-box">
+    <div class='job-info-title'>{{ job_title }}</div>
+    <div class='job-info-company-location'>{{ job_company }} - {{ job_location }}</div>
+  </div>
+  <form method='POST' id='job-application'>
+    {% if requires_resume %}
+      <label><span class="form-required-star">*</span> Create your Simply Hired resume</label>
+      <div class='form-hasresume-field' {% if not request.user.has_resume %}style='display:none;'{% endif %}>
+        <span class='sprite-resume-confirm-check'></span>
+        <span class='form-resume-attached-text'> Resume attached</span>
+      </div>
+      <div class='form-noresume-field' {% if request.user.has_resume %}style='display:none;'{% endif %}>
+        <a class='form-linkedin-button btn-blue' href="{{ linkedin_uas_url }}" class="btn-blue">Import from LinkedIn</a>
+      </div>
+    {% endif %}
+    {% for field in form %}
+      <label for='{{ field.name }}'>
+      {% if field.field.required %}<span class='form-required-star'>*</span> {% endif %}{{ field.label }}
+      </label>
+      {{ field }}
+      {% if field.errors %}
+      <div class='form-error'>{{ field.errors }}</div>
+      {% endif %}
+    {% endfor %}
+    {% csrf_token %}
+    <div class="form-submit-line">
+      <button type='submit' class="btn-orange">Submit Application</button>
+    </div>
+  </form>
+{% endblock %}
+
+{% block "scripts" %}
+  <script type="text/javascript">
+    $(function() {
+      window.appView = new ApplyAppView({ model: new AccountModel(SH), el: 'body' });
+    });
+  </script>
+{% endblock %}

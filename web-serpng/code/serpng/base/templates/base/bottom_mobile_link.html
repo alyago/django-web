@@ -1,0 +1,14 @@
+{% load absolute_http_url %}
+{% comment %}
+  If the requesting device is a mobile device, render link to mobile site.
+{% endcomment %}
+
+{% if request.is_supported_mobile_device %}
+  <div class="mobile-navigation">
+    <span>
+      <a rel="nofollow" href="/a/settings/mobile{% if request_query %}/{{ request_query }}{% endif %}?m=1">
+        {{ translations.mobile_link_text }}        
+      </a>
+     </span>
+  </div>
+{% endif %}

@@ -1,0 +1,44 @@
+{% load compressed %}
+{% load get_config %}
+{% load staticfiles %}
+{% extends "base.html" %}
+
+{% block css %}
+  {% compressed_css 'accounts' %}
+{% endblock %}
+
+{% block header %}
+<div id="header" class="span10">
+  <div class="header_logo pull-left">
+    <a href="/"><img width="255" height="56" alt="Simply Hired" src="{% static 'images/simplyhired.png' %}?{% get_config "DEPLOY_TAG" %}" /></a>
+  </div>
+
+  <div class="">
+    <form class="search" action="/a/jobs/search" method="get">
+      <div class="element">
+        <label for="f_keywords">Keywords</label>
+        <input id="f_keywords" type="text" name="q" value="" placeholder="Enter job title, skills or company" />
+      </div>
+      <div class="element">
+        <label for="f_location">Location</label>
+        <input id="f_location" type="text" name="l" value="" placeholder="Enter city, state or zip" />
+      </div>
+      <div class="element">
+        <button type="submit" class="btn">Search All Jobs</button>
+      </div>
+    </form>
+  </div>
+</div><!--header-->
+{% endblock %}
+
+{% block content %}
+<div id="opt_out_content" class="span10">
+  <section id="l_new">
+    <h3>Email Preferences Updated</h3>
+    <div class="opt_out_message">
+      You have successfully updated your promotional email preferences and
+      will no longer receive {{ opt_out_string }} promotional emails.
+    </div>
+  </section>
+</div>
+{% endblock %}

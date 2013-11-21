@@ -1,0 +1,29 @@
+ERROR 2013-11-13 23:15:35,403 middleware 3369 139781083748096 Uncaught exception: global name 'sh_rating__rating' is not defined
+Traceback (most recent call last):
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/core/handlers/base.py", line 115, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "/home/oleg/code/web-serpng/code/serpng/employer_pages/views/directory.py", line 21, in directory
+    employer_list = _get_default_employer_list()
+  File "/home/oleg/code/web-serpng/code/serpng/employer_pages/views/directory.py", line 48, in _get_default_employer_list
+    employer_list = Employer.objects.filter(sh_rating__rating != '0').order_by('?')[:75]
+NameError: global name 'sh_rating__rating' is not defined
+ERROR 2013-11-13 23:22:23,619 middleware 3656 140051233109760 Uncaught exception: global name 'name' is not defined
+Traceback (most recent call last):
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/core/handlers/base.py", line 115, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "/home/oleg/code/web-serpng/code/serpng/employer_pages/views/directory.py", line 21, in directory
+    employer_list = _get_default_employer_list()
+  File "/home/oleg/code/web-serpng/code/serpng/employer_pages/views/directory.py", line 49, in _get_default_employer_list
+    employer_list.order_by(name)
+NameError: global name 'name' is not defined
+ERROR 2013-11-13 23:27:00,769 middleware 3761 139926654781184 Uncaught exception: Cannot reorder a query once a slice has been taken.
+Traceback (most recent call last):
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/core/handlers/base.py", line 115, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "/home/oleg/code/web-serpng/code/serpng/employer_pages/views/directory.py", line 21, in directory
+    employer_list = _get_default_employer_list()
+  File "/home/oleg/code/web-serpng/code/serpng/employer_pages/views/directory.py", line 49, in _get_default_employer_list
+    employer_list.order_by('name')
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/db/models/query.py", line 802, in order_by
+    "Cannot reorder a query once a slice has been taken."
+AssertionError: Cannot reorder a query once a slice has been taken.

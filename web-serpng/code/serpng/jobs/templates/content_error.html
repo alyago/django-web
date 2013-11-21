@@ -1,0 +1,57 @@
+{% load absolute_http_url %}
+{% load i18n %}
+{% load get_config %}
+
+<div class="error-column-center">
+  {% if search_myresume %}
+    <div class="error">
+      <h1>{{ translations.personalized_search_signin_heading_text }}</h1>
+      <p>
+        {{ translations.need_to_sign_in_text }}<a href="{{ account_login_url }}">{{ translations.sign_in_cta_text }}</a>{{ translations.sign_in_cta_reason_text }}<br>
+        {{ translations.sign_in_cta_humor_text }}
+      </p>
+      <div class="sign-in-button">
+          <p class="link"><a href="{{ account_login_url }}">{{ translations.sign_in_now_text }}</a></p>
+      </div>
+    </div>
+    <div class="error divider">
+      <h1>{{ translations.personalized_search_upload_resume_heading_text }}</h1>
+      <p>
+        {{ translations.personalization_search_upload_resume_cta_text }}<br>
+        {{ translations.personalization_search_upload_resume_cta_reason_text }}
+      </p>
+      <p>
+        {{ translations.personalization_search_upload_resume_get_started_text }}<a href="{% absolute_http_url "/myresume/landing?rfr=dang" %}">{{ translations.personalization_search_upload_resume_link_text }}</a>
+      </p>
+    </div>
+  {% else %}
+    {% comment %} TODO(delaney): Remove this hack once FutureSERP ships and WebOps updates their health check scripts. {% endcomment %}
+    <!-- Dang -->
+
+    <div class="error">
+      <h1>{{ error_page_heading }}</h1>
+      {{ error_page_message|safe }}
+    </div><!--error-->
+
+    <div class="mini_browse">
+      <h4>{{ translations.find_by_category_heading_text }}</h4>
+
+      {% for column in browse_urls %}
+      <ul>
+        {% for row in column %}
+          <li>
+          {% for link in row %}
+            <a href="{% get_config 'SERP_PAGE_URL' %}{{ link.link_url }}">{{ link.link_text }}</a>
+            {% if not forloop.last %}&nbsp/&nbsp;{% endif %}
+          {% endfor %}
+          </li>
+        {% endfor %}
+      </ul>
+      {% endfor %}
+      <p><a href="{% absolute_http_url "/job-search" %}"><strong>{{ translations.browse_job_listings_text }} &raquo;</strong></a></p>
+    </div><!--mini_browse-->
+
+  {% endif %}
+
+  {% include "content_center_google_ads_bottom.html" %}
+</div>

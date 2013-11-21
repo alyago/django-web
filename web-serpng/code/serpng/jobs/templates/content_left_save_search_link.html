@@ -1,0 +1,22 @@
+{% load absolute_http_url %}
+{% load get_config %}
+{% load staticfiles %}
+
+{% if not myresume and user and user.is_logged_in and current_country_code == 'us' %}
+  <div class="search_links">
+    <p class="link">
+      <a id="l_save_search" class="save save_see_all evti" href="{% absolute_http_url "/a/my-searches/saved" %}"
+        data-event="left_rail_edit_saved_search_click" title="See all saved searches"
+        {% if not user_data.is_search_saved %}style="display:none;"{% endif %}>
+        {{ translations.see_all_saved_searches_text }}
+      </a>
+      
+      <a id="l_save_search" class="save save_new evti" 
+        data-event="left_rail_save_search_open" title="Save this search"
+        {% if user_data.is_search_saved %}style="display:none;"{% endif %}>
+        <span class="icon-save-this-search"></span> 
+        {{ translations.save_this_search_text }}
+      </a>
+    </p>
+  </div>
+{% endif %}

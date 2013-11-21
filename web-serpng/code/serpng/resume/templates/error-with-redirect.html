@@ -1,0 +1,15 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+  <head>
+    <title>{{ message }}</title>
+    <script type="text/javascript">
+      function redirect_sleep() {
+        setTimeout("location='{{ redirect_url }}'", 5000);
+      }
+    </script>
+  </head>
+
+  <body onLoad="redirect_sleep()">
+    {{ message }}
+  </body>
+</html>

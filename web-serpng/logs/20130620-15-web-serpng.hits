@@ -1,0 +1,5 @@
+WARNING 2013-06-20 22:04:22,183 jobs 19728 140695545296640 Error in obtaining search results: Bad results from searcher
+WARNING 2013-06-20 22:04:25,372 serp_links 19728 140695545296640 Error in obtaining search results: Bad results from searcher
+WARNING 2013-06-20 22:24:58,638 jobs 19728 140695545296640 Error in obtaining search results: No query terms
+WARNING 2013-06-20 22:24:58,640 jobs 19728 140695545296640 Error in google adsense handler: 'dict' object has no attribute 'google_ads_query'
+WARNING 2013-06-20 22:25:00,303 serp_links 19728 140695655843584 Error in obtaining search results: No query terms

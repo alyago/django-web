@@ -1,0 +1,1324 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-10-25 15:10-0700\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: account/user_api.py:276
+#, python-format
+msgid "%s month ago"
+msgid_plural "%s months ago"
+msgstr[0] ""
+msgstr[1] ""
+
+#: account/user_api.py:279
+#, python-format
+msgid "%s week ago"
+msgid_plural "%s weeks ago"
+msgstr[0] ""
+msgstr[1] ""
+
+#: account/user_api.py:282
+#, python-format
+msgid "%s day ago"
+msgid_plural "%s days ago"
+msgstr[0] ""
+msgstr[1] ""
+
+#: account/user_api.py:284
+#, python-format
+msgid "%s hour ago"
+msgid_plural "%s hours ago"
+msgstr[0] ""
+msgstr[1] ""
+
+#: account/user_api.py:287
+#, python-format
+msgid "%s minute ago"
+msgid_plural "%s minutes ago"
+msgstr[0] ""
+msgstr[1] ""
+
+#. Translators: no comment.
+#: jobs/translation_strings.py:12
+msgid "OK"
+msgstr "OK"
+
+#. Translators: This is the page title, letting the user know they are looking at search results from Simply Hired.
+#: jobs/translation_strings.py:19
+msgid "Job Search with Simply Hired"
+msgstr "Simply Hired Canada"
+
+#. Translators: This is a link to a page with information about jobs in various cities.
+#: jobs/translation_strings.py:26
+msgid "Local Jobs"
+msgstr "Emplois locaux"
+
+#. Translators: This is a link to a page with information about salaries for various jobs.
+#: jobs/translation_strings.py:29
+msgid "Job Salaries"
+msgstr "Salaires"
+
+#. Translators: This is a link to a page with information about trends in employment and hiring.
+#: jobs/translation_strings.py:32
+msgid "Job Trends"
+msgstr "Tendances emplois"
+
+#. Translators: This is a link to the Simply Hired blog, which contains information about employment and hiring.
+#: jobs/translation_strings.py:35
+msgid "Get Hired Blog"
+msgstr "Blogue"
+
+#. Translators: This is a link to a page containing information about how advertisers can post jobs on Simply Hired.
+#: jobs/translation_strings.py:38
+msgid "Post Jobs"
+msgstr "Publier d'emplois"
+
+#. Translators: This is a link to our home page
+#: jobs/translation_strings.py:41
+msgid "Find Jobs"
+msgstr "Recherche d’emplois"
+
+#. Translators: This is a link to a page containing information about how advertisers can contact Simply Hired sales.
+#: jobs/translation_strings.py:44
+msgid "Employer Solutions"
+msgstr "Solutions pour employeurs"
+
+#. Translators: This is a link to a page containing information about how web site publishers can contact Simply Hired sales.
+#: jobs/translation_strings.py:47
+msgid "Publisher Solutions"
+msgstr "Solutions pour éditeurs"
+
+#. Translators: This is a link to a page where users can browse jobs by category.
+#: jobs/translation_strings.py:50
+msgid "Browse Jobs"
+msgstr "Parcourir emplois"
+
+#. Translators: This is a link to the Simply Hired corporate page that contains information about Simply Hired.
+#: jobs/translation_strings.py:53
+msgid "About Simply Hired"
+msgstr "À propos de Simply Hired"
+
+#. Translators: This is a link to the Simply Hired support page.
+#: jobs/translation_strings.py:56
+msgid "Help"
+msgstr "Aide"
+
+#. Translators: This is a link to a page where the user can upload his resume.
+#. Translators: This is a link in a drop-down menu that takes the user to a page where he can upload
+#. a resume.
+#: jobs/translation_strings.py:59 jobs/translation_strings.py:507
+#: resume/templates/manage-tab.html:52
+msgid "Upload Resume"
+msgstr "Téléverser un CV"
+
+#. Translators: This is a link to a page where the user can contact Simply Hired.
+#: jobs/translation_strings.py:62
+msgid "Contact Us"
+msgstr "Nous contacter"
+
+#. Translators: This activates a drop-down menu that displays links to Simply Hired's international sites.
+#: jobs/translation_strings.py:65
+msgid "International"
+msgstr "International"
+
+#. Translators: This is a link to a page containing information about Simply Hired's privacy policy.
+#: jobs/translation_strings.py:68
+#: resume/templates/resume-default-footer.html:5
+msgid "Privacy"
+msgstr "Confidentialité"
+
+#. Translators: This is a link to a page containing information about Simply Hired's terms of service.
+#: jobs/translation_strings.py:71
+#: resume/templates/resume-default-footer.html:6
+msgid "Terms"
+msgstr "Conditions"
+
+#. Translators: This is the text that accompanies Simply Hired's copyright notice.
+#: jobs/translation_strings.py:74
+msgid "All Rights Reserved"
+msgstr "Tous droits réservés"
+
+#. Translators: This text sits right above a form in which users can submit their email addresses.
+#: jobs/translation_strings.py:82
+msgid "Email jobs like this to me"
+msgstr "Envoyez-moi des offres similaires"
+
+#. Translators: This is an abbreviation for "Previous", and links to the previous page of search results.
+#: jobs/translation_strings.py:89
+msgid "Prev"
+msgstr "Préc."
+
+#. Translators: This links to the next page of search results.
+#: jobs/translation_strings.py:92
+msgid "Next"
+msgstr "Suiv."
+
+#. Translators: This is the text that shows when a job is newly posted
+#: jobs/translation_strings.py:99
+msgid "NEW"
+msgstr "NOUVEAU"
+
+#. Translators: This is the text that follows the x days ago in the job entry
+#. that tells where the job is from
+#: jobs/translation_strings.py:103
+msgid "from"
+msgstr "de"
+
+#. Translators: This is the text that says if the job was found from multiple locations
+#: jobs/translation_strings.py:106
+msgid "location"
+msgstr "lieu"
+
+#. Translators: This is the text that says if the job was found from multiple locations
+#: jobs/translation_strings.py:109
+msgid "locations"
+msgstr "lieux"
+
+#. Translators: This is the text of a link next to a short description of a job which, when clicked,
+#. allows a user to save the job for viewing later.
+#. Translators: This is text displayed on a submit button which, when clicked, will save the user's search.
+#: jobs/translation_strings.py:113 jobs/translation_strings.py:465
+msgid "Save"
+msgstr "Sauver"
+
+#. Translators: This is a text next to a short description of a job which indicates that the job
+#. has been saved for later viewing.
+#: jobs/translation_strings.py:117
+msgid "Saved"
+msgstr "Sauvé"
+
+#. Translators: This is the text of a link next to a short description of a job which, when clicked,
+#. allows a user to share the job with other people, via email, Facebook, Twitter, or LinkedIn.
+#: jobs/translation_strings.py:121
+msgid "Share"
+msgstr "Partager"
+
+#. Translators: This is the text of a link next to a short description of a job which, when clicked,
+#. allows a user to hide the job from the list of jobs displayed.
+#: jobs/translation_strings.py:125
+msgid "Hide"
+msgstr "Masquer"
+
+#. Translators: This is the text of a link next to a short description of a job which, when clicked,
+#. allows a user to report problems with the job to Simply Hired.
+#: jobs/translation_strings.py:129
+msgid "Report"
+msgstr "Signaler"
+
+#. Translators: This is the text of a link next to a short description of a job which, when clicked,
+#. allows a user to view job research tools associated with the job.
+#: jobs/translation_strings.py:133
+msgid "Job Tools"
+msgstr "Outils"
+
+#. Translators: This is the text that immediately precedes "My Jobs", which is a link that a user
+#. can click to access a page where all his saved jobs are displayed.  The whole line reads:
+#. "Saved To My Jobs".
+#: jobs/translation_strings.py:138
+msgid "Saved To"
+msgstr "Suavegardé dans"
+
+#. Translators: This is the text that immediately follows "Saved To". "My Jobs" is a link that a user
+#. can click to access a page where all his saved jobs are displayed.  The whole line reads:
+#. "Saved To My Jobs".
+#: jobs/translation_strings.py:143
+msgid "My Jobs"
+msgstr "Mes offres d'emploi"
+
+#. Translators: This is the text that sits above a box in which the user can edit his notes for
+#. a saved job.
+#: jobs/translation_strings.py:147
+msgid "Edit Notes:"
+msgstr "Modifier les remarques"
+
+#. Translators: This is the text of a link that, when clicked, shows a box in which the user
+#. can add notes for a saved job.
+#: jobs/translation_strings.py:151
+msgid "Add Notes"
+msgstr "Ajouter des remarques"
+
+#. Translators: This is the title of a widget that displays a form that allows the user to
+#. email information about a job to a friend.
+#: jobs/translation_strings.py:155
+msgid "Email"
+msgstr "Transmettre"
+
+#. Translators: This is the text of a link under a job description. When this link is clicked,
+#. all jobs from the company associated with the job described above the link will be removed
+#. from the list of jobs displayed.
+#: jobs/translation_strings.py:160
+msgid "Hide all jobs at this company"
+msgstr "Masquer les offres de cette société"
+
+#. Translators: This is the text of a link under a job description. When this link is clicked,
+#. all jobs from the website associated with the job described above the link will be removed
+#. from the list of jobs displayed.
+#: jobs/translation_strings.py:165
+msgid "Hide all jobs from this site"
+msgstr "Masquer les offres de ce site"
+
+#. Translators: This is the text of a link under a job description. When this link is clicked,
+#. the user is taken to a page where he can choose to view previously hidden jobs.
+#: jobs/translation_strings.py:169
+msgid "View all hidden companies and sites."
+msgstr "Afficher les sociétés et les sites masqués."
+
+#. Translators: Text that appears when the user attempts to hide a job from the list of
+#. jobs being displayed.
+#: jobs/translation_strings.py:173
+msgid "Tired of seeing jobs from this company or website?"
+msgstr "Les offres d'emploi d'une société ou d'un site vous pèsent?"
+
+#. Translators: Link that takes the user to an account sign-in page.
+#: jobs/translation_strings.py:176
+msgid "Sign in"
+msgstr "Ouvrez une session"
+
+#. Translators: This indicates a choice between alternatives.
+#: jobs/translation_strings.py:179
+msgid "or"
+msgstr "ou"
+
+#. Translators: Link that takes the user to an account creation page.
+#: jobs/translation_strings.py:182
+msgid "create a free account"
+msgstr "créez un compte gratuit"
+
+#. Translators: Text that appears when the user attempts to hide a job from the list of
+#. jobs being displayed, but has not logged in yet. The full sentence reads:
+#. "Sign in or create a free accont to hide their jobs."
+#: jobs/translation_strings.py:187
+msgid "to hide their jobs."
+msgstr "pour masquer ces offres."
+
+#. Translators: Text that appears when the user attempts to report a problem with ajob
+#. to Simply Hired.
+#: jobs/translation_strings.py:191
+msgid "Report this job"
+msgstr "Signaler cette offre"
+
+#. Translators: One of several options to choose from when reporting a problem with a job.
+#: jobs/translation_strings.py:194
+msgid "scam/spam"
+msgstr "pourriel"
+
+#. Translators: One of several options to choose from when reporting a problem with a job.
+#: jobs/translation_strings.py:197
+msgid "expired"
+msgstr "périmée"
+
+#. Translators: One of several options to choose from when reporting a problem with a job.
+#: jobs/translation_strings.py:200
+msgid "duplicate"
+msgstr "doublon"
+
+#. Translators: One of several options to choose from when reporting a problem with a job.
+#: jobs/translation_strings.py:203
+msgid "inaccurate"
+msgstr "inexacte"
+
+#. Translators: Summary of job title, employer name, and location (city) of job.
+#: jobs/translation_strings.py:206
+msgid "Job Summary:"
+msgstr "Sommaire de l'offre :"
+
+#. Translators: This text precedes a link that will take the user to a full description of the job.
+#: jobs/translation_strings.py:209
+msgid "Also found at:"
+msgstr "Énoncé de l'offre :"
+
+#. Translators: These are links to information related to the job, useful for the user's research
+#. on the job.
+#: jobs/translation_strings.py:213
+msgid "Research Tools:"
+msgstr ""
+
+#. Translators: These are links to information related to the job, useful for the user's research
+#. on the job.
+#: jobs/translation_strings.py:217
+msgid "Similar Searches:"
+msgstr "Recherches similaires:"
+
+#. Translators: "Personalized search" uses a users's resume to search for relevant jobs.
+#: jobs/translation_strings.py:224
+msgid "Personalized Search is Great, Isn't It?"
+msgstr "Recherche personnalisée. Bonne idée, non?"
+
+#. Translators: This text asks the user to sign in to a Simply Hired account.
+#. The full text is:
+#. Just one catch. You need to sign in to your Simply Hired account first,
+#. so we can show you jobs relevant just to you.
+#. And not to that guy next to you with the great hair.
+#: jobs/translation_strings.py:231
+msgid "Just one catch. You need to "
+msgstr "Un seul obstacle : vous devez d'abord"
+
+#. Translators: This text ask the user to sign in to a Simply Hired account.
+#. The full text is:
+#. Just one catch. You need to sign in to your Simply Hired account first,
+#. so we can show you jobs relevant just to you.
+#. And not to that guy next to you with the great hair.
+#: jobs/translation_strings.py:238
+msgid "sign in to your Simply Hired account"
+msgstr "vous inscrire à un compte Simply Hired"
+
+#. Translators: This text ask the user to sign in to a Simply Hired account.
+#. The full text is:
+#. Just one catch. You need to sign in to your Simply Hired account first,
+#. so we can show you jobs relevant just to you.
+#. And not to that guy next to you with the great hair.
+#: jobs/translation_strings.py:245
+msgid " first, so we can show you jobs relevant just to you."
+msgstr ""
+"pour que nous puissions vous montrer les offres qui correspondent à ce que "
+"vous cherchez."
+
+#. Translators: This text ask the user to sign in to a Simply Hired account.
+#. The full text is:
+#. Just one catch. You need to sign in to your Simply Hired account first,
+#. so we can show you jobs relevant just to you.
+#. And not to that guy next to you with the great hair.
+#: jobs/translation_strings.py:252
+msgid "And not to that guy next to you with the great hair."
+msgstr "Pas à ce que cherche votre voisin de palier."
+
+#. Translators: This text appears on a button that, when clicked, takes the user to a sign-in page.
+#: jobs/translation_strings.py:255
+msgid "Sign In Now"
+msgstr "Inscrivez-vous dès maintenant"
+
+#. Translators: This is part of a text that asks the user to personalize his search experience
+#. by uploading a resume.
+#. The full text is:
+#. Stumble here by accident? No problem! Now that you're here, why not give that personalized search a try? Choosing keywords is hard, we know.
+#. Why not give our secret sauce a try? Get started by uploading your resume.
+#: jobs/translation_strings.py:262
+msgid "Stumble here by accident?"
+msgstr "Arrivé ici par erreur?"
+
+#. Translators: This is part of a text that asks the user to personalize his search experience
+#. by uploading a resume.
+#. The full text is:
+#. Stumble here by accident? No problem! Now that you're here, why not give that personalized search a try? Choosing keywords is hard, we know.
+#. Why not give our secret sauce a try? Get started by uploading your resume.
+#: jobs/translation_strings.py:269
+msgid ""
+"No problem! Now that you're here, why not give that personalized search a "
+"try? Choosing keywords is hard, we know."
+msgstr ""
+"Pas de problème! Puisque vous êtes là, pourquoi ne pas faire l'essai de la "
+"recherche personnalisée? Il est difficile de trouver les mots-clés : c'est "
+"vrai."
+
+#. Translators: This is part of a text that asks the user to personalize his search experience
+#. by uploading a resume.
+#. The full text is:
+#. Stumble here by accident? No problem! Now that you're here, why not give that personalized search a try? Choosing keywords is hard, we know.
+#. Why not give our secret sauce a try? Get started by uploading your resume.
+#: jobs/translation_strings.py:276
+msgid "Why not give our secret sauce a try?"
+msgstr "Alors pourquoi ne pas tenter le coup avec notre arme secrète?"
+
+#. Translators: This is part of a text that asks the user to personalize his search experience
+#. by uploading a resume.
+#. The full text is:
+#. Stumble here by accident? No problem! Now that you're here, why not give that personalized search a try? Choosing keywords is hard, we know.
+#. Why not give our secret sauce a try? Get started by uploading your resume.
+#: jobs/translation_strings.py:283
+msgid "Get started by "
+msgstr "Pour commencer,"
+
+#. Translators: This is part of a text that asks the user to personalize his search experience
+#. by uploading a resume.
+#. The full text is:
+#. Stumble here by accident? No problem! Now that you're here, why not give that personalized search a try? Choosing keywords is hard, we know.
+#. Why not give our secret sauce a try? Get started by uploading your resume.
+#: jobs/translation_strings.py:290
+msgid "uploading your resume."
+msgstr "téléversez votre CV."
+
+#. Translators: This is a heading above job categories.
+#: jobs/translation_strings.py:293
+msgid "Find Jobs by Category"
+msgstr "Rechercher des offres par catégorie"
+
+#. Translators: This is a link that takes a user to a page with job categories.
+#: jobs/translation_strings.py:296
+msgid "Browse Job Listings"
+msgstr "Parcourir les offres d'emploi"
+
+#. Translators: This describes a toggle switch which, when clicked, will clear all
+#. applied filters (to apply a filter to job search
+#. results is to view only jobs that meet certain criteria).
+#: jobs/translation_strings.py:305
+msgid "Clear all"
+msgstr "Effacer tout"
+
+#. Translators: This describes a toggle switch which, when clicked, will display more filters
+#. that the user can apply to filter job search results (to apply a filter to job search
+#. results is to view only jobs that meet certain criteria).
+#: jobs/translation_strings.py:310
+msgid "More Filters"
+msgstr "Autres filtres"
+
+#. Translators: This describes a toggle switch which, when clicked, will display more filters
+#. that the user can apply to filter job search results (to apply a filter to job search
+#. results is to view only jobs that meet certain criteria).
+#: jobs/translation_strings.py:315
+#, fuzzy
+msgid "Filters"
+msgstr "Autres filtres"
+
+#. Translators: This describes a switch that is next to an applied filter. Clicking the
+#. switch clears the applied filter (to apply a filter to job search
+#. results is to view only jobs that meet certain criteria).
+#. Translators: This switch, when clicked, will clear the user's history of recently performed searches.
+#: jobs/translation_strings.py:324 jobs/translation_strings.py:577
+msgid "Clear"
+msgstr "Effacer"
+
+#. Translators: This describes a toggle switch which, when clicked, will allow the user
+#. to see more filters that he can apply (to apply a filter to job search
+#. results is to view only jobs that meet certain criteria).
+#: jobs/translation_strings.py:329
+msgid "See more"
+msgstr "Voir plus de filtres"
+
+#. Translators: This describes a link that takes the user to a page where he can view
+#. previously saved job searches.
+#: jobs/translation_strings.py:337
+msgid "See all saved searches"
+msgstr "Voir les recherches sauvegardées"
+
+#. Translators: This describes switch that, when clicked, will save the currently active
+#. job search to the user's account.
+#: jobs/translation_strings.py:341
+msgid "Save this search"
+msgstr "Sauvegarder cette recherche"
+
+#. Translators: This label describes two radio buttons that, when clicked, display the
+#. job search results in different kinds of sorted order.
+#: jobs/translation_strings.py:349
+msgid "Sort by"
+msgstr "Ordre de tri"
+
+#. Translators: This label is next to a radio button that, when clicked, displays a page
+#. where the job search results are sorted in order of relevance to the search keywords.
+#: jobs/translation_strings.py:353
+msgid "Relevance"
+msgstr "Pertinence"
+
+#. Translators: This label is next to a radio button that, when clicked, displays a page
+#. where the job search results are sorted in order of date (newest jobs displayed first).
+#: jobs/translation_strings.py:357
+msgid "Date"
+msgstr "Date"
+
+#. Translators: This label describes a radio button that, when clicked, will allow the user
+#. to sign in with LinkedIn to see their LinkedIn connections.
+#: jobs/translation_strings.py:365
+msgid "Connect with LinkedIn"
+msgstr "Se connecter à LinkedIn"
+
+#. Translators: This label is next to a radio button that, if selected, indicates that
+#. the user has turned on his LinkedIn connections.
+#: jobs/translation_strings.py:369
+msgid "On"
+msgstr "Connecté"
+
+#. Translators: This label is next to a radio button that, if selected, indicates that
+#. the user has NOT turned on his LinkedIn connections.
+#: jobs/translation_strings.py:373
+msgid "Off"
+msgstr "Déconnecté"
+
+#. Translators: This is the heading for some help text that describes the features of
+#. LinkedIn connections.
+#: jobs/translation_strings.py:377
+msgid "Unleash the power of your professional network"
+msgstr "Libérez toute la puissance de votre réseau professionnel"
+
+#. Translators: This describes a reason that a user should turn on his LinkedIn connections.
+#: jobs/translation_strings.py:380
+msgid "See all of your connections to interesting jobs"
+msgstr "Voir toutes vos connexions à des emplois intéressants"
+
+#. Translators: This describes a reason that a user should turn on his LinkedIn connections.
+#: jobs/translation_strings.py:383
+msgid "Target companies where you have connections"
+msgstr "Cibler les sociétés où vous avez une relation"
+
+#. Translators: This describes a reason that a user should turn on his LinkedIn connections.
+#: jobs/translation_strings.py:386
+msgid "Make a personal connection when you apply"
+msgstr "Établissez des liens personnels lorsque vous postulez"
+
+#. Translators: This is a survey question that asks an user whether he is satisfied with his
+#. job search results.
+#: jobs/translation_strings.py:394
+msgid "Were you satisfied with these results?"
+msgstr "Êtes-vous satisfaits de ces résultats?"
+
+#. Translators: no comment.
+#: jobs/translation_strings.py:397
+msgid "Yes"
+msgstr "Oui"
+
+#. Translators: no comment.
+#: jobs/translation_strings.py:400
+msgid "No"
+msgstr "Non"
+
+#. Translators: This is a thank you that is displayed after an user completes a survey.
+#: jobs/translation_strings.py:403
+msgid "Thank you for your feedback!"
+msgstr "Merci de vos commentaires!"
+
+#. Translators: This is the heading in a dialog that is displayed when the user has successfully
+#. created an email alert (creating an email alert allows the user to receive daily email notifications of
+#. new job openings).
+#: jobs/translation_strings.py:412
+msgid "Email Alert created!"
+msgstr "Alerte courriel créée!"
+
+#. Translators: This is the body in a dialog that is displayed when the user has successfully
+#. created an email alert (creating an email alert allows the user to receive daily email notifications of
+#. new job openings).
+#: jobs/translation_strings.py:417
+msgid ""
+"Congratulations! You have just successfully created a job alert. Please "
+"check your inbox for new job matches."
+msgstr ""
+"Félicitations! Vous venez de créer une alerte d'offres d'emploi par "
+"courriel. Consultez votre boîte de réception pour voir ces nouvelles offres."
+
+#. Translators: This precedes a link which, when clicked, takes the user to their personal email page.
+#: jobs/translation_strings.py:420
+msgid "Check email at"
+msgstr "Consultez votre boîte courriel à"
+
+#. Translators: This is a link that, when clicked, exits a dialog and re-displays a page with job search results.
+#: jobs/translation_strings.py:423
+msgid "Return to search results"
+msgstr "Retourner aux résultats de recherche"
+
+#. Translators: This is informational text in the dialog that is displayed when the user has successfully
+#. created an email alert (creating an email alert allows the user to receive daily email notifications of
+#. new job openings).
+#: jobs/translation_strings.py:428
+msgid "We'll send daily job notifications to"
+msgstr "Nous enverrons un avis par jour à"
+
+#. Translators: This is the heading for some help text that describes the features of
+#. email alerts (creating an email alert allows the user to receive daily email notifications of
+#. new job openings).
+#: jobs/translation_strings.py:437
+msgid "Let Simply Hired do the work!"
+msgstr "Laissez Simply Hired faire le travail!"
+
+#. Translators: This describes a reason that a user should create an email alert (creating
+#. an email alert allows the user to receive daily email notifications of new job openings).
+#: jobs/translation_strings.py:441
+msgid "New jobs delivered daily"
+msgstr "Envoi quotidien de nouvelles offres d'emploi"
+
+#. Translators: This describes a reason that a user should create an email alert (creating
+#. an email alert allows the user to receive daily email notifications of new job openings).
+#: jobs/translation_strings.py:445
+msgid "Only the jobs you want to see"
+msgstr "Seulement les emplois que vous désirez"
+
+#. Translators: This describes a reason that a user should create an email alert (creating
+#. an email alert allows the user to receive daily email notifications of new job openings).
+#: jobs/translation_strings.py:449
+msgid "Unsubscribe anytime"
+msgstr "Désabonnement en tout temps"
+
+#. Translators: This is the heading in a dialog where the user can save a job search.
+#: jobs/translation_strings.py:456
+msgid "Saving your search..."
+msgstr "Sauvegarde de votre recherche…"
+
+#. Translators: This is the text in a dialog in which the user had just saved a job search.
+#: jobs/translation_strings.py:459
+msgid "Your search has been saved."
+msgstr "Votre recherche a été sauvegardée."
+
+#. Translators: This text is displayed before an input box where the user can name his saved search.
+#: jobs/translation_strings.py:462
+msgid "Your current search will be saved as:"
+msgstr "La recherche en cours sera sauvegardée sous le nom :"
+
+#. Translators: This is the heading for an input field where the user enters keywords for a job search.
+#. Example keywords: "nurse", "General Electric", "data entry".
+#: jobs/translation_strings.py:473
+msgid "Keywords"
+msgstr "Mots-clés"
+
+#. Translators: This is instructional text for an input field where the user enters keywords for a job search.
+#. Example keywords: "nurse", "General Electric", "data entry".
+#: jobs/translation_strings.py:477
+msgid "job title, skills or company"
+msgstr "métier, compétence ou société"
+
+#. Translators: This is the heading for an input field where the user enters location for a job search.
+#. Example location: "New York, NY", "Washington", "94043" (postal code).
+#: jobs/translation_strings.py:481
+msgid "Location"
+msgstr "Lieu"
+
+#. Translators: This is instructional text for an input field where the user enters location for a job search.
+#. Example location: "New York, NY", "Washington", "94043" (postal code).
+#: jobs/translation_strings.py:485
+msgid "city, state or zip"
+msgstr "ville ou province"
+
+#. Translators: This is text on a submit button which, when clicked, will perform a search for jobs.
+#: jobs/translation_strings.py:488
+msgid "Search Jobs"
+msgstr "Rechercher"
+
+#. Translators: This is the label to inform the user that they can change the site language
+#: jobs/translation_strings.py:495
+msgid "Language:"
+msgstr "Langue :"
+
+#. Translators: This is a link in a drop-down menu that takes the user to the email alerts he has
+#. created (creating an email alert allows the user to receive daily email notifications of
+#. new job openings).
+#: jobs/translation_strings.py:500
+msgid "Email Alerts"
+msgstr "Alertes par courriel"
+
+#. Translators: This is a link in a drop-down menu that takes the user to the resume he has uploaded.
+#: jobs/translation_strings.py:503
+msgid "Resume"
+msgstr "CV"
+
+#. Translators: This is a link in a drop-down menu that takes the user to a page where he can view
+#. the job searches that he has previously saved.
+#: jobs/translation_strings.py:511
+msgid "Saved Searches"
+msgstr "Recherches sauvegardées"
+
+#. Translators: This is a link in a drop-down menu that takes the user to a page where he can view
+#. the jobs that he has previously saved.
+#: jobs/translation_strings.py:515
+msgid "Saved Jobs"
+msgstr "Offres d'emploi sauvegardés"
+
+#. Translators: This is a link in a drop-down menu that takes the user to a page where he can view
+#. information for his user account.
+#: jobs/translation_strings.py:519
+msgid "Account"
+msgstr "Compte"
+
+#. Translators: This is link in a drop-down menu that, when clicked, signs the user out from his account.
+#: jobs/translation_strings.py:522
+msgid "Sign Out"
+msgstr "Déconnexion"
+
+#. Translators: This is text on a submit button which, when clicked, allows the user to sign in to
+#. his account.
+#: jobs/translation_strings.py:526
+msgid "Sign In"
+msgstr "Connexion"
+
+#. Translators: no comment.
+#: jobs/translation_strings.py:533
+msgid "of"
+msgstr "de"
+
+#. Translators: no comment.
+#: jobs/translation_strings.py:536
+msgid "Personalized search results"
+msgstr "Résultats de la recherche personnalisée"
+
+#. Translators: singular form of "job", where job refers to a person's employment/occupation.
+#: jobs/translation_strings.py:539
+msgid "job"
+msgstr "emploi"
+
+#. Translators: plural form of "job", where job refers to a person's employment/occupation.
+#: jobs/translation_strings.py:542
+msgid "jobs"
+msgstr "emplois"
+
+#. Translators: no comment.
+#: jobs/translation_strings.py:545
+msgid "near"
+msgstr "près de"
+
+#. Translators: Informational text for Simply Hired's company logo.
+#: jobs/translation_strings.py:552
+msgid "Find Jobs and Careers - SimplyHired.com Job Search"
+msgstr ""
+"Se trouver un emploi, une carrière – Recherche d'emploi à SimplyHired.ca"
+
+#. Translators: This is a link that takes the user to a page where he can perform a more advanced
+#. search for jobs where he can specify many specific criteria for the search.
+#: jobs/translation_strings.py:556
+msgid "Advanced Job Search"
+msgstr "Recherche avancée"
+
+#. Translators: This is a link that takes the user to a page where he can customize his search
+#. (for example, by specifying how many jobs to display on a page).
+#: jobs/translation_strings.py:560
+msgid "Search Options"
+msgstr "Options de recherche"
+
+#. Translators: This text indicates that a job has been sponsored (its listing was paid for by an advertiser).
+#: jobs/translation_strings.py:567
+msgid "Sponsored"
+msgstr "Commandité"
+
+#. Translators: This is the heading for a list of job searches that the user has recently performed.
+#: jobs/translation_strings.py:574
+msgid "Recent Job Searches"
+msgstr "Recherches d'emplois récentes"
+
+#. Translators: This link, when clicked, will take the user to a page where he can view all of his recent
+#. searches (only a few on shown on the original page).
+#: jobs/translation_strings.py:581
+msgid "See all"
+msgstr "Voir tout"
+
+#. Translators: This is the heading for a list of useful job search links.
+#: jobs/translation_strings.py:588
+msgid "Job Search Tools"
+msgstr "Outils de recherche d'emplois"
+
+#. Translators: This is a link to an RSS feed for a job search.
+#: jobs/translation_strings.py:591
+msgid "RSS Feed"
+msgstr "Fil RSS"
+
+#. Translators: This is link to an equivalent page rendered for mobile devices.
+#: jobs/translation_strings.py:598
+msgid "Mobile site"
+msgstr "Site pour mobiles"
+
+#. Translators: This is the heading for a dialog box that asks the user to create an email alert.
+#. (creating an email alert allows the user to receive daily email notifications of new job openings).
+#: jobs/translation_strings.py:607
+msgid "Yes, email me job leads like this one."
+msgstr "Oui, envoyez-moi des offres comme celle-ci."
+
+#. Translators: This is the text for a button which, when clicked, will allow the user to edit
+#. the email alert that he is creating.
+#. (creating an email alert allows the user to receive daily email notifications of new job openings).
+#: jobs/translation_strings.py:612
+msgid "edit"
+msgstr "modifier"
+
+#. Translators: This is the text for a submit button that'll save an email alert for the user.
+#. (creating an email alert allows the user to receive daily email notifications of new job openings).
+#: jobs/translation_strings.py:616
+msgid "save"
+msgstr "enregistrer"
+
+#. Translators: This text tells a user to enter his email address in an input box.
+#: jobs/translation_strings.py:619
+msgid "Your email address"
+msgstr "Votre adresse courriel"
+
+#. Translators: This text tells a user to enter search keywords an input box.
+#: jobs/translation_strings.py:622
+msgid "Enter keywords:  job title, skills or company"
+msgstr "Saisissez les mots-clés : appellation d'emploi, compétence ou société"
+
+#. Translators: This text tells a user to enter a search location an input box.
+#: jobs/translation_strings.py:625
+msgid "Enter a location:  city, state or zip"
+msgstr "Saisissez un lieu : ville, province ou code postal"
+
+#. Translators: This is the first part of a text for a link that will take the user to a job page
+#. without creating an email alert.
+#. The full text is: Continue without free email updates
+#: jobs/translation_strings.py:630
+msgid "Continue"
+msgstr "Continuez"
+
+#. Translators: This is the second part of a text for a link that will take the user to a job page
+#. without creating an email alert.
+#. The full text is: Continue without free email updates
+#: jobs/translation_strings.py:635
+msgid "without free email updates"
+msgstr "sans mises à jour gratuites par courriel"
+
+#. Translators: no comment.
+#: jobs/translation_strings.py:638
+msgid "Maintenance in progress"
+msgstr "Maintenance en cours"
+
+#. Translators: no comment.
+#: jobs/translation_strings.py:641
+msgid ""
+"Our email alert system is currently undergoing routine maintenance. Please "
+"try to create or edit your email alert later."
+msgstr ""
+"Des travaux de maintenance régulière sont en cours sur notre système "
+"d'alertes par courriel. Veuillez revenir plus tard pour créer ou modifier "
+"votre alerte."
+
+#. Translators: no comment.
+#: jobs/translation_strings.py:644
+msgid "We apologize for any inconvenience."
+msgstr "Nous nous excusons de cet inconvénient."
+
+#. Translators: no comment.
+#: jobs/translation_strings.py:647
+msgid "The Simply Hired Team"
+msgstr "L'équipe de Simply Hired"
+
+#. Translators: This is the heading for a dialog box that asks the user to create an email alert.
+#. (creating an email alert allows the user to receive daily email notifications of new job openings).
+#: jobs/translation_strings.py:651
+msgid "Create a Job Email Alert"
+msgstr "Créer une alerte d'emplois par courriel"
+
+#. Translators: This text tells a user what he'll get when he creates an email alert.
+#. (creating an email alert allows the user to receive daily email notifications of new job openings).
+#: jobs/translation_strings.py:655
+msgid "Get new jobs for this search delivered to your inbox!"
+msgstr ""
+"Recevez les nouvelles offres d'emploi liées à cette recherche à votre "
+"adresse courriel!"
+
+#. Translators: This text asks a user to create an email alert.
+#. (creating an email alert allows the user to receive daily email notifications of new job openings).
+#: jobs/translation_strings.py:659
+msgid "Create a free job alert by entering your email address:"
+msgstr ""
+"Créez une alerte d'emplois gratuite en inscrivant votre adresse courriel :"
+
+#. Translators: This text tells a user to enter his email address in an input box.
+#: jobs/translation_strings.py:662
+msgid "Enter email address..."
+msgstr "Saisissez votre adresse courriel…"
+
+#. Translators: This text tells a user that he can unsubscribe from email alerts.
+#. (creating an email alert allows the user to receive daily email notifications of new job openings).
+#: jobs/translation_strings.py:666
+msgid "You can unsubscribe anytime.  We respect your privacy."
+msgstr ""
+"Vous pouvez vous désabonner n'importe quand. Nous respectons votre "
+"confidentialité."
+
+#. Translators: This is a heading for searches that are similar to and related to the search that the user just performed.
+#: jobs/translation_strings.py:673
+msgid "Related Searches"
+msgstr "Recherches connexes"
+
+#. Translators: This error heading is displayed when the user did not enter any search terms.
+#: jobs/translation_strings.py:679
+msgid ""
+"Oops. Our site thinks you want to see every job we have listed (millions)."
+msgstr ""
+"Oups. Notre site pense que vous voulez consulter les millions d'emplois "
+"qu'il contient."
+
+#. Translators: This error message is displayed when the user did not enter any search terms.
+#. Note: please translate the text between the tags, and copy over the tags.
+#. A tag is anything between < and >, inclusive.
+#. For example, "<p>a girl</p><p>the apples</p>" should translate to
+#. "<p>une fille</p><p>les pommes</p>" in French.
+#: jobs/translation_strings.py:686
+msgid ""
+"<p>In order to receive job results that interest you, please tell us a "
+"little something about what you're looking for. Try searching again with a "
+"job title, a location or both.</p>"
+msgstr ""
+"<p>Pour obtenir les résultats de recherche que vous voulez, veuillez nous "
+"donner quelques détails sur ce que vous recherchez. Relancez la recherche en "
+"précisant un type d'emploi et/ou un lieu.</p>"
+
+#. Translators: This error heading is displayed when the user's search has no search results.
+#: jobs/translation_strings.py:690 jobs/translation_strings.py:701
+msgid "Hmm? This is rare. Your search didn't turn up any results."
+msgstr "Quoi? C'est rare, mais votre recherche n'a produit aucun résultat."
+
+#. Translators: This error message is displayed when the user's search has no search results.
+#. Note: please translate the text between the tags, and copy over the tags.
+#. A tag is anything between < and >, inclusive.
+#. For example, "<p>a girl</p><p>the apples</p>" should translate to
+#. "<p>une fille</p><p>les pommes</p>" in French.
+#: jobs/translation_strings.py:697 jobs/translation_strings.py:708
+msgid ""
+"<p>Please check the spelling and try again. Often, that solves the problem. "
+"If changing the spelling still yields no results, the job you seek might not "
+"be available in your search location.</p>"
+msgstr ""
+"<p>Veuillez vérifier l'orthographe et réessayer. Cela permet souvent de "
+"régler le problème. Si la modification de l'orthographe ne produit aucun "
+"résultat, il est possible qu'il n'y ait aucun poste disponible pour le type "
+"d'emploi recherché dans la région précisée.</p>"
+
+#. Translators: This error heading is displayed when the user has entered an invalid location in his search.
+#: jobs/translation_strings.py:712
+msgid "We cannot find that location. Let's do something about it."
+msgstr "Impossible de trouver ce lieu. Trouvons une solution."
+
+#. Translators: This error message is displayed when the user has entered an invalid location in his search.
+#. Note: please translate the text between the tags, and copy over the tags.
+#. A tag is anything between < and >, inclusive.
+#. For example, "<p>a girl</p><p>the apples</p>" should translate to
+#. "<p>une fille</p><p>les pommes</p>" in French.
+#: jobs/translation_strings.py:719
+msgid ""
+"<p>If you entered a location name, please check the spelling. If you entered "
+"a ZIP code, perhaps try again with a city, state combination.</p>"
+msgstr ""
+"<p>Si vous avez saisi un nom de lieu, veuillez en vérifier l’orthographe. Si "
+"vous avez saisi un code postal, réessayez en précisant le nom d'une ville et "
+"d'une province.</p>"
+
+#. Translators: This error heading is displayed when the user requests a page that cannot be found.
+#: jobs/translation_strings.py:723
+msgid ""
+"Sorry. The page you're looking for either no longer exists or has moved."
+msgstr "Désolé, la page que vous recherchez n'existe plus ou a été déplacée."
+
+#. Translators: This error message is displayed when the user requests a pages that cannot be found.
+#. Note: please translate the text between the tags, and copy over the tags.
+#. A tag is anything between < and >, inclusive.
+#. For example, "<p>a girl</p><p>the apples</p>" should translate to
+#. "<p>une fille</p><p>les pommes</p>" in French.
+#. Translators: This error message is displayed when there ahs been a non-specific technical error.
+#. Note: please translate the text between the tags, and copy over the tags.
+#. A tag is anything between < and >, inclusive.
+#. For example, "<p>a girl</p><p>the apples</p>" should translate to
+#. "<p>une fille</p><p>les pommes</p>" in French.
+#: jobs/translation_strings.py:730 jobs/translation_strings.py:741
+msgid ""
+"<p>You may try searching above or clicking the Simply Hired logo to be taken "
+"back to our home page.</p>"
+msgstr ""
+"<p>Vous pouvez lancer une nouvelle recherche ci-dessous ou cliquer sur le "
+"logo Simply Hired. Vous serez redirigé vers notre page d'accueil.</p>"
+
+#. Translators: This error heading is displayed when there has been a non-specific technical error.
+#: jobs/translation_strings.py:734
+msgid "Sorry. We just experienced a momentary technical glitch."
+msgstr "Désolé, un problème technique temporaire est survenu."
+
+#. Translators: Link to information about salaries for the job at the job location.
+#: jobs/templates/content_center_results.html:139
+#: jobs/templates/content_center_sponsored_results.html:127
+#, python-format
+msgid "%(title)s Salaries in %(city)s"
+msgstr "Salaires pour %(title)s à %(city)s"
+
+#. Translators: Link to information about the job location.
+#: jobs/templates/content_center_results.html:147
+#: jobs/templates/content_center_sponsored_results.html:135
+#, python-format
+msgid " jobs in %(location)s"
+msgstr "emplois à %(location)s"
+
+#. Translators: Link to similar jobs at the job location.
+#: jobs/templates/content_center_results.html:169
+#: jobs/templates/content_center_results.html:178
+#: jobs/templates/content_center_sponsored_results.html:157
+#: jobs/templates/content_center_sponsored_results.html:166
+#, python-format
+msgid "%(title)s jobs"
+msgstr "offres de %(title)s"
+
+#: jobs/templates/content_center_results.html:170
+#: jobs/templates/content_center_sponsored_results.html:158
+msgid "in"
+msgstr "à"
+
+#: jobs/templates/content_center_results.html:186
+#: jobs/templates/content_center_sponsored_results.html:174
+#, python-format
+msgid "%(company)s jobs!"
+msgstr "offres chez %(company)s"
+
+#. Translators: These are links to Simply Hired's job search sites in non-U.S. countries.
+#: jobs/templates/intl_dropdown.html:18
+#, python-format
+msgid "%(country_name)s Jobs"
+msgstr "emplois en %(country_name)s"
+
+#: jobs/views/jobs.py:84
+#, python-format
+msgid "%(search_keywords)s Jobs"
+msgstr "Emplois de %(search_keywords)s"
+
+#. Translators: country name.
+#: lib/international.py:37
+msgid "South Africa"
+msgstr "Afrique du Sud"
+
+#. Translators: country name.
+#: lib/international.py:40
+msgid "Austria"
+msgstr "Autriche"
+
+#. Translators: country name.
+#: lib/international.py:43
+msgid "Belgium"
+msgstr "Belgique"
+
+#. Translators: country name.
+#: lib/international.py:46
+msgid "Switzerland"
+msgstr "Suisse"
+
+#. Translators: country name.
+#: lib/international.py:49
+msgid "Germany"
+msgstr "Allemagne"
+
+#. Translators: country name.
+#: lib/international.py:52
+msgid "Spain"
+msgstr "Espagne"
+
+#. Translators: country name.
+#: lib/international.py:55
+msgid "France"
+msgstr "France"
+
+#. Translators: country name.
+#: lib/international.py:58
+msgid "UK"
+msgstr "Royaume-Uni"
+
+#. Translators: country name.
+#: lib/international.py:61
+msgid "Ireland"
+msgstr "Irlande"
+
+#. Translators: country name.
+#: lib/international.py:64
+msgid "Italy"
+msgstr "Italie"
+
+#. Translators: country name.
+#: lib/international.py:67
+msgid "Netherlands"
+msgstr "Pays-Bas"
+
+#. Translators: country name.
+#: lib/international.py:70
+msgid "Portugal"
+msgstr "Portugal"
+
+#. Translators: country name.
+#: lib/international.py:73
+msgid "Russia"
+msgstr "Russie"
+
+#. Translators: country name.
+#: lib/international.py:76
+msgid "Sweden"
+msgstr "Suède"
+
+#. Translators: country name.
+#: lib/international.py:79
+msgid "Argentina"
+msgstr "Argentine"
+
+#. Translators: country name.
+#: lib/international.py:82
+msgid "Brazil"
+msgstr "Brésil"
+
+#. Translators: country name.
+#: lib/international.py:85
+msgid "Canada"
+msgstr "Canada"
+
+#. Translators: country name.
+#: lib/international.py:88
+msgid "Mexico"
+msgstr "Mexique"
+
+#. Translators: country name.
+#: lib/international.py:91
+msgid "USA"
+msgstr "États-Unis"
+
+#. Translators: country name.
+#: lib/international.py:94
+msgid "Australia"
+msgstr "Australie"
+
+#. Translators: country name.
+#: lib/international.py:97
+msgid "India"
+msgstr "Inde"
+
+#. Translators: country name.
+#: lib/international.py:100
+msgid "Japan"
+msgstr "Japon"
+
+#. Translators: country name.
+#: lib/international.py:103
+msgid "China"
+msgstr "Chine"
+
+#. Translators: country name.
+#: lib/international.py:106
+msgid "Korea"
+msgstr "Corée"
+
+#. Translators: region/continent name.
+#: lib/international.py:138
+msgid "Africa"
+msgstr "Afrique"
+
+#. Translators: region/continent name.
+#: lib/international.py:141
+msgid "Americas"
+msgstr "Amériques"
+
+#. Translators: region/continent name.
+#: lib/international.py:144
+msgid "Asia/Pacific"
+msgstr "Asie/Pacifique"
+
+#. Translators: region/continent name.
+#: lib/international.py:147
+msgid "Europe"
+msgstr "Europe"
+
+#: mobile/templates/mobile/list.html:49
+msgid "Apply by phone"
+msgstr ""
+
+#: mobile/templates/mobile/search_box.html:15
+#, fuzzy
+msgid "Job title, Skills, or Company"
+msgstr "métier, compétence ou société"
+
+#: mobile/templates/mobile/search_box.html:20
+#, fuzzy
+msgid "City, State, or ZIP code"
+msgstr "ville ou province"
+
+#: resume/views.py:76 resume/views.py:456
+msgid "Error importing file. Please upload a text, word or pdf resume."
+msgstr ""
+
+#: resume/views.py:133 resume/views.py:367
+msgid "Error importing profile from LinkedIn. Please try again."
+msgstr ""
+
+#: resume/views.py:159
+msgid "Please try again in a few minutes."
+msgstr ""
+
+#: resume/templates/500.html:5
+msgid "Whoops"
+msgstr ""
+
+#: resume/templates/build-resume.html:22
+#, fuzzy
+msgid "Your resume"
+msgstr "téléversez votre CV."
+
+#: resume/templates/build-resume.html:25
+msgid "Summary and Contact Info"
+msgstr ""
+
+#: resume/templates/build-resume.html:25 resume/templates/build-resume.html:32
+#: resume/templates/build-resume.html:41 resume/templates/build-resume.html:50
+#: resume/templates/build-resume.html:66 resume/templates/build-resume.html:75
+#: resume/templates/manage-tab.html:26
+msgid "Edit"
+msgstr ""
+
+#: resume/templates/build-resume.html:32
+msgid "Work Experience"
+msgstr ""
+
+#: resume/templates/build-resume.html:41
+#, fuzzy
+msgid "Education"
+msgstr "Lieu"
+
+#: resume/templates/build-resume.html:50
+msgid "Skills"
+msgstr ""
+
+#: resume/templates/build-resume.html:66
+msgid "Awards"
+msgstr ""
+
+#: resume/templates/build-resume.html:75
+msgid "Patents & Publications"
+msgstr ""
+
+#: resume/templates/landing.html:6
+msgid "Add Your Resume"
+msgstr ""
+
+#: resume/templates/maintenance.html:5
+msgid "Resume Maintenance"
+msgstr ""
+
+#: resume/templates/manage-tab.html:7
+#, fuzzy
+msgid "My Resume"
+msgstr "CV"
+
+#: resume/templates/manage-tab.html:22
+msgid "unknown"
+msgstr ""
+
+#: resume/templates/manage-tab.html:28
+msgid "Delete"
+msgstr ""
+
+#: resume/templates/manage-tab.html:32
+msgid "View Personalized Jobs"
+msgstr ""
+
+#: resume/templates/manage-tab.html:51
+msgid "You currently do not have a resume uploaded."
+msgstr ""
+
+#: tools/casper/docs/_themes/casperjs/localtoc.html:2
+msgid "Document Outline"
+msgstr ""
+
+#: tools/casper/docs/_themes/casperjs/sourcelink.html:5
+msgid "This Page"
+msgstr ""
+
+#: tools/casper/docs/_themes/casperjs/sourcelink.html:8
+msgid "Show Source"
+msgstr ""
+
+#~ msgid "Options"
+#~ msgstr "Options"
+
+#~ msgid "Hmm. A minimalist, eh?"
+#~ msgstr "Ah! Tendance minimaliste?"
+
+#~ msgid ""
+#~ "<p>Sorry, we can't show you <em>every</em> job. Please enter a keyword "
+#~ "and/or location and try again.</p><p>Or, browse for jobs using the links "
+#~ "below.</p>"
+#~ msgstr ""
+#~ "<p>Désolé, impossible d'afficher <em>toutes</em> les offres. Veuillez "
+#~ "saisir un mot-clé et/ou un lieu et essayer à nouveau.</p><p>Ou encore, "
+#~ "parcourez les offres présentées sur les liens ci-dessous.</p>"

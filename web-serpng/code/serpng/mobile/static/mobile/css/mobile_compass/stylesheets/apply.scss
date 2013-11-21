@@ -1,0 +1,80 @@
+@import "sh_colors";
+@import "mobile_variables";
+
+#apply-content-main {
+
+  .content-main {
+    border-top:$mobile-padding solid $sh-dark-grey;
+  }
+
+  .job-info-box {
+    background-color:$sh-light-blue;
+    margin:$mobile-padding;
+    padding:$mobile-padding;
+  }
+
+  .job-info-title {
+    color:black;
+    font-size:18px;
+  }
+
+  .job-info-company-location {
+    color:#666;
+    font-size:12px;
+  }
+
+  .form-error {
+    color:red;
+  }
+
+  .form-linkedin-button {
+    font-size:14px;
+    line-height:22px;
+    margin-bottom:$mobile-padding;
+  }
+
+  .form-required-star {
+    color:red;
+  }
+
+  .form-hasresume-field {
+    line-height:30px;
+
+    > * {
+      vertical-align:top;
+    }
+  }
+
+  .form-resume-attached-text {
+    color:$sh-cyan;
+  }
+
+  .form-resume-remove {
+    color:$sh-link-blue;
+    cursor:pointer;
+    float:right;
+  }
+
+  .form-submit-line {
+    margin:2*$mobile-padding 0;
+    text-align:center;
+  }
+
+  form {
+    padding:0 $mobile-padding;
+  }
+
+  label {
+    margin-top:$mobile-padding;
+  }
+
+  input, select, textarea {
+    box-sizing:border-box;
+    height:30px;
+    width:100%;
+  }
+
+  textarea {
+    height:150px;
+  }
+}

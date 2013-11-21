@@ -1,0 +1,109 @@
+{% extends "simplyapply/mobile-base.html" %}
+
+{% block page_body_content %}
+
+<form name="edit-resume" action="/myresume/mobile/edit" data-ajax="false" method="post">{% csrf_token %}
+<div id="edit-nav" data-role="page">
+    {% include "simplyapply/mobile-header.html" %}
+    <div class="ui-bar title"><h4>Edit Your Resume</h4></div>
+
+    <div data-role="content">
+        {% if forms_manager.has_errors %}<div class="ui-body ui-body-e error">Please fix the errors.</div>{% endif %}
+        <ul data-role="listview" data-inset="true">
+            <li><a href="#edit-name">First and Last Name</a></li>
+            <li><a href="#edit-contact"{% if forms_manager.contact_form.errors %} style="color: red"{% endif %}>Contact Information</a></li>
+            <li><a href="#edit-summary">Summary</a></li>
+        </ul>
+        <p></p>
+        {% if resume.job_set.count %}
+        <ul data-role="listview" data-inset="true">
+            {% for job, job_form in jobs %}
+            <li><a href="#job-{{ forloop.counter0 }}" {% if job_form.errors %} class="error"{% endif %}>{% if job.title %}{{ job.title }}{% else %}<em style="color: #aaa;">(No Title)</em>{% endif %} {% if job.employer %} at {{ job.employer }}{% else %}<em style="color: #aaa;">(No Company)</em>{% endif %}</a></li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        <p></p>
+        {% if resume.education_set.count %}
+        <ul data-role="listview" data-inset="true">
+            {% for education in resume.education_set.iterator %}
+            <li><a href="#education-{{ forloop.counter0 }}">{{ education.institution }}</a></li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        <div style="padding:10px;"></div>
+        <a href="#" data-role="button" data-theme="b" onclick="javascript:$('form[name=edit-resume]').submit();">Save Changes</a>
+        <a href="{% url 'mobile_simplyapply' %}?{{ key_type }}={{ jobkey }}" data-role="button" data-theme="d" data-ajax="false">Go Back</a>
+    </div>
+</div>
+
+<div id="edit-name" data-role="page" data-theme="c">
+  {% include "simplyapply/mobile-header.html" %}
+  <div class="ui-bar title"><h4>Edit Name</h4></div>
+  <div data-role="content">
+    <div>
+      {{ forms_manager.contact_form.first_name }}
+    </div>
+    <div>
+      {{ forms_manager.contact_form.last_name }}
+    </div>
+    <a href="#edit-nav" data-role="button" data-theme="b">Done Editing</a>
+    <a href="#edit-nav" data-role="button">Go Back</a>
+  </div>
+</div>
+
+<div id="edit-contact" data-role="page" data-theme="c">
+  {% include "simplyapply/mobile-header.html" %}
+  <div class="ui-bar title"><h4>Edit Contact</h4></div>
+  <div data-role="content">
+    {% include "simplyapply/mobile-edit-contact.html" %}
+    <a href="#edit-nav" data-role="button" data-theme="b">Done Editing</a>
+    <a href="#edit-nav" data-role="button">Go Back</a>
+  </div>
+</div>
+
+<div id="edit-summary" data-role="page" data-theme="c">
+  {% include "simplyapply/mobile-header.html" %}
+  <div class="ui-bar title"><h4>Edit Summary</h4></div>
+  <div data-role="content">
+    <label class="ui-input-text">{{ forms_manager.summary_form.description.label }}</label>{{ forms_manager.summary_form.description }}
+    <a href="#edit-nav" data-role="button" data-theme="b">Done Editing</a>
+    <a href="#edit-nav" data-role="button">Go Back</a>
+  </div>
+</div>
+
+{{ forms_manager.jobformset.management_form }}
+{% for job_form in forms_manager.jobformset.forms %}
+
+<div id="job-{{ forloop.counter0 }}" data-role="page" data-theme="c">
+  {% include "simplyapply/mobile-header.html" %}
+  <div class="ui-bar title"><h4>Edit Job</h4></div>
+  <div data-role="content">
+    {% include "simplyapply/mobile-edit-job.html" %}
+    <a href="#edit-nav" name="job-{{ forloop.counter0 }}" onclick="javascript:mobile_update_display($(this), ['title', 'employer']);" data-role="button" data-theme="b">Done Editing</a>
+    <a href="#edit-nav" data-role="button">Go Back</a>
+  </div>
+</div>
+
+{% endfor %}
+
+{{ forms_manager.educationformset.management_form }}
+{% for education_form in forms_manager.educationformset.forms %}
+
+<div data-role="page" id="education-{{ forloop.counter0 }}" data-theme="c">
+  {% include "simplyapply/mobile-header.html" %}
+  <div class="ui-bar title"><h4>Edit Education</h4></div>
+  <div data-role="content">
+    {% include "simplyapply/mobile-edit-education.html" %}
+    <a href="#edit-nav" name="education-{{ forloop.counter0 }}" onclick="javascript:mobile_update_display($(this), ['institution']);" data-role="button" data-theme="b">Done Editing</a>
+    <a href="#edit-nav" data-role="button">Go Back</a>
+  </div>
+</div>
+
+{% for hidden in education_form.hidden_fields %}
+{{ hidden }}
+{% endfor %}
+
+{% endfor %}
+<input type="hidden" name="{{ key_type }}" value="{{ jobkey }}" />
+</form>
+{% endblock %}

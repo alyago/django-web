@@ -1,0 +1,2174 @@
+// Hacks
+// -----
+
+// Firefox screws up text alignment when a height is specified, use line-height instead.
+// Of course, line-height ignores border-box so we need to shave 4px off manually. This
+// is a horrible hack and needs to go away since it assumes 34px buttons.
+// TODO(delaney): Find a way to detect FF inside a SASS mixin for variable height and/or
+// use something like Normalizer to get around this type of issue.
+@-moz-document url-prefix() {
+  .column_left button {
+    height: auto !important;
+    line-height: 30px;
+  }
+  .search .search_button {
+    line-height: 30px;
+    padding-bottom: 2px;
+  }
+}
+
+.search input::-webkit-input-placeholder,
+.email_alert_container input::-webkit-input-placeholder { /* WebKit browsers */
+  color: $sh-gray-4;
+}
+.search input:-moz-placeholder, 
+.email_alert_container input:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+  color: $sh-gray-4;
+}
+.search input::-moz-placeholder, 
+.email_alert_container input::-moz-placeholder { /* Mozilla Firefox 19+ */
+  color: $sh-gray-4;
+}
+.search input:-ms-input-placeholder,
+.email_alert_container input:-ms-input-placeholder { /* Internet Explorer 10+ */
+  color: $sh-gray-4;
+}
+.search input.placeholder,
+.email_alert_container input.placeholder { /* IE 9 and below */
+  color: $sh-gray-4;
+}
+
+// IE7 Data Store
+
+// Recently viewed jobs
+.ie7-user-data-viewedJobs {
+  display: none;
+  behavior: url(#default#userdata);
+}
+
+// Recent searches
+.ie7-user-data-recentSearches {
+  display: none;
+  behavior: url(#default#userdata);
+}
+
+
+// Placeholder selectors
+// ---------------------
+
+%blue-link-with-black-hover {
+  color: $sh-dark-blue;
+  &:visited {
+    color: $sh-dark-blue;
+  }
+  &:active,
+  &:hover {
+    color: $sh-gray-1;
+  }
+}
+
+%button-with-orange-gradient {
+  $top-color: $sh-orange;
+  $bottom-color: $sh-dark-orange;
+  $border-color: $sh-dark-orange;
+
+  // Fallback color for browsers that don't support linear-gradient.
+  background: $top-color;
+
+  background-image: -ms-linear-gradient(top, $top-color 0%, $bottom-color 100%);
+  background-image: -moz-linear-gradient(top, $top-color 0%, $bottom-color 100%);
+  background-image: -o-linear-gradient(top, $top-color 0%, $bottom-color 100%);
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, $top-color), color-stop(1, $bottom-color));
+  background-image: -webkit-linear-gradient(top, $top-color 0%, $bottom-color 100%);
+  background-image: linear-gradient(to bottom, $top-color 0%, $bottom-color 100%);
+  border: 1px solid $border-color;
+  border-radius: 1px;
+  &:hover {
+    background-color: $bottom-color;
+    background-image: none;
+    cursor: pointer;
+  }
+}
+
+%fancy-radio-button {
+  color: $sh-gray-1;
+  @include font-size(12);
+  font-weight: bold;
+
+  // Style the radio buttons using pure CSS.
+  input[type=radio] {
+    margin: 0;
+    opacity: 0;
+    padding: 0;
+    width: 10px;
+
+    // Use regular radio button style for IE8 and lower.
+    .lte8 & {
+      opacity: 1;
+      width: auto;
+    }
+  }
+  input[type=radio] + label {
+    display: inline;
+    margin-left: -10px;
+    margin-right: 5px;
+
+    // Use regular radio button style for IE8 and lower.
+    .lte8 & {
+      margin-left: 0px;
+    }
+  }
+  input[type=radio] + label > span {
+    background-color: $sh-white;
+    border: 1px solid $sh-gray-3;
+    border-radius: 50%;
+    display: inline-block;
+    height: 10px;
+    margin-top: 2px;
+    width: 10px;
+    vertical-align: top;
+
+    // Hide CSS styled radio button for for IE8 and lower.
+    .lte8 & {
+      display: none;
+    }
+  }
+  input[type=radio]:checked + label > span {
+    background-color: $sh-dark-blue;
+  }
+  label {
+    display: inline;
+    &.link:hover {
+      cursor: pointer;
+    }
+  }  
+  ul {
+    margin-left: 12px;
+  }
+}
+
+%gray-link {
+  &:active,
+  &:hover,
+  &:link,
+  &:visited {
+    color: $sh-gray-3;
+  }
+}
+
+%opacity-transition {
+  transition: opacity .2s ease-in-out;
+  -moz-transition: opacity .2s ease-in-out;
+  -webkit-transition: opacity .2s ease-in-out;
+}
+
+%background-color-transition {
+  transition: background-color .1s ease-in-out;
+  -moz-transition: background-color .1s ease-in-out;
+  -webkit-transition: background-color .1s ease-in-out;
+}
+
+%save-this-search-icon {
+  @include inline();
+  @include serp-icons-sprite(icon-save-this-search);
+}
+
+%small-envelope-icon {
+  @include inline();
+  @include serp-icons-sprite(envelope-small);
+}
+
+// Body
+// ----
+
+#results {
+  img {
+    border: none;
+  }
+}
+
+// Search Header
+// -------------
+
+.sh_header_search {
+  background-color: $sh-white;
+  border-bottom: $sh-gray-5 solid 1px;
+  height: auto;
+  margin: 0 10px;
+  padding-bottom: 5px;
+  width: 960px;
+  a {
+    color: $sh-gray-1;
+    &:hover,
+    &:visited {
+      color: $sh-gray-1;
+    }
+  }
+  & > div {
+    @include inline(top);
+  }
+  .sh_logo {
+    width: 230px;
+    img {
+      height: 40px;
+      padding-top: 20px;
+      width: 217px;
+    }
+  }
+}
+
+.menu {
+  color: #999;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.search {
+  .bottom_search_form & {
+    margin-left: 0px;
+  }
+  input {
+    border: 1px solid #999;
+    color: $sh-gray-1;
+    @include font-size(18);
+    @include inline(top);
+    margin: 2px 2px 0 0;
+    padding: 0 5px;
+  }
+  .bottom_search_form & input {
+    @include font-size(16);
+  }
+  label {
+    color: $sh-gray-1;
+    @include font-size(12);
+    @include inline(bottom);
+    margin: 0 5px 0 0;
+    &.search_keywords_label {
+      @include border-box-size(280);
+      margin-right: 10px;
+    }
+    // We need a smaller width for the bottom search keywords input
+    .bottom_search_form &.search_keywords_label {
+      @include border-box-size(245);
+      margin-right: 4px;
+    }
+    &.search_location_label {
+      @include border-box-size(220);
+      margin-right: 10px;
+    }
+    .bottom_search_form &.search_location_label {
+      @include border-box-size(200);
+      margin-right: 4px;
+    }
+  }
+  .bottom_search_form & label {
+    // Fix for wrapping on zoom (#2863)
+    margin: 0 4px 0 0;
+  }
+  .search_keywords {
+    @include text-input-box(280, 40);
+  }
+  // We need a smaller width for the bottom search keywords input
+  .bottom_search_form & .search_keywords {
+    @include text-input-box(245);
+  }
+  .search_location {
+    @include text-input-box(220, 40);
+  }
+  .bottom_search_form & .search_location {
+    @include text-input-box(200);
+  }
+  .search_button {
+    @include border-box-button(180, 40);
+    @extend %button-with-orange-gradient;
+    color: $sh-white;
+    font-family: Arial, Helvetica, sans-serif;
+    @include font-size(18);
+    font-weight: bold;
+    margin-top: 20px;
+    *margin-top: 21px;
+  }
+  .bottom_search_form & .search_button {
+    @include border-box-button(90);
+    @include font-size(12);
+  }
+  #sh_header_search & {
+    margin: 0px 0px 10px 10px;
+    padding-top: 0px;
+  }
+}
+
+
+// Search Title
+// ------------
+
+.search_title {
+  @include inline;
+  @include font-size(12);
+  font-weight: bold;
+  @include line-height(16);
+  margin: 10px 0;
+}
+
+
+// Content
+// -------
+
+.content {
+  @extend %clearfix;
+  margin: 0 10px;
+  width: 960px;
+}
+
+
+// Search Results
+// --------------
+
+.search_results {
+  height: auto;
+  margin: 0 auto;
+  position: relative;
+  width: 960px;
+}
+
+
+// Search Results Left Column
+// --------------------------
+
+.column-left {
+  color: $sh-gray-1;
+  float: left;
+  @include font-size(12);
+  height: auto;
+  left: -554px;
+  @include line-height(16);
+  margin-right: 13px;
+  overflow: hidden;
+  position: relative;
+  width: 180px;
+  ul {
+    clear: left;
+    list-style-type: none;
+  }
+  .recent_searches,
+  .search_tools,
+  .search_links {
+    a {
+      @extend %blue-link-with-black-hover;
+    }
+  }
+}
+
+#create_alert_button {
+  margin-bottom: 18px;
+  #l_create_alert {
+    color: $sh-blue;
+    @include font-size(14);
+    text-transform: uppercase;
+    p {
+      margin-top: 0;
+      padding: 7px 0 7px 10px;
+      width: 165px;
+      border: {
+        color: $sh-blue;
+        style: solid;
+        width: 1px;
+      };
+    }
+  }
+}
+
+// BEGIN FutureSERP email form
+
+.email_alert_instruction {
+  @include font-size(12);
+  font-weight: bold;
+  img {
+    margin-right: 2px;
+    vertical-align: text-bottom;
+  }
+  .icon-envelope-small {
+    @extend %small-envelope-icon;
+  }
+}
+
+.email_alert_container {
+  border-bottom: 1px solid $sh-gray-5;
+  margin-bottom: 10px;
+  padding-bottom: 15px;
+  .email_alert_button {
+    @include border-box-button(35, 30);
+    @extend %button-with-orange-gradient;
+    @include font-size(13);
+    color: $sh-white;
+    vertical-align: top;
+  }
+  .email_alert_email_addr {
+    color: $sh-gray-1;
+    @include font-size(13);
+    margin-right: 1px;
+    padding: 0 0 0 3px;
+    @include text-input-box(140, 30);
+    vertical-align: top;
+  }
+  .email_alert_instruction {
+    margin: 10px 0;
+  }
+  .invalid_email_error {
+    color: red;
+    @include font-size(11);
+  }
+  .loading {
+    height: 26px;
+    margin-left: 3px;
+    width: 26px;
+  }
+}
+.email_alert_tooltip_content {
+  .heading {
+    @include font-size(16);
+    font-weight: bold;
+  }
+  li {
+    margin-left: 15px;
+    span {
+      margin-left: -5px;
+    }
+  }
+}
+
+.sort_jobs {
+  border-bottom: 1px solid $sh-gray-5;
+  clear: left;
+  @extend %fancy-radio-button;
+  @include line-height(16);
+  margin: 10px 0;
+  padding-bottom: 10px;
+  .heading {
+    @include font-size(14);
+  }
+}
+
+.sn_heading {
+  color: $sh-gray-1;
+  @include font-size(12);
+  font-weight: bold;
+  @include line-height(16);
+  margin: 0 0 5px 0;
+}
+
+.wdik_li {
+  &:hover {
+    cursor: pointer;
+  }
+  margin-left: 5px;
+  .arrow,
+  .arrow_border {
+    border-bottom: 3px solid transparent; 
+    border-top: 3px solid transparent;
+    height: 0; 
+    position: absolute;
+    top: 5px;
+    width: 0; 
+  }
+  .arrow {
+    border-right: 5px solid $sh-white; 
+    left: 1px;
+    z-index: 1;
+  }
+  .arrow_border {
+    border-right: 5px solid $sh-blue; 
+    left: 0;
+  }
+  .count {
+    border: 1px solid $sh-blue;
+    color: $sh-blue;
+    @include font-size(9);
+    height: 9px;
+    @include inline;
+    left: 5px;
+    padding: 0 5px 5px 3px;
+    position: relative;
+    top: 0;
+  }
+  .count_container {
+    @include inline;
+    position: relative;
+  }
+  .icon {
+    width: 16px;
+    @include inline;
+  }
+}
+
+.filters {
+  margin: 0 0 10px;
+  .collapsed {
+    span.icon {
+      @include serp-icons-sprite(icon-arrow-closed);
+    }
+    ul {
+      display: none;
+    }
+  }
+  .expanded {
+    ul {
+      li.more {
+        display: block;
+      }
+      .see_more {
+        display: none;
+      }
+    }
+  }
+  .filter {
+    margin: 0 0 8px 0px;
+    position: relative;
+    .count,
+    .undo {
+      background: $sh-white;
+      color: $sh-gray-3;
+      padding: 0 5px 0 0;
+      position: absolute;
+      right: 0;
+    }
+    li.more {
+      display: none;
+    }
+    li {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      width: 120px;
+    }
+    ul {
+      padding: 2px 0 0 15px;
+    }
+    ul li a {
+      @extend %blue-link-with-black-hover;
+    }
+    .undo {
+      @extend %gray-link;
+    }
+  }
+  .handle > a {
+    color: $sh-gray-1;
+    @include font-size(14);
+    font-weight: bold;
+    padding-left: 15px;
+  }
+  .icon {
+    @include serp-icons-sprite(icon-arrow-open);
+    display: inline-block;
+    left: 0;
+    margin: 2px 2px 0 0 ;
+    position: absolute;
+  }
+  .more_filters_container .filter {
+    margin-left: 15px;
+  }
+  .more_filters {
+    margin-top: 8px;
+  }
+  .reset {
+    @extend %gray-link;
+    float: right;
+    padding: 0 5px 0 0;
+  }
+  .reset_container {
+    @extend %clearfix;
+  }
+}
+
+.recent_searches,
+.recent-searches,
+.recently-viewed-jobs,
+.search_tools {
+  margin: 10px 0 0 0;
+  .heading {
+    @include font-size(14);
+    font-weight: bold;
+  }
+}
+
+.recent_searches.rs-top {
+  margin-bottom: 20px;
+}
+
+.search_links {
+  border-bottom: 1px solid $sh-gray-5;
+  border-top: 1px solid $sh-gray-5;
+  margin: 15px 0;
+  padding: 10px 0;
+  .icon-save-this-search {
+    @extend %save-this-search-icon;
+  }
+  img {
+    margin: 0 3px 0 0;
+  }
+  p {
+    font-weight: bold;
+    @include font-size(14);
+  }
+}
+
+
+// Search Results Center Column
+// ----------------------------
+
+.column-center {
+  color: $sh-gray-1;
+  float: left;
+  @include font-size(12);
+  height: auto;
+  left: 193px;
+  @include line-height(16);
+  overflow: hidden;
+  position: relative;
+  width: 554px; 
+}
+
+.column_center_inner {
+  color: $sh-gray-1;
+  overflow: hidden;
+  a.heading {
+    color: $sh-gray-4;
+  }
+}
+
+// Expired Messaging
+#c_expired {
+  background-color: #ffcdcd;
+  border-radius: 5px;
+  border: 2px solid #cc0000;
+  margin-bottom: 10px;
+  padding: 4px 8px;
+  .box_close {
+    float: right;
+    margin-left: 10px;
+  }
+  a {
+    @extend %blue-link-with-black-hover;
+    font-weight: bold;
+  }
+}
+
+// Sponsored Label
+.label_right {
+  .heading {
+    float: right;
+  }
+}
+
+.divider {
+  border-top: 1px solid $sh-gray-5;
+  padding-bottom: 6px;
+}
+
+.results {
+  .jobs {
+    margin-top: 5px;
+  }
+  ul {
+    margin-left: 0;
+    padding: 0;
+    li {
+      list-style: none;
+      padding: 7px 0;
+    }
+  }
+  .more {
+    div.more {
+      display: block;
+      visibility: visible;
+    }
+  }
+  .icon-simplyapply-btn {
+    @include inline();
+    @include serp-icons-sprite(simply-apply);
+    vertical-align: -6px;
+  }
+  // LinkedIn
+  .who {
+    background-color: $sh-gray-5;
+    margin-top: 10px;
+    padding: 5px 10px;
+    .contact {
+      background-color: $sh-white;
+      float: left;
+      margin: 5px 10px 0 0;
+      padding: 10px;
+      width: 140px;
+      .photo {
+        @include inline(top);
+        img {
+          width: 36px;
+          margin-right: 3px
+        }
+      }
+      .info {
+        color: $sh-gray-2;
+        @include font-size(11);
+        height: 66px; // TODO(delaney): Implement stretch-to-fit column height.
+        @include inline(top);
+        margin-top: -4px;
+        overflow: hidden;
+        width: 100px;
+      }
+    }
+    .header {
+      .close {
+        float: right;
+        height: 12px;
+        margin: 0 0 5px 10px;
+        width: 12px;
+      }
+      .icon {
+        @include inline(middle);
+        width: 16px;
+      }
+      .see_all {
+        @include font-size(11);
+        font-weight: bold;
+        @include inline(middle);
+      }
+      .title {
+        @include font-size(13);
+        font-weight: bold;
+        @include inline(middle);
+        margin-left: 5px;
+        width: 320px;
+      }
+    }
+  }
+}
+
+.result {
+  @extend %background-color-transition; 
+  a {
+    @extend %blue-link-with-black-hover;
+  }
+  .box {
+    background-color: $sh-gray-5;
+    display: none;
+    margin-top: 5px;
+    padding: 5px 10px;
+    a.box_close {
+      float: right;
+      margin: 0 0 5px 10px;
+    }
+    button {
+      padding: 4px 7px;
+    }
+    .icon-car {
+      @include inline();
+      @include serp-icons-sprite(car_icon);
+    }
+    .label {
+      display: inline;
+      font-weight: bold;
+      list-style: none;
+      padding-right: 10px;
+    }
+    .tab {
+      border-left: 1px solid #ccc;
+      display: inline;
+      list-style: none;
+      padding: 0 10px;
+    }
+    ul li {
+      padding: 0;
+    }
+  }
+  &.gray_background {
+    background-color: #f9f9f9;
+  } 
+  &:hover .tools {
+    opacity: 1;
+  }
+  .tools {
+    @extend %opacity-transition; 
+  }
+  &.viewed .job .title {
+    color: $sh-purple;
+  } 
+}
+
+// Ensure touch-based clients can see the tools links.
+html.touch .result .tools {
+  opacity: 1;
+}
+
+.save_job {
+  display: block;
+  float: left;
+  height: 24px;
+  @include serp-icons-sprite(star-default);
+  margin: 0 10px 0 0;
+  min-width: 24px;
+}
+.saved_job:hover,
+.save_job.saved {
+  @include serp-icons-sprite(star-selected);
+}
+
+.job {
+  &.sjabtest {
+    float: left;
+    margin-bottom: 7px;
+    width: 520px;
+  }
+  .ago {
+    color: $sh-green;
+    &.sjabtest {
+      color: $sh-gray-1;
+      font-style: italic;
+    }
+  }
+  .company {
+    color: $sh-green;
+    display: inline;
+    @include font-size(14);
+    font-weight: normal;
+    @include line-height(18);
+    &.sjabtest {
+      color: $sh-gray-2;
+    }
+  }
+  .description {
+    color: $sh-black;
+    @include font-size(13);
+    @include line-height(17);
+  }
+  .gray_background & {
+    cursor: pointer;
+  }
+  h2 {
+    color: $sh-dark-blue;
+    @include font-size(16);
+    font-weight: normal;
+    display: inline;
+    @include line-height(20);
+    margin: 0 0 1px 0;
+    a {
+      text-decoration: underline;
+    }
+    a:active,
+    a:hover {
+      color: $sh-dark-blue;
+    }
+  }
+  h4.company {
+    @include inline(baseline);
+  }
+  .location {
+    @include font-size(14);
+    @include line-height(18);
+    &.sjabtest {
+      color: $sh-gray-2;
+    }
+  }
+  .new {
+    color: $sh-orange;
+    @include font-size(10);
+    @include line-height(14);
+    margin-left: 2px;
+    vertical-align: top;
+  }
+  .source,
+  span {
+    @include font-size(13);
+    @include line-height(17);
+  }
+  .source {
+    color: $sh-gray-2;
+    @include inline;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 300px;
+    &.sjabtest {
+      @include inline(bottom);
+      width: 315px !important;
+    }
+  }
+  .tools {
+    display: table;
+    opacity: 0;
+    text-align: center;
+    white-space: nowrap;
+    width: 230px;
+    a {
+      display: table-cell;   
+    }
+    span {
+      color: $sh-gray-1;
+      display: table-cell;   
+      width: 4px;
+    }
+    &.sjabtest {
+      width: 200px !important;
+    }
+  }
+  .tools_container {
+    @include inline;
+    &.canada {
+      float: right;
+    }
+  }
+  .canada .tools {
+    width: 100px;
+  }
+}
+
+
+// Job tools
+// ---------
+
+// Handle blocked / flagged jobs.
+.blocked .job .title,
+.flagged .job .title {
+  color: $sh-gray-2;
+  margin-right: 10px;
+}
+
+.blocked .job .tools a.block,
+.flagged .job .tools a.flag {
+  color: $sh-gray-2;
+}
+
+.blocked .job .tools a.undo,
+.flagged .job .tools a.undo {
+  color: $sh-gray-2;
+  margin-left: 10px;
+}
+
+// Handle link toggle states.
+.block a.block,
+.flag a.flag,
+.more a.more,
+.send a.send {
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.blocked a.block,
+.flagged a.flag,
+.saved a.save {
+  cursor: default;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+// Handle box toggle states.
+.block div.block,
+.flag div.flag,
+.more div.more,
+.saved div.rate,
+.send div.send {
+  display: block;
+}
+
+// Job tools box tab style.
+.result div li.tab a {
+  text-decoration: none;
+}
+
+// Box-close icons.
+.block,
+.flag,
+.more,
+.send {
+  .icon-close-small {
+    @include inline();
+    @include serp-icons-sprite(icon-close-small);
+  }
+}
+
+// Save / notes box style.
+.result div.rate {
+  .aside {
+    font-size: 10px;
+    line-height: 20px;
+    margin-left: 20px;
+  }
+  div.tab_note {
+    background-color: $sh-white;
+    display: none;
+    margin-top: 2px;
+    padding-bottom: 5px;
+    padding-left: 65px;
+    padding-top: 5px;
+    button {
+      margin-right: 5px;
+    }
+    textarea { 
+      height: 60px;
+      padding: 5px;
+      width: 394px;
+    }
+  }
+  li.tab {
+    padding: 0;
+    a {
+      padding: 0 10px;
+    }
+  }
+}
+
+.result div.note_on {
+  div.tab_note {
+    background-color: $sh-white;
+    display: block;
+  }
+  li.tab_note {
+    border-left: 0;
+    a {
+      background-color: $sh-white;
+      font-weight: bold;
+      padding-bottom: 7px;
+      text-decoration:none;
+    }
+  }
+}
+
+// Send box style.
+.result div.send {
+  font-weight: bold;
+  button {
+    margin: 5px 0 0 336px;
+  }
+  div.send div.tab_linkedin,
+  form.tab_email {
+    background-color: $sh-white;
+    display: none;
+    margin-top: 2px;
+    padding: 5px 10px;
+  }
+  li.tab_email {
+    border-left: 0;
+    margin-left: 10px;
+    padding: 0;
+    a {
+      padding: 0 10px;
+    }
+  }
+}
+
+.result div.email_on {
+  div.send {
+    .error {
+      color: red;
+    }
+    .success {
+      margin-top: 10px;
+    }
+  }
+  form.tab_email {
+    background-color: $sh-white;
+    display: block;
+    div { 
+      clear: left;
+      overflow: auto;
+      padding-top: 5px;
+    }
+    label.text { 
+      float: left;
+      font-weight: normal;
+      margin-top: 2px;
+      position: relative;
+      width: 165px;
+    }
+    input.text {
+      float: left;
+      position: relative;
+      width: 200px;
+    }
+  }
+  li.tab_email {
+    background-color: $sh-white;
+    border-left: 0;
+    padding-bottom: 7px;
+    a {
+      color: $sh-gray-1;
+      cursor: default;
+      font-weight: bold;
+      text-decoration: none;
+    }
+  }
+  li.tab_facebook {
+    border-left: 1px solid #D0F0FB;
+  }
+}
+
+
+// Hide box style.
+.result div.block .links {
+  list-style: none;
+  margin-bottom: 10px;
+}
+
+// More box style.
+.result div.more {
+  .also {
+    white-space: nowrap;
+  }
+  .label {
+    font-weight: normal;
+  }
+  .permalink {
+    font-weight: bold;
+  }
+  .search_location_distance {
+    margin-bottom: 10px; 
+    h3 {
+      color: $sh-gray-1;
+      display: inline;
+      font-weight: bold;
+    }
+    img {
+      margin-right: 3px;
+      position: relative;
+      top: 2px;
+    }
+  }
+  .section {
+    display: block;
+    font-weight: bold;
+    margin-top: 10px;
+  }
+  .section_first {
+    margin-top: 0px;
+  }
+}
+
+
+.expand_search {
+  @include font-size(14);
+  font-style: italic;
+  margin: 20px 0;
+  a {
+    @extend %blue-link-with-black-hover;
+  }
+}
+
+// For SJ Ads A/B test.
+.sj-jobs-top {
+  border-bottom: 1px solid $sh-gray-5;
+}
+
+.sj-jobs-bottom {
+  border-top: 1px solid $sh-gray-5;
+}
+
+// -----------------------------------
+
+.pagination {
+  @extend %clearfix;
+  float: left;
+  left: 50%;
+  margin: 30px 0 15px;
+  position: relative;
+  a {
+    &:active,
+    &:hover,
+    &:link,
+    &:visited {
+      color: $sh-dark-blue;
+    }
+  }
+  .current,
+  .next,
+  .page,
+  .previous {
+    font-weight: bold;
+  }
+  .page {
+    background-color: $sh-white;
+    border: $sh-dark-blue solid 1px;
+    @include font-size(18);
+    @include line-height(34);
+    padding: 5px 7px;
+    &:hover {
+      background-color: $sh-dark-blue;
+      color: $sh-white;
+    }
+  }
+  .pages {
+    float: left;
+    position: relative;
+    right: 50%;
+  }
+  .current {
+    background-color: $sh-gray-4;
+    border: $sh-gray-4 solid 1px;
+    color: $sh-white;
+    &:hover {
+      background-color: $sh-gray-4;
+      text-decoration: none;
+    }
+  }
+  .next,
+  .previous {
+    @include font-size(16);
+    @include line-height(20);
+    &:hover {
+      text-decoration: underline;
+    }
+    &.unclickable {
+      color: $sh-gray-4;
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+  .next {
+    padding-left: 2px;
+  }
+  .previous {
+    padding-right: 2px;
+  }
+}
+
+// Related Searches
+.related_searches {
+  @extend %clearfix;
+  margin: 15px 0 15px;
+  .heading {
+    @include font-size(14);
+    font-weight: bold;
+  }
+  .searches {
+    float: left;
+    margin-top: 0 20px 0 0;
+    max-width: 250px;
+    min-width: 160px;
+    a {
+      @extend %blue-link-with-black-hover;
+      font-weight: bold;
+    }
+    li {
+      list-style: none;
+      margin: 8px 0;
+    }
+  }
+
+}
+
+// Bottom search form
+.bottom_search_form {
+  border-top: 1px solid $sh-gray-5;
+  margin-top: 20px;
+  // Make the bottom autocomplete dropdown appear above the input fields.
+  .atc_dropdown {
+    bottom: 33px;
+  }
+  .search {
+    margin-top: 10px;
+  }
+}
+
+
+// Search Results Right Column
+// ----------------------------
+
+.column-right {
+  float: right;
+  height: auto;
+  margin-left: 13px;
+  overflow: hidden;
+  width: 200px;
+}
+
+.recent-searches,
+.recently-viewed-jobs {
+  @include font-size(12);
+  border-bottom: 1px solid $sh-gray-5;
+  padding-bottom: 10px;
+  a {
+    @extend %blue-link-with-black-hover;
+  }
+  ul {
+    margin: 5px 0;
+  }
+  .recent-searches-info,
+  .recently-viewed-jobs-info {
+    margin: 10px 0;
+  }
+  .recent-search,
+  .viewed-job {
+    margin-bottom: 5px;
+  }
+  .rv-delete {
+    float: right;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+.recently-viewed-jobs {
+  .company {
+    color: $sh-green;
+    // Scoot company name up closer to the job link.
+    margin-top: -3px;
+  }
+}
+
+// Control panel for "recent" widgets.
+.rv-controls {
+  height: 20px;
+  margin-top: 5px;
+  .rv-clear,
+  .rv-next-page,
+  .rv-prev-page {
+    @include inline;
+    background-color: $sh-gray-7;
+    color: $sh-gray-1;
+    opacity: 0.5;
+    padding: 1px 3px;
+    &.actionable {
+      opacity: 1;
+      &:hover {
+        background-color: $sh-gray-4;
+        cursor: pointer;
+      }
+    }
+  }
+  .rv-clear {
+    @include border-radius(5px);
+    float: left;
+  }
+  .rv-pagination {
+    float: right;
+  }
+  .rv-results-indicator-container {
+    display: block;
+    margin: 0 28px 0 35px;
+    width: 137px;
+    .rv-results-indicator {
+      color: $sh-gray-1;
+      display: block;
+      margin: auto;
+      width: 70px;
+    }
+  }
+  .rv-next-page,
+  .rv-prev-page {
+    float: right;
+  }
+  .rv-next-page {
+    @include border-bottom-right-radius(5px);
+    @include border-top-right-radius(5px);
+  }
+  .rv-prev-page {
+    @include border-bottom-left-radius(5px);
+    @include border-top-left-radius(5px);
+    border-right: 1px solid $sh-gray-3;
+  }
+}
+
+
+// Autocomplete
+// ------------
+
+.search form {
+  // Need to position this so child elements can be positioned relatively.
+  position: relative;
+
+  // IE7 needs a z-index on the parent element otherwize child z-index is ignored.
+  *z-index: 1;
+
+  // Autocomplete dropdown box.
+  .atc_dropdown {
+    background-color: #FFF;
+    border: 1px solid #888888;
+    color: $sh-gray-2;
+    display: block;
+    overflow: hidden;
+    position: absolute;
+    z-index: 4;
+    // A single autocomplete item.
+    .dropdown_item {
+      display: block;
+      @include font-size(14);
+      padding: 5px;
+      width: 97%;
+      a {
+        line-height: 1.5;
+        text-decoration: none;
+      }
+    }
+    // Autocomplete item hover treatment.
+    .dropdown_item_hover {
+      background: none repeat scroll 0 0 $sh-gray-5;
+      cursor: pointer;
+      font-weight: bold;
+      text-decoration: none;
+      a:active {
+        color: $sh-dark-blue;
+      }
+    }
+  }
+}
+
+// Location dropdown left offset, in pixels from left edge of form.
+#l_atc_dropdown.atc_dropdown {
+  left: 293px;
+  *left: 285px;
+  .bottom_search_form & {
+    left: 253px;
+    *left: 246px;
+  }
+}
+
+
+// LinkedIn
+// --------
+
+.social-network-logins {
+  @extend %fancy-radio-button;
+  margin-bottom: 20px;
+  overflow: auto;
+  padding-top: 10px;
+  .sn_heading {
+    .icon-linkedin-small {
+      @include inline(top);
+      @include serp-icons-sprite(icon-linkedin-small);
+    }
+    img, span {
+      @include inline;
+    }
+    img {
+      width: 16px;
+    }
+  }
+  ul {
+    margin-left: 15px;
+  }
+}
+
+.linkedin-tooltip {
+  .header {
+    h2, img {
+      @include inline;
+    }
+    h2 {
+      @include font-size(16);
+      width: 250px;
+    }
+  }
+  .icon-linkedin-large {
+    @include inline(top);
+    @include serp-icons-sprite(icon-linkedin);
+  }
+  ul {
+    margin-left: 15px;
+    span {
+      margin-left: -5px;
+      vertical-align: middle;
+    }
+  }
+}
+
+
+// Mobile Navigation Link
+// ----------------------
+
+.mobile-navigation {
+  margin: 15px 0 0;
+  text-align: center;
+}
+
+
+// Email Alert Dialog (non-interstitial) and Save Search Dialog
+// ------------------------------------------------------------
+
+.create-alert {
+  @include font-size(13);
+  .success {
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  .privacy {
+    clear: left;
+    color: $sh-gray-3;
+  }
+  label {
+    width: auto;
+  }
+  input.text {
+    width: 200px;
+  }
+}
+
+.email_alert_dialog,
+.save_search_dialog,
+.signin_dialog{
+  background-color: $sh-white;
+  border: 1px solid #ccc;
+  .dialog_heading {
+    margin: 0 0 20px 0;
+  }
+  .dialog_main_msg {
+    color: $sh-gray-1;
+  }
+  display: none;
+  @include font-size(16);
+  font-weight: bold;
+  .icon-close {
+    @include font-size(10);
+    @include inline();
+    @include serp-icons-sprite(icon-close);
+    color: $sh-gray-2;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+  }
+  p {
+    margin: 10px 0;
+  }
+  padding: 20px;
+  position: relative;
+}
+
+.email_alert_dialog {
+  width: 500px;
+  .dialog_email_link_msg {
+    color: $sh-dark-blue;
+    text-align: center;
+  }
+  .dialog_info_msg {
+    color: $sh-gray-2;
+    @include font-size(12);
+    text-align: center;
+  }
+  .icon-envelope-small {
+    @extend %small-envelope-icon;
+  }
+}
+
+.save_search_dialog {
+  width: 400px;
+  .icon-save-this-search {
+    @extend %save-this-search-icon;
+  }
+  .save_search_btn {
+    @include border-box-button(50);
+    @extend %button-with-orange-gradient;
+    color: $sh-white;
+    font-size: 14px;
+    font-weight: bold;
+    vertical-align: top;
+  }
+  .save_search_name {
+    @include text-input-box(280);
+    color: $sh-gray-1;
+    @include font-size(13);
+    margin-right: 1px;
+    padding: 0 0 0 3px;
+    vertical-align: top;
+  }
+  .save-search-ok {
+    display: block;
+    margin: 30px auto 0;
+  }
+}
+
+.signin_dialog {
+  font-weight:normal;
+  font-size: 20px;
+  width: 440px;
+  .dialog_content {
+    padding: 25px 0 20px 13px;
+  }
+  .dialog_icon {
+    display: block;
+    float: left;
+    height: 24px;
+    @include serp-icons-sprite(star-selected);
+  }
+  .dialog_link {
+    @include button-with-gradient($sh-light-blue-new, $sh-blue-new, $sh-white);
+  }
+  .dialog_main_msg {
+    position: relative;
+    right: -5px;
+    top: 5px;
+  }
+}
+
+// Google Ads
+// ----------
+
+// Top
+#c_google_ads_top.google_ads {
+  margin-bottom: 5px;
+  padding: 5px 3px 3px;
+}
+
+// Bottom
+.c_google_ads_bottom.google_ads {
+  margin: 40px 0 15px;
+  padding: 3px 0px;
+  width: 545px;
+}
+
+#google_ads_bottom {
+  @extend %clearfix;
+  float: left;
+  @include font-size(12);
+  height: auto;
+  @include line-height(16);
+  overflow: hidden;
+  width: 545px;
+}
+
+// Rail
+#c_google_ads {
+  margin-top: 10px;
+}
+
+
+// International Dropdown
+// ----------------------
+
+.simplyhired-intl {
+  color: $sh-gray-1;
+  @include font-size(12);
+  height: 280px;
+  @include line-height(16);
+  padding: 0 0 10px 10px;
+  width: 334px;
+  h2 {
+    @include font-size(12);
+    @include line-height(16);
+    margin: 16px 0 1px 0;
+  }
+  .region {
+    float: left;
+    height: auto;
+    overflow: hidden;
+    width: 170px;
+  }
+  .europe {
+    margin-top: -158px;
+    width: 160px;
+  }
+  .column_center_inner {
+    .box1 {
+      float: left;
+      margin: 3px 0 4px 0;
+      overflow: hidden;
+      width: 20px;
+    }
+    .box2 {
+      float: left;
+      overflow: hidden;
+      width: 150px;
+    }
+  }
+  .box2 {
+    margin: 2px 0;
+  }
+  a {
+    @extend %blue-link-with-black-hover;
+  }
+}
+
+// Flags
+span.flag {
+  @include inline();
+  left: 0;
+  margin-right: 4px;
+  top: 0;
+}
+
+.us span.flag {
+  @include intl-flags-icons-sprite(flag-us);
+}
+
+.au span.flag {
+  @include intl-flags-icons-sprite(flag-au);
+}
+
+.be span.flag {
+  @include intl-flags-icons-sprite(flag-be);
+}
+
+.br span.flag {
+  @include intl-flags-icons-sprite(flag-br);
+}
+
+.ca span.flag {
+  @include intl-flags-icons-sprite(flag-ca);
+}
+
+.de span.flag {
+  @include intl-flags-icons-sprite(flag-de);
+}
+
+.es span.flag {
+  @include intl-flags-icons-sprite(flag-es);
+}
+
+.fr span.flag {
+  @include intl-flags-icons-sprite(flag-fr);
+}
+
+.gb span.flag {
+  @include intl-flags-icons-sprite(flag-gb);
+}
+
+.ie span.flag {
+  @include intl-flags-icons-sprite(flag-ie);
+}
+
+.in span.flag {
+  @include intl-flags-icons-sprite(flag-in);
+}
+
+.it span.flag {
+  @include intl-flags-icons-sprite(flag-it);
+}
+
+.nl span.flag {
+  @include intl-flags-icons-sprite(flag-nl);
+}
+
+.mx span.flag {
+  @include intl-flags-icons-sprite(flag-mx);
+}
+
+.jp span.flag {
+  @include intl-flags-icons-sprite(flag-jp);
+}
+
+.ch span.flag {
+  @include intl-flags-icons-sprite(flag-ch);
+}
+
+.cn span.flag {
+  @include intl-flags-icons-sprite(flag-cn);
+}
+
+.at span.flag {
+  @include intl-flags-icons-sprite(flag-at);
+}
+
+.kr span.flag {
+  @include intl-flags-icons-sprite(flag-kr);
+}
+
+.za span.flag {
+  @include intl-flags-icons-sprite(flag-za);
+}
+
+.ar span.flag {
+  @include intl-flags-icons-sprite(flag-ar);
+}
+
+.ru span.flag {
+  @include intl-flags-icons-sprite(flag-ru);
+}
+
+.se span.flag {
+  @include intl-flags-icons-sprite(flag-se);
+}
+
+.pt span.flag {
+  @include intl-flags-icons-sprite(flag-pt);
+}
+
+
+// Interstitial Email Alert (fancybox)
+// -----------------------------------
+
+// fancybox library
+.fancybox-overlay {
+  background-color: $sh-white;
+  bottom: 0;
+  display: none;
+  filter: alpha(opacity = 80);
+  left: 0;
+  opacity: 0.80;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 1100;
+}
+
+.fancybox-opened .fancybox-skin {
+	-webkit-box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+	   -moz-box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+	        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+}
+
+.fancybox-tmp {
+	border: 0;
+	margin: 0;
+  overflow: auto;
+	padding: 0;
+  position: absolute;
+  visibility: hidden;
+}
+
+.fancybox-wrap {
+  left: 0;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: 0;
+  z-index: 1101;
+}
+
+// IE6
+// select
+* html .fancybox-overlay {
+  position: absolute;
+  width: 100%;
+}
+
+// IE6
+* html .fancybox-inner {
+  position: absolute;
+}
+
+label {
+  color: $sh-gray-1;
+  display: block;
+  margin: 0 0 0 10px;
+  width: 180px;
+}
+
+.alerts-offer {
+  background-color: $sh-gray-7;
+  color: #333;
+  height: 360px;
+  overflow: hidden;
+  padding-bottom: 45px;
+  padding-top: 95px;
+  text-align: center;
+  width: 565px;
+}
+
+#c_alerts_offer .alerts-logo {
+  @include serp-lightbox-icons-sprite(simplyhired);
+  margin: 0 auto;
+  position: relative;
+  top: -20px;
+}
+
+// 50+34+10
+.alerts-offer .box_close {
+  @include serp-lightbox-icons-sprite(close);
+  position: absolute;
+  right: 15px;
+  text-decoration: none;
+  top: 15px;
+}
+
+.alerts-offer .box_close:hover {
+  @include serp-lightbox-icons-sprite(close-hover);
+}
+
+.alerts-offer .message {
+  font-family: Hoefler, Times New Roman, serif;
+  @include font-size(20);
+  line-height: 1.2em;
+  margin-bottom: 10px;
+}
+
+.alerts-offer .envelope {
+  @include serp-lightbox-icons-sprite(envelope);
+  margin: 0 auto 10px;
+  overflow: hidden;
+}
+
+.alerts-offer .display,
+.alerts-offer .modify {
+  margin: 40px auto 0;
+  width: 360px;
+}
+
+.alerts-offer .keywords {
+  margin-bottom: 10px;
+}
+
+.alerts-offer .location {
+  margin-bottom: 20px;
+}
+
+.alerts-offer .envelope a {
+  color: #55669A;
+  @include font-size(11);
+  font-weight: bold;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.alerts-offer .envelope a:hover {
+  text-decoration: underline;
+}
+
+.alerts-offer .display {
+  padding-top: 50px;
+}
+
+.alerts-offer p.keywords {
+  @include font-size(18);
+  font-weight: bold;
+  line-height: 1.2em;
+}
+
+// 18px/22px
+.alerts-offer p.location {
+  color: #808080;
+  @include font-size(14);
+  line-height: 1.15em;
+}
+
+// 14px/16px
+.alerts-offer .modify {
+  background-color: $sh-white;
+  padding-top: 15px;
+}
+
+.alerts-offer input.keywords,
+.alerts-offer input.location {
+  background-color: #f2f2f2;
+  border: 2px solid #c5c5c5;
+  font-family: Arial, Helvetica, sans-serif;
+  @include font-size(15);
+  height: 18px;
+  @include line-height(18);
+  padding: 9px 4px;
+  text-align: center;
+  width: 290px;
+}
+
+.alerts-offer .display,
+.alerts-offer .edit_alert .modify {
+  display: block;
+  visibility: visible;
+}
+
+.alerts-offer .modify,
+.alerts-offer .edit_alert .display {
+  display: none;
+  visibility: hidden;
+}
+
+.alerts-offer .create {
+  margin-bottom: 20px;
+}
+
+.alerts-offer input.email {
+  border-right: none;
+  border: 2px solid $sh-dark-orange;
+  color: #808080;
+  font-family: Arial, Helvetica, sans-serif;
+  @include font-size(16);
+  font-weight: bold;
+  height: 18px;
+  @include line-height(18);
+  padding: 9px 4px;
+  text-align: center;
+  vertical-align: middle;
+  width: 310px;
+}
+
+#c_alerts_offer .icon-go-btn {
+  @include inline();
+  @include serp-lightbox-icons-sprite(go);
+  border: 0;  // Reset browser border on submit buttons.
+}
+
+.alerts-offer a.continue {
+  color: #55669A;
+  @include font-size(14);
+  text-decoration: none;
+}
+
+.alerts-offer a.continue:hover {
+  text-decoration: underline;
+}
+
+.alerts-offer p.error {
+  @include font-size(18);
+  font-style: italic;
+  @include line-height(20);
+}
+
+.alerts-offer .error input.email {
+  background-color: #fffcca;
+  border-color: $sh-dark-orange;
+  color: $sh-gray-2;
+  font-style: italic;
+}
+.alerts-offer .error input.keywords,
+.alerts-offer .error input.location,
+
+.alerts-offer .help input.keywords,
+.alerts-offer .help input.location {
+  font-style: italic;
+}
+
+.alerts-offer .create input.email {
+  -moz-border-radius: 4px 0 0 4px;
+}
+
+// FF
+.alerts-offer .create input.email {
+  -webkit-border-radius: 4px 0 0 4px;
+  outline: none;
+}
+
+// Safari/Chrome
+.alerts-offer .success {
+  padding-top: 25px;
+}
+
+.alerts-offer .loading {
+  margin: 40px 0 20px;
+}
+
+.alerts-offer .please_wait {
+  font-family: Times New Roman, Times, serif;
+  @include font-size(16);
+  font-style: italic;
+  line-height: 1.25em;
+}
+
+
+// jQuery UI "theme"
+// -----------------
+.ui-widget-overlay {
+  z-index: 1;
+}
+
+.ui-dialog {
+  z-index: 2;
+}
+
+
+// Search relevance one-question survey
+// ------------------------------------
+
+.survey {
+  background-color: $sh-white;
+  border: 1px solid $sh-gray-1;
+  border-right: 0;
+  bottom: 12px;
+  -moz-box-shadow: 2px 2px 3px #999;
+  -webkit-box-shadow: 2px 2px 3px #999;
+  box-shadow: 2px 2px 3px #999;
+  display: none;  /* slide-in animation will make element visible. */
+  height: 40px;
+  padding: 8px;
+  position: fixed;
+  right: -240px; /* slide-in animation sets this to 0. */
+  width: 210px;
+  z-index: 1;
+}
+
+.icon-survey-close-button {
+  @include inline();
+  @include serp-icons-sprite(close_x);
+  cursor: pointer;
+  left: -10px;
+  position: absolute;
+  top: -10px;
+}
+
+.icon-survey-sh-icon {
+  @include inline;
+  @include serp-icons-sprite(sh_icon);
+  margin-right: 10px;
+}
+
+.survey-text {
+  @include inline;
+  padding-top: 2px;
+  width: 150px;
+}
+
+.survey-thanks {
+  display: none;
+  padding-top: 10px;
+}
+
+
+// Error Pages
+// -----------
+
+.error-column-center {
+  color: $sh-gray-1;
+  float: left;
+  @include font-size(12);
+  height: auto;
+  @include line-height(16);
+  margin: 0 0 30px 190px;
+  overflow: hidden;
+  padding: 0 8px 0 0;
+  width: 570px;
+  .mini_browse {
+    h4 {
+      @include font-size(14);
+      @include line-height(18);
+      margin: 26px 0 7px;
+    }
+    ul {
+      float: left;
+      list-style: none;
+      margin: 0 0 10px;
+      li {
+        @include font-size(12);
+        @include line-height(16);
+        margin: 0 0 3px;
+        padding: 0 13px 0 0;
+      }
+    }
+    p {
+      clear: both;
+      margin-bottom: 0;
+    }
+    a:link {
+      color: #003ccc;
+    }
+    a:hover,
+    a:active {
+      color: $sh-black;
+    }
+    a:visited {
+      color: #551a8b;
+    }
+  }
+}
+
+#error {
+  .error {
+    @include font-size(14);
+    padding-top: 30px;
+    h1, h2 {
+      color: #555555;
+      @include font-size(22);
+      font-weight: normal;
+      @include line-height(30);
+      margin: 0 0 20px;
+    }
+    p {
+      @include line-height(18);
+    }
+    a:link {
+      color: #003ccc;
+    }
+    a:hover, a:active {
+      color: $sh-black;
+    }
+    a:visited {
+      color: #551a8b;
+    }
+  }
+}

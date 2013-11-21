@@ -1,0 +1,24 @@
+<ul class="menu-signup">
+  <li class="title">
+    <div class="sprite-icon-account"></div>
+    Account: Sign Up
+    <button class="cancel-button btn btn-mini">Cancel</button>
+  </li>
+  <li>
+    <form>
+      <label>Email Address</label>
+      <input class="email" type="email" value="<%= username %>" autocomplete="on" />
+      <label>Password<span class="password-help-text small-text">6-12 letters + numbers</span></label>
+      <input class="password" type="password" autocomplete="on" />
+      <div class="error-message"></div>
+      <button class="submit-button btn btn-orange">Sign Up</button>
+    </form>
+  </li>
+  <li>
+    <span class="small-text">By clicking Sign Up, you are indicating that you agree to Simply Hired's <a href="/a/legal/terms-of-service">Terms of Service</a>.</span>
+  </li>
+  <li class="goto-signin-signup-message">
+    <span class="small-text">Already have an account?</span>
+    <button class="goto-signin-button btn">Sign In</button>
+  </li>
+</ul>

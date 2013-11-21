@@ -1,0 +1,37 @@
+{% extends "base/base.html" %}
+
+
+{% comment %} ***** Head ***** {% endcomment %}
+
+{% block page_title %}
+  Employer Pages | Directory
+{% endblock page_title %}
+
+{% block css %}
+  {% include "css_support.html" %}
+  {% include "employer_pages/css.html" %}
+{% endblock %}
+
+{% comment %} ***** Body ***** {% endcomment %}
+
+{% block body_id %}"employer-directory"{% endblock body_id %}
+
+{% block body_class %}
+  "employers-directory{% if linkedin_login %} contacts{% endif %}"
+{% endblock body_class %}
+
+{% comment %} ***** Visible HTML ***** {% endcomment %}
+      
+  {% block content %}
+   {% include "employer_pages/directory_content.html" %}
+  {% endblock content %}
+
+{% comment %} ***** Hidden HTML ***** {% endcomment %}
+
+{% comment %} ***** Javascript Support ***** {% endcomment %}
+
+  {% block js_support %}
+    {% include "employer_pages/js_support_base.html" %}
+  {% endblock js_support %}
+
+{% comment %} ***** Tracking ***** {% endcomment %}

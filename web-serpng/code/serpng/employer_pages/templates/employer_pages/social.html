@@ -1,0 +1,38 @@
+{% extends "base/base.html" %}
+{% load compressed %}
+
+{% comment %} ***** Head ***** {% endcomment %}
+
+{% block page_title %}
+  {{ emp.name}} | Social  
+{% endblock page_title %}
+
+{% block css %}
+  {% include "css_support.html" %}
+  {% include "employer_pages/css.html" %}
+  {% compressed_css 'employer-social-pages' %}
+{% endblock %}
+
+{% comment %} ***** Body ***** {% endcomment %}
+
+{% block body_id %}"employer-directory"{% endblock body_id %}
+
+{% block body_class %}
+  "employers-directory{% if linkedin_login %} contacts{% endif %}"
+{% endblock body_class %}
+
+{% comment %} ***** Visible HTML ***** {% endcomment %}
+      
+  {% block content %}
+    {% include "employer_pages/social_content.html" %}
+  {% endblock content %}
+
+{% comment %} ***** Hidden HTML ***** {% endcomment %}
+
+{% comment %} ***** Javascript Support ***** {% endcomment %}
+
+  {% block js_support %}
+    {% include "employer_pages/js_support_social.html" %}
+  {% endblock js_support %}
+
+{% comment %} ***** Tracking ***** {% endcomment %}

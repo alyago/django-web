@@ -1,0 +1,40 @@
+{% extends "resume-base.html" %}
+
+{% load i18n %}
+{% load staticfiles %}
+
+{% block page_head_title %}{% trans "Add Your Resume" %}{% endblock %}
+{% block page_body_id %}landing{% endblock %}
+{% block page_body_class %}landing{% endblock %}
+{% block page_body_content %}
+<script src="//cdn.optimizely.com/js/110509595.js"></script>
+
+{% include "resume-default-header.html" %}
+
+<div class="box">
+  <div class="row span12" style="padding: 10px 0 35px;">
+    <div class="span5 no-left" style="padding: 0 25px 0 10px;">
+      <img src="{% static 'resume/images/landing_welcome.png' %}">
+    </div>
+    <div class="span5">
+      {% include "add.html" %}
+   </div>
+  </div>
+</div>
+
+{% include "resume-default-footer.html" %}
+
+{% endblock %}
+
+{% block page_specific_js_script %}
+{% spaceless %}
+<script type="text/javascript">
+$(document).ready(function() {
+  $('div.li_img').click(function() {
+    var wdik_checked = $('input[name=wdik]').is(':checked');
+    _gaq.push(['_trackEvent', 'landing', 'wdik_checkbox', wdik_checked]);
+  });
+});
+</script>
+{% endspaceless %}
+{% endblock %}

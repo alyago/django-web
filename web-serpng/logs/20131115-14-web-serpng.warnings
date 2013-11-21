@@ -1,0 +1,25 @@
+ERROR 2013-11-15 22:36:37,789 middleware 1020 139819197060864 Uncaught exception: DISTINCT ON fields is not supported by this database backend
+Traceback (most recent call last):
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/core/handlers/base.py", line 115, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "/home/oleg/code/web-serpng/code/serpng/employer_pages/views/profile.py", line 74, in profile
+    'ncns': get_ncns(emp),
+  File "/home/oleg/code/web-serpng/code/serpng/employer_pages/services/jobs_list.py", line 72, in get_ncns
+    for w in ws:
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/db/models/query.py", line 123, in _result_iter
+    self._fill_cache()
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/db/models/query.py", line 939, in _fill_cache
+    self._result_cache.append(next(self._iter))
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/db/models/query.py", line 344, in _safe_iterator
+    for item in iterator:
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/db/models/query.py", line 301, in iterator
+    for row in compiler.results_iter():
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/db/models/sql/compiler.py", line 775, in results_iter
+    for rows in self.execute_sql(MULTI):
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/db/models/sql/compiler.py", line 830, in execute_sql
+    sql, params = self.as_sql()
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/db/models/sql/compiler.py", line 94, in as_sql
+    result.append(self.connection.ops.distinct_sql(distinct_fields))
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/db/backends/__init__.py", line 554, in distinct_sql
+    raise NotImplementedError('DISTINCT ON fields is not supported by this database backend')
+NotImplementedError: DISTINCT ON fields is not supported by this database backend

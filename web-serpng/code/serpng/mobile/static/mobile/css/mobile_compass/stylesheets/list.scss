@@ -1,0 +1,152 @@
+@import "global";
+@import "mobile_sprites";
+@import "mobile_variables";
+@import "sh_colors";
+
+#mobile-list-content-main {
+
+  #results {
+
+    #search-error {
+      margin:15px;
+    }
+
+    margin:0;
+
+    .result {
+      @include clearfix;
+      border-width:0px 0px 1px 0px;
+      border-color:#aaaaaa;
+      border-style:solid;
+      height:100%;
+      line-height:17px;
+      position:relative;
+
+      * {
+        font-size:13px;
+      }
+
+      &:first-child {
+        border-top-width:1px;
+      }
+
+      .result-body {
+        position:relative;
+      }
+
+      .result-sponsored {
+        color:#999999;
+        font-size:12px;
+        height:6px;
+        padding:0 2px 2px 0;
+        text-align:right;
+      }
+
+      .result-text {
+        margin:6px 0 0 $mobile-padding*2;
+        display:block;
+        color:black;
+        text-decoration:none;
+        padding:5px 0 6px 0;
+
+        .result-title {
+          font:bold 15px sans-serif;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space:nowrap;
+        }
+
+        .result-company {
+          text-overflow: ellipsis;
+          white-space:nowrap;
+        }
+
+        .result-ago {
+          font-weight:bold;
+        }
+      }
+  
+      .result-mobile-apply {
+        color:blue;
+        float:right;
+        font-size:11px;
+        padding:0 1px 1px 0;
+
+        * {
+          vertical-align:top;
+        }
+      }
+
+      .result-next-arrow {
+          position:absolute;
+          right:9px;
+          top:35px;
+          opacity:0.5;
+      }
+
+      .result-save-job {
+          position:absolute;
+          left:12px;
+          top:12px;
+          @include retina-sprite(star-disabled);
+
+          &.saved {
+            @include retina-sprite(star-selected);
+          }
+      }
+
+      .result-save-job + .result-text {
+        margin-left:60px;
+      }
+    }
+  }
+
+// Phase 1 styling -- temporarily disabled until we can sort revenue numbers out.
+//
+//  .pagination {
+//    background-color:black;
+//    padding:$mobile-padding;
+//    height:30px;
+//  
+//    // Bootstrap override
+//    margin:0;
+//  
+//    a {
+//      color:white;
+//    }
+//  
+//    .prev-btn {
+//      float:left;
+//    }
+//  
+//    .next-btn {
+//      float:right;
+//    }
+//
+//  }
+
+  // Phase 0 styling. We will probably remove this later after confirming Phase 1 A/B results, after which, the above commented code should be reinstated.
+  .pagination {
+    padding:16px;
+    .btn {
+      background-color: #eee;
+      background: linear-gradient(to bottom, white, #e6e6e6);
+      background: -webkit-gradient(linear, left top, left bottom, from(#ffffff), to(#e6e6e6));
+      border: 1px solid #b3b3b3;
+      border-radius: 4px;
+      font: 14px sans-serif;
+      line-height: 20px;
+      text-align: center;
+    }
+
+    a {
+      color:#666;
+      display:block;
+    }
+  }
+
+  .google_ad_unit {
+    padding:0 $mobile-padding;
+    background-color:#f6f9fc;
+  }
+}

@@ -1,0 +1,100 @@
+{% extends "accounts_base.html" %}
+{% load staticfiles %}
+{% load get_config %}
+{% load compressed %}
+
+{% block css %}
+  {% compressed_css 'accounts-base' %}
+{% endblock %}
+
+{% block content %}
+  <div class="span8">
+    <h3>Find your dream job <em>now</em>.</h3>
+    {% ifequal message "savejob" %}
+      <div>Create your free account to save interesting jobs.</div>
+      <ul>
+        <li>Access your saved jobs on any computer, tablet, or mobile device.</li>
+        <li>Add notes to enach job to organize your job search.</li>
+        <li>It's simple, easy, and only takes a few minutes.</li>
+      </ul>
+    {% else %}
+      <div>It's simple, easy, and only takes a few minutes.</div>
+      <ul>
+        <li>Receive personalized search results when you upload your resume</li>
+        <li>SimplyApply&#8482; to thousands of jobs with a single click</li>
+        <li>Keep track of those awesome jobs you saw through your account</li>
+        <li>All this and more, for free.</li>
+      </ul>
+    {% endifequal %}
+    <div class="lead">Get started and create your account!</div>
+  </div>
+  <div class="span4">
+    <div class="option">
+      <form id="signup-form" method="post">
+        <fieldset>
+          <div class="form-fields">
+            <div class="option-section">
+              <div class="row-fluid">
+                <legend>{{ form_title }}</legend>
+              </div>
+            </div>
+            <div class="option-section">
+              <div class="row-fluid">
+                <label for="email">{{ email_label }}</label>
+              </div>
+              <div class="row-fluid">
+                <input id="email" class="span12" type="text" name="email" placeholder="{{ email_placeholder }}" maxlength="{% get_config 'MAX_ACCOUNT_EMAIL_LENGTH' %}" {% if email_value %}value="{{ email_value }}" {% endif %}/>
+              </div>
+            </div>
+            <div class="option-section">
+              <div class="row-fluid">
+                <label class="float-left" for="password">{{ password_label }}</label>
+                <label class="float-right" for="password">{{ password_requirements }}</label>
+              </div>
+              <div class="row-fluid">
+                <input id="password" class="span12" type="password" name="password" placeholder="{{ password_placeholder }}" />
+              </div>
+            </div>
+            <div class="option-section">
+              <div class="row-fluid">
+                <p class="legal">{{ legal|safe }}</p>
+              </div>
+            </div>
+            <div class="option-section">
+              <div class="row-fluid">
+                <button type="submit" class="btn btn-sh float-left">{{ submit_button_text }}</button>
+              </div>
+            </div>
+          </div>
+          <div class="messages">
+            <div class="option-section">
+              <div class="success-message alert alert-success" style="display:none">
+                <div class="title">You're almost done!</div>
+                <p>To activate your account, please click the link in the email we just sent to <span class="signup-email"></span>.</p>
+              </div>
+              <div class="row-fluid">
+                <button id="email-button" type="button" class="btn btn-sh" style="display:none"></button>
+              </div>
+            </div>
+            <div class="option-section">
+              <div class="row-fluid">
+                <div class="error-message alert alert-error" style="display:none">{{ error_message }}</div>
+              </div>
+            </div>
+          </div>
+        </fieldset>
+      </form>
+    </div>
+    <div class="option">
+      <div class="row-fluid">
+        <div class="title float-left">{{ already_a_member_title }}</div>
+        <a id="signin-link" class="float-right" href="{{ signin_link }}">{{ signin_text }}</a>
+      </div>
+    </div>
+  </div>
+{% endblock %}
+
+{% block external_js %}
+  {% compressed_js 'accounts-bootstrap' %}
+  {% compressed_js 'accounts-signup' %}
+{% endblock %}

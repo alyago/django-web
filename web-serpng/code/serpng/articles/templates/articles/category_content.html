@@ -1,0 +1,21 @@
+<div class="article-directory-header">
+    <h1>{{ category.title }} Directory</h1>
+</div><!-- article-profile-header -->
+
+<div class="spotlight">
+  <h3>Featured {{ category.title }} Articles</h3>
+  {% for post, teaser in featured_posts.items %}
+    <a class="spotlight-headline" href="{% url 'articles-url:article' post.slug %}">{{ post.title }}</a>
+    <p>{{ teaser | truncatewords:18 | safe | slice:'-4' }}...</p>
+  {% endfor %}
+</div>
+
+<div class="directory-body">
+  <ul class="posts-list">
+    {% for post in posts %}
+      <li class="posts-list-item">
+        <a href="{% url 'articles-url:article' post.slug %}">{{ post.title }}</a>
+      </li>
+    {% endfor %}
+  </ul>
+</div>

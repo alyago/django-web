@@ -1,0 +1,4 @@
+# Ignore generated static directory, this is built automatically in prod using
+# the before-restart hook and in dev using the run script.
+static-root
+.sass-cache

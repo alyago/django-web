@@ -1,0 +1,199 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+    "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>SH.search</title>
+    <link rel="stylesheet" href="../test/qunit-1.11.0.css">
+  </head>
+  <body>
+    <!-- Sinon / QUnit boiler-plate -->
+    <h1 id="qunit-header">Tests for SH.search</h1>
+    <h2 id="qunit-banner"></h2>
+    <h2 id="qunit-userAgent"></h2>
+    <ol id="qunit-tests"></ol>
+
+    <!-- QUnit Fixture -->
+    <div id="qunit-fixture">
+      <div class="sh_header_search">
+        <div class='search'>
+          <form class="search_form">
+            <input type="text" name="q" class="id_f_keywords search_keywords">
+            <input type="text" name="l" class="id_f_location search_location">
+            <input type="submit" class="search_button" value="Search Jobs">
+          </form>
+        </div>
+      </div>
+
+      <div id="column_center">
+        <div class='search'>
+          <form class="search_form">
+            <input type="text" name="q" class="id_f_keywords search_keywords">
+            <input type="text" name="l" class="id_f_location search_location">
+            <input type="submit" class="search_button" value="Search Jobs">
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <script type="text/javascript" src="../../../../../static/js/jquery-1.7.1.min.js"></script>
+    <script type="text/javascript" src="../test/qunit-1.11.0.js"></script>
+    <script type="text/javascript" src="../test/sinon-1.6.0.js"></script>
+    <script type="text/javascript" src="../test/sinon-qunit-1.0.0.js"></script>
+
+    <!-- Code to test -->
+    <script src="services.js"></script>
+    <script src="search.js"></script>
+
+    <script>
+      //
+      // Helpers
+      //
+
+      /*
+       * @class Empty placeholder fallback plugin.
+       */
+      (function( $ ) {
+        $.fn.placeholderFallback = function(method) {
+          return;
+        };
+      })( jQuery );
+
+
+      //
+      // Tests
+      //
+
+      // Note: need to put closure around module so that setup and teardown functions
+      //       and test functions can share variables without polluting global scope.
+      (function() {
+
+        // Module for event handler tests. All test setup for these tests happens inside the test.
+        module("event handler tests");
+        $(['.sh_header_search', '#column_center']).each(function(index, id) {
+          test("SH.search.init - " + id + " - should attach event handler for submit", function() {
+            var $search_form = $(id + ' .search_form', '#qunit-fixture');
+            this.spy($search_form[0], 'addEventListener');
+            SH.search.init();
+            ok($search_form[0].addEventListener.calledOnce);
+            equal($search_form[0].addEventListener.getCall(0).args[0], 'submit');
+            $search_form[0].addEventListener.restore(); // Unwrap the spy
+          });
+        });
+
+        // Module for submit tests. Sets up a fake NavigationService and initializes SH.search.
+        module("submit tests", {
+          setup: function() {
+            sinon.stub(SH.NavigationService, "navigateTo", function(search_url) {
+              return search_url;
+            });
+            SH.search.init();
+
+          }, teardown: function() {
+            SH.NavigationService.navigateTo.restore();
+          }
+        });
+
+        // Run all submit tests on both top and bottom forms.
+        $(['.sh_header_search', '#column_center']).each(function(index, id) {
+          test("SH.search.submit - " + id + " - should submit to correct url for keywords only", function() {
+            var $search_form = $(id + ' .search_form', '#qunit-fixture');
+
+            // Populate keywords.
+            $('.id_f_keywords', $search_form).val('nurse');
+
+            // Submit search form.
+            $('.search_button', $search_form).trigger('click');
+
+            ok(SH.NavigationService.navigateTo.calledOnce);
+            equal(SH.NavigationService.navigateTo.lastCall.returnValue, '/a/jobs/list/q-nurse');
+          });
+
+          test("SH.search.submit - " + id + " - should submit to correct url for location only", function() {
+            var $search_form = $(id + ' .search_form', '#qunit-fixture');
+
+            // Populate location.
+            $('.id_f_location', $search_form).val('Chicago, IL');
+
+            // Submit search form.
+            $('.search_button', $search_form).trigger('click');
+
+            ok(SH.NavigationService.navigateTo.calledOnce);
+            equal(SH.NavigationService.navigateTo.lastCall.returnValue, '/a/jobs/list/l-Chicago%2C+IL');
+          });
+
+          test("SH.search.submit - " + id + " - should submit to correct url for keywords and location", function() {
+            var $search_form = $(id + ' .search_form', '#qunit-fixture');
+
+            // Populate keywords and location.
+            $('.id_f_keywords', $search_form).val('nurse');
+            $('.id_f_location', $search_form).val('Chicago, IL');
+
+            // Submit search form.
+            $('.search_button', $search_form).trigger('click');
+
+            ok(SH.NavigationService.navigateTo.calledOnce);
+            equal(SH.NavigationService.navigateTo.lastCall.returnValue, '/a/jobs/list/q-nurse/l-Chicago%2C+IL');
+          });
+
+          test("SH.search.submit - " + id + " - should submit to correct url for no keywords or location", function() {
+            var $search_form = $(id + ' .search_form', '#qunit-fixture');
+
+            // Submit search form.
+            $('.search_button', $search_form).trigger('click');
+
+            ok(SH.NavigationService.navigateTo.calledOnce);
+            equal(SH.NavigationService.navigateTo.lastCall.returnValue, '/a/jobs/list');
+          });
+
+          test("SH.search.submit - " + id + " - should submit to correct url for location and miles", function() {
+            var $search_form = $(id + ' .search_form', '#qunit-fixture');
+
+            // Populate location and miles.
+            $('.id_f_location', $search_form).val('Chicago, IL');
+            $search_form.append('<input type="hidden" name="mi" class="id_f_miles" value="50">');
+
+            // Submit search form.
+            $('.search_button', $search_form).trigger('click');
+
+            ok(SH.NavigationService.navigateTo.calledOnce);
+            equal(SH.NavigationService.navigateTo.lastCall.returnValue, '/a/jobs/list/l-Chicago%2C+IL/mi-50');
+          });
+
+          test("SH.search.submit - " + id + " - should submit to correct url for no location and miles", function() {
+            var $search_form = $(id + ' .search_form', '#qunit-fixture');
+
+            // Populate keyword and miles.
+            $('.id_f_keywords', $search_form).val('nurse');
+            $search_form.append('<input type="hidden" name="mi" class="id_f_miles" value="50">');
+
+            // Submit search form.
+            $('.search_button', $search_form).trigger('click');
+
+            ok(SH.NavigationService.navigateTo.calledOnce);
+            equal(SH.NavigationService.navigateTo.lastCall.returnValue, '/a/jobs/list/q-nurse');
+          });
+
+          test("SH.search.submit - " + id + " - should submit to correct url for keywords with spaces", function() {
+            var $search_form = $(id + ' .search_form', '#qunit-fixture');
+
+            // Populate keyword.
+            $('.id_f_keywords', $search_form).val(' nurse  practitioner  ');
+
+            // Submit search form.
+            $('.search_button', $search_form).trigger('click');
+
+            ok(SH.NavigationService.navigateTo.calledOnce);
+            equal(SH.NavigationService.navigateTo.lastCall.returnValue, '/a/jobs/list/q-nurse+practitioner');
+          });
+        });
+      })();
+
+      // Standalone url test
+      test("SH.search.url - should return correct url string", function() {
+        equal(SH.search.url, '/a/jobs/list');
+      });
+
+    </script>
+  </body>
+</html>

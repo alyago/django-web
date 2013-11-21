@@ -1,0 +1,6 @@
+WARNING 2013-08-01 04:39:25,614 jobs 7172 140279210952448 Error in obtaining search results: No query terms
+WARNING 2013-08-01 04:39:25,617 jobs 7172 140279210952448 Error in google adsense handler: 'dict' object has no attribute 'google_ads_query'
+WARNING 2013-08-01 04:39:26,970 serp_links 7172 140279210952448 Error in obtaining search results: No query terms
+WARNING 2013-08-01 04:40:49,343 jobs 7172 140279127557888 Error in obtaining search results: No query terms
+WARNING 2013-08-01 04:40:49,345 jobs 7172 140279127557888 Error in google adsense handler: 'dict' object has no attribute 'google_ads_query'
+WARNING 2013-08-01 04:40:50,626 serp_links 7172 140279127557888 Error in obtaining search results: No query terms

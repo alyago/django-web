@@ -1,0 +1,26 @@
+{% load i18n %}
+{% comment %}
+  Used with inclusion tag (see 'templatetags/international_sites.py')
+{% endcomment %}
+
+{% regroup international_sites|dictsort:"region_id" by region_id as countries_by_region %}
+
+<div id="c_simplyhired_intl" class="simplyhired-intl" style="display:none">
+{% for region in countries_by_region %}
+  {% for country in region.list|dictsort:'country_name' %}
+    {% if forloop.first %}
+  <div class="region {{ region.grouper }}">
+    <h2>{{ country.region_name }}:</h2>
+    {% endif %}
+    <div class="box2">
+      <a class="intl {{ country.country_code }}" href="{{ country.url }}"><span class="flag"></span>
+        {# Translators: These are links to Simply Hired's job search sites in non-U.S. countries. #}
+        {% blocktrans with country.country_name as country_name %}{{ country_name }} Jobs{% endblocktrans %}
+      </a>
+    </div>
+
+  {% endfor %}
+  </div>
+
+{% endfor %}
+</div><!--c_simplyhired_intl-->

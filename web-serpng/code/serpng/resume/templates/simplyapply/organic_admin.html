@@ -1,0 +1,31 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html> <head>
+<title>Add Organic Sources</title>
+<style type="text/css">
+body { font-family: Helvetica, Arial; }
+</style>
+</head>
+
+<body>
+
+<form method="post" name="delete_source">{% csrf_token %}
+  <table>
+    <th>Robot ID</th>
+    <th>Delete</th>
+    <tr />
+    {% for source in organic_sources %}
+      <td>{{ source.robotid }}</td>
+      <td><input type="checkbox" name="delete_source" value="{{ source.robotid }}" /></td>
+      <tr />
+    {% endfor %}
+    {% if organic_sources %}
+      <td></td><td colspan=2><input type="submit" value="Delete"></td>
+    {% endif %}
+  </table>
+</form>
+
+<form method="post" name="add_source">{% csrf_token %}
+  <div>{{ message}}</div>
+  <input type="text" style="width:80px;" maxlength=10 name="add_source" placeholder="robot id" /><input type="submit" value="Add" />
+</form>
+</body> </html>

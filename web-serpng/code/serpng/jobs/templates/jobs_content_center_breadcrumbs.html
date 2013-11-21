@@ -1,0 +1,13 @@
+{% load absolute_http_url %}
+
+{% if result.display_breadcrumbs %}
+  <div class="breadcrumbs">
+  {% for label, nav_url in result.display_breadcrumbs.items %}
+    {% if forloop.last %}
+    <strong>{{ label }}</strong>
+    {% else %}
+    <a href="{% absolute_http_url nav_url %}">{{ label }}</a> &gt;
+    {% endif %}
+  {% endfor %}
+  </div><!--breadcrumbs-->
+{% endif %}

@@ -1,0 +1,10 @@
+{% extends "simplyapply/mobile-base.html" %}
+
+{% block page_body_content %}
+<div data-role="page">
+  <div data-role="header" data-theme="b"><h4>{% if error_header %}{{ error_header }}{% else %}Oops{% endif %}</h4></div>
+  <div class="content">
+    <div class="error">{{ error }}</div>
+  </div>
+</div>
+{% endblock %}

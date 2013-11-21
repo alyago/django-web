@@ -1,0 +1,26 @@
+@import "sh_colors";
+@import "mobile_variables";
+
+#generic-message-content-main {
+
+  .content-main {
+    color:black;
+    padding:30px 0;
+    text-align:center;
+  }
+
+  .message-button {
+    margin-bottom:50px;
+    margin-top:50px;
+  }
+
+  .message-text {
+    font-size:14px;
+    margin:0 $mobile-padding;
+  }
+
+  .message-title {
+    font:bold 24px sans-serif;
+    line-height:35px;
+  }
+}

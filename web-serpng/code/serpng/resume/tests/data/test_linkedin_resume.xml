@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<person>
+  <id>123456</id>
+  <first-name>TestFirst</first-name>
+  <last-name>TestLast</last-name>
+  <headline>An accomplished Individual</headline>
+  <summary>A great job for a great person</summary>
+  <relation-to-viewer>
+    <distance>0</distance>
+  </relation-to-viewer>
+  <connections total="65" />
+  <positions total="3">
+    <position>
+      <id>1</id>
+      <title>Engineer</title>
+      <summary>My duties at Job 1 were as follows</summary>
+      <start-date>
+        <year>2012</year>
+        <month>1</month>
+      </start-date>
+      <is-current>true</is-current>
+      <company>
+        <name>Acme Co</name>
+        <industry>Industry1</industry>
+      </company>
+    </position>
+    <position>
+      <id>2</id>
+      <title>Assistant</title>
+      <summary>My duties at Job 2 were as follows</summary>
+      <start-date>
+        <year>2011</year>
+        <month>2</month>
+      </start-date>
+      <end-date>
+        <year>2012</year>
+        <month>1</month>
+      </end-date>
+      <is-current>false</is-current>
+      <company>
+        <name>Amazon Inc</name>
+        <industry>Industry2</industry>
+      </company>
+    </position>
+    <position>
+      <id>3</id>
+      <title>Intern</title>
+      <summary>My duties at Job 3 were as follows</summary>
+      <start-date>
+        <year>2010</year>
+        <month>3</month>
+      </start-date>
+      <end-date>
+        <year>2011</year>
+        <month>2</month>
+      </end-date>
+      <is-current>false</is-current>
+      <company>
+        <name>IBM</name>
+        <industry>Industry3</industry>
+      </company>
+    </position>
+  </positions>
+  <educations total="2">
+    <education>
+      <id>1</id>
+      <school-name>University of California</school-name>
+      <degree>Master of Science</degree>
+      <field-of-study>Computer Science</field-of-study>
+      <start-date>
+        <year>2010</year>
+      </start-date>
+      <end-date>
+        <year>2012</year>
+      </end-date>
+    </education>
+    <education>
+      <id>2</id>
+      <school-name>California State University</school-name>
+      <degree>Bachelor of Science</degree>
+      <field-of-study>Computer Science</field-of-study>
+      <start-date>
+        <year>2006</year>
+      </start-date>
+      <end-date>
+        <year>2010</year>
+      </end-date>
+    </education>
+  </educations>
+  <member-url-resources total="0" />
+  <api-standard-profile-request>
+    <url>http://api.linkedin.com/v1/people/5706866</url>
+    <headers total="1">
+      <http-header>
+        <name>x-li-auth-token</name>
+        <value>name:Idw9</value>
+      </http-header>
+    </headers>
+  </api-standard-profile-request>
+  <site-standard-profile-request>
+    <url>http://www.linkedin.com/profile?WE-DONT-USE</url>
+  </site-standard-profile-request>
+  <location>
+    <name>Sunnyvale</name>
+    <country>
+      <code>us</code>
+    </country>
+    <postal-code>94085</postal-code>
+  </location>
+  <industry>Internet</industry>
+  <distance>0</distance>
+  <num-recommenders>0</num-recommenders>
+  <specialties>php, python, web site production</specialties>
+</person>

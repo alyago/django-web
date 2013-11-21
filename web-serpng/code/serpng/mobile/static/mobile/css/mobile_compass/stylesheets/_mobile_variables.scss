@@ -1,0 +1,12 @@
+// Standard margin / padding for mobile
+//
+$mobile-padding:10px;
+
+// All z-indexes should be defined here to keep things coherent.
+//
+$z-index-menu:400;
+$z-index-content:500;
+$z-index-search-overlay:600;
+$z-index-header:700;
+$z-index-menu-overlay:800;
+$z-index-loading-overlay:1000;

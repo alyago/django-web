@@ -1,0 +1,7 @@
+#: jobs/translation_strings.py:474
+msgid "city, state or zip"
+msgstr "city or province"
+
+#: jobs/translation_strings.py:691
+msgid "<p>If you entered a location name, please check the spelling. If you entered a ZIP code, perhaps try again with a city, state combination.</p><br><p>Or browse jobs by category:</p>"
+msgstr "<p>If you entered a location name, please check the spelling. If you entered a postal code, perhaps try again with a city, province combination.</p><br><p>Or browse jobs by category:</p>"

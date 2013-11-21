@@ -1,0 +1,28 @@
+#!/bin/bash
+
+#
+# Run git-submodule update on user's behalf if needed.
+#
+
+SCRIPT_NAME=$(basename "$0")
+
+# If run as a post-checkout script hook, and the previous and current
+# HEAD are the same or if its a file checkout, don't proceed.
+if [[ "$SCRIPT_NAME" = "post-checkout" && ( "$1" = "$2" || "$3" = "0" ) ]]; then
+  exit 0
+fi
+
+ROOT_DIR=$(git rev-parse --show-cdup)
+SUBMODULES=$(grep path ${ROOT_DIR}.gitmodules | sed 's/^.*path = //')
+MOD_SUBMODULES=$(git diff --name-only --ignore-submodules=dirty | grep -F "$SUBMODULES")
+
+if [[ -n "$MOD_SUBMODULES" ]]; then
+  echo "The following submodules have been updated in HEAD:"
+  echo "$MOD_SUBMODULES"
+  echo -n "Run git-submodule update? [n] "
+  read -n 1 reply </dev/tty
+  echo
+  if [[ "$reply" == "y" || "$reply" == "Y" ]]; then
+    git submodule update
+  fi
+fi

@@ -1,0 +1,14 @@
+<div class="articles-body">
+  {{ article.body | safe }}
+</div>
+
+<div class="right-rail">
+  <h2 class="rail-header">Categories</h2>
+  <ul class="categories-list">
+    {% for category in categories %}
+      <li class="categories-list-item">
+        <a href="{% url 'articles-url:category' category.slug %}">{{ category.title }}</a>
+      </li> 
+    {% endfor %}
+  </ul>
+</div>

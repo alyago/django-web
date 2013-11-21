@@ -1,0 +1,17 @@
+#!/bin/bash
+
+source ~/.env
+
+# Use virtualenv to load the proper Python instance.
+source ~/.virtualenv/bin/activate
+
+# Load RVM
+source /usr/local/rvm/scripts/rvm
+
+# Ensure the correct ruby gems are installed.
+export BUNDLE_GEMFILE="$SH_ROOT/configs/$SH_ENV/Gemfile"
+bundle install --path=~/.gem
+
+# Minify JS/CSS offline.
+mkdir -p ${SH_ROOT}/code/serpng/static-root
+bundle exec python ${SH_ROOT}/code/serpng/manage.py collectstatic --clear --noinput

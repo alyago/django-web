@@ -1,0 +1,246 @@
+#: jobs/translation_strings.py:150
+#: jobs/translation_strings.py:690
+#: jobs/templates/content/content_center/jobs_content_center_results.html:122
+msgid "Sign in"
+msgstr "Connexion"
+
+#: jobs/static/jobs/js/serp.js:1755
+msgid "Anytime"
+msgstr "Á tout moment"
+
+#: jobs/translation_strings.py:55
+#: jobs/translation_strings.py:693
+msgid "Privacy"
+msgstr "Confidentialité"
+
+#: jobs/translation_strings.py:58
+#: jobs/translation_strings.py:696
+msgid "Terms"
+msgstr "Conditions"
+
+#: jobs/translation_strings.py:433
+#: jobs/translation_strings.py:700
+#: jobs/templates/top/jobs_top_header.html:53
+msgid "job title, skills or company"
+msgstr "métier, compétence ou société"
+
+#: jobs/translation_strings.py:441
+#: jobs/translation_strings.py:704
+#: jobs/templates/top/jobs_top_header.html:62
+msgid "city, state or zip"
+msgstr "ville ou province"
+
+#: jobs/translation_strings.py:707
+msgid "Email address"
+msgstr "Adresse courriel"
+
+#: jobs/translation_strings.py:711
+msgid "Please enter a valid email address."
+msgstr "Veuillez saisir une adresse courriel valide."
+
+#: jobs/translation_strings.py:717
+msgid "Reported"
+msgstr "Signalé"
+
+#: jobs/translation_strings.py:103
+#: jobs/translation_strings.py:721
+#: jobs/templates/content/content_center/jobs_content_center_results.html:65
+msgid "Report"
+msgstr "Signaler"
+
+#: jobs/translation_strings.py:724
+#: jobs/templates/content/content_center/jobs_content_center_results.html:82
+#: jobs/templates/content/content_center/jobs_content_center_results.html:87
+msgid "Add notes"
+msgstr "Ajouter des remarques"
+
+#: jobs/translation_strings.py:727
+msgid "Edit notes: "
+msgstr "Modifier des remarques :"
+
+#: jobs/translation_strings.py:730
+msgid "your notes are only visible to you"
+msgstr "Vos remarques ne peuvent être lues que par vous-même"
+
+#: jobs/translation_strings.py:87
+#: jobs/translation_strings.py:421
+#: jobs/translation_strings.py:733
+#: jobs/templates/content/content_center/jobs_content_center_results.html:59
+#: jobs/templates/content/content_left/jobs_content_left_save_search_dialog.html:27
+msgid "Save"
+msgstr "Sauver"
+
+#: jobs/translation_strings.py:736
+msgid "Cancel"
+msgstr "Annuler"
+
+#: jobs/translation_strings.py:739
+msgid "Email sent! Use this form to email another friend."
+msgstr "Courriel envoyé! Utilisez ce formulaire pour envoyer un courriel à un autre ami."
+
+#: jobs/translation_strings.py:742
+msgid "Please correct the errors below."
+msgstr "Veuillez corriger les erreurs ci-dessous."
+
+#: jobs/translation_strings.py:745
+msgid "Unable to send email.  Please try again."
+msgstr "Échec de l'envoi du courriel. Veuillez essayer à nouveau."
+
+#: jobs/translation_strings.py:748
+msgid "Send"
+msgstr "Envoyer"
+
+#: jobs/translation_strings.py:751
+msgid "Send this job to a friend"
+msgstr "Envoyez cette offre à un ami"
+
+#: jobs/translation_strings.py:754
+msgid "Your name: "
+msgstr "Votre nom :"
+
+#: jobs/translation_strings.py:757
+msgid "Your email address: "
+msgstr "Votre adresse courriel :"
+
+#: jobs/translation_strings.py:582
+msgid "Your email address"
+msgstr "Votre adresse courriel"
+
+#: jobs/translation_strings.py:760
+msgid "Friend's email address: "
+msgstr "Adresse courriel de votre ami :"
+
+#: jobs/translation_strings.py:763
+msgid "View Mapped Jobs"
+msgstr "Voir les offres sur une carte"
+
+#: jobs/translation_strings.py:766
+#: jobs/templates/content/content_center/jobs_content_center_results.html:94
+#: jobs/templates/content/content_center/jobs_content_center_results.html:103
+#: jobs/templates/content/content_center/jobs_content_center_results.html:131
+#: jobs/templates/content/content_center/jobs_content_center_results.html:142
+msgid "close"
+msgstr "fermer"
+
+#: jobs/translation_strings.py:769
+msgid "Sorry, but we need some more information."
+msgstr "Désolé, mais nous avons besoin de plus d'information."
+
+#: jobs/translation_strings.py:772
+msgid "Please enter keywords or a location."
+msgstr "Veuillez saisir des mots-clés ou un lieu."
+
+#: jobs/translation_strings.py:775
+msgid "Your email address didn't work."
+msgstr "Échec de connexion avec votre adresse courriel."
+
+#: jobs/translation_strings.py:778
+msgid "We aren't sure where the location {{location}} is."
+msgstr "Nous ne savons pas où se trouve {{location}}."
+
+#: jobs/translation_strings.py:781
+msgid "Unable to create alert.  Please try again."
+msgstr "Échec de la création d'alerte. Veuillez essayer de nouveau."
+
+#: jobs/translation_strings.py:784
+msgid "Check your inbox for a confirmation email.<br/>Click the link in the email to start receiving jobs."
+msgstr "Consultez votre boîte de réception pour y trouver une confirmation.<br/>Cliquez sur le lien de ce courriel pour démarrer les envois."
+
+#: jobs/translation_strings.py:787
+msgid "Your email alert is created.<br/>No further action is necessary."
+msgstr "Votre alerte par courriel a été créée.<br/>Aucune autre mesure n'est requise."
+
+#: jobs/translation_strings.py:802
+msgid "{{search}} Jobs"
+msgstr "Emplois de {{search}}"
+
+#: jobs/translation_strings.py:807
+msgid "edit email alert"
+msgstr "modifier l'alerte courriel"
+
+#: jobs/translation_strings.py:811
+msgid "You're all set up to receive email alerts for this search!  <a rel=\")nofollow\" href=\"/a/my-alerts/email\">Manage your alerts.</a>"
+msgstr "Vous êtes fin prêt à recevoir les alertes par courriel pour cette recherche!  <a rel=\")nofollow\" href=\"/a/my-alerts/email\">Gérer vos alertes.</a>"
+
+#: jobs/translation_strings.py:815
+msgid "To activate your job alert, please check your email now and click the confirmation link."
+msgstr "Pour activer votre alerte d'offres d'emploi veuillez consulter vos courriels et cliquer sur le lien de confirmation."
+
+#: jobs/translation_strings.py:818
+msgid "Receive updates with the latest relevant jobs: "
+msgstr "Recevez les plus récentes offres d'emplois pertinentes :"
+
+#: jobs/translation_strings.py:821
+msgid "Please enter a valid email address!"
+msgstr "Veuillez saisir une adresse courriel valide!"
+
+#: jobs/translation_strings.py:612
+#: jobs/translation_strings.py:824
+#: jobs/templates/content/content_center/jobs_content_center_email_alert_form.html:9
+msgid "Enter email address..."
+msgstr "Saisissez votre adresse courriel…"
+
+#: jobs/translation_strings.py:827
+msgid "Check email at %s"
+msgstr "Consultez vos courriels de l'adresse %s"
+
+#: jobs/translation_strings.py:830
+#: jobs/templates/content/content_left/jobs_content_left_save_search_link.html:8
+msgid "Edit this search"
+msgstr "Modifier cette recherche"
+
+#: jobs/translation_strings.py:833
+msgid "Unable to save search.  Please try again."
+msgstr "Échec de la sauvegarde de recherche. Veuillez essayer de nouveau."
+
+#: jobs/translation_strings.py:836
+msgid "You already saved 100 searches.  Saving this search will override an existing search.  Do you want to continue?"
+msgstr "Vous avez déjà sauvegardé 100 recherches. Pour sauvegarder celle-ci, il faudrait écraser une recherche précédente. Est-ce bien ce que vous voulez?"
+
+#: jobs/translation_strings.py:839
+msgid "name this search"
+msgstr "nommer cette recherche"
+
+#: jobs/translation_strings.py:843
+msgid "Connections"
+msgstr "Connexions"
+
+#: jobs/translation_strings.py:846
+msgid "knows"
+msgstr "connaît"
+
+#: jobs/translation_strings.py:854
+msgid "View connections"
+msgstr "Voir les relations"
+
+#: jobs/translation_strings.py:862
+msgid "View all connections"
+msgstr "Voir les relations"
+
+#: jobs/translation_strings.py:865
+msgid "Sorry, there is no one in your social network at this company."
+msgstr "Désolé. Aucune personne de votre réseau social ne fait partie de cette société."
+
+#: jobs/translation_strings.py:868
+msgid "Sorry, this feature is currently unavailable.  Please try again later."
+msgstr "Désolé. Cette fonction n'est pas disponible actuellement. Veuillez réessayer plus tard."
+
+#: jobs/translation_strings.py:871
+msgid "Sorry, we were unable to determine the company name for this job."
+msgstr "Désolé. Nous ne sommes pas en mesure de déterminer le nom de la société en lien avec ce poste."
+
+#: jobs/translation_strings.py:874
+msgid "From LinkedIn"
+msgstr "De LinkedIn"
+
+#: jobs/translation_strings.py:877
+msgid "From Viadeo"
+msgstr "De Viadeo"
+
+#: jobs/translation_strings.py:880
+msgid "Improve your chances of finding a job"
+msgstr "Améliorez les chances de vous trouver un emploi"
+
+#: jobs/translation_strings.py:883
+msgid "50% of job seekers find their job through friends. Login to get started."
+msgstr "La moitié des chercheurs ont trouvé leur emploi par l'entremise d'un ami. Connectez-vous pour démarrer."

@@ -1,0 +1,393 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+    "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>SH.JobLightbox</title>
+    <link rel="stylesheet" href="../test/qunit-1.11.0.css">
+  </head>
+  <body>
+    <!-- Sinon / QUnit boiler-plate -->
+    <h1 id="qunit-header">Tests for SH.JobLightbox</h1>
+    <h2 id="qunit-banner"></h2>
+    <h2 id="qunit-userAgent"></h2>
+    <ol id="qunit-tests"></ol>
+
+    <!-- QUnit Fixture -->
+    <div id="qunit-fixture">
+      <div id="c_alerts_offer" style="display:none;">
+        <form action="#" method="post">
+          <div class="message"></div>
+
+          <div class="envelope">
+            <div class="display">
+              <p class="keywords"></p>
+              <p class="location"></p>
+              <a class="edit">Edit</a>
+            </div>
+
+            <div class="modify">
+              <div>
+                <input class="keywords" type="text" name="q" value="" placeholder="" />
+              </div>
+              <div>
+                <input class="location" type="text" name="l" value="" placeholder="" />
+              </div>
+              <a class="save">Save</a>
+            </div>
+          </div>
+
+          <div class="create">
+            <input class="email" type="text" name="email" value="" maxlength="80" placeholder="" />
+            <input class="go" type="image" name="go" src="images/dialogs/go.png" alt="Go"/>
+          </div>
+
+          <div>
+            <a class="continue" href="#" target="_blank">Continue</a>
+          </div>
+        </form>
+      </div><!--c_alerts_offer-->
+    </div>
+
+    <!-- Load jQuery and test libraries -->
+    <script type="text/javascript" src="../../../../../static/js/jquery-1.7.1.min.js"></script>
+    <script type="text/javascript" src="../test/qunit-1.11.0.js"></script>
+    <script type="text/javascript" src="../test/sinon-1.6.0.js"></script>
+    <script type="text/javascript" src="../test/sinon-qunit-1.0.0.js"></script>
+
+    <!-- Code to test -->
+    <script>
+        //
+        // Mock out dependent objects
+        //
+
+        // Make sure the namespace is defined.
+        var SH = SH || {};
+
+        SH.fancybox = function(callback) {
+          if (callback) {
+            callback();
+          }
+        };
+        SH.EventLog = {
+          serpng: {
+            email_alert_interstitial_display: function() {
+              return true;
+            },
+            email_alert_interstitial_form_submit: function() {
+              return true;
+            }
+          }
+        };
+        SH.cookies = function(){
+          var getSubcookiePublic = function(name, subname) {
+            return false;
+          }
+          
+          var setSubcookiePublic = function(name, subname, data) {
+            return false;
+          }
+
+          return {
+            enabled: true,
+            getSubcookie: getSubcookiePublic,
+            setSubcookie: setSubcookiePublic
+          };
+        }();
+        SH.messages = {
+          "alert_errors": "Sorry, but we need some more information.",
+          "alert_search_error": "Please enter keywords or a location.",
+          "alert_email_error": "Your email address didn't work.",
+          "alert_location_error": "We aren't sure where the location {{location}} is.",
+          "alert_failure": "Unable to create alert.  Please try again.",
+          "alert_created_unconfirmed": "Check your inbox for a confirmation email.<br/>Click the link in the email to start receiving jobs.",
+          "alert_created_confirmed": "Your email alert is created.<br/>No further action is necessary.",
+          "alert_search_format": "{{search}} Jobs"
+
+        };
+        SH.validation = {
+          validate_email: function(email) {
+            if (email === 'test123') {
+
+              // Email error value.
+              return true;
+            } else {
+
+              // Returns false for no error.
+              return false;
+            }
+          }
+        };
+    </script>
+    <script src="job_lightbox.js"></script>
+
+    <script>
+      /*
+       * @class Empty placeholder fallback plugin.
+       */
+      (function( $ ) {
+        $.fn.placeholderFallback = function(method) {
+          return;
+        };
+      })( jQuery );
+
+      /*
+       * @class Empty placeholder fancybox plugin.
+       */
+      (function( $ ) {
+        var F = $.fancybox = function() {
+          return;
+        };
+        $.extend(F, {
+          open: function(group, opts) {
+            return;
+          },
+          close: function(group, opts) {
+            return;
+          }
+        });
+      })( jQuery );
+
+      //
+      // Tests
+      //
+
+      // Note: need to put closure around module so that setup and teardown functions
+      //       and test functions can share variables without polluting global scope.
+      (function() {
+
+        // Test strings
+        var keywordString = 'truck driver';
+        var locationString = 'sunnyvale, ca';
+        var invalidLocationString = 'neverland';
+        var validEmailString = 'test123@simplyhired.com';
+        var invalidEmailString = 'test123';
+
+        // jQuery variables
+        var $dialog;
+        var $alertForm;
+        var $keywordInput;
+        var $locationInput;
+        var $emailInput;
+        var $keywordText;
+        var $locationText;
+        var $editLink;
+        var $saveLink;
+
+        /**
+         * Grabs a new copy of the jQuery objects to ensure they are up to date.
+         */
+        var updateJquery = function() {
+          $dialog = $("#c_alerts_offer");
+          $alertForm = $("form", "#qunit-fixture");
+          $keywordInput = $('input[name=q]', $alertForm);
+          $locationInput = $('input[name=l]', $alertForm);
+          $emailInput = $('input[name=email]', $alertForm);
+          $keywordText = $('p.keywords');
+          $locationText = $('p.location');
+          $editLink = $('a.edit', $alertForm);
+          $saveLink = $('a.save', $alertForm);
+        };
+
+        var updateSearchForm = function(keywords, location) {
+          // Edit the form.
+          $editLink.trigger('click');
+
+          // Populate the form.
+          $keywordInput.val(keywords);
+          $locationInput.val(location);
+
+          // Save the form.
+          $saveLink.trigger('click');
+        };
+
+        // Module for event handler tests.
+        module("event handler binding tests", {
+          setup: function() {
+            updateJquery();
+          }, teardown: function() {
+            SH.JobLightbox.resetEmailAlert();
+            $.fancybox.close();
+          }
+        });
+        test("SH.JobLightbox - should attach event handler for click", function() {
+          this.spy($dialog[0], 'addEventListener');
+          SH.JobLightbox.open();
+          ok($dialog[0].addEventListener.calledOnce);
+          equal($dialog[0].addEventListener.getCall(0).args[0], 'click');
+          $dialog[0].addEventListener.restore(); // Unwrap the spy
+        });
+        test("SH.JobLightbox - should attach event handler for form submit", function() {
+          this.spy($alertForm[0], 'addEventListener');
+          SH.JobLightbox.open();
+          ok($alertForm[0].addEventListener.calledOnce);
+          equal($alertForm[0].addEventListener.getCall(0).args[0], 'submit');
+          $alertForm[0].addEventListener.restore(); // Unwrap the spy
+        });
+
+        // Module for form save tests.
+        module("form save tests", {
+          setup: function() {
+            updateJquery();
+          },
+          teardown: function() {
+            SH.JobLightbox.resetEmailAlert();
+            $.fancybox.close();
+          }
+        });
+
+        test("SH.JobLightbox - should successfully save keyword and location", function() {
+          SH.JobLightbox.open();
+
+          // Modify the form.
+          updateSearchForm(keywordString, locationString);
+
+          equal($keywordText.text().toLowerCase(), keywordString.toLowerCase() + ' jobs');
+          equal($locationText.text().toLowerCase(), locationString.toLowerCase());
+        });
+
+        test("SH.JobLightbox - should successfully save keyword", function() {
+          SH.JobLightbox.open();
+
+          // Modify the form.
+          updateSearchForm(keywordString, "");
+
+          equal($keywordText.text().toLowerCase(), keywordString.toLowerCase() + ' jobs');
+        });
+
+        test("SH.JobLightbox - should successfully save location", function() {
+          SH.JobLightbox.open();
+
+          // Modify the form.
+          updateSearchForm("", locationString);
+
+          // When only the location is given, it appears in the keywords paragraph.
+          equal($keywordText.text().toLowerCase(), locationString.toLowerCase() + ' jobs');
+        });
+
+        test("SH.JobLightbox - should show error on empty keywords and location", function() {
+          SH.JobLightbox.open();
+
+          // Modify the form.
+          updateSearchForm("", "");
+
+          ok($keywordInput.parent().hasClass('error'));
+          ok($locationInput.parent().hasClass('error'));
+        });
+
+        // Module for submit tests.
+        module("form submit tests", {
+          setup: function() {
+            updateJquery();
+            this.server = sinon.fakeServer.create();
+
+            // Valid responses
+            this.server.respondWith("/a/job-alerts/create-json/q-" + keywordString.toLowerCase() + "/l-" + locationString.toLowerCase() + "?uea=y", [200, { "Content-Type": "application/json" }, '{ "data": { "email": false, "errors": null, "id": 123, "status": "unconfirmed" }, "ret_id": true, "req_id": null}']); 
+            this.server.respondWith("/a/job-alerts/create-json/q-" + keywordString.toLowerCase() + "?uea=y", [200, { "Content-Type": "application/json" }, '{ "data": { "email": false, "errors": null, "id": 123, "status": "unconfirmed" }, "ret_id": true, "req_id": null}']); 
+            this.server.respondWith("/a/job-alerts/create-json/l-" + locationString.toLowerCase() + "?uea=y", [200, { "Content-Type": "application/json" }, '{ "data": { "email": false, "errors": null, "id": 123, "status": "unconfirmed" }, "ret_id": true, "req_id": null}']); 
+
+            // Invalid responses
+            this.server.respondWith("/a/job-alerts/create-json/q-" + keywordString.toLowerCase() + "/l-" + invalidLocationString.toLowerCase() + "?uea=y", [200, { "Content-Type": "application/json" }, '{ "data": { "email": false, "errors": { "location": "bad-location", "search": "error-invalid"}, "id": null, "status": null }, "ret_id": false, "req_id": null}']); 
+
+          },
+          teardown: function() {
+            SH.JobLightbox.resetEmailAlert();
+            $.fancybox.close();
+            this.server.restore();
+          }
+        });
+
+        test("SH.JobLightbox - should successfully create email alert with keyword and location", function() {
+
+          SH.JobLightbox.open();
+
+          // Modify the form.
+          updateSearchForm(keywordString, locationString);
+
+          // Populate the email address.
+          $emailInput.val(validEmailString);
+
+          // Submit the form.
+          $alertForm.submit();
+          this.server.respond();
+
+          // This check needs to get the jQuery object after the server.respond() call
+          ok($(".message").parent().hasClass('success'));
+        });
+
+        test("SH.JobLightbox - should successfully create email alert with keyword only", function() {
+
+          SH.JobLightbox.open();
+
+          // Modify the form.
+          updateSearchForm(keywordString, "");
+
+          // Populate the email address.
+          $emailInput.val(validEmailString);
+
+          // Submit the form.
+          $alertForm.submit();
+          this.server.respond();
+
+          // This check needs to get the jQuery object after the server.respond() call
+          ok($(".message").parent().hasClass('success'));
+        });
+
+        test("SH.JobLightbox - should successfully create email alert with location only", function() {
+
+          SH.JobLightbox.open();
+
+          // Modify the form.
+          updateSearchForm("", locationString);
+
+          // Populate the email address.
+          $emailInput.val(validEmailString);
+
+          // Submit the form.
+          $alertForm.submit();
+          this.server.respond();
+
+          // This check needs to get the jQuery object after the server.respond() call
+          ok($(".message").parent().hasClass('success'));
+        });
+
+        test("SH.JobLightbox - should show error on invalid location", function() {
+
+          SH.JobLightbox.open();
+
+          // Modify the form.
+          updateSearchForm(keywordString, invalidLocationString);
+
+          // Populate the email address.
+          $emailInput.val(validEmailString);
+
+          // Submit the form.
+          $alertForm.submit();
+          this.server.respond();
+
+          ok($keywordInput.parent().hasClass('error'));
+          ok($locationInput.parent().hasClass('error'));
+        });
+
+        test("SH.JobLightbox - should show error on invalid email", function() {
+
+          SH.JobLightbox.open();
+
+          // Modify the form.
+          updateSearchForm(keywordString, locationString);
+
+          // Populate the email address.
+          $emailInput.val(invalidEmailString);
+
+          // Submit the form.
+          $alertForm.submit();
+
+          $emailInput = $('input[name=email]', $alertForm);
+          var $emailParent = $emailInput.parent();
+          ok($emailInput.parent().hasClass('error'));
+        });
+
+      })();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,37 @@
+{% extends "base/base.html" %}
+
+
+{% comment %} ***** Head ***** {% endcomment %}
+
+{% block page_title %}
+  {{ article.title }}
+{% endblock page_title %}
+
+{% block css %}
+  {% include "css_support.html" %}
+  {% include "articles/css.html" %}
+{% endblock %}
+
+{% comment %} ***** Body ***** {% endcomment %}
+
+{% block body_id %}"article"{% endblock body_id %}
+
+{% block body_class %}
+  "article{% if linkedin_login %} contacts{% endif %}"
+{% endblock body_class %}
+
+{% comment %} ***** Visible HTML ***** {% endcomment %}
+      
+  {% block content %}
+   {% include "articles/article_content.html" %}
+  {% endblock content %}
+
+{% comment %} ***** Hidden HTML ***** {% endcomment %}
+
+{% comment %} ***** Javascript Support ***** {% endcomment %}
+
+  {% block js_support %}
+    {% include "articles/js_support.html" %}
+  {% endblock js_support %}
+
+{% comment %} ***** Tracking ***** {% endcomment %}

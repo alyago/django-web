@@ -1,0 +1,49 @@
+{
+  "search_result":{
+    "primary_listings_array":[
+
+    ],
+    "current_page_first_hit_offset":1,
+    "error_code":"no-results-for-keywords",
+    "error_title":"Dang. We didn't find anything for you.",
+    "error_text":"<p>We couldn't find any jobs.<\/p><p>You're probably a good speller, but check the keyword terms you entered.<\/p><p>You can also try using some other keywords, or enter fewer words to expand your search.<\/p><p>It's also possible we made an error somewhere.<\/p><p>Sometimes computers are human too... just shinier.<\/p>",
+    "error_ping_url":"\/a\/error\/ping?ec=no-results-for-keywords&app=jobs&act=list&q=zzzzzzzzz",
+    "page_title":"Zzzzzzzzz Jobs",
+    "search_title":"zzzzzzzzz jobs",
+    "meta_description":"Every Zzzzzzzzz job on the web.",
+    "meta_keywords":"zzzzzzzzz jobs, zzzzzzzzz, job search engine, find jobs, careers, employment, job listings, Simply Hired, simple, hire",
+    "google_adsense_keywords":"zzzzzzzzz jobs",
+    "search_data_for_counts":"{\"skw\":\"zzzzzzzzz\",\"src\":\"\",\"spd\":\"1002\",\"utg\":\"none\"}",
+    "rss_url":"\/a\/job-feed\/rss\/q-zzzzzzzzz",
+    "reset_filters_url":"\/a\/jobs\/list\/q-zzzzzzzzz",
+    "search_tool_urls":{
+      "Zzzzzzzzz Trends":"\/a\/jobtrends\/trend\/q-zzzzzzzzz",
+      "Zzzzzzzzz Salaries":"\/a\/salary\/search\/q-zzzzzzzzz"
+    }
+  },
+  "user_data":{
+    "recent_searches":[
+      {
+        "search_name":"apple",
+        "search_url":"\/a\/jobs\/list\/q-apple"
+      },
+      {
+        "search_name":"trucker",
+        "search_url":"\/a\/jobs\/list\/q-trucker"
+      },
+      {
+        "search_name":"nurse",
+        "search_url":"\/a\/jobs\/list\/q-nurse"
+      },
+      {
+        "search_name":"seo",
+        "search_url":"\/a\/jobs\/list\/q-seo"
+      },
+      {
+        "search_name":"Mountain View, CA",
+        "search_url":"\/a\/jobs\/list\/l-Mountain+View%2C+CA"
+      }
+    ],
+    "user_email":"cary@simplyhired.com"
+  }
+}

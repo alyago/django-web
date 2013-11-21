@@ -1,0 +1,24 @@
+{% load absolute_http_url %}
+
+{% if not myresume and result.search_tool_urls and current_country_code == 'us' %}
+  <div class="search_tools">
+    <div class="heading">
+      {{ translations.job_search_tools_heading_text }}
+    </div>
+    <ul>
+      {% for search_tool_text, search_tool_link in result.search_tool_urls.items %}
+      <li>
+        <a href="{% absolute_http_url search_tool_link %}" class="evtc" data-event="left_rail_search_tool" data-tool-label="{{ search_tool_text }}">{{ search_tool_text }}</a>
+      </li>
+      {% endfor %}
+
+      {% if result.rss_url %}
+      <li>
+        <a rel="nofollow" class="rss evtc" data-event="left_rail_rss_feed" href="{% absolute_http_url result.rss_url %}">
+          {{ translations.rss_feed_text }}
+        </a>
+      </li>
+      {% endif %}
+    </ul>
+  </div><!--search_tools-->
+{% endif %}

@@ -1,0 +1,23 @@
+{% extends "mobile/base.html" %}
+
+{% load i18n %}
+{% load adv_cache %}
+
+{% block "content" %}
+  <div class="searchListTitle">{{ search_list_title }}</div>
+  <ul id="recent-searches-ul">
+  {% for search in search_list %}
+    <li class="recent-search-item"><a href="{{ search.1 }}"><span>{{ search.0 }}</span><div class="sprite-chevron-white invert-colors"></div></a></li>
+  {% endfor %}
+  </ul>
+{% endblock %}
+
+{% block "scripts" %}
+  <script type="text/javascript">
+    $(function() {
+      window.appView = new HomeAppView({model: new AccountModel(SH), el: 'body', userAgent: '{{ request.user_agent }}'});
+      window.appRouter = new AppRouter();
+      Backbone.history.start();
+    });
+  </script>
+{% endblock %}

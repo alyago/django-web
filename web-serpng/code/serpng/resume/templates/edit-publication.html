@@ -1,0 +1,8 @@
+<div class="edit_detail">
+	    {{ forms_manager.publicationformset.management_form }}
+  {% for form in forms_manager.publicationformset %}
+  <div id="edit_publications">
+  {{ form.as_p }}
+  </div>
+  {% endfor %}
+</div>

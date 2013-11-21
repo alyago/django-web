@@ -1,0 +1,1164 @@
+
+{
+  "search_result": {
+    "results_good": true,
+    "primary_listings_array": [
+      {
+        "title_highlited": "Sushi <strong>Chef<\/strong>\/Prep <strong>Chef<\/strong>",
+        "listing_clickthrough_url": "\/a\/job-details\/view\/cparm-cF9pZD0xMDAyJnpvbmU9NiZpcD0xMC4xLjMuMTcmY291bnQ9MTAmc3RhbXA9MjAxMi0wNy0zMSAxMDo1MDoyMiZwdWJsaXNoZXJfY2hhbm5lbF9pZHM9NiZhX2lkPTQzMjEzJmNfaWQ9MTYwMTUmY3BjPTAuMjcmcG9zPTEmaGFzaD1hM2ZkNjZmNTFmMDkxOTZmY2E2Yzk4ZGFlNjEzNzYzYg%3D%3D%3B3c43fd47f4466935d0f04c34b1bfd014\/jobkey-20494.112516977\/rid-178453052350181adddaca25.82590789\/pub_id-1002\/cjp-0",
+        "listing_permalink_url": "http:\/\/www.simplyhired.com\/job-id\/o2daanik2g\/sushi-chef-jobs\/",
+        "listing_refind_key": "20494.112516977",
+        "cluster_expansion_url": "\/a\/jobs\/list\/q-cook\/l-94043\/mi-10\/fdb-30\/clst-combo1\/clstcn-MAI+Cuisine\/clstft-sushi+chef%2Fprep+chef",
+        "cluster_unique_value_count": 1,
+        "search_urls_hash": {
+          "company": "\/a\/jobs\/list\/c-mai+cuisine",
+          "location": "\/a\/jobs\/list\/l-redwood+city%2C+ca"
+        },
+        "tool_urls_hash": {
+          "local-portal-url": "\/a\/local-jobs\/city\/l-redwood+city%2C+ca"
+        },
+        "permalink_display_string": "Sushi Chef\/Prep Chef at MAI Cuisine in Redwood City, CA",
+        "search_display_strings": {
+          "location-title": "Sushi Chef\/Prep Chef jobs in Redwood City",
+          "title": "Sushi Chef\/Prep Chef jobs",
+          "company": "MAI Cuisine jobs",
+          "cluster": "All Sushi Chef\/Prep Chef jobs at MAI Cuisine in Redwood City"
+        },
+        "tool_display_strings": {
+          "local-portal": "jobs in Redwood City, CA",
+          "salary-tool": "Sushi Chef\/Prep Chef Salaries in Redwood City",
+          "trends-tool": "Sushi Chef\/Prep Chef Trends"
+        },
+        "company_name": "MAI Cuisine",
+        "company_name_highlited": "MAI Cuisine",
+        "source_name": "Monster",
+        "source_name_clip": "Monster",
+        "formatted_location_string": "Redwood City, CA",
+        "first_crawl_iso_date_time": "2012-07-24T11:19:20Z",
+        "config_specified_ago_string": "7 days ago",
+        "description_clip": "Mai Cuisine, a subsidiary of Genji, LLC currently has opportunities available for candidates interested in becoming Part Time and Full Time Sushi Chefs at our brand new location...",
+        "section": "pjl",
+        "job_data_for_counts": "{joc:'35-1011.00', jri:'20494'}"
+      },
+      {
+        "title_highlited": "DevOps Engineer- <strong>Chef<\/strong>, Puppet, Beanstalkd, Node.js, AWS",
+        "listing_clickthrough_url": "\/a\/job-details\/view\/cparm-cF9pZD0xMDAyJnpvbmU9NiZpcD0xMC4xLjMuMTcmY291bnQ9MTAmc3RhbXA9MjAxMi0wNy0zMSAxMDo1MDoyMiZwdWJsaXNoZXJfY2hhbm5lbF9pZHM9NiZhX2lkPTMxOTY3JmNfaWQ9MTU1NjEmY3BjPTAuMiZwb3M9MiZoYXNoPTQ2NDE4ODcxNmZlMGE1MTgzZjgwOTAzZTc2YmM0Mzc4%3B9bc7c9224e961d2a0f1f1b85c025d057\/jobkey-14831.7000-32\/rid-178453052350181adddaca25.82590789\/pub_id-1002\/cjp-1",
+        "listing_permalink_url": "http:\/\/www.simplyhired.com\/job-id\/doj7dazbiw\/devops-engineer-jobs\/",
+        "listing_refind_key": "14831.7000-32",
+        "cluster_expansion_url": "\/a\/jobs\/list\/q-cook\/l-94043\/mi-10\/fdb-30\/clst-combo1\/clstcn-Sohum\/clstft-devops+engineer-+chef%2C+puppet%2C+beanstalkd%2C+node.js%2C+aws",
+        "cluster_unique_value_count": 1,
+        "search_urls_hash": {
+          "company": "\/a\/jobs\/list\/c-sohum",
+          "location": "\/a\/jobs\/list\/l-redwood+city%2C+ca"
+        },
+        "tool_urls_hash": {
+          "local-portal-url": "\/a\/local-jobs\/city\/l-redwood+city%2C+ca"
+        },
+        "permalink_display_string": "DevOps Engineer- Chef, Puppet, Beanstalkd, Node.js, AWS at Sohum in Redwood City, CA",
+        "search_display_strings": {
+          "location-title": "DevOps Engineer- Chef, Puppet, Beanstalkd, Node.js, AWS jobs in Redwood City",
+          "title": "DevOps Engineer- Chef, Puppet, Beanstalkd, Node.js, AWS jobs",
+          "company": "Sohum jobs",
+          "cluster": "All DevOps Engineer- Chef, Puppet, Beanstalkd, Node.js, AWS jobs at Sohum in Redwood City"
+        },
+        "tool_display_strings": {
+          "local-portal": "jobs in Redwood City, CA",
+          "salary-tool": "DevOps Engineer- Chef, Puppet, Beanstalkd, Node.js, AWS Salaries in Redwood City",
+          "trends-tool": "DevOps Engineer- Chef, Puppet, Beanstalkd, Node.js, AWS Trends"
+        },
+        "company_name": "Sohum",
+        "company_name_highlited": "Sohum",
+        "company_key": "122d4d05c1a1d6293e93770fa122f6fd",
+        "source_name": "Dice",
+        "source_name_clip": "Dice",
+        "formatted_location_string": "Redwood City, CA",
+        "first_crawl_iso_date_time": "2012-07-17T10:56:28Z",
+        "config_specified_ago_string": "14 days ago",
+        "description_clip": "Our client a well established startup in Bay Area is actively looking for Dev Ops Engineer Full time opportunity that offers good benefits and a great collaborative environment to...",
+        "job_position": 1,
+        "section": "pjl",
+        "job_data_for_counts": "{joc:'35-1011.00', jri:'14831'}"
+      },
+      {
+        "title_highlited": "Dev Ops - <strong>Chef<\/strong>, Puppet, Beanstalkd, Node.js",
+        "listing_clickthrough_url": "\/a\/job-details\/view\/cparm-cF9pZD0xMDAyJnpvbmU9NiZpcD0xMC4xLjMuMTcmY291bnQ9MTAmc3RhbXA9MjAxMi0wNy0zMSAxMDo1MDoyMiZwdWJsaXNoZXJfY2hhbm5lbF9pZHM9NiZhX2lkPTIwNTAmY19pZD0xNDk1NCZjcGM9MC4xMyZwb3M9MyZoYXNoPTczZjIxYTE1YzE4MTg3ZTBhM2FlOGQ5ZWFmMTQwMjM4%3B7b6eff604758f2dc387a3d13f58fb783\/jobkey-5850.4154525\/rid-178453052350181adddaca25.82590789\/pub_id-1002\/cjp-2",
+        "listing_permalink_url": "http:\/\/www.simplyhired.com\/job-id\/7g47tle4h2\/dev-ops-jobs\/",
+        "listing_refind_key": "5850.4154525",
+        "cluster_expansion_url": "\/a\/jobs\/list\/q-cook\/l-94043\/mi-10\/fdb-30\/clst-combo1\/clstcn-Semiconductors+Company\/clstft-dev+ops+-+chef%2C+puppet%2C+beanstalkd%2C+node.js",
+        "cluster_unique_value_count": 1,
+        "search_urls_hash": {
+          "company": "\/a\/jobs\/list\/c-semiconductors+company",
+          "location": "\/a\/jobs\/list\/l-redwood+city%2C+ca"
+        },
+        "tool_urls_hash": {
+          "local-portal-url": "\/a\/local-jobs\/city\/l-redwood+city%2C+ca"
+        },
+        "permalink_display_string": "Dev Ops - Chef, Puppet, Beanstalkd, Node.js at Semiconductors Company in Redwood City, CA",
+        "search_display_strings": {
+          "location-title": "Dev Ops - Chef, Puppet, Beanstalkd, Node.js jobs in Redwood City",
+          "title": "Dev Ops - Chef, Puppet, Beanstalkd, Node.js jobs",
+          "company": "Semiconductors Company jobs",
+          "cluster": "All Dev Ops - Chef, Puppet, Beanstalkd, Node.js jobs at Semiconductors Company in Redwood City"
+        },
+        "tool_display_strings": {
+          "local-portal": "jobs in Redwood City, CA",
+          "salary-tool": "Dev Ops - Chef, Puppet, Beanstalkd, Node.js Salaries in Redwood City",
+          "trends-tool": "Dev Ops - Chef, Puppet, Beanstalkd, Node.js Trends"
+        },
+        "company_name": "Semiconductors Company",
+        "company_name_highlited": "Semiconductors Company",
+        "source_name": "TheLadders.com",
+        "source_name_clip": "TheLadders.com",
+        "formatted_location_string": "Redwood City, CA",
+        "first_crawl_iso_date_time": "2012-07-17T00:12:27Z",
+        "config_specified_ago_string": "14 days ago",
+        "description_clip": "We are currently looking for Dev Ops Engineer with experience in latest technologies preferred. Full time opportunity with a fast growing startup in cloud computing. You will work...",
+        "job_position": 2,
+        "section": "pjl",
+        "job_data_for_counts": "{joc:'15-1132.00', jri:'5850'}"
+      },
+      {
+        "title_highlited": "Catering <strong>Cooks<\/strong>",
+        "listing_clickthrough_url": "\/a\/job-details\/view\/jobkey-5772.159250\/rid-178453052350181adddaca25.82590789\/cjp-3\/hits-369",
+        "listing_permalink_url": "http:\/\/www.simplyhired.com\/job-id\/bbwkgnis3v\/catering-cooks-jobs\/",
+        "listing_refind_key": "5772.159250",
+        "cluster_expansion_url": "\/a\/jobs\/list\/q-cook\/l-94043\/mi-10\/fdb-30\/clst-combo1\/clstcn-Bon+Appetit+Mgmt+Co\/clstft-catering+cooks",
+        "cluster_unique_value_count": 1,
+        "search_urls_hash": {
+          "title": "\/a\/jobs\/list\/q-catering+cooks",
+          "company": "\/a\/jobs\/list\/c-bon+appetit+mgmt+co",
+          "location-title": "\/a\/jobs\/list\/q-catering+cooks\/l-mountain+view%2C+ca",
+          "location": "\/a\/jobs\/list\/l-mountain+view%2C+ca"
+        },
+        "tool_urls_hash": {
+          "salary-tool-url": "\/a\/salary\/search\/q-catering+cooks\/l-mountain+view%2C+ca",
+          "local-portal-url": "\/a\/local-jobs\/city\/l-mountain+view%2C+ca"
+        },
+        "permalink_display_string": "Catering Cooks at Bon Appetit Mgmt Co in Mountain View, CA",
+        "search_display_strings": {
+          "location-title": "Catering Cooks jobs in Mountain View",
+          "title": "Catering Cooks jobs",
+          "company": "Bon Appetit Mgmt Co jobs",
+          "cluster": "All Catering Cooks jobs at Bon Appetit Mgmt Co in Mountain View"
+        },
+        "tool_display_strings": {
+          "local-portal": "jobs in Mountain View, CA",
+          "salary-tool": "Catering Cooks Salaries in Mountain View",
+          "trends-tool": "Catering Cooks Trends"
+        },
+        "company_name": "Bon Appetit Mgmt Co",
+        "company_name_highlited": "Bon Appetit Mgmt Co",
+        "company_key": "81117306608124c310e81ac86b6e0629",
+        "source_name": "Bon Appetit Mgmt Co",
+        "source_name_clip": "Bon Appetit Mgmt Co",
+        "formatted_location_string": "Mountain View, CA",
+        "first_crawl_iso_date_time": "2012-07-20T07:57:02Z",
+        "config_specified_ago_string": "11 days ago",
+        "description_clip": "POSITION SUMMARY: The Catering <strong>Cook<\/strong> for Bon Apptit Management Company at Google prepares and serves food at scheduled functions under the supervision of the Catering Sous Chef.",
+        "job_position": 3,
+        "section": "organic",
+        "job_data_for_counts": "{joc:'35-2012.00', jri:'5772'}"
+      },
+      {
+        "title_highlited": "Executive <strong>Chef<\/strong> 1 (Exempt)",
+        "listing_clickthrough_url": "\/a\/job-details\/view\/jobkey-5235.0e9004a2ffb17ba0d247cb45299cebe2\/rid-178453052350181adddaca25.82590789\/cjp-4\/hits-369",
+        "listing_permalink_url": "http:\/\/www.simplyhired.com\/job-id\/xdceryz6gi\/executive-chef-jobs\/",
+        "listing_refind_key": "5235.0e9004a2ffb17ba0d247cb45299cebe2",
+        "also_found_at": {
+          "iHispano.com": {
+            "source-url": "http:\/\/www.ihispano.com\/job-search\/executive-chef-1-exempt.5081667.html?from=SimplyHired&utm_source=SimplyHired&utm_medium=jobboard&utm_campaign=SimplyHired",
+            "clickthrough-url": "\/a\/job-details\/view\/jobkey-6094.5081667"
+          }
+        },
+        "cluster_expansion_url": "\/a\/jobs\/list\/q-cook\/l-94043\/mi-10\/fdb-30\/clst-combo1\/clstcn-Sodexo\/clstft-executive+chef+1+%28exempt%29",
+        "cluster_unique_value_count": 1,
+        "search_urls_hash": {
+          "title": "\/a\/jobs\/list\/q-executive+chef+exempt",
+          "company": "\/a\/jobs\/list\/c-sodexo",
+          "location-title": "\/a\/jobs\/list\/q-executive+chef+exempt\/l-santa+clara%2C+ca",
+          "location": "\/a\/jobs\/list\/l-santa+clara%2C+ca"
+        },
+        "tool_urls_hash": {
+          "salary-tool-url": "\/a\/salary\/search\/q-executive+chef+exempt\/l-santa+clara%2C+ca",
+          "local-portal-url": "\/a\/local-jobs\/city\/l-santa+clara%2C+ca"
+        },
+        "permalink_display_string": "Executive Chef 1 (Exempt) at Sodexo in Santa Clara, CA",
+        "search_display_strings": {
+          "location-title": "Executive Chef 1 (Exempt) jobs in Santa Clara",
+          "title": "Executive Chef 1 (Exempt) jobs",
+          "company": "Sodexo jobs",
+          "cluster": "All Executive Chef 1 (Exempt) jobs at Sodexo in Santa Clara"
+        },
+        "tool_display_strings": {
+          "local-portal": "jobs in Santa Clara, CA",
+          "salary-tool": "Executive Chef 1 (Exempt) Salaries in Santa Clara",
+          "trends-tool": "Executive Chef 1 (Exempt) Trends"
+        },
+        "company_name": "Sodexo",
+        "company_name_highlited": "Sodexo",
+        "company_key": "c6f074c5b6a2a480b6acbe9c4bcaaadc",
+        "source_name": "Sodexo",
+        "source_name_clip": "Sodexo",
+        "formatted_location_string": "Santa Clara, CA",
+        "first_crawl_iso_date_time": "2012-07-28T18:24:21Z",
+        "config_specified_ago_string": "2 days ago",
+        "ranked_list_array": {
+          "diversity50": "Diversity Friendly",
+          "vetfriendly": "Veteran Friendly"
+        },
+        "description_clip": "food cost issues and offer solutions. May <strong>cook<\/strong> selected items, and plan or price menus. Typically has chefs and cooks reporting to this position. Qualifications &amp; Requirements:...",
+        "job_position": 4,
+        "section": "organic",
+        "job_data_for_counts": "{joc:'35-1011.00', jri:'5235'}"
+      },
+      {
+        "title_highlited": "SUSHI <strong>COOK<\/strong>",
+        "listing_clickthrough_url": "\/a\/job-details\/view\/jobkey-472bbc634aed40e811510b6b319c87e904e9a8b\/rid-178453052350181adddaca25.82590789\/cjp-5\/hits-369",
+        "listing_permalink_url": "http:\/\/www.simplyhired.com\/job-id\/bykc6cpwmm\/sushi-cook-jobs\/",
+        "listing_refind_key": "472bbc634aed40e811510b6b319c87e904e9a8b",
+        "cluster_expansion_url": "\/a\/jobs\/list\/q-cook\/l-94043\/mi-10\/fdb-30\/clst-combo1\/clstcn-Adecco\/clstft-sushi+cook",
+        "cluster_unique_value_count": 1,
+        "search_urls_hash": {
+          "title": "\/a\/jobs\/list\/q-sushi+cook",
+          "company": "\/a\/jobs\/list\/c-adecco",
+          "location-title": "\/a\/jobs\/list\/q-sushi+cook\/l-cupertino%2C+ca",
+          "location": "\/a\/jobs\/list\/l-cupertino%2C+ca"
+        },
+        "tool_urls_hash": {
+          "salary-tool-url": "\/a\/salary\/search\/q-sushi+cook\/l-cupertino%2C+ca",
+          "local-portal-url": "\/a\/local-jobs\/city\/l-cupertino%2C+ca"
+        },
+        "permalink_display_string": "SUSHI COOK at Adecco in Cupertino, CA",
+        "search_display_strings": {
+          "location-title": "SUSHI COOK jobs in Cupertino",
+          "title": "SUSHI COOK jobs",
+          "company": "Adecco jobs",
+          "cluster": "All SUSHI COOK jobs at Adecco in Cupertino"
+        },
+        "tool_display_strings": {
+          "local-portal": "jobs in Cupertino, CA",
+          "salary-tool": "SUSHI COOK Salaries in Cupertino",
+          "trends-tool": "SUSHI COOK Trends"
+        },
+        "company_name": "Adecco",
+        "company_name_highlited": "Adecco",
+        "company_key": "7a0c2fce4084c4d4f45196acd3142862",
+        "source_name": "Adecco",
+        "source_name_clip": "Adecco",
+        "formatted_location_string": "Cupertino, CA",
+        "first_crawl_iso_date_time": "2012-07-28T18:51:48Z",
+        "config_specified_ago_string": "2 days ago",
+        "ranked_list_array": {
+          "agefriendly": "Age 50+ Friendly",
+          "fortunemostadmired": "Fortune Most Admired Companies"
+        },
+        "description_clip": "methods of Japanese cooking. Experience as a <strong>cook<\/strong> in an upscale restaurant preferred. Must possess knowledge of quantity food production, presentation, service and sanitation.",
+        "job_position": 5,
+        "section": "organic",
+        "job_data_for_counts": "{joc:'35-1011.00', jri:'18895'}"
+      },
+      {
+        "title_highlited": "DevOps Engineer - <strong>Chef<\/strong> Expert",
+        "listing_clickthrough_url": "\/a\/job-details\/view\/jobkey-1b1198bef2a7549635f16880c0805ce187fca0\/rid-178453052350181adddaca25.82590789\/cjp-6\/hits-369",
+        "listing_permalink_url": "http:\/\/www.simplyhired.com\/job-id\/absj7u66ks\/devops-engineer-jobs\/",
+        "listing_refind_key": "1b1198bef2a7549635f16880c0805ce187fca0",
+        "also_found_at": {
+          "Women in Technology International": {
+            "source-url": "http:\/\/jobs.witi4hire.com\/c\/job.cfm?site_id=273&jb=10492556",
+            "clickthrough-url": "\/a\/job-details\/view\/jobkey-5350.96a332649d9541ddc0861e362c24fe81"
+          },
+          "TAOnline": {
+            "source-url": "http:\/\/jobs.taonline.com\/jobseekerx\/viewjobrss.asp?cjid=1089530&accountno=74",
+            "clickthrough-url": "\/a\/job-details\/view\/jobkey-11828.1089530"
+          },
+          "EMC": {
+            "source-url": "http:\/\/jcnlx.com\/133d934c43e64692a0a664f9bee8ad7e107",
+            "clickthrough-url": "\/a\/job-details\/view\/jobkey-5235.da6bf0c4c508ecef8c1082e7a46551fb"
+          }
+        },
+        "cluster_expansion_url": "\/a\/jobs\/list\/q-cook\/l-94043\/mi-10\/fdb-30\/clst-combo1\/clstcn-EMC\/clstft-devops+engineer+-+chef+expert",
+        "cluster_unique_value_count": 2,
+        "search_urls_hash": {
+          "company": "\/a\/jobs\/list\/c-emc",
+          "location": "\/a\/jobs\/list\/l-mountain+view%2C+ca"
+        },
+        "tool_urls_hash": {
+          "local-portal-url": "\/a\/local-jobs\/city\/l-mountain+view%2C+ca"
+        },
+        "permalink_display_string": "DevOps Engineer - Chef Expert at EMC in Mountain View, CA",
+        "search_display_strings": {
+          "location-title": "DevOps Engineer - Chef Expert jobs in Mountain View",
+          "title": "DevOps Engineer - Chef Expert jobs",
+          "company": "EMC jobs",
+          "cluster": "All DevOps Engineer - Chef Expert jobs at EMC in Mountain View"
+        },
+        "tool_display_strings": {
+          "local-portal": "jobs in Mountain View, CA",
+          "salary-tool": "DevOps Engineer - Chef Expert Salaries in Mountain View",
+          "trends-tool": "DevOps Engineer - Chef Expert Trends"
+        },
+        "company_name": "EMC",
+        "company_name_highlited": "EMC",
+        "company_key": "4244d6f48c8d8938784dfffc65eca2f2",
+        "source_name": "EMC Corporation",
+        "source_name_clip": "EMC Corporation",
+        "formatted_location_string": "Mountain View, CA",
+        "first_crawl_iso_date_time": "2012-07-28T10:57:16Z",
+        "config_specified_ago_string": "3 days ago",
+        "ranked_list_array": {
+          "fortune500companies": "Fortune 500",
+          "sociallyresponsible": "Socially Responsible",
+          "fortunemostadmired": "Fortune Most Admired Companies"
+        },
+        "description_clip": "Key Qualifications\n\n* Must be a calm, confident, patient professional with experience fulfilling the roles of consultant and architect\n\n* Ability to step in and smoothly take...",
+        "job_position": 6,
+        "section": "organic",
+        "job_data_for_counts": "{joc:'15-1132.00', jri:'2787'}"
+      },
+      {
+        "title_highlited": "<strong>Cook<\/strong>",
+        "listing_clickthrough_url": "\/a\/job-details\/view\/jobkey-6170.334617-2012-07-27\/rid-178453052350181adddaca25.82590789\/cjp-7\/hits-369",
+        "listing_permalink_url": "http:\/\/www.simplyhired.com\/job-id\/fgnsup2n5h\/cook-jobs\/",
+        "listing_refind_key": "6170.334617-2012-07-27",
+        "cluster_expansion_url": "\/a\/jobs\/list\/q-cook\/l-94043\/mi-10\/fdb-30\/clst-combo1\/clstcn-Crowne+Plaza+Cabana+Hotel+-+Palo+Alto\/clstft-cook",
+        "cluster_unique_value_count": 1,
+        "search_urls_hash": {
+          "title": "\/a\/jobs\/list\/q-cook",
+          "location-title": "\/a\/jobs\/list\/q-cook\/l-palo+alto%2C+ca",
+          "location": "\/a\/jobs\/list\/l-palo+alto%2C+ca"
+        },
+        "tool_urls_hash": {
+          "salary-tool-url": "\/a\/salary\/search\/q-cook\/l-palo+alto%2C+ca",
+          "local-portal-url": "\/a\/local-jobs\/city\/l-palo+alto%2C+ca"
+        },
+        "permalink_display_string": "Cook at Crowne Plaza Cabana Hotel - Palo Alto in Palo Alto, CA",
+        "search_display_strings": {
+          "location-title": "Cook jobs in Palo Alto",
+          "title": "Cook jobs",
+          "company": "Crowne Plaza Cabana Hotel - Palo Alto jobs",
+          "cluster": "All Cook jobs at Crowne Plaza Cabana Hotel - Palo Alto in Palo Alto"
+        },
+        "tool_display_strings": {
+          "local-portal": "jobs in Palo Alto, CA",
+          "salary-tool": "Cook Salaries in Palo Alto",
+          "trends-tool": "Cook Trends"
+        },
+        "company_name": "Crowne Plaza Cabana Hotel - Palo Alto",
+        "company_name_highlited": "Crowne Plaza Cabana Hotel - Palo Alto",
+        "source_name": "Crowne Plaza Cabana Hotel - Palo Alto",
+        "source_name_clip": "Crowne Plaza Cabana Hotel - Palo Alto",
+        "formatted_location_string": "Palo Alto, CA",
+        "first_crawl_iso_date_time": "2012-07-28T01:11:24Z",
+        "config_specified_ago_string": "3 days ago",
+        "description_clip": "be able to cover both restaurant and banquet <strong>cook<\/strong> shifts, have good knife skills, can ... years <strong>Cook<\/strong> experience in banquets or as Line <strong>Cook<\/strong>. Hotel restaurant experience preferred...",
+        "job_position": 7,
+        "section": "organic",
+        "job_data_for_counts": "{joc:'35-2011.00', jri:'6170'}"
+      },
+      {
+        "title_highlited": "<strong>Cooks<\/strong>: Line and Prep",
+        "listing_clickthrough_url": "\/a\/job-details\/view\/jobkey-e31fab9165cc164e0ef306d68ca2ce975837b1b\/rid-178453052350181adddaca25.82590789\/cjp-8\/hits-369",
+        "listing_permalink_url": "http:\/\/www.simplyhired.com\/job-id\/opdbcct26l\/cooks-line-jobs\/",
+        "listing_refind_key": "e31fab9165cc164e0ef306d68ca2ce975837b1b",
+        "cluster_expansion_url": "\/a\/jobs\/list\/q-cook\/l-94043\/mi-10\/fdb-30\/clst-combo1\/clstcn-Fogster\/clstft-cooks%3A+line+and+prep",
+        "cluster_unique_value_count": 1,
+        "search_urls_hash": {
+          "company": "\/a\/jobs\/list\/c-fogster",
+          "location": "\/a\/jobs\/list\/l-woodside%2C+ca"
+        },
+        "tool_urls_hash": {
+          "local-portal-url": "\/a\/local-jobs\/city\/l-woodside%2C+ca"
+        },
+        "permalink_display_string": "Cooks: Line and Prep at Fogster in Woodside, CA",
+        "search_display_strings": {
+          "location-title": "Cooks: Line and Prep jobs in Woodside",
+          "title": "Cooks: Line and Prep jobs",
+          "company": "Fogster jobs",
+          "cluster": "All Cooks: Line and Prep jobs at Fogster in Woodside"
+        },
+        "tool_display_strings": {
+          "local-portal": "jobs in Woodside, CA",
+          "salary-tool": "Cooks: Line and Prep Salaries in Woodside",
+          "trends-tool": "Cooks: Line and Prep Trends"
+        },
+        "company_name": "Fogster",
+        "company_name_highlited": "Fogster",
+        "source_name": "fogster",
+        "source_name_clip": "fogster",
+        "formatted_location_string": "Woodside, CA",
+        "first_crawl_iso_date_time": "2012-07-23T21:16:09Z",
+        "config_specified_ago_string": "7 days ago",
+        "description_clip": "Cooks: Line and Prep (Woodside)\n------------\n\nFor estab. Midpeninsula restaurant. Open kitchen, wood burning pizza open. Candidate should be comfortable w\/kit. environ.,...",
+        "job_position": 8,
+        "section": "organic",
+        "job_data_for_counts": "{joc:'35-3021.00', jri:'5975'}"
+      },
+      {
+        "title_highlited": "McCormick & Schmick's - Sous <strong>Chef<\/strong>\/Kitchen Manager",
+        "listing_clickthrough_url": "\/a\/job-details\/view\/jobkey-146b5157e37e81e686c90b2f5c2a08d653d4117\/rid-178453052350181adddaca25.82590789\/cjp-9\/hits-369",
+        "listing_permalink_url": "http:\/\/www.simplyhired.com\/job-id\/s3m3uhsfue\/mccormick-schmick-jobs\/",
+        "listing_refind_key": "146b5157e37e81e686c90b2f5c2a08d653d4117",
+        "also_found_at": {
+          "Talent Exchange": {
+            "source-url": "http:\/\/jobs.talentexchange.com\/a\/job-listing\/job-description\/jobkey-14891.5272d38f54fa7010455a59f6705252bc&",
+            "clickthrough-url": "\/a\/job-details\/view\/jobkey-14891.5272d38f54fa7010455a59f6705252bc%26"
+          }
+        },
+        "cluster_expansion_url": "\/a\/jobs\/list\/q-cook\/l-94043\/mi-10\/fdb-30\/clst-combo1\/clstcn-Landry%27s\/clstft-mccormick+%26+schmick%27s+-+sous+chef%2Fkitchen+manager",
+        "cluster_unique_value_count": 1,
+        "apply_url": "\/a\/jump\/to?id=apply&u=https%3A%2F%2Ftbe.taleo.net%2FNA5%2Fats%2Fcareers%2Fapply.jsp%3Frid%3D891%26act%3DaddCart%26org%3DBUBBA%26cws%3D10%26submit%3DApply%2Bfor%2Bthis%2BPosition",
+        "search_urls_hash": {
+          "company": "\/a\/jobs\/list\/c-landry%27s",
+          "location": "\/a\/jobs\/list\/l-san+jose%2C+ca"
+        },
+        "tool_urls_hash": {
+          "local-portal-url": "\/a\/local-jobs\/city\/l-san+jose%2C+ca"
+        },
+        "permalink_display_string": "McCormick & Schmick's - Sous Chef\/Kitchen Manager at Landry's in San Jose, CA",
+        "search_display_strings": {
+          "location-title": "McCormick & Schmick's - Sous Chef\/Kitchen Manager jobs in San Jose",
+          "title": "McCormick & Schmick's - Sous Chef\/Kitchen Manager jobs",
+          "company": "Landry's jobs",
+          "cluster": "All McCormick & Schmick's - Sous Chef\/Kitchen Manager jobs at Landry's in San Jose"
+        },
+        "tool_display_strings": {
+          "local-portal": "jobs in San Jose, CA",
+          "salary-tool": "McCormick & Schmick's - Sous Chef\/Kitchen Manager Salaries in San Jose",
+          "trends-tool": "McCormick & Schmick's - Sous Chef\/Kitchen Manager Trends"
+        },
+        "company_name": "Landry's",
+        "company_name_highlited": "Landry's",
+        "company_key": "6f34b00a08436094fde7f383c7074485",
+        "source_name": "Landry's Restaurants",
+        "source_name_clip": "Landry's Restaurants",
+        "formatted_location_string": "San Jose, CA",
+        "first_crawl_iso_date_time": "2012-07-25T08:28:25Z",
+        "config_specified_ago_string": "6 days ago",
+        "description_clip": "McCormick &amp; Schmicks Seafood Restaurants in San Jose is seeking an experienced\n\nSOUS CHEF!\n\nThe Sous Chef assists the Executive Chef in the operation of a high volume kitchen,...",
+        "job_position": 9,
+        "section": "organic",
+        "job_data_for_counts": "{joc:'35-1011.00', jri:'8049'}"
+      }
+    ],
+    "primary_parametric_fields": {
+      "experience-level": {
+        "canonical_name": "experience-level",
+        "get_parameter": "fex",
+        "filter_label_string": "Experience",
+        "reset_filter_value": null,
+        "selected_filter_value": null,
+        "filter_values_array": [
+          {
+            "value_label_string": "0 - 2 years",
+            "is_selected": false,
+            "url_path": "\/a\/jobs\/list\/q-cook\/l-94043\/mi-10\/fdb-30\/fex-2",
+            "count": "3",
+            "parameter_value": "2"
+          },
+          {
+            "value_label_string": "2 - 5 years",
+            "is_selected": false,
+            "url_path": "\/a\/jobs\/list\/q-cook\/l-94043\/mi-10\/fdb-30\/fex-3",
+            "count": "2",
+            "parameter_value": "3"
+          },
+          {
+            "value_label_string": "5 - 7 years",
+            "is_selected": false,
+            "url_path": "\/a\/jobs\/list\/q-cook\/l-94043\/mi-10\/fdb-30\/fex-4",
+            "count": "1",
+            "parameter_value": "4"
+          },
+          {
+            "value_label_string": "7 - 10 years",
+            "is_selected": false,
+            "url_path": "\/a\/jobs\/list\/q-cook\/l-94043\/mi-10\/fdb-30\/fex-5",
+            "count": "2",
+            "parameter_value": "5"
+          },
+          {
+            "value_label_string": "10 - 15 years",
+            "is_selected": false,
+            "url_path": "\/a\/jobs\/list\/q-cook\/l-94043\/mi-10\/fdb-30\/fex-6",
+            "count": "4",
+            "parameter_value": "6"
+          }
+        ],
+        "do_nofollow": true
+      },
+      "ranked-list": {
+        "canonical_name": "ranked-list",
+        "get_parameter": "frl",
+        "filter_label_string": "Special Filters",
+        "reset_filter_value": null,
+        "selected_filter_value": null,
+        "filter_values_array": [
+          {
+            "value_label_string": "Fortune Best Companies to Work For",
+            "is_selected": false,
+            "url_path": "\/a\/jobs\/list\/q-cook\/l-94043\/mi-10\/fdb-30\/frl-fortune100best",
+            "count": "25",
+            "parameter_value": "fortune100best"
+          },
+          {
+            "value_label_string": "Veteran Friendly",
+            "is_selected": false,
+            "url_path": "\/a\/jobs\/list\/q-cook\/l-94043\/mi-10\/fdb-30\/frl-vetfriendly",
+            "count": "17",
+            "parameter_value": "vetfriendly"
+          },
+          {
+            "value_label_string": "Fortune 500",
+            "is_selected": false,
+            "url_path": "\/a\/jobs\/list\/q-cook\/l-94043\/mi-10\/fdb-30\/frl-fortune500companies",
+            "count": "10",
+            "parameter_value": "fortune500companies"
+          },
+          {
+            "value_label_string": "New Graduate",
+            "is_selected": false,
+            "url_path": "\/a\/jobs\/list\/q-cook\/l-94043\/mi-10\/fdb-30\/frl-newgrad",
+            "count": "9",
+            "parameter_value": "newgrad"
+          },
+          {
+            "value_label_string": "Age 50+ Friendly",
+            "is_selected": false,
+            "url_path": "\/a\/jobs\/list\/q-cook\/l-94043\/mi-10\/fdb-30\/frl-agefriendly",
+            "count": "6",
+            "parameter_value": "agefriendly"
+          },
+          {
+            "value_label_string": "Diversity Friendly",
+            "is_selected": false,
+            "url_path": "\/a\/jobs\/list\/q-cook\/l-94043\/mi-10\/fdb-30\/frl-diversity50",
+            "count": "4",
+            "parameter_value": "diversity50"
+          },
+          {
+            "value_label_string": "Dog Friendly",
+            "is_selected": false,
+            "url_path": "\/a\/jobs\/list\/q-cook\/l-94043\/mi-10\/fdb-30\/frl-dogfriendly",
+            "count": "2",
+            "parameter_value": "dogfriendly"
+          },
+          {
+            "value_label_string": "Fortune Most Admired Companies",
+            "is_selected": false,
+            "url_path": "\/a\/jobs\/list\/q-cook\/l-94043\/mi-10\/fdb-30\/frl-fortunemostadmired",
+            "count": "2",
+            "parameter_value": "fortunemostadmired"
+          },
+          {
+            "value_label_string": "Socially Responsible",
+            "is_selected": false,
+            "url_path": "\/a\/jobs\/list\/q-cook\/l-94043\/mi-10\/fdb-30\/frl-sociallyresponsible",
+            "count": "1",
+            "parameter_value": "sociallyresponsible"
+          }
+        ],
+        "do_nofollow": true
+      },
+      "sortable-title": {
+        "canonical_name": "sortable-title",
+        "get_parameter": "fft",
+        "filter_label_string": "Title",
+        "reset_filter_value": null,
+        "selected_filter_value": null,
+        "filter_values_array": [
+          {
+            "value_label_string": "Sous Chef",
+            "is_selected": false,
+            "url_path": "\/a\/jobs\/list\/q-cook\/l-94043\/mi-10\/fdb-30\/fft-Sous+Chef",
+            "count": "10",
+            "parameter_value": "Sous Chef"
+          },
+          {
+            "value_label_string": "In-Store Demo-Event Specialist",
+            "is_selected": false,
+            "url_path": "\/a\/jobs\/list\/q-cook\/l-94043\/mi-10\/fdb-30\/fft-In-store+Demo-event+Specialist",
+            "count": "9",
+            "parameter_value": "In-store Demo-event Specialist"
+          },
+          {
+            "value_label_string": "In-Store Demo-Event Specialist",
+            "is_selected": false,
+            "url_path": "\/a\/jobs\/list\/q-cook\/l-94043\/mi-10\/fdb-30\/fft-In-store+Demo-Event+Specialist",
+            "count": "8",
+            "parameter_value": "In-store Demo-Event Specialist"
+          },
+          {
+            "value_label_string": "In-Store Demo-Event Specialist Job",
+            "is_selected": false,
+            "url_path": "\/a\/jobs\/list\/q-cook\/l-94043\/mi-10\/fdb-30\/fft-In-store+Demo-Event+Specialist+Job",
+            "count": "7",
+            "parameter_value": "In-store Demo-Event Specialist Job"
+          },
+          {
+            "value_label_string": "Systems Administrator",
+            "is_selected": false,
+            "url_path": "\/a\/jobs\/list\/q-cook\/l-94043\/mi-10\/fdb-30\/fft-Systems+Administrator",
+            "count": "6",
+            "parameter_value": "Systems Administrator"
+          },
+          {
+            "value_label_string": "System Administrator",
+            "is_selected": false,
+            "url_path": "\/a\/jobs\/list\/q-cook\/l-94043\/mi-10\/fdb-30\/fft-System+Administrator",
+            "count": "5",
+            "parameter_value": "System Administrator"
+          }
+        ],
+        "do_nofollow": true
+      },
+      "source-type": {
+        "canonical_name": "source-type",
+        "get_parameter": "fsr",
+        "filter_label_string": "Job Boards",
+        "reset_filter_value": null,
+        "selected_filter_value": {
+          "value_label_string": "",
+          "is_selected": true,
+          "url_path": "\/a\/jobs\/list\/q-cook\/l-94043\/mi-10\/fdb-30",
+          "count": "0",
+          "parameter_value": ""
+        },
+        "filter_values_array": [
+          {
+            "value_label_string": "Job Boards Only",
+            "is_selected": false,
+            "url_path": "\/a\/jobs\/list\/q-cook\/l-94043\/mi-10\/fdb-30\/fsr-job_board",
+            "count": "257",
+            "parameter_value": "job_board"
+          },
+          {
+            "value_label_string": "Exclude Job Boards",
+            "is_selected": false,
+            "url_path": "\/a\/jobs\/list\/q-cook\/l-94043\/mi-10\/fdb-30\/fsr-primary",
+            "count": "112",
+            "parameter_value": "primary"
+          },
+          {
+            "value_label_string": "",
+            "is_selected": true,
+            "url_path": "\/a\/jobs\/list\/q-cook\/l-94043\/mi-10\/fdb-30",
+            "count": "0",
+            "parameter_value": ""
+          }
+        ],
+        "do_nofollow": true
+      },
+      "education-level": {
+        "canonical_name": "education-level",
+        "get_parameter": "fed",
+        "filter_label_string": "Education",
+        "reset_filter_value": null,
+        "selected_filter_value": null,
+        "filter_values_array": [
+          {
+            "value_label_string": "High School",
+            "is_selected": false,
+            "url_path": "\/a\/jobs\/list\/q-cook\/l-94043\/mi-10\/fdb-30\/fed-2",
+            "count": "2",
+            "parameter_value": "2"
+          },
+          {
+            "value_label_string": "Bachelor's Degree",
+            "is_selected": false,
+            "url_path": "\/a\/jobs\/list\/q-cook\/l-94043\/mi-10\/fdb-30\/fed-7",
+            "count": "5",
+            "parameter_value": "7"
+          },
+          {
+            "value_label_string": "Master's Degree",
+            "is_selected": false,
+            "url_path": "\/a\/jobs\/list\/q-cook\/l-94043\/mi-10\/fdb-30\/fed-8",
+            "count": "2",
+            "parameter_value": "8"
+          }
+        ],
+        "do_nofollow": true
+      },
+      "job-type": {
+        "canonical_name": "job-type",
+        "get_parameter": "fjt",
+        "filter_label_string": "Job Type",
+        "reset_filter_value": null,
+        "selected_filter_value": null,
+        "filter_values_array": [
+          {
+            "value_label_string": "Full-time",
+            "is_selected": false,
+            "url_path": "\/a\/jobs\/list\/q-cook\/l-94043\/mi-10\/fdb-30\/fjt-full-time",
+            "count": "61",
+            "parameter_value": "full-time"
+          },
+          {
+            "value_label_string": "Part-time",
+            "is_selected": false,
+            "url_path": "\/a\/jobs\/list\/q-cook\/l-94043\/mi-10\/fdb-30\/fjt-part-time",
+            "count": "18",
+            "parameter_value": "part-time"
+          },
+          {
+            "value_label_string": "Contract",
+            "is_selected": false,
+            "url_path": "\/a\/jobs\/list\/q-cook\/l-94043\/mi-10\/fdb-30\/fjt-contract",
+            "count": "5",
+            "parameter_value": "contract"
+          },
+          {
+            "value_label_string": "Telecommute",
+            "is_selected": false,
+            "url_path": "\/a\/jobs\/list\/q-cook\/l-94043\/mi-10\/fdb-30\/fjt-telecommute",
+            "count": "4",
+            "parameter_value": "telecommute"
+          },
+          {
+            "value_label_string": "Temporary",
+            "is_selected": false,
+            "url_path": "\/a\/jobs\/list\/q-cook\/l-94043\/mi-10\/fdb-30\/fjt-temporary",
+            "count": "1",
+            "parameter_value": "temporary"
+          },
+          {
+            "value_label_string": "Permanent",
+            "is_selected": false,
+            "url_path": "\/a\/jobs\/list\/q-cook\/l-94043\/mi-10\/fdb-30\/fjt-permanent",
+            "count": "1",
+            "parameter_value": "permanent"
+          }
+        ],
+        "do_nofollow": true
+      },
+      "normalized-company": {
+        "canonical_name": "normalized-company",
+        "get_parameter": "fcn",
+        "filter_label_string": "Company",
+        "reset_filter_value": null,
+        "selected_filter_value": null,
+        "filter_values_array": [
+          {
+            "value_label_string": "Cybercoders",
+            "is_selected": false,
+            "url_path": "\/a\/jobs\/list\/q-cook\/l-94043\/mi-10\/fdb-30\/fcn-Cybercoders",
+            "count": "27",
+            "parameter_value": "Cybercoders"
+          },
+          {
+            "value_label_string": "CROSSMARK",
+            "is_selected": false,
+            "url_path": "\/a\/jobs\/list\/q-cook\/l-94043\/mi-10\/fdb-30\/fcn-CROSSMARK",
+            "count": "24",
+            "parameter_value": "CROSSMARK"
+          },
+          {
+            "value_label_string": "Stanford University",
+            "is_selected": false,
+            "url_path": "\/a\/jobs\/list\/q-cook\/l-94043\/mi-10\/fdb-30\/fcn-Stanford+University",
+            "count": "15",
+            "parameter_value": "Stanford University"
+          },
+          {
+            "value_label_string": "Boston Market",
+            "is_selected": false,
+            "url_path": "\/a\/jobs\/list\/q-cook\/l-94043\/mi-10\/fdb-30\/fcn-Boston+Market",
+            "count": "12",
+            "parameter_value": "Boston Market"
+          },
+          {
+            "value_label_string": "Marriott",
+            "is_selected": false,
+            "url_path": "\/a\/jobs\/list\/q-cook\/l-94043\/mi-10\/fdb-30\/fcn-Marriott",
+            "count": "10",
+            "parameter_value": "Marriott"
+          },
+          {
+            "value_label_string": "Vmware",
+            "is_selected": false,
+            "url_path": "\/a\/jobs\/list\/q-cook\/l-94043\/mi-10\/fdb-30\/fcn-Vmware",
+            "count": "9",
+            "parameter_value": "Vmware"
+          },
+          {
+            "value_label_string": "Whole Foods Market",
+            "is_selected": false,
+            "url_path": "\/a\/jobs\/list\/q-cook\/l-94043\/mi-10\/fdb-30\/fcn-Whole+Foods+Market",
+            "count": "9",
+            "parameter_value": "Whole Foods Market"
+          },
+          {
+            "value_label_string": "Guckenheimer",
+            "is_selected": false,
+            "url_path": "\/a\/jobs\/list\/q-cook\/l-94043\/mi-10\/fdb-30\/fcn-Guckenheimer",
+            "count": "8",
+            "parameter_value": "Guckenheimer"
+          },
+          {
+            "value_label_string": "Bon Appetit Mgmt Co",
+            "is_selected": false,
+            "url_path": "\/a\/jobs\/list\/q-cook\/l-94043\/mi-10\/fdb-30\/fcn-Bon+Appetit+Mgmt+Co",
+            "count": "6",
+            "parameter_value": "Bon Appetit Mgmt Co"
+          }
+        ],
+        "do_nofollow": true
+      },
+      "employer-type": {
+        "canonical_name": "employer-type",
+        "get_parameter": "fem",
+        "filter_label_string": "Recruiters",
+        "reset_filter_value": null,
+        "selected_filter_value": {
+          "value_label_string": "",
+          "is_selected": true,
+          "url_path": "\/a\/jobs\/list\/q-cook\/l-94043\/mi-10\/fdb-30",
+          "count": "0",
+          "parameter_value": ""
+        },
+        "filter_values_array": [
+          {
+            "value_label_string": "Exclude Recruiters",
+            "is_selected": false,
+            "url_path": "\/a\/jobs\/list\/q-cook\/l-94043\/mi-10\/fdb-30\/fem-employer",
+            "count": "341",
+            "parameter_value": "employer"
+          },
+          {
+            "value_label_string": "Recruiters Only",
+            "is_selected": false,
+            "url_path": "\/a\/jobs\/list\/q-cook\/l-94043\/mi-10\/fdb-30\/fem-recruiter",
+            "count": "28",
+            "parameter_value": "recruiter"
+          },
+          {
+            "value_label_string": "",
+            "is_selected": true,
+            "url_path": "\/a\/jobs\/list\/q-cook\/l-94043\/mi-10\/fdb-30",
+            "count": "0",
+            "parameter_value": ""
+          }
+        ],
+        "do_nofollow": true
+      },
+      "date-posted": {
+        "canonical_name": "date-posted",
+        "get_parameter": "fdb",
+        "filter_label_string": "Date Posted",
+        "reset_filter_value": {
+          "value_label_string": null,
+          "is_selected": false,
+          "url_path": "\/a\/jobs\/list\/q-cook\/l-94043\/mi-10",
+          "parameter_value": null
+        },
+        "selected_filter_value": {
+          "value_label_string": "Last 30 days",
+          "is_selected": true,
+          "url_path": "\/a\/jobs\/list\/q-cook\/l-94043\/mi-10\/fdb-30",
+          "parameter_value": 30
+        },
+        "filter_values_array": [
+          {
+            "value_label_string": "Since last visit",
+            "is_selected": false,
+            "url_path": "\/a\/jobs\/list\/q-cook\/l-94043\/mi-10\/fdb-lv",
+            "parameter_value": "lv"
+          },
+          {
+            "value_label_string": "Last 24 hours",
+            "is_selected": false,
+            "url_path": "\/a\/jobs\/list\/q-cook\/l-94043\/mi-10\/fdb-1",
+            "parameter_value": 1
+          },
+          {
+            "value_label_string": "Last 7 days",
+            "is_selected": false,
+            "url_path": "\/a\/jobs\/list\/q-cook\/l-94043\/mi-10\/fdb-7",
+            "parameter_value": 7
+          },
+          {
+            "value_label_string": "Last 14 days",
+            "is_selected": false,
+            "url_path": "\/a\/jobs\/list\/q-cook\/l-94043\/mi-10\/fdb-14",
+            "parameter_value": 14
+          },
+          {
+            "value_label_string": "Last 30 days",
+            "is_selected": true,
+            "url_path": "\/a\/jobs\/list\/q-cook\/l-94043\/mi-10\/fdb-30",
+            "parameter_value": 30
+          }
+        ],
+        "do_nofollow": true
+      },
+      "has-salary-info": {
+        "canonical_name": "has-salary-info",
+        "get_parameter": "fhc",
+        "filter_label_string": "Has Salary Info",
+        "reset_filter_value": null,
+        "selected_filter_value": null,
+        "filter_values_array": [
+          {
+            "value_label_string": "has salary info",
+            "is_selected": false,
+            "url_path": "\/a\/jobs\/list\/q-cook\/l-94043\/mi-10\/fdb-30\/fhc-y",
+            "parameter_value": "y"
+          }
+        ],
+        "do_nofollow": true
+      },
+      "meta-attribute": {
+        "canonical_name": "meta-attribute",
+        "get_parameter": "",
+        "filter_label_string": "",
+        "reset_filter_value": null,
+        "selected_filter_value": null,
+        "filter_values_array": [
+          {
+            "value_label_string": "6FigureJobs",
+            "is_selected": false,
+            "url_path": "\/a\/jobs\/list\/q-cook\/l-94043\/mi-10\/fdb-30\/-sixfigure",
+            "parameter_value": "sixfigure"
+          }
+        ],
+        "do_nofollow": true
+      },
+      "miles-radius": {
+        "canonical_name": "miles-radius",
+        "get_parameter": "mi",
+        "filter_label_string": "Distance",
+        "reset_filter_value": {
+          "value_label_string": null,
+          "is_selected": false,
+          "url_path": "\/a\/jobs\/list\/q-cook\/l-94043\/fdb-30",
+          "parameter_value": null
+        },
+        "selected_filter_value": {
+          "value_label_string": "Within 10 miles",
+          "is_selected": true,
+          "url_path": "\/a\/jobs\/list\/q-cook\/l-94043\/mi-10\/fdb-30",
+          "parameter_value": 10
+        },
+        "filter_values_array": [
+          {
+            "value_label_string": "Exact location",
+            "is_selected": false,
+            "url_path": "\/a\/jobs\/list\/q-cook\/l-94043\/mi-exact\/fdb-30",
+            "parameter_value": "exact"
+          },
+          {
+            "value_label_string": "Within 5 miles",
+            "is_selected": false,
+            "url_path": "\/a\/jobs\/list\/q-cook\/l-94043\/mi-5\/fdb-30",
+            "parameter_value": 5
+          },
+          {
+            "value_label_string": "Within 10 miles",
+            "is_selected": true,
+            "url_path": "\/a\/jobs\/list\/q-cook\/l-94043\/mi-10\/fdb-30",
+            "parameter_value": 10
+          },
+          {
+            "value_label_string": "Within 15 miles",
+            "is_selected": false,
+            "url_path": "\/a\/jobs\/list\/q-cook\/l-94043\/mi-15\/fdb-30",
+            "parameter_value": 15
+          },
+          {
+            "value_label_string": "Within 25 miles",
+            "is_selected": false,
+            "url_path": "\/a\/jobs\/list\/q-cook\/l-94043\/fdb-30",
+            "parameter_value": 25
+          },
+          {
+            "value_label_string": "Within 50 miles",
+            "is_selected": false,
+            "url_path": "\/a\/jobs\/list\/q-cook\/l-94043\/mi-50\/fdb-30",
+            "parameter_value": 50
+          },
+          {
+            "value_label_string": "Within 100 miles",
+            "is_selected": false,
+            "url_path": "\/a\/jobs\/list\/q-cook\/l-94043\/mi-100\/fdb-30",
+            "parameter_value": 100
+          }
+        ],
+        "do_nofollow": true
+      },
+      "kilometers-radius": {
+        "canonical_name": "kilometers-radius",
+        "get_parameter": "",
+        "filter_label_string": "",
+        "reset_filter_value": null,
+        "selected_filter_value": null,
+        "filter_values_array": [
+          {
+            "value_label_string": "exact",
+            "is_selected": false,
+            "url_path": "\/a\/jobs\/list\/q-cook\/l-94043\/mi-10\/fdb-30\/-exact",
+            "parameter_value": "exact"
+          },
+          {
+            "value_label_string": "within 5 km",
+            "is_selected": false,
+            "url_path": "\/a\/jobs\/list\/q-cook\/l-94043\/mi-10\/fdb-30\/-5",
+            "parameter_value": 5
+          },
+          {
+            "value_label_string": "within 10 km",
+            "is_selected": false,
+            "url_path": "\/a\/jobs\/list\/q-cook\/l-94043\/mi-10\/fdb-30\/-10",
+            "parameter_value": 10
+          },
+          {
+            "value_label_string": "within 15 km",
+            "is_selected": false,
+            "url_path": "\/a\/jobs\/list\/q-cook\/l-94043\/mi-10\/fdb-30\/-15",
+            "parameter_value": 15
+          },
+          {
+            "value_label_string": "within 25 km",
+            "is_selected": false,
+            "url_path": "\/a\/jobs\/list\/q-cook\/l-94043\/mi-10\/fdb-30\/-25",
+            "parameter_value": 25
+          },
+          {
+            "value_label_string": "within 50 km",
+            "is_selected": false,
+            "url_path": "\/a\/jobs\/list\/q-cook\/l-94043\/mi-10\/fdb-30\/-50",
+            "parameter_value": 50
+          },
+          {
+            "value_label_string": "within 100 km",
+            "is_selected": false,
+            "url_path": "\/a\/jobs\/list\/q-cook\/l-94043\/mi-10\/fdb-30\/-100",
+            "parameter_value": 100
+          }
+        ],
+        "do_nofollow": true
+      },
+      "window-size": {
+        "canonical_name": "window-size",
+        "get_parameter": "ws",
+        "filter_label_string": "Number per Page",
+        "reset_filter_value": null,
+        "selected_filter_value": {
+          "value_label_string": "10 results",
+          "is_selected": true,
+          "url_path": "\/a\/jobs\/list\/q-cook\/l-94043\/mi-10\/fdb-30",
+          "parameter_value": 10
+        },
+        "filter_values_array": [
+          {
+            "value_label_string": "10 results",
+            "is_selected": true,
+            "url_path": "\/a\/jobs\/list\/q-cook\/l-94043\/mi-10\/fdb-30",
+            "parameter_value": 10
+          },
+          {
+            "value_label_string": "15 results",
+            "is_selected": false,
+            "url_path": "\/a\/jobs\/list\/q-cook\/l-94043\/mi-10\/fdb-30\/ws-15",
+            "parameter_value": 15
+          },
+          {
+            "value_label_string": "25 results",
+            "is_selected": false,
+            "url_path": "\/a\/jobs\/list\/q-cook\/l-94043\/mi-10\/fdb-30\/ws-25",
+            "parameter_value": 25
+          },
+          {
+            "value_label_string": "50 results",
+            "is_selected": false,
+            "url_path": "\/a\/jobs\/list\/q-cook\/l-94043\/mi-10\/fdb-30\/ws-50",
+            "parameter_value": 50
+          }
+        ],
+        "do_nofollow": true
+      }
+    },
+    "primary_applied_filters": [
+      {
+        "canonical_name": "miles-radius",
+        "reset_filter_value": {
+          "value_label_string": null,
+          "is_selected": false,
+          "url_path": "\/a\/jobs\/list\/q-cook\/l-94043\/fdb-30",
+          "parameter_value": null
+        },
+        "selected_filter_value": {
+          "value_label_string": "Within 10 miles",
+          "is_selected": true,
+          "url_path": "\/a\/jobs\/list\/q-cook\/l-94043\/mi-10\/fdb-30",
+          "parameter_value": 10
+        }
+      },
+      {
+        "canonical_name": "date-posted",
+        "reset_filter_value": {
+          "value_label_string": null,
+          "is_selected": false,
+          "url_path": "\/a\/jobs\/list\/q-cook\/l-94043\/mi-10",
+          "parameter_value": null
+        },
+        "selected_filter_value": {
+          "value_label_string": "Last 30 days",
+          "is_selected": true,
+          "url_path": "\/a\/jobs\/list\/q-cook\/l-94043\/mi-10\/fdb-30",
+          "parameter_value": 30
+        }
+      }
+    ],
+    "current_page": 1,
+    "current_page_first_hit_offset": 1,
+    "current_page_last_hit_offset": 10,
+    "total_primary_hits": 369,
+    "total_primary_pages": 37,
+    "next_page_link_text": "Next &gt;",
+    "next_page_link_url": "\/a\/jobs\/list\/q-cook\/l-94043\/mi-10\/fdb-30\/pn-2",
+    "next_page_numbered_links": {
+      "2": "\/a\/jobs\/list\/q-cook\/l-94043\/mi-10\/fdb-30\/pn-2",
+      "3": "\/a\/jobs\/list\/q-cook\/l-94043\/mi-10\/fdb-30\/pn-3",
+      "4": "\/a\/jobs\/list\/q-cook\/l-94043\/mi-10\/fdb-30\/pn-4",
+      "5": "\/a\/jobs\/list\/q-cook\/l-94043\/mi-10\/fdb-30\/pn-5",
+      "6": "\/a\/jobs\/list\/q-cook\/l-94043\/mi-10\/fdb-30\/pn-6",
+      "7": "\/a\/jobs\/list\/q-cook\/l-94043\/mi-10\/fdb-30\/pn-7",
+      "8": "\/a\/jobs\/list\/q-cook\/l-94043\/mi-10\/fdb-30\/pn-8",
+      "9": "\/a\/jobs\/list\/q-cook\/l-94043\/mi-10\/fdb-30\/pn-9",
+      "10": "\/a\/jobs\/list\/q-cook\/l-94043\/mi-10\/fdb-30\/pn-10"
+    },
+    "error_title": "Sorry, we didn't find anything matching your search query.",
+    "error_text": "<p>We searched for <strong>cook<\/strong> around <strong>94043<\/strong>.<\/p><p>With the filters <strong>Within 10 miles<\/strong>, <strong>Last 30 days<\/strong>.<\/p><p>If you'd like, you can <a href=\"\/a\/jobs\/list\/q-cook\/l-94043\">clear your filters<\/a> and redo the search.<\/p>",
+    "search_formatted_location": "Mountain View, CA 94043",
+    "search_location": "94043",
+    "page_title": "Cook Jobs - Mountain View, CA 94043",
+    "search_title": "cook jobs in Mountain View, CA 94043",
+    "meta_description": "Every Cook job in Mountain View, CA 94043 on the web. 369 jobs available. Recent Jobs: Sushi Chef\/Prep Chef, DevOps Engineer- Chef Puppet Beanstalkd Node.js AWS",
+    "meta_keywords": "cook jobs in Mountain View CA, job search engine, find jobs, careers, employment, job listings, Simply Hired, simple, hire",
+    "google_adsense_keywords": "cook jobs in Mountain View, CA 94043",
+    "search_data_for_counts": "{\"skw\":\"cook\",\"slc\":\"Mountain View, CA 94043\",\"src\":\"807\",\"spd\":\"1002\",\"utg\":\"none\"}",
+    "canonical_url": "http:\/\/www.simplyhired.com\/a\/jobs\/list\/q-cook\/l-mountain+view%2C+ca+94043",
+    "rss_url": "\/a\/job-feed\/rss\/q-cook\/l-94043\/mi-10",
+    "reset_filters_url": "\/a\/jobs\/list\/q-cook\/l-94043",
+    "search_tool_urls": {
+      "Cook Trends": "\/a\/jobtrends\/trend\/q-cook",
+      "Cook Salaries": "\/a\/salary\/search\/q-cook"
+    }
+  },
+  "user_data": {
+    "recent_searches": [
+      {
+        "search_name": "cook",
+        "search_url": "\/a\/jobs\/list\/q-cook"
+      },
+      {
+        "search_name": "myresume",
+        "search_url": "\/a\/jobs\/list\/q-myresume"
+      }
+    ],
+    "saved_jobs": [
+      
+    ],
+    "user_email": null
+  }
+}

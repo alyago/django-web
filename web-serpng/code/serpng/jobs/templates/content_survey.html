@@ -1,0 +1,18 @@
+{% load get_config %}
+{% load staticfiles %}
+      
+<div id='survey' class='survey'>
+  <span class='evti icon-survey-close-button js-icon-survey-close-button' data-event='serp_survey_dismiss'></span>
+  <span class='icon-survey-sh-icon'></span>
+  <div id='survey_text' class='survey-text'>
+    <div id='survey_question'>
+      {{ translations.survey_question_text }}
+      <span id='survey_yes' class='evti action-link' data-event='serp_survey_yes'>{{ translations.yes_text }}</span>
+      |
+      <span id='survey_no' class='evti action-link' data-event='serp_survey_no'>{{ translations.no_text }}</span>
+    </div>
+    <div id='survey_thanks' class='survey-thanks'>
+      {{ translations.survey_thank_you_text }}
+    </div>
+  </div>
+</div>

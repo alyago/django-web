@@ -1,0 +1,25 @@
+{% extends "resume-base.html" %}
+
+{% load i18n %}
+
+{% block page_head_title %}{% trans "Whoops" %}{% endblock %}
+{% block page_body_id %}500{% endblock %}
+{% block page_body_class %}500{% endblock %}
+
+{% block page_body_content %}
+
+{% include "resume-default-header.html" %}
+
+            
+<div id="sh_content" class="sh_content">
+
+<BR>
+Sorry, we have experienced a problem. Please <a href="http://www.simplyhired.com">click here</a> to continue.
+<BR>
+
+</div>
+
+
+{% include "resume-default-footer.html" %}
+
+{% endblock %}

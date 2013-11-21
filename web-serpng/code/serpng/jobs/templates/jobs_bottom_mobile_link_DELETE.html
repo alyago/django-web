@@ -1,0 +1,16 @@
+{% comment %} !!!!! Replaced by base/bottom_mobile_link.html !!!!! {% endcomment %}
+
+{% load absolute_http_url %}
+{% comment %}
+  If the requesting device is a mobile device, render link to mobile site.
+{% endcomment %}
+
+{% if request.is_supported_mobile_device %}
+  <div class="mobile-navigation">
+    <span>
+      {% with "/a/settings/mobile/"|add:request_query|add:"?m=1" as query_path %}
+        <a rel="nofollow" href="{% absolute_http_url query_path %}" %}>{{ translations.mobile_link_text }}</a>
+      {% endwith %}
+     </span>
+  </div>
+{% endif %}

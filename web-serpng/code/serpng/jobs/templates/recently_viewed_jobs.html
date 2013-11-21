@@ -1,0 +1,25 @@
+<div class="recently-viewed-jobs js-recently-viewed-jobs" style="display:none;">
+  <h2 class="heading">Jobs You've Viewed</h2>
+  <p class="recently-viewed-jobs-info js-recently-viewed-jobs-info" style="display: none;">
+    You have no recently viewed jobs.
+  </p>
+  
+  <div class="js-recently-viewed-jobs-listings" style="display: none;">
+    <ul></ul>
+  </div>
+
+  <div class="rv-controls js-recently-viewed-jobs-controls">
+    <span class="rv-pagination js-recently-viewed-jobs-pagination">
+      <span class="rv-next-page js-recently-viewed-jobs-next-page evti" data-event="recent_jobs_next">&gt;</span>
+      <span class="rv-prev-page js-recently-viewed-jobs-prev-page evti" data-event="recent_jobs_prev">&lt;</span>
+    </span>
+    <span class="rv-clear js-clear-recently-viewed-jobs evti" data-event="recent_jobs_clear">Clear</span>
+    <span class="js-clear-recently-viewed-jobs-tooltip" style="display: none;">Clear all recently viewed jobs</span>
+    <span class="rv-results-indicator-container">
+      <span class="rv-results-indicator js-recently-viewed-jobs-results-indicator"></span>
+    </span>
+  </div>
+
+  {# The following is used to interface with IE7's userData functionality, a fallback to local storage. #}
+  <input type="text" id="js-ie7-user-data-viewedJobs" class="ie7-user-data-viewedJobs" />
+</div>

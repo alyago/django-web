@@ -1,0 +1,22 @@
+{% load absolute_http_url %}
+
+{% with display_filters=result.filters.get_filters_for_display %}
+  <div class="filters">
+    {% if result.filters.has_any_applied_filters %}
+      <div class="reset_container">
+        <a class="reset evtc" data-event="filter_clear_all" href="{% absolute_http_url result.filters.get_reset_all_filters_url %}">
+          {{ translations.clear_all_filters_text }}
+        </a>
+      </div>
+    {% endif %}
+
+    <ul class="basic_filters">
+      {% include "content_left_filters_list.html" with filters=display_filters.basic_filters %}
+    </ul>
+
+    <div class="handle more_filters_container {{ display_filters.more_filters_state }}">
+      <a class="toggle"><span class="icon"></span>{{ translations.more_filters_text }}</a>
+      <ul class="more_filters"></ul>
+    </div>
+  </div><!--filters-->
+{% endwith %}

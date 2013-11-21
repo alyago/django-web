@@ -1,0 +1,14 @@
+{% load get_config %}
+{% spaceless %}
+{% if google_afs_container %}
+<div id="c_google_ads_top"
+		style="background-color: {% get_config 'GOOGLE_AFS_AD_PARAMS_TOP' 'colorBackground' %};">
+  <div id="google_ads_top" class="ads" style="height:0;"></div>
+</div>
+
+{% if current_country_code == 'ca' %}
+  <div class="divider"></div>
+{% endif %}
+
+{% endif %}
+{% endspaceless %}

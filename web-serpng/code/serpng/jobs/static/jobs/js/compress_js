@@ -1,0 +1,4 @@
+#!/bin/bash
+
+cat serp-og.js event-logging.js > serp-og-event-logging.js
+yuicompressor -o serp-og-event-logging-min.js serp-og-event-logging.js

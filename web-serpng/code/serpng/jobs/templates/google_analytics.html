@@ -1,0 +1,8 @@
+{% load get_config %}
+{% comment %}
+http://code.google.com/apis/analytics/docs/tracking/gaTrackingOverview.html
+This block should appear before the closing <body> tag.
+{% endcomment %}
+<script type="text/javascript">
+  var sh_pageTracker=null;var sh_pageAccount='{% get_config "GOOGLE_ANALYTICS_ACCOUNT" %}';
+</script>

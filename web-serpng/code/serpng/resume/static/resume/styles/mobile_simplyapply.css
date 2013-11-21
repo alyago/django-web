@@ -1,0 +1,61 @@
+body { font-family: Helvetica, Arial; }
+input[type=text] { margin-bottom: 3px !important; }
+ul { width: 99%; margin: 0 auto !important; }
+
+.left { float: left; }
+.right { float: right; }
+.confirmation { padding: 15px; }
+.error { color: red !important; font-weight: bold; }
+div.error { margin: 0 auto 10px; }
+
+h4 { padding: 2px 0; }
+.ui-title { color: #fff; }
+
+.title { padding: 5px 0; text-align: center; }
+.title {
+  background: black;
+  text-shadow: 0 0 0;
+}
+.title h4 {color:#fff;}
+
+.header { margin: 5px auto; }
+.header img { display: block; margin: 0 auto; padding: 5px 0; height: 30px; width: 163px; }
+
+.content > div { padding: 10px 10px 0; }
+.content div a { padding: 1px 3px; }
+.navbuttons { padding: 25px 0; }
+
+#preview { margin: 0 auto; padding:20px 0; width: 90%;}
+#preview ul, #preview li { padding-left: 15px; }
+#preview li { padding-bottom: 2px; }
+#preview .sheet { background: #fff; padding: 15px 25px; }
+#preview .sheet .header { margin: 0 auto; background: InfoBackground; text-align: center; padding: 10px; }
+#preview .sheet .section { border-top: 1px solid #ddd; padding: 10px 0 20px; }
+#preview .headline { text-align: center; }
+#preview .job-title, #preview .employer { font-weight: bold; }
+#preview_resume, #edit_resume { padding: 0; width: 49%; display: inline-block; }
+#edit_resume { text-align: right; }
+
+.no-resume ul { list-style: disc inside; }
+
+form .ui-btn-up-b, .navbuttons .ui-btn-up-b {
+   background-image: -moz-linear-gradient(top, #ff9900, #ff6600);
+   background-image: -webkit-gradient(linear,left top,left bottom,
+       color-stop(0,       #ff9900),
+       color-stop(1,       #ff6600));
+   -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#ff9900', EndColorStr='#ff6600')";
+}
+
+form .ui-btn-active, .navbuttons .ui-btn-active, form .ui-btn-hover-b, .navbuttons .ui-btn-hover-b {
+    color:            white;
+    background:       #f60;
+    background-image: none;
+}
+
+form .ui-radio-on .ui-icon, form .ui-checkbox-on .ui-icon {
+    background-color: #f60;
+}
+
+.ui-bar-b[role="banner"] {
+    background:black;
+}

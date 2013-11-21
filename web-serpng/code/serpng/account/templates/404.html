@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% load compressed %}
+
+{% block css %}
+  {% compressed_css 'base' %}
+{% endblock %}
+
+{% block content %}
+  <div class="span6">
+    <h4>Toto, I don't think we're in Kansas anymore!</h4>
+    <p>Greetings, Dear User. We believe you might have taken a wrong exit off of
+the Information Superhighway. Either that, or you've reached a link that's
+Simply Broken right now.</p>
+
+    <p>The "Back" button is your friend. Or if you want to head back to Kansas, click your heels together three times and then click <a href="/a/jobs/list/l-Kansas">here</a>.</p>
+  </div>
+{% endblock %}

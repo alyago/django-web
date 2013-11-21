@@ -1,0 +1,93 @@
+@import "sh_colors";
+
+@mixin button($color:null,
+              $bgcolor:null,
+              $active-color:null,
+              $active-bgcolor:null,
+              $disabled-color:null,
+              $disabled-bgcolor:null)
+{
+  $color:white !default;
+  $bgcolor:$sh-grey !default;
+  $active-color:lighten($color, 75%) !default;
+  $active-bgcolor:darken($bgcolor, 10%) !default;
+  $disabled-color:#999 !default;
+  $disabled-bgcolor:$bgcolor !default;
+
+  -moz-box-sizing:border-box;
+  background-color:$bgcolor;
+  border:none;
+  border-radius:2px;
+  box-sizing:border-box;
+  color:$color;
+  display:inline-block;
+  font-size:12px;
+  height:30px;
+  line-height:23px;
+  padding:4px 10px;
+  text-align:center;
+
+  // Override Bootstrap styles
+  //
+  -webkit-box-shadow:none;
+  background-image:none;
+  box-shadow:none;
+  text-shadow:none;
+
+  &:active, &:hover {
+    background-color:$active-bgcolor;
+    color:$active-color;
+  }
+
+  &:disabled {
+    background-color:$disabled-bgcolor;
+    color:$disabled-color;
+  }
+}
+
+@mixin button-mini($color:null,
+                   $bgcolor:null,
+                   $active-color:null,
+                   $active-bgcolor:null,
+                   $disabled-color:null,
+                   $disabled-bgcolor:null)
+{
+  @include button($color,
+                  $bgcolor,
+                  $active-color,
+                  $active-bgcolor,
+                  $disabled-color,
+                  $disabled-bgcolor);
+
+  font-size:11px;
+  height:21px;
+  line-height:10px;
+  margin-top:-3px;
+  padding:4px 10px;
+}
+
+.btn {
+  @include button($bgcolor:$sh-grey,
+                  $active-bgcolor:$sh-dark-grey);
+}
+
+.btn-mini {
+  @include button-mini($bgcolor:$sh-grey,
+                       $active-bgcolor:$sh-dark-grey);
+}
+
+.btn-blue {
+  @include button($bgcolor:#0077b5);
+}
+
+.btn-orange {
+  @include button($bgcolor:$sh-light-orange,
+                  $active-bgcolor:$sh-dark-orange,
+                  $disabled-color:white,
+                  $disabled-bgcolor:$sh-light-grey);
+}
+
+.btn-dark-grey {
+  @include button($bgcolor:$sh-dark-grey,
+                  $active-bgcolor:black);
+}

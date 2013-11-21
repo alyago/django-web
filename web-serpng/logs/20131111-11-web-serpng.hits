@@ -1,0 +1,304 @@
+ERROR 2013-11-11 19:34:46,642 middleware 11282 139855420839680 Uncaught exception: Could not parse the remainder: '('?')' from 'emp.order_by('?')'
+Traceback (most recent call last):
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/core/handlers/base.py", line 115, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "/home/oleg/code/web-serpng/code/serpng/employer_pages/views/directory.py", line 38, in directory
+    'us_states_list': us_states_list,
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/shortcuts/__init__.py", line 53, in render
+    return HttpResponse(loader.render_to_string(*args, **kwargs),
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 170, in render_to_string
+    t = get_template(template_name)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 146, in get_template
+    template, origin = find_template(template_name)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 135, in find_template
+    source, display_name = loader(name, dirs)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 43, in __call__
+    return self.load_template(template_name, template_dirs)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 49, in load_template
+    template = get_template_from_string(source, origin, template_name)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 157, in get_template_from_string
+    return Template(source, origin, name)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/base.py", line 125, in __init__
+    self.nodelist = compile_string(template_string, origin)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/base.py", line 153, in compile_string
+    return parser.parse()
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/base.py", line 274, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader_tags.py", line 215, in do_extends
+    nodelist = parser.parse()
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/base.py", line 274, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader_tags.py", line 190, in do_block
+    nodelist = parser.parse(('endblock',))
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/base.py", line 274, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader_tags.py", line 263, in do_include
+    isolated_context=isolated_context)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader_tags.py", line 146, in __init__
+    t = get_template(template_path)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 146, in get_template
+    template, origin = find_template(template_name)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 135, in find_template
+    source, display_name = loader(name, dirs)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 43, in __call__
+    return self.load_template(template_name, template_dirs)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 49, in load_template
+    template = get_template_from_string(source, origin, template_name)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 157, in get_template_from_string
+    return Template(source, origin, name)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/base.py", line 125, in __init__
+    self.nodelist = compile_string(template_string, origin)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/base.py", line 153, in compile_string
+    return parser.parse()
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/base.py", line 274, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/defaulttags.py", line 767, in do_for
+    nodelist_loop = parser.parse(('empty', 'endfor',))
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/base.py", line 274, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/defaulttags.py", line 917, in do_if
+    nodelist = parser.parse(('endif',))
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/base.py", line 253, in parse
+    filter_expression = self.compile_filter(token.contents)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/base.py", line 353, in compile_filter
+    return FilterExpression(token, self)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/base.py", line 570, in __init__
+    "from '%s'" % (token[upto:], token))
+TemplateSyntaxError: Could not parse the remainder: '('?')' from 'emp.order_by('?')'
+ERROR 2013-11-11 19:34:54,256 middleware 11282 139855420839680 Uncaught exception: Could not parse the remainder: '('?')' from 'emp.order_by('?')'
+Traceback (most recent call last):
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/core/handlers/base.py", line 115, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "/home/oleg/code/web-serpng/code/serpng/employer_pages/views/directory.py", line 38, in directory
+    'us_states_list': us_states_list,
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/shortcuts/__init__.py", line 53, in render
+    return HttpResponse(loader.render_to_string(*args, **kwargs),
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 170, in render_to_string
+    t = get_template(template_name)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 146, in get_template
+    template, origin = find_template(template_name)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 135, in find_template
+    source, display_name = loader(name, dirs)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 43, in __call__
+    return self.load_template(template_name, template_dirs)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 49, in load_template
+    template = get_template_from_string(source, origin, template_name)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 157, in get_template_from_string
+    return Template(source, origin, name)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/base.py", line 125, in __init__
+    self.nodelist = compile_string(template_string, origin)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/base.py", line 153, in compile_string
+    return parser.parse()
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/base.py", line 274, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader_tags.py", line 215, in do_extends
+    nodelist = parser.parse()
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/base.py", line 274, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader_tags.py", line 190, in do_block
+    nodelist = parser.parse(('endblock',))
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/base.py", line 274, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader_tags.py", line 263, in do_include
+    isolated_context=isolated_context)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader_tags.py", line 146, in __init__
+    t = get_template(template_path)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 146, in get_template
+    template, origin = find_template(template_name)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 135, in find_template
+    source, display_name = loader(name, dirs)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 43, in __call__
+    return self.load_template(template_name, template_dirs)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 49, in load_template
+    template = get_template_from_string(source, origin, template_name)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 157, in get_template_from_string
+    return Template(source, origin, name)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/base.py", line 125, in __init__
+    self.nodelist = compile_string(template_string, origin)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/base.py", line 153, in compile_string
+    return parser.parse()
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/base.py", line 274, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/defaulttags.py", line 767, in do_for
+    nodelist_loop = parser.parse(('empty', 'endfor',))
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/base.py", line 274, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/defaulttags.py", line 917, in do_if
+    nodelist = parser.parse(('endif',))
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/base.py", line 253, in parse
+    filter_expression = self.compile_filter(token.contents)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/base.py", line 353, in compile_filter
+    return FilterExpression(token, self)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/base.py", line 570, in __init__
+    "from '%s'" % (token[upto:], token))
+TemplateSyntaxError: Could not parse the remainder: '('?')' from 'emp.order_by('?')'
+WARNING 2013-11-11 19:47:42,856 jobs 11282 139855461771008 Error in google adsense handler: src
+WARNING 2013-11-11 19:47:52,438 jobs 11282 139855208118016 Error in google adsense handler: src
+WARNING 2013-11-11 19:48:02,349 jobs 12024 140004236883744 Error in google adsense handler: src
+WARNING 2013-11-11 19:48:03,352 jobs 12024 140004236883744 Error in google adsense handler: src
+WARNING 2013-11-11 19:48:03,969 jobs 12024 140004236883744 Error in google adsense handler: src
+WARNING 2013-11-11 19:48:04,556 jobs 12024 140004236883744 Error in google adsense handler: src
+WARNING 2013-11-11 19:48:05,236 jobs 12024 140004236883744 Error in google adsense handler: src
+WARNING 2013-11-11 19:48:05,713 jobs 12024 140004236883744 Error in obtaining search results: Bad results from searcher
+WARNING 2013-11-11 19:48:05,714 jobs 12024 140004236883744 Error in google adsense handler: src
+WARNING 2013-11-11 19:48:06,024 jobs 12024 140004236883744 Error in google adsense handler: src
+WARNING 2013-11-11 19:48:06,588 jobs 12024 140004236883744 Error in google adsense handler: src
+WARNING 2013-11-11 19:48:07,226 jobs 12024 140004236883744 Error in google adsense handler: src
+WARNING 2013-11-11 19:48:07,773 jobs 12024 140004236883744 Error in google adsense handler: src
+WARNING 2013-11-11 19:48:08,426 jobs 12024 140004236883744 Error in google adsense handler: src
+WARNING 2013-11-11 19:48:08,994 jobs 12024 140004236883744 Error in google adsense handler: src
+WARNING 2013-11-11 19:48:09,593 jobs 12024 140004236883744 Error in google adsense handler: src
+WARNING 2013-11-11 19:48:10,248 jobs 12024 140004236883744 Error in google adsense handler: src
+WARNING 2013-11-11 19:48:10,831 jobs 12024 140004236883744 Error in google adsense handler: src
+WARNING 2013-11-11 19:48:11,522 jobs 12024 140004236883744 Error in google adsense handler: src
+WARNING 2013-11-11 19:48:12,109 jobs 12024 140004236883744 Error in google adsense handler: src
+ERROR 2013-11-11 19:48:12,889 speed_logging_utils 12024 140004236883744 browser speed log HTTP request keys missing from JSON object
+None
+ERROR 2013-11-11 19:48:13,194 speed_logging_utils 12024 140004236883744 browser speed log HTTP request keys missing from JSON object
+None
+ERROR 2013-11-11 19:48:13,303 speed_logging_utils 12024 140004236883744 browser speed log HTTP request JSON parse failed
+Traceback (most recent call last):
+  File "/home/oleg/code/web-serpng/code/serpng/../serpng/lib/speed_logging_utils.py", line 93, in read_browser_speed_data
+    speed_data = json.loads(request.body)
+  File "/usr/lib64/python2.7/json/__init__.py", line 326, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib64/python2.7/json/decoder.py", line 360, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib64/python2.7/json/decoder.py", line 378, in raw_decode
+    raise ValueError("No JSON object could be decoded")
+ValueError: No JSON object could be decoded
+ERROR 2013-11-11 19:48:13,489 speed_logging_utils 12024 140004236883744 unable to retrieve timestamp from request object for speed logging (django_begins)
+Traceback (most recent call last):
+  File "/home/oleg/code/web-serpng/code/serpng/../serpng/lib/speed_logging_utils.py", line 35, in read
+    value = request.speed[name]
+AttributeError: 'Request' object has no attribute 'speed'
+ERROR 2013-11-11 19:48:13,625 speed_logging_utils 12024 140004236883744 unable to retrieve timestamp from request object for speed logging (php_bridge_begins)
+Traceback (most recent call last):
+  File "/home/oleg/code/web-serpng/code/serpng/../serpng/lib/speed_logging_utils.py", line 35, in read
+    value = request.speed[name]
+AttributeError: 'Request' object has no attribute 'speed'
+ERROR 2013-11-11 19:48:13,758 speed_logging_utils 12024 140004236883744 unable to retrieve timestamp from request object for speed logging (django_begins)
+Traceback (most recent call last):
+  File "/home/oleg/code/web-serpng/code/serpng/../serpng/lib/speed_logging_utils.py", line 35, in read
+    value = request.speed[name]
+KeyError: 'django_begins'
+ERROR 2013-11-11 19:48:13,890 speed_logging_utils 12024 140004236883744 unable to retrieve timestamp from request object for speed logging (php_bridge_begins)
+Traceback (most recent call last):
+  File "/home/oleg/code/web-serpng/code/serpng/../serpng/lib/speed_logging_utils.py", line 35, in read
+    value = request.speed[name]
+KeyError: 'php_bridge_begins'
+ERROR 2013-11-11 19:48:14,014 speed_logging_utils 12024 140004236883744 unable to retrieve timestamp from request object for speed logging (django_begins)
+Traceback (most recent call last):
+  File "/home/oleg/code/web-serpng/code/serpng/../serpng/lib/speed_logging_utils.py", line 35, in read
+    value = request.speed[name]
+AttributeError: 'Request' object has no attribute 'speed'
+ERROR 2013-11-11 19:48:14,153 speed_logging_utils 12024 140004236883744 unable to retrieve timestamp from request object for speed logging (django_ends)
+Traceback (most recent call last):
+  File "/home/oleg/code/web-serpng/code/serpng/../serpng/lib/speed_logging_utils.py", line 35, in read
+    value = request.speed[name]
+AttributeError: 'Request' object has no attribute 'speed'
+ERROR 2013-11-11 19:48:14,285 speed_logging_utils 12024 140004236883744 unable to retrieve timestamp from request object for speed logging (php_bridge_begins)
+Traceback (most recent call last):
+  File "/home/oleg/code/web-serpng/code/serpng/../serpng/lib/speed_logging_utils.py", line 35, in read
+    value = request.speed[name]
+AttributeError: 'Request' object has no attribute 'speed'
+ERROR 2013-11-11 19:48:14,416 speed_logging_utils 12024 140004236883744 unable to retrieve timestamp from request object for speed logging (php_bridge_ends)
+Traceback (most recent call last):
+  File "/home/oleg/code/web-serpng/code/serpng/../serpng/lib/speed_logging_utils.py", line 35, in read
+    value = request.speed[name]
+AttributeError: 'Request' object has no attribute 'speed'
+ERROR 2013-11-11 19:48:14,550 speed_logging_utils 12024 140004236883744 unable to retrieve timestamp from request object for speed logging (php_bridge_begins)
+Traceback (most recent call last):
+  File "/home/oleg/code/web-serpng/code/serpng/../serpng/lib/speed_logging_utils.py", line 35, in read
+    value = request.speed[name]
+KeyError: 'php_bridge_begins'
+ERROR 2013-11-11 19:48:14,677 speed_logging_utils 12024 140004236883744 unable to retrieve timestamp from request object for speed logging (php_bridge_ends)
+Traceback (most recent call last):
+  File "/home/oleg/code/web-serpng/code/serpng/../serpng/lib/speed_logging_utils.py", line 35, in read
+    value = request.speed[name]
+KeyError: 'php_bridge_ends'
+WARNING 2013-11-11 19:49:13,019 jobs 11282 139855199725312 Error in google adsense handler: src
+WARNING 2013-11-11 19:49:22,689 jobs 11282 139855461771008 Error in google adsense handler: src
+WARNING 2013-11-11 19:49:31,404 jobs 12422 140123860129568 Error in google adsense handler: src
+WARNING 2013-11-11 19:49:32,091 jobs 12422 140123860129568 Error in google adsense handler: src
+WARNING 2013-11-11 19:49:32,718 jobs 12422 140123860129568 Error in google adsense handler: src
+WARNING 2013-11-11 19:49:33,290 jobs 12422 140123860129568 Error in google adsense handler: src
+WARNING 2013-11-11 19:49:33,968 jobs 12422 140123860129568 Error in google adsense handler: src
+WARNING 2013-11-11 19:49:34,453 jobs 12422 140123860129568 Error in obtaining search results: Bad results from searcher
+WARNING 2013-11-11 19:49:34,454 jobs 12422 140123860129568 Error in google adsense handler: src
+WARNING 2013-11-11 19:49:34,744 jobs 12422 140123860129568 Error in google adsense handler: src
+WARNING 2013-11-11 19:49:35,285 jobs 12422 140123860129568 Error in google adsense handler: src
+WARNING 2013-11-11 19:49:35,927 jobs 12422 140123860129568 Error in google adsense handler: src
+WARNING 2013-11-11 19:49:36,478 jobs 12422 140123860129568 Error in google adsense handler: src
+WARNING 2013-11-11 19:49:37,123 jobs 12422 140123860129568 Error in google adsense handler: src
+WARNING 2013-11-11 19:49:37,679 jobs 12422 140123860129568 Error in google adsense handler: src
+WARNING 2013-11-11 19:49:38,282 jobs 12422 140123860129568 Error in google adsense handler: src
+WARNING 2013-11-11 19:49:38,931 jobs 12422 140123860129568 Error in google adsense handler: src
+WARNING 2013-11-11 19:49:39,526 jobs 12422 140123860129568 Error in google adsense handler: src
+WARNING 2013-11-11 19:49:40,185 jobs 12422 140123860129568 Error in google adsense handler: src
+WARNING 2013-11-11 19:49:40,766 jobs 12422 140123860129568 Error in google adsense handler: src
+ERROR 2013-11-11 19:49:41,477 speed_logging_utils 12422 140123860129568 browser speed log HTTP request keys missing from JSON object
+None
+ERROR 2013-11-11 19:49:41,783 speed_logging_utils 12422 140123860129568 browser speed log HTTP request keys missing from JSON object
+None
+ERROR 2013-11-11 19:49:41,893 speed_logging_utils 12422 140123860129568 browser speed log HTTP request JSON parse failed
+Traceback (most recent call last):
+  File "/home/oleg/code/web-serpng/code/serpng/../serpng/lib/speed_logging_utils.py", line 93, in read_browser_speed_data
+    speed_data = json.loads(request.body)
+  File "/usr/lib64/python2.7/json/__init__.py", line 326, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib64/python2.7/json/decoder.py", line 360, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib64/python2.7/json/decoder.py", line 378, in raw_decode
+    raise ValueError("No JSON object could be decoded")
+ValueError: No JSON object could be decoded
+ERROR 2013-11-11 19:49:42,070 speed_logging_utils 12422 140123860129568 unable to retrieve timestamp from request object for speed logging (django_begins)
+Traceback (most recent call last):
+  File "/home/oleg/code/web-serpng/code/serpng/../serpng/lib/speed_logging_utils.py", line 35, in read
+    value = request.speed[name]
+AttributeError: 'Request' object has no attribute 'speed'
+ERROR 2013-11-11 19:49:42,203 speed_logging_utils 12422 140123860129568 unable to retrieve timestamp from request object for speed logging (php_bridge_begins)
+Traceback (most recent call last):
+  File "/home/oleg/code/web-serpng/code/serpng/../serpng/lib/speed_logging_utils.py", line 35, in read
+    value = request.speed[name]
+AttributeError: 'Request' object has no attribute 'speed'
+ERROR 2013-11-11 19:49:42,336 speed_logging_utils 12422 140123860129568 unable to retrieve timestamp from request object for speed logging (django_begins)
+Traceback (most recent call last):
+  File "/home/oleg/code/web-serpng/code/serpng/../serpng/lib/speed_logging_utils.py", line 35, in read
+    value = request.speed[name]
+KeyError: 'django_begins'
+ERROR 2013-11-11 19:49:42,464 speed_logging_utils 12422 140123860129568 unable to retrieve timestamp from request object for speed logging (php_bridge_begins)
+Traceback (most recent call last):
+  File "/home/oleg/code/web-serpng/code/serpng/../serpng/lib/speed_logging_utils.py", line 35, in read
+    value = request.speed[name]
+KeyError: 'php_bridge_begins'
+ERROR 2013-11-11 19:49:42,590 speed_logging_utils 12422 140123860129568 unable to retrieve timestamp from request object for speed logging (django_begins)
+Traceback (most recent call last):
+  File "/home/oleg/code/web-serpng/code/serpng/../serpng/lib/speed_logging_utils.py", line 35, in read
+    value = request.speed[name]
+AttributeError: 'Request' object has no attribute 'speed'
+ERROR 2013-11-11 19:49:42,722 speed_logging_utils 12422 140123860129568 unable to retrieve timestamp from request object for speed logging (django_ends)
+Traceback (most recent call last):
+  File "/home/oleg/code/web-serpng/code/serpng/../serpng/lib/speed_logging_utils.py", line 35, in read
+    value = request.speed[name]
+AttributeError: 'Request' object has no attribute 'speed'
+ERROR 2013-11-11 19:49:42,853 speed_logging_utils 12422 140123860129568 unable to retrieve timestamp from request object for speed logging (php_bridge_begins)
+Traceback (most recent call last):
+  File "/home/oleg/code/web-serpng/code/serpng/../serpng/lib/speed_logging_utils.py", line 35, in read
+    value = request.speed[name]
+AttributeError: 'Request' object has no attribute 'speed'
+ERROR 2013-11-11 19:49:42,987 speed_logging_utils 12422 140123860129568 unable to retrieve timestamp from request object for speed logging (php_bridge_ends)
+Traceback (most recent call last):
+  File "/home/oleg/code/web-serpng/code/serpng/../serpng/lib/speed_logging_utils.py", line 35, in read
+    value = request.speed[name]
+AttributeError: 'Request' object has no attribute 'speed'
+ERROR 2013-11-11 19:49:43,119 speed_logging_utils 12422 140123860129568 unable to retrieve timestamp from request object for speed logging (php_bridge_begins)
+Traceback (most recent call last):
+  File "/home/oleg/code/web-serpng/code/serpng/../serpng/lib/speed_logging_utils.py", line 35, in read
+    value = request.speed[name]
+KeyError: 'php_bridge_begins'
+ERROR 2013-11-11 19:49:43,248 speed_logging_utils 12422 140123860129568 unable to retrieve timestamp from request object for speed logging (php_bridge_ends)
+Traceback (most recent call last):
+  File "/home/oleg/code/web-serpng/code/serpng/../serpng/lib/speed_logging_utils.py", line 35, in read
+    value = request.speed[name]
+KeyError: 'php_bridge_ends'

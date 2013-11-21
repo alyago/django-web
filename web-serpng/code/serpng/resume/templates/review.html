@@ -1,0 +1,345 @@
+{% extends "resume-base.html" %}
+
+{% load i18n %}
+{% load get_settings %}
+{% load staticfiles %}
+
+{% block page_head_title %}Review Resume{% endblock %}
+{% block page_body_id %}review{% endblock %}
+{% block page_body_class %}review{% endblock %}
+
+{% block page_body_content %}
+
+{% include "resume-default-header.html" %}
+
+{# Page header #}
+<h1>Edit and Review your Resume</h1>
+{% if resume.source == "Linkedin" %}
+<span style="display: block;">Imported from LinkedIn on {{ resume.add_date_time|date:"F d, Y" }} {# <a href="">update</a> #}</span>
+{% else %}
+<span style="display: block;">Imported from file on {{ resume.add_date_time|date:"F d, Y" }} {#<a href="">update</a>#}</span>
+{% endif %}
+
+<span class="welcome">{% if resume.contact.first_name %} Welcome, {{ resume.contact.first_name }}.{% endif %}</span>
+
+<div id="no_job_error" class="alert alert-error" style="margin-bottom: 0;{% if resume.job_set.count > 0 %}display: none;{% endif %}">Please add at least one job.</div>
+
+<form method="post" name="edit_review">{% csrf_token %}
+<div class="container">
+
+  <div style="padding-left: 660px; padding-bottom: 10px;">
+    {% ifnotequal source 'manage' %}
+      <button type="button" id="review_save_top_btn" class="btn btn-info btn-submit">Save</button>
+    {% else %}
+      <button type="button" id="review_save_top_btn" class="btn btn-info btn-submit">Save</button>
+    {% endifnotequal %}
+    {#<div class="cb opt-in">{{ forms_manager.resume_form.employer_opt_in }}{{ forms_manager.resume_form.employer_opt_in.label_tag }}</div>#}
+    {#<a target="_blank" class="opt-in" href="http://support.simplyhired.com/anonymous_requests/new">Share your thoughts</a>#}
+  </div>
+
+  <div id="nav" class="btn-group summarybar">
+    <a class="btn" name="contact">Contact</a>
+    <a class="btn" name="summary">Summary</a>
+    <a class="btn" name="job">Work Experience</a>
+    <a class="btn" name="education">Education</a>
+    <a class="btn" name="additional_info">Additional Info</a>
+    {#<a class="btn" name="skills">Skills</a>#}
+  </div>
+
+  <div name="contact" class="row">
+    <a name="contact"></a>
+    <div class="span11 inset">
+      <div class="span2">
+        <h5>CONTACT</h5>
+      </div>
+      <div class="row description">
+        <div class="span7 {% if forms_manager.contact_form.errors or forms_manager.address_form.errors  %}hidden{% endif %} display">
+          <span id="id_first_name">{% if resume.contact.first_name %}{{ resume.contact.first_name }}{% endif %}</span>
+          <span id="id_middle_name">{% if resume.contact.middle_name %}{{ resume.contact.middle_name }}{% endif %}</span>
+          <span id="id_last_name">{% if resume.contact.last_name %}{{ resume.contact.last_name }}{% endif %}</span>
+          <br>
+          <span id="id_email">{% if resume.contact.email %}{{ resume.contact.email }}{% endif %}</span>
+          <address>
+            <span id="id_street">{{ resume.contact.address.street }}</span>
+            <span id="id_street2">{{ resume.contact.address.street2 }}</span>
+            <br>
+            <span id="id_city">{{ resume.contact.address.city }}</span>
+            <span id="id_state">{{ resume.contact.address.state }}</span>
+            <span id="id_postcode">{{ resume.contact.address.postcode }}</span>
+          </address>
+          <p id="id_home_phone">{% if resume.contact.home_phone %}{{ resume.contact.home_phone }}{% endif %}</p>
+          <p id="id_cell_phone">{% if resume.contact.cell_phone %}{{ resume.contact.cell_phone }}{% endif %}</p>
+        </div> {# span7 display #}
+
+        <div id="form_edit" class="span7 {% if not forms_manager.contact_form.errors and not forms_manager.address_form.errors %}hidden{% endif %}">
+          {% include "edit-contact.html" %}
+        </div> {# form_edit #}
+
+        <div class="span1 edit" onClick="_gaq.push(['_trackEvent', 'resume_builder', 'edit_contact']);">
+          edit
+        </div> {# edit #}
+
+      </div> {# row description #}
+    </div> {# span11 inset #}
+  </div> {# description row #}
+
+  <div name="summary" class="row">
+    <a name="summary"></a>
+    <div class="span11 inset">
+      <div class="span2">
+        <h5>SUMMARY</h5>
+      </div>
+
+      <div class="row description">
+        <div class="span7 display">
+          <p id="id_summary-headline">{% if resume.summary.headline %}{{ resume.summary.headline }}{% endif %}</p>
+          <p id="id_summary-description">{% if resume.summary.description %}{{ resume.summary.description }}{% endif %}</p>
+          {% if not resume.summary.headline %}
+          <div class="row">
+            <a class="span2" style="padding-top: 5px" onClick="javascript:$(this).parents('div[name=summary]').find('div.edit').click(); _gaq.push(['_trackEvent', 'resume_builder', 'add_headline']);">+ Add a headline</a>
+          </div>
+          {% endif %}
+        </div>
+
+        <div id="form_edit" class="span7 hidden">
+          {% include "edit-summary.html" %}
+        </div>
+
+        <div class="span1 edit" onClick="_gaq.push(['_trackEvent', 'resume_builder', 'edit_summary']);">
+          edit
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div name="job" class="row">
+    <a name="job"></a>
+    <div class="span11 inset">
+      <div class="span2">
+        <h5>WORK EXPERIENCE</h5>
+      </div>
+      <div class="span8">
+        {{ forms_manager.jobformset.management_form }}
+        {% for job, job_form in jobs %}
+        <div class="row description">
+          <div class="span7 {% if job_form.errors %}hidden{% endif %} display">
+            <span id="id_{{ job_form.prefix }}-title">{% if job.title %}{{ job.title }}{% endif %}</span>
+            {% spaceless %}
+            <span id="job_date">
+              <span id="id_{{ job_form.prefix }}-start_date">
+              {% if job.start_date %}
+                {% if job.start_date|date:"M d" == "Jan 02" %}
+                  {{ job.start_date|date:"Y" }} -
+                {% else %}
+                  {{ job.start_date|date:"M Y" }} -
+                {% endif %}
+              {% else  %}
+              {% endif %}
+              </span>
+              <span id="id_{{ job_form.prefix }}-end_date">
+              {% if job.current %}
+                Present
+              {% else %}
+                {% if job.end_date %}
+                  {% if job.end_date|date:"M d" == "Jan 02" %}
+                    {{ job.end_date|date:"Y" }}
+                  {% else %}
+                    {{ job.end_date|date:"M Y" }}
+                  {% endif %}
+                {% endif %}
+              {% endif %}
+            </span>
+            </span>
+            {% endspaceless %}
+            <br>
+            <span id="id_{{ job_form.prefix }}-employer">{% if job.employer %}{{ job.employer }}{% else %}<a class="add_company" onClick="javascript:$(this).parents('div.description').find('div.edit').click(); _gaq.push(['_trackEvent', 'resume_builder', 'add_company']);">+ Add company</a>{% endif %}</span>
+            <p></p>
+            <pre id="id_{{ job_form.prefix }}-description">{% if job.description %}{{ job.description }}{% endif %}</pre>
+            <hr>
+          </div>
+          <div id="form_edit" class="span7 {% if not job_form.errors %}hidden{% endif %}">
+            {% include "edit-job.html" %}
+            <hr>
+          </div>
+
+          <div class="span1 edit" onClick="_gaq.push(['_trackEvent', 'resume_builder', 'edit_work_experience']);">
+            edit
+          </div>
+
+        </div>
+        {% endfor %}
+        <a class="add_form" name="job" onClick="_gaq.push(['_trackEvent', 'resume_builder', 'add_job']);">+ Add job</a>
+      </div>
+    </div>
+  </div>
+
+  <div name="education" class="row">
+    <a name="education"></a>
+    <div class="span11 inset">
+      <div class="span2">
+        <h5>EDUCATION</h5>
+      </div>
+      <div class="span8">
+        {{ forms_manager.educationformset.management_form }}
+        {% for education, education_form in edu %}
+        <div class="row description">
+          <div class="span7 {% if education_form.errors %}hidden{% endif %} display">
+            <p id="id_{{ education_form.prefix }}-institution">{% if education_form.initial.institution %}{{ education_form.initial.institution }}{% endif %}<p>
+            <span id="id_{{ education_form.prefix }}-degree">{% if education.degree %}{{ education.degree }}{% endif %}</span>
+            <br>
+            {% spaceless %}
+            <span id="id_{{ education_form.prefix }}-start_date">
+              {% if education.start_date %}
+                {% if education.start_date|date:"M d" == "Jan 02" %}
+                  {{ education.start_date|date:"Y" }} -
+                {% else %}
+                  {{ education.start_date|date:"M Y" }} -
+                {% endif %}
+              {% else %}
+              {% endif %}
+            </span>
+            <span id="id_{{ education_form.prefix }}-end_date">
+              {% if education.end_date %}
+                {% if education.end_date|date:"M d" == "Jan 02" %}
+                  {{ education.end_date|date:"Y" }}
+                {% else %}
+                  {{ education.end_date|date:"M Y" }}
+                {% endif %}
+              {% else %}
+              {% endif %}
+            </span>
+            {% endspaceless %}
+            <hr>
+          </div>
+
+          <div id="form_edit" class="span7 {% if not education_form.errors %}hidden{% endif %}">
+            {% include "edit-education.html" %}
+            <hr>
+          </div>
+
+          <div class="span1 edit" onClick="_gaq.push(['_trackEvent', 'resume_builder', 'edit_education']);">
+            edit
+          </div>
+        </div>
+        {% endfor %}
+        <a class="add_form" name="education" onClick="_gaq.push(['_trackEvent', 'resume_builder', 'add_education']);">+ Add education</a>
+      </div>
+    </div>
+  </div>
+
+  <div name="additional_info" class="row">
+    <a id="additional_info"></a>
+    <div class="span11 inset">
+      <div class="span2">
+        <h5>ADDITIONAL INFORMATION</h5>
+      </div>
+      <div class="row description">
+        <div class="span7 display">
+          <p id="id_additional_info-description">{% if resume.additional_info.description %}{{ resume.additional_info.description }}{% endif %}</p>
+        </div>
+
+        <div id="form_edit" class="span7 hidden">
+          {% include "edit-additional-info.html" %}
+        </div>
+
+        <div class="span1 edit" onClick="_gaq.push(['_trackEvent', 'resume_builder', 'edit_additional_info']);">
+          edit
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {% comment %}
+  <div name="skills" class="row">
+    <a id="skills"></a>
+    <div class="span11 inset">
+      <div class="span2">
+        <h5>SKILLS</h5>
+      </div>
+      <div class="row description">
+        <div class="span7 display">
+          <p id="id_skill-description">{% if resume.skill.description %}{{ resume.skill.description }}{% endif %}</p>
+        </div>
+
+        <div id="form_edit" class="span7 hidden">
+          {% include "edit-skill.html" %}
+        </div>
+
+        <div class="span1 edit" onClick="_gaq.push(['_trackEvent', 'resume_builder', 'edit_skills']);">
+          edit
+        </div>
+      </div>
+    </div>
+  </div>
+  {% endcomment %}
+
+<div id="modal" class="modal hide fade" style="display:none">
+  {% include "confirmation.html" %}
+</div>
+
+</div> {# Container #}
+
+  <div style="padding-bottom: 10px; padding-left: 660px;">
+    {% ifnotequal source 'manage' %}
+      <button type="button" id="review_save_bottom_btn" class="btn btn-info btn-submit">Save</button>
+    {% else %}
+      <button type="button" id="review_save_bottom_btn" class="btn btn-info btn-submit">Save</button>
+    {% endifnotequal %}
+  </div>
+</form>
+
+{# TODO: move this into another file. #}
+{# For cloning formset forms. #}
+<div id="clone_job" class="hidden">
+  <div class="row description">
+    <div class="span7 hidden display">
+      <span id="id_job-__prefix__-title"></span>
+      <span id="job_date">
+      <span id="id_job-__prefix__-start_date"></span><span id="id_job-__prefix__-end_date"></span>
+      </span>
+      <br>
+      <span id="id_job-__prefix__-employer"></span>
+      <p></p>
+      <p id="id_job-__prefix__-description"></p>
+      <hr>
+    </div>
+
+    <div id="form_edit" class="span7" onClick="_gaq.push(['_trackEvent', 'resume_builder', 'edit_job']);">
+      {% include "empty-edit-job.html" %}
+    </div>
+
+    <div class="span1 edit">
+      edit
+    </div>
+  </div>
+</div>
+
+<div id="clone_education" class="hidden">
+  <div class="row description">
+    <div class="span7 hidden display">
+      <p id="id_education-__prefix__-institution"><p>
+      <span id="id_education-__prefix__-degree"></span>
+      <br>
+      <span id="id_education-__prefix__-start_date"></span><span id="id_education-__prefix__-end_date"></span>
+      <hr>
+    </div>
+
+    <div id="form_edit" class="span7">
+      {% include "empty-edit-education.html" %}
+    </div>
+
+    <div class="span1 edit" onClick="_gaq.push(['_trackEvent', 'resume_builder', 'edit_education']);">
+      edit
+    </div>
+  </div>
+</div>
+
+{% include "resume-default-footer.html" %}
+
+{% endblock %}
+
+{% block page_specific_js_script %}
+<script src="{% static 'resume/js/bootstrap-modal.js' %}"></script>
+<script src="{% static 'resume/js/bootstrap-alert.js' %}"></script>
+{% endblock %}

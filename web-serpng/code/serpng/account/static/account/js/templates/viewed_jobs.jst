@@ -1,0 +1,32 @@
+<h4>Viewed Jobs</h4>
+<% if (viewedJobs && viewedJobs.length > 0) { %>
+<div>
+  <span class="pull-right">[ <a href="#" class="unsave_all">clear list</a> ]</span>
+</div>
+<ul class="unstyled">
+<% _.each(viewedJobs, function(job){ %>
+  <li>
+    <div class="job">
+      <a rel="nofollow" class="job_title" href="<%= job.url %>" target="_blank"><%= job.title %></a> - <span class="added">viewed <%= job.created_date %></span>
+        <div>
+        <% if (job.company) { %>
+        <span class="company"><%= job.company %></span> - 
+        <% } %>
+        <span class="location"><%= job.location %></span>
+        </div>
+        <div>
+        <span class="source">from <%= job.source %></span>
+        <span class="ago"> - <%= job.ago %></span>
+      </div>
+    </div>
+  </li>
+<% });
+%></ul><%
+} else { %>
+<ul class="unstyled">
+<li>
+<p class="headline">No clicks, no history - you gotta click on a job first.</p>
+<p>If you never read the whole job description, don't you think it's going to be a little harder to land the job?  So get clickin' already!  We'll track the jobs you look at and they'll show up here.</p>
+</li>
+</ul>
+<% } %>

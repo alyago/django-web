@@ -1,0 +1,48 @@
+ERROR 2013-10-03 19:41:49,870 middleware 13985 140153164650240 Uncaught exception: Reverse for 'index' with arguments '()' and keyword arguments '{}' not found.
+Traceback (most recent call last):
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/core/handlers/base.py", line 115, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "/home/oleg/code/web-serpng/code/serpng/employer_pages/views/directory.py", line 12, in redirect_to_default
+    return HttpResponseRedirect(reverse('employer_pages:index'))
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/core/urlresolvers.py", line 496, in reverse
+    return iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs))
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/core/urlresolvers.py", line 416, in _reverse_with_prefix
+    "arguments '%s' not found." % (lookup_view_s, args, kwargs))
+NoReverseMatch: Reverse for 'index' with arguments '()' and keyword arguments '{}' not found.
+ERROR 2013-10-03 19:52:29,263 middleware 2391 139883691484928 Uncaught exception: base/debug_meta_data.html
+Traceback (most recent call last):
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/core/handlers/base.py", line 115, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "/home/oleg/code/web-serpng/code/serpng/employer_pages/views/directory.py", line 23, in directory
+    'meta': sorted(request.META.iteritems()),
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/shortcuts/__init__.py", line 53, in render
+    return HttpResponse(loader.render_to_string(*args, **kwargs),
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 170, in render_to_string
+    t = get_template(template_name)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 149, in get_template
+    template = get_template_from_string(template, origin, template_name)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 157, in get_template_from_string
+    return Template(source, origin, name)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/base.py", line 125, in __init__
+    self.nodelist = compile_string(template_string, origin)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/base.py", line 153, in compile_string
+    return parser.parse()
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/base.py", line 274, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader_tags.py", line 215, in do_extends
+    nodelist = parser.parse()
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/base.py", line 274, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader_tags.py", line 190, in do_block
+    nodelist = parser.parse(('endblock',))
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/base.py", line 274, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader_tags.py", line 263, in do_include
+    isolated_context=isolated_context)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader_tags.py", line 146, in __init__
+    t = get_template(template_path)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 146, in get_template
+    template, origin = find_template(template_name)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 139, in find_template
+    raise TemplateDoesNotExist(name)
+TemplateDoesNotExist: base/debug_meta_data.html

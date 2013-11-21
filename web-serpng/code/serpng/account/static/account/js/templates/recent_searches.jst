@@ -1,0 +1,31 @@
+<h4>Recent Searches</h4>
+<% if (recentSearches && recentSearches.length > 0) { %>
+<table class="table table-hover table-condensed">
+  <thead>
+    <tr>
+      <td colspan="2"><%= firstHit %> - <%= lastHit %> of <%= totalHits %></td>
+      <td colspan="2" class="pull-right">[ <a class="clear_recent" href="#">clear list</a> ]</td>
+    </tr>
+  </thead>
+  <tbody>
+    <% _.each(recentSearches, function(search) { %>
+    <tr>
+      <td><a class="view" href="<%= search.search_url %>"><%= search.search_feedback %></a> - <a class="remove_recent" href="#delete?<%= search.search_id %>">delete</a></td>
+      <td><a href="<%= search.alert_url %>">create job alert</a></td>
+      <td><a href="<%= search.rss_url %>">rss feed</a></td>
+    </tr>
+    <% }); %>
+  </tbody>
+</table>
+  <% if (totalPages > 1) { %>
+  <div class="pagination pagination-small">
+    <ul>
+      <% _.each(_.range(1, totalPages+1), function(pageNum) { %>
+      <li<% if (pageNum == currentPage) { %> class="active"<% } %>><a href="#"><%= pageNum %></a></li>
+      <% }); %>
+    </ul>
+  </div>
+  <% } %>
+<% } else { %>
+<p>After you go ahead and search for some jobs, we'll keep track of your most recent ones here. (<a href="/a/jobs/list/q-freelance">Great! Let's get started</a>...)</p>
+<% } %>

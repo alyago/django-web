@@ -1,0 +1,17 @@
+{% load get_config %}
+{% load staticfiles %}
+
+<div id='signin_dialog' class='signin_dialog' style='display:none'>
+  <span class="icon-close dialog_close"></span>
+  <div class="dialog_icon"></div>
+
+  <div class="dialog_main_msg">
+    Please sign in or create an account.
+  </div>
+
+  <div class="dialog_content">
+    <a class="dialog_signin_link dialog_link" href="/account/signin">Sign In</a>
+    <span>or</span>
+    <a class="dialog_signup_link dialog_link" href="/account/signup">Create a Free Account</a>
+  </div>
+</div>

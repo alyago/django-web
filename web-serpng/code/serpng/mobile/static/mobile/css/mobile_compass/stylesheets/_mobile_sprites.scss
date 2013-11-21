@@ -1,0 +1,83 @@
+@import "retina-sprites";
+
+$sprites-spacing: 1px;
+$sprites-clean-up: true;
+$sprites-sprite-dimensions: true;
+$sprites: sprite-map("sprites/*.png");
+
+$sprites2x-spacing: 1px;
+$sprites2x-clean-up: true;
+$sprites2x-sprite-dimensions: true;
+$sprites2x: sprite-map("sprites2x/*.png");
+
+.sprite-chevron-white {
+  @include retina-sprite(chevron-white);
+}
+
+.sprite-email-alert {
+  @include retina-sprite(email-alert);
+}
+
+.sprite-icon-account {
+  @include retina-sprite(icon-account);
+}
+
+.sprite-icon-bang {
+  @include retina-sprite(icon-bang);
+}
+
+.sprite-icon-bang-black {
+  @include retina-sprite(sprite-icon-bang-black);
+}
+
+.sprite-icon-bang-red {
+  @include retina-sprite(icon-bang-red);
+}
+
+.sprite-icon-close-x {
+  @include retina-sprite(icon-close-x);
+}
+
+.sprite-icon-email {
+  @include retina-sprite(icon-email);
+}
+
+.sprite-icon-geo {
+  @include retina-sprite(icon-geo);
+}
+
+.sprite-icon-iphone {
+  @include retina-sprite(icon-iphone);
+}
+
+.sprite-icon-recent {
+  @include retina-sprite(icon-recent);
+}
+
+.sprite-icon-saved {
+  @include retina-sprite(icon-saved);
+}
+
+.sprite-logo {
+  @include retina-sprite(logo);
+}
+
+.sprite-magnifying-glass {
+  @include retina-sprite(magnifying-glass);
+}
+
+.sprite-manburger {
+  @include retina-sprite(manburger);
+}
+
+.sprite-resume-confirm-check {
+  @include retina-sprite(resume-confirm-check);
+}
+
+.sprite-star-selected {
+  @include retina-sprite(star-selected);
+}
+
+.sprite-star-disabled {
+  @include retina-sprite(star-disabled);
+}

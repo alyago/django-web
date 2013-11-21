@@ -1,0 +1,17 @@
+{% extends "simplyapply/mobile-base.html" %}
+
+{% block page_body_content %}
+<div data-role="page">
+  <div data-role="header" data-theme="b"><h4>Success!</h4></div>
+  <div data-role="content">
+    Your application has been submitted. Thanks for applying!
+  </div>
+</div>
+
+{% if advertiser_id %}
+<img height="1" width="1" style="border-style:none;" alt="" src="http://www.simplyhired.com/a/track/conversion/?u={{ advertiser_id }}&type=sponsored"/>
+{% else %}
+<img height="1" width="1" style="border-style:none;" alt="" src="http://www.simplyhired.com/a/track/conversion/?u=SFxAQAE%3D&type=organic"/>
+{% endif %}
+
+{% endblock %}

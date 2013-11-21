@@ -1,0 +1,40 @@
+<div class="row">
+  <div class="span4">
+    {{ job_form.title.label_tag }}
+    {{ job_form.title }}<span class="error">{% for err in job_form.title.errors %}{{ err }}{% endfor %}</span>
+    {{ job_form.employer.label_tag }}
+    {{ job_form.employer }}<span class="error">{% for err in job_form.employer.errors %}{{ err }}{% endfor %}</span>
+  </div>
+  <div class="span3">
+    {{ job_form.city.label_tag }}
+    {{ job_form.city }}<span class="error">{% for err in job_form.city.errors %}{{ err }}{% endfor %}</span>
+    {{ job_form.state }}<span class="error">{% for err in job_form.state.errors %}{{ err }}{% endfor %}</span>
+  </div>
+</div>
+
+<div class="row">
+  <div class="span7">
+    {{ job_form.start_date.label_tag }}
+    <span class="span" style="margin: 0;">
+      {{ job_form.start_date }} <span class="error">{% for err in job_form.start_date.errors %}{{ err }}{% endfor %}</span>
+    </span>
+    <span class="span">to</span>
+    <span class="span2">
+      {{ job_form.end_date }}<span class="error">{% for err in job_form.end_date.errors %}{{ err }}{% endfor %}</span>
+    </span>
+    <div class="cb">{{ job_form.current }}{{ job_form.current.label_tag }}</div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="span7">
+    {{ job_form.description.label_tag }}
+    {{ job_form.description }}<span class="error">{% for err in job_form.description.errors %}{{ err }}{% endfor %}</span>
+  </div>
+</div>
+{% if job_form.instance.pk %}{{ job_form.DELETE.as_hidden }}{% endif %}
+{% for hidden in job_form.hidden_fields %}
+{{ hidden }}
+{% endfor %}
+
+{% include "edit-jobformset-buttons.html" %}

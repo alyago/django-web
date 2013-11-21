@@ -1,0 +1,10 @@
+{% extends 'base/js_support.html' %}
+{% load compressed %}
+
+{% block app_specific_js %} 
+  var sh_legacy_document_pathname = '{{ legacy_request_path }}';
+{% endblock %}
+
+{% block compressed_js %}
+  {% compressed_js 'serp' %}
+{% endblock %}

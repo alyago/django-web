@@ -1,0 +1,98 @@
+@import "mobile_sprites";
+@import "mobile_variables";
+@import "sh_colors";
+
+#mobile-job-detail-content-main {
+
+  .saved-star {
+    @include retina-sprite(star-disabled);
+
+    &.saved {
+      @include retina-sprite(star-selected);
+    }
+  }
+  
+  #arrow-left {
+    float:left;
+    //padding:5px;
+    //height:30px;
+    //width:30px;
+  }
+  
+  #arrow-right {
+    float:right;
+    //padding:5px;
+    //height:30px;
+    //width:30px;
+  }
+  
+  .buttons-banner { 
+    background-color:$sh-tan;
+    padding:$mobile-padding;
+    text-align:center;
+  
+    & > * {
+      display:inline-block;
+    }
+
+    .visit-website-link, .simplyapply-link, .open-email-job, .saved-star {
+      margin-right:$mobile-padding;
+      vertical-align:text-bottom;
+    }
+  
+    .email-job-form {
+      display:none;
+      margin:0;
+      vertical-align:text-bottom;
+
+      .input-append {
+        margin-bottom:0;
+      }
+  
+      .appendedInputButton {
+        height:30px;
+        width:180px;
+      }
+    }
+  }
+  
+  #email-job {width:60px;}
+  
+  .email-error {
+    margin-top:$mobile-padding;
+  	color:#cc0000;
+    display:none;
+  
+    .email-error-text {
+      margin-left:5px;
+    }
+  }
+  
+  .showEmailJobForm .email-job-form { display:block; }
+  .showEmailJobForm .visit-website-link, 
+  .showEmailJobForm .open-email-job, 
+  .showEmailJobForm .saved-star,
+  .showEmailJobForm .simplyapply-link { display:none; }
+  
+  #title-bar {
+    position:relative;
+    font-size:12px;
+    padding:$mobile-padding;
+  
+    #company, #location {
+      color:$sh-grey;
+    }
+  
+    #title {
+      font-size:16px;
+      font-weight:bold;
+      margin-bottom:$mobile-padding/2;
+    }
+  }
+  
+  #job-description {
+    font-size:14px;
+    margin:$mobile-padding;
+    white-space: pre-wrap;
+  }
+}

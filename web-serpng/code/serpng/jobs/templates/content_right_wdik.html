@@ -1,0 +1,52 @@
+{% load get_config %}
+{% load staticfiles %}
+
+{% if enable_wdik_linkedin %}
+  <div id="social_network_logins" class="social-network-logins">
+    <div class="sn_heading">
+      <span class="icon-linkedin-small"></span>
+      <span>{{ translations.connect_with_linkedin_text }}</span>
+    </div>
+
+    <ul>
+      <input type="radio" id="linked_in_activate" name="linked_in" value="activate"
+        class="evtc" data-event="linkedin_activate"
+        onclick="SH.contacts.li_action('login')"
+        {% if linkedin_login %}
+          checked="checked"
+          disabled
+        {% endif %} />
+      <label for="linked_in_activate" {% if not linkedin_login %}class="link"{% endif %}>
+        <span><span>
+        </span></span>
+        {{ translations.linkedin_is_on_text }}
+      </label>
+
+      <input type="radio" id="linked_in_deactivate" name="linked_in" value="deactivate"
+        class="evtc" data-event="linkedin_deactivate"
+        onclick="SH.contacts.li_action('logout')"
+        {% if not linkedin_login %}
+          checked="checked"
+          disabled
+        {% endif %} />
+      <label for="linked_in_deactivate" {% if linkedin_login %}class="link"{% endif %}>
+        <span><span>
+        </span></span>
+        {{ translations.linkedin_is_off_text }}
+      </label>
+    </ul>
+
+    <div id="linkedin_tooltip" class="linkedin-tooltip" style="display: none;">
+      <div class="header">
+        <span class="icon-linkedin-large"></span>
+        <h2>{{ translations.linkedin_tooltip_heading_text }}</h2>
+      </div>
+      <ul>
+        <li><span>{{ translations.linkedin_tooltip_para1_text }}</span></li>
+        <li><span>{{ translations.linkedin_tooltip_para2_text }}</span></li>
+        <li><span>{{ translations.linkedin_tooltip_para3_text }}</span></li>
+      </ul>
+    </div>
+
+  </div><!--social_network_logins-->
+{% endif %}

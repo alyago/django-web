@@ -1,0 +1,194 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+    "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>SH.cookies</title>
+    <link rel="stylesheet" href="../test/qunit-1.11.0.css">
+  </head>
+  <body>
+    <!-- Sinon / QUnit boiler-plate -->
+    <h1 id="qunit-header">Tests for SH.cookies</h1>
+    <h2 id="qunit-banner"></h2>
+    <h2 id="qunit-userAgent"></h2>
+    <ol id="qunit-tests"></ol>
+
+    <!-- Load jQuery and test libraries -->
+    <script type="text/javascript" src="../../../../../static/js/jquery-1.7.1.min.js"></script>
+    <script type="text/javascript" src="../test/qunit-1.11.0.js"></script>
+    <script type="text/javascript" src="../test/sinon-1.6.0.js"></script>
+    <script type="text/javascript" src="../test/sinon-qunit-1.0.0.js"></script>
+
+    <!-- Code to test -->
+    <script src="services.js"></script>
+    <script src="cookies.js"></script>
+
+    <script>
+      //
+      // Tests
+      //
+
+      // Note: need to put closure around module so that setup and teardown functions
+      //       and test functions can share variables without polluting global scope.
+      (function() {
+        var fakeDocumentCookie = "";
+
+        // Test SH.enabled 
+        module("cookie tests", {
+          setup: function() {
+            sinon.stub(SH.CookieService, "readCookie", function() {
+              return fakeDocumentCookie;
+            });
+
+            sinon.stub(SH.CookieService, "writeCookie", function(cookieString) {
+              fakeDocumentCookie = cookieString;
+            });
+          }, teardown: function() {
+            SH.CookieService.readCookie.restore();
+            SH.CookieService.writeCookie.restore();
+            fakeDocumentCookie = "";
+          }
+        });
+
+        asyncTest("SH.cookies.enabled should be true when 'gc' is set", 1, function() {
+          fakeDocumentCookie = "gc=1";
+
+          // Reload SH.cookies from "cookies.js".
+          this.clock.restore();
+          var script = document.createElement('script');
+          script.type = "text/javascript";
+          script.src= "cookies.js";
+          document.body.appendChild(script);
+
+          // Check that value of enabled is correct.
+          script.onload = function() {
+            ok(SH.cookies.enabled);
+            start();
+          };
+        });
+
+        asyncTest("SH.cookies.enabled should be false when 'gc' is not set", 1, function() {
+          fakeDocumentCookie = "";
+
+          // Reload SH.cookies from "cookies.js".
+          this.clock.restore();
+          var script = document.createElement('script');
+          script.type = "text/javascript";
+          script.src= "cookies.js";
+          document.body.appendChild(script);
+
+          // Check that value of enabled is correct.
+          script.onload = function() {
+            ok(!SH.cookies.enabled);
+            start();
+          };
+        });
+
+        test("getCookie() should return good value when a single cookie value is set", 
+          function() {
+            fakeDocumentCookie = "shab=138%2C137%2C136";
+            equal(SH.cookies.getCookie("shab"), "138%2C137%2C136");
+          }
+        );
+
+        test("getCookie() should return good value when multiple cookie values are set", 
+          function() {
+            fakeDocumentCookie = "shab=138%2C137%2C136; shxyz=meow";
+            equal(SH.cookies.getCookie("shab"), "138%2C137%2C136");
+            equal(SH.cookies.getCookie("shxyz"), "meow");
+          }
+        );
+
+        test("getCookie() should return null when there are no cookies", 
+          function() {
+            fakeDocumentCookie = "";
+            strictEqual(SH.cookies.getCookie("shab"), null);
+          }
+        );
+
+        test("getCookie() should return null when the requested cookie does not exist", 
+          function() {
+            fakeDocumentCookie = "shab=138%2C137%2C136; shxyz=meow";
+            strictEqual(SH.cookies.getCookie("sh123"), null);
+          }
+        );
+
+        test("getSubcookie() should return good value when a single cookie value is set", 
+          function() {
+            fakeDocumentCookie = "shua=ua123%3D123";
+            equal(SH.cookies.getSubcookie("shua", "ua123"), "123");
+          }
+        );
+
+        test("getSubcookie() should return good value when multiple cookie values are set", 
+          function() {
+            fakeDocumentCookie = "shua=ua123%3D123%2Cua456%3D456; shxyz=meow";
+            equal(SH.cookies.getSubcookie("shua", "ua123"), "123");
+            equal(SH.cookies.getSubcookie("shua", "ua456"), "456");
+          }
+        );
+
+        test("getSubcookie() should return null when there are no cookies", 
+          function() {
+            fakeDocumentCookie = "";
+            strictEqual(SH.cookies.getSubcookie("shab", "ab123"), null);
+          }
+        );
+
+        test("getSubcookie() should return null when cookie value is not set", 
+          function() {
+            fakeDocumentCookie = "shua=ua123%3D123%2Cua456%3D456;shab=ab123%3D123%26ab456%3D456";
+            strictEqual(SH.cookies.getSubcookie("shxyz", "xyz"), null);
+          }
+        );
+
+        test("getSubcookie() should return null when subcookie value is not set", 
+          function() {
+            fakeDocumentCookie = "shua=ua123%3D123%2Cua456%3D456;shab=ab123%3D123%26ab456%3D456";
+            strictEqual(SH.cookies.getSubcookie("shua", "ua789"), null);
+          }
+        );
+
+        test("setSubcookie() should set a good subcookie where none exists", 
+          function() {
+            fakeDocumentCookie = "";
+            this.clock.restore();
+
+            SH.cookies.setSubcookie("shua", "ua123", "123");
+            ok(fakeDocumentCookie.indexOf("shua=ua123%3D123") !== -1);
+            ok(fakeDocumentCookie.indexOf("path=/") !== -1);
+
+            var twoYearsFromNow = new Date();
+            twoYearsFromNow.setFullYear(twoYearsFromNow.getFullYear() + 2)
+            ok(fakeDocumentCookie.indexOf("expires=" + twoYearsFromNow.toGMTString()) !== -1);
+          }
+        );
+
+        test("setSubcookie() should set a good subcookie when there are other subcookies", 
+          function() {
+            fakeDocumentCookie = "shua=ua123%3D123%2Cua456%3D456;shab=ab123%3D123%26ab456%3D456";
+            this.clock.restore();
+
+            SH.cookies.setSubcookie("shua", "ua789", "789");
+            ok(fakeDocumentCookie.indexOf("shua=ua123%3D123%2Cua456%3D456%2Cua789%3D") !== -1);
+            ok(fakeDocumentCookie.indexOf("path=/") !== -1);
+
+            var twoYearsFromNow = new Date();
+            twoYearsFromNow.setFullYear(twoYearsFromNow.getFullYear() + 2)
+            ok(fakeDocumentCookie.indexOf("expires=" + twoYearsFromNow.toGMTString()) !== -1);
+          }
+        );
+
+        test("getSubcookie after setSubcookie() should return good value", 
+          function() {
+            fakeDocumentCookie = "shua=ua123%3D123%2Cua456%3D456;shab=ab123%3D123%26ab456%3D456";
+            SH.cookies.setSubcookie("shua", "ua789", "789");
+            equal(SH.cookies.getSubcookie("shua", "ua789"), "789");
+          }
+        );
+
+      })();
+
+    </script>
+  </body>
+</html>

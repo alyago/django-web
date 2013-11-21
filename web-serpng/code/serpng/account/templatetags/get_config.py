@@ -1,0 +1,1 @@
+../../jobs/templatetags/get_config.py

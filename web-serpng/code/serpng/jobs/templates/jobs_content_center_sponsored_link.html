@@ -1,0 +1,9 @@
+{% with firstJob=result.jobs|first %}
+{% if firstJob.is_sponsored %}
+<div class="label_right">
+  <a class="heading" href="http://employers.simplyhired.com/overview">
+    {{ translations.sponsored_text }}
+  </a>
+</div>
+{% endif %}
+{% endwith %}

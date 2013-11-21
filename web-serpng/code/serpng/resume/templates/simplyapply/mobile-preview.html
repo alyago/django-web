@@ -1,0 +1,92 @@
+{% extends "simplyapply/mobile-base.html" %}
+
+{% load preview %}
+
+{% block page_body_content %}
+
+{% include "simplyapply/mobile-header.html" %}
+
+<div id="preview">
+  <div class="sheet">
+    <div class="headline">
+      <h2>{{ resume.contact.first_name }} {{ resume.contact.last_name }}</h2>
+      {% spaceless %}
+      <h4>
+      {% if resume.contact.email %} {{ resume.contact.email }}{% endif %}
+      {% if resume.contact.email and resume.contact.cell_phone %} | {% endif %}
+      {% if resume.contact.cell_phone %} {{ resume.contact.cell_phone }}{% endif %}</h4>
+      {% endspaceless %}
+    </div>
+
+    {% if resume.summary.description %}
+    <div class="section">
+      <h3>Highlights</h3>
+      {% if resume.summary.description %}{{ resume.summary.description }}{% endif %}
+    </div>
+    {% endif %}
+
+    {# Note that this section doesn't exactly match what's in the PDF. The inline title at company ruins the layout on a small screen. #}
+    {% if resume.job_set.count %}
+    <div class="section">
+      <h3>Experience</h3>
+      {% for job in resume.job_set.iterator %}
+      <div style="padding: 5px 0;">
+        <div>
+          <span class="job-title">{% if job.title %}{{ job.title }}{% else %}&nbsp;{% endif %}</span>
+          {% if job.start_date or job.end_date %}
+          <span class="right">
+            {{ job.start_date|date:"M Y" }} -
+            {% if job.current %}
+            Present
+            {% else %}
+            {{ job.end_date|date:"M Y" }}
+            {% endif %}
+          </span>
+          {% endif %}
+        </div>
+        <div>
+          <span class="employer">{% if job.employer %}{{ job.employer }}{% endif %}</span>
+        </div>
+        <div style="padding: 2px 0;">
+          <ul>
+            {{ job.description|bulletize }}
+          </ul>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    {% endif %}
+
+    {% if resume.education_set.count %}
+    <div class="section">
+      <h3>Education</h3>
+      {% for edu in resume.education_set.iterator %}
+      <div style="padding-bottom: 5px;">
+        <div>
+          <span>{{ edu.institution }}</span>
+          <span class="right">
+          {% if edu.start_date %}{{ edu.start_date|date:"Y" }}{% endif %}
+          {% if edu.start_date and edu.end_date %} - {% endif %}
+          {% if edu.end_date %}{{ edu.end_date|date:"Y" }}{% endif %}
+          </span>
+        </div>
+        <span>{{ edu.degree }}</span>
+      </div>
+      {% endfor %}
+    </div>
+    {% endif %}
+
+    {% if resume.additional_info.description %}
+    <div class="section">
+      <h3>Additional Information</h3>
+      <span>{{ resume.additional_info.description }}</span>
+    </div>
+    {% endif %}
+  </div>
+
+  <a href="{% url 'mobile_edit' %}?{{ key_type }}={{ jobkey }}" data-role="button" data-theme="b" data-ajax="false">Edit Resume</a>
+  {% if resume.source == 'Linkedin' %}<a href="{% url 'mobile_linkedin' %}?{{ key_type }}={{ jobkey }}" data-role="button" data-ajax="false">Refresh from LinkedIn</a>{% endif %}
+  <a href="{% url 'mobile_simplyapply' %}?{{ key_type }}={{ jobkey }}" data-role="button">Go Back</a>
+</div>
+
+{% endblock %}

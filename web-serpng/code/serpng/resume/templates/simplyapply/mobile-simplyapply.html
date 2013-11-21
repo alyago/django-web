@@ -1,0 +1,77 @@
+{% extends "simplyapply/mobile-base.html" %}
+
+{% block page_body_content %}
+<form name="simply_apply" method="post" action="/myresume/mobile/simplyapply" enctype="multipart/form-data">{% csrf_token %}
+    <div data-role="page" id="main">
+        {% include "simplyapply/mobile-header.html" %}
+        <div class="ui-bar title"><h4>Simply Apply&trade;</h4></div>
+        <div class="content">
+            <div>
+                <strong>Simply Apply to {{ job.title }} at <span>{{ job.company }}</span></strong>
+                <span style="display: block;">Location: {{ job.location }}</span>
+            </div>
+        </div>
+
+        <div class="content">
+            <div>
+                <h4>Name</h4>
+                <ul data-role="listview" data-inset="true">
+                  <li><a id="displayname" href="#edit-name">{% if resume.contact.first_name %}{{ resume.contact.first_name }} {{ resume.contact.last_name }}{% endif %}</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Resume</h4>
+                  {% if resume.content_set.count %}
+                    {% for f in resume.content_set.all %}
+                      {% if not f.file_name %}
+                      <ul data-role="listview" data-inset="true">
+                        <li><a href="{% url 'mobile_preview' %}?{{ job.key_type }}={{ job.key }}">Created: {{ resume.add_date_time }}</a></li>
+                      </ul>
+                      {% else %}
+                      <span class="ui-body ui-body-c">{{ f.file_name }}</span>
+                      {% endif %}
+                    {% endfor %}
+                  {% endif %}
+              
+                {% comment %}
+                {# Uncomment when we support multiple resumes. #}
+                <select id="resume_select" name="simply_apply_uploaded_resume" style="display: inline-block;">
+                  {% if resume.content_set.count %}
+                    {% for f in resume.content_set.all %}
+                    <option value="resume" selected="selected">
+                    {% if not f.file_name %}
+                    LinkedIn
+                    {% else %}
+                    {{ f.file_name }}
+                    {% endif %}
+                    </option>
+                    {% endfor %}
+                  {% else %}
+                    <option value=""></option>
+                  {% endif %}
+                </select>
+                {% endcomment %}
+            </div>
+            <div>
+                <h4>Optional Cover Letter to the Hiring Manager</h4>
+                <textarea name="message" maxlength=2000></textarea>
+            </div>
+            <div>
+                <a onclick="$('form').submit();" data-role="button" data-theme="b" data-ajax="false">Submit Application</a>
+            </div>
+        </div>
+    </div> {# /main #}
+
+    <div data-role="page" id="edit-name">
+        {% include "simplyapply/mobile-header.html" %}
+        <div class="ui-bar title"><h4>Edit Name</h4></div>
+        <div data-role="content">
+            <input type="text" name="first_name" placeholder="First Name"{% if resume.contact.first_name %} value="{{ resume.contact.first_name }}"{% endif %}"/>
+            <input type="text" name="last_name" placeholder="Last Name"{% if resume.contact.last_name %} value="{{ resume.contact.last_name }}"{% endif %}" />
+            <a href="#main" onclick="javascript:$('span#displayname').text($('input[name=first_name]').val() + ' ' + $('input[name=last_name]').val());" data-role="button" data-theme="b">Done</a>
+        </div>
+    </div>
+
+    <input type="hidden" name="{{ job.key_type }}" value="{{ job.key }}" />
+</form>
+{% endblock %}

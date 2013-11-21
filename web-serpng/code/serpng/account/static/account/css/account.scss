@@ -1,0 +1,309 @@
+$simplyhired-blue: #0066CC;
+$simplyhired-darkblue: $simplyhired-blue;
+
+$input-placeholder-color: #ddd;
+
+$radius: 4px;
+
+a {
+  color: $simplyhired-darkblue;
+  font-weight: bold;
+}
+
+.float-left {
+  position: relative;
+  float: left;
+}
+
+.float-right {
+  position: relative;
+  float: right;
+}
+
+.text {
+  line-height: 30px;
+}
+
+.title {
+  @extend .text;
+  font-size: 14px;
+  font-weight: bold;
+  vertical-align: middle;
+}
+
+.option {
+  padding-bottom: 5px;
+  padding-top: 5px;
+  margin-bottom: 20px;
+
+  .option-section {
+    margin-bottom: 15px;
+  }
+
+  .option-section:last-of-type {
+    margin-bottom: 0px;
+  }
+
+  .row-fluid {
+    @extend .text;
+  }
+
+  p {
+    line-height: normal;
+  }
+}
+
+form {
+
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+
+  * {
+    margin-bottom: 0px;
+    margin-top: 0px;
+    padding-bottom: 0px;
+    padding-top: 0px;
+  }
+
+  legend {
+    @extend .title;
+  }
+
+  .legal {
+    color: gray;
+    font-size: 12px;
+  }
+
+  input[type="text"], input[type="password"] {
+    margin-bottom: 0px;
+  }
+
+  input::-webkit-input-placeholder, input::-moz-placeholder, input::-ms-input-placeholder {
+    color: $input-placeholder-color;
+    font-style: italic;
+  }
+
+  .form-error {
+    color: red;
+    font-size: 9pt;
+  }
+
+}
+
+//
+// IE-specific hacks
+//
+
+.ie7, .ie8 {
+  input {
+    padding: 0px;
+    line-height: 30px;
+  }
+
+  #l_account {
+    input {
+      line-height: 20px;
+    }
+  }
+
+}
+
+.success-message {
+  margin-top: 15px;
+  margin-bottom: 0px;
+}
+
+#email-button {
+  margin-top: 15px;
+}
+
+#forgot_password_link {
+  font-size: 10pt;
+}
+.btn-sh {
+  background-color: $simplyhired-blue !important;
+  background-repeat: repeat-x;
+  background-image: -khtml-gradient(linear, left top, left bottom, from($simplyhired-darkblue), to($simplyhired-blue));
+  background-image: -moz-linear-gradient(top, $simplyhired-darkblue, $simplyhired-blue);
+  background-image: -ms-linear-gradient(top, $simplyhired-darkblue, $simplyhired-blue);
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, $simplyhired-darkblue), color-stop(100%, $simplyhired-blue));
+  background-image: -webkit-linear-gradient(top, $simplyhired-darkblue, $simplyhired-blue);
+  background-image: -o-linear-gradient(top, $simplyhired-darkblue, $simplyhired-blue);
+  background-image: linear-gradient($simplyhired-darkblue, $simplyhired-blue);
+  border-color: $simplyhired-blue $simplyhired-blue hsl(195, 79%, 38%);
+  color: white !important;
+  text-shadow: rgba(0, 0, 0, 0.247059) 0px -1px 0px;
+  -webkit-font-smoothing: antialiased;
+}
+
+#account {
+  #header {
+    border-bottom: none;
+  }
+
+  #footer {
+    border-top: none;
+  }
+
+  .navbar {
+    border-right: 1px solid #fff;
+    border-left: 1px solid #fff;
+  }
+
+  .sh-navbar-fixed {
+    position: fixed;
+    top: 0;
+    margin-bottom: 0;
+    z-index: 1000;
+  }
+}
+
+#account_content {
+  margin-bottom: 20px;
+  border: 1px solid #e3e3e3;
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  border-radius: $radius;
+
+  section {
+    padding: 0 20px;
+    margin-bottom: 30px;
+
+    .tab-content {
+      padding: 0 10px;
+    }
+
+    >h3 {
+      border-bottom: 1px solid #ccc;
+    }
+  }
+
+  .checkbox {
+    min-height: 30px;
+  }
+
+  .alert {
+    margin-top: 20px;
+    margin-bottom: 0;
+  }
+}
+
+#l_alert {
+  .search {
+    max-width: 250px;
+
+    p {
+      font-size: 12px;
+      margin-bottom: 0;
+    }
+  }
+
+  select {
+    height: 20px;
+    padding: 0;
+  }
+}
+
+#l_searches {
+  .view {
+    font-weight: bold;
+  }
+
+  .remove_saved, .remove_recent {
+    font-size: 11px;
+  }
+}
+
+#l_jobs {
+  .expired_jobs {
+    line-height: 30px;
+  }
+
+  .expired_jobs_icon {
+    padding: 3px;
+    position: relative;
+    top: -2px;
+  }
+
+  li {
+    margin-top:10px;
+
+    .source {
+      color: #339933;
+    }
+
+    .ago {
+      color: #666666;
+    }
+
+    .added {
+      color: #666666;
+      font-size: 12px;
+    }
+
+    .job_title {
+      font-size: 1.2em;
+      text-decoration: underline;
+    }
+
+    .job_notes_edit_link {
+      margin-right: 10px;
+    }
+    
+    .job_notes_text {
+      color: #888;
+    }
+
+    .job_notes_edit {
+      display: none;
+    }
+  }
+}
+
+#l_account {
+  form {
+    margin-bottom:20px;
+    .btn {
+      display: block;
+      margin-top:10px;
+    }
+  }
+
+  #c_close {
+    margin: 10px 0;
+  }
+
+  #m_close {
+    margin: 10px 0;
+  }
+
+  .warning {
+    font-size: 1.1em;
+    font-weight: bold;
+    color: red;
+  }
+
+  .messages {
+    width: 220px;
+  }
+}
+
+.resume_iframe {
+  width: 100%;
+  max-height: 470px;
+}
+
+#f_email_prefs input[type="checkbox"] {
+  margin-top: -3px;
+}
+
+#m_email_prefs {
+  margin-bottom: 3px;
+}
+/*
+ * Engagement Email Opt-out Pages
+ */
+.opt_out_message {
+  font-size: 18px;
+}
+

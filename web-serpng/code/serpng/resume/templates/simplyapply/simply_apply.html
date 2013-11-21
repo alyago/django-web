@@ -1,0 +1,137 @@
+{% extends "simplyapply/simply_apply_base.html" %}
+
+{% load get_message %}
+
+{% block page_body_content %}
+
+<div>
+    <div class="jobinfo">
+        <h2>Apply to <span id="job_company">{{ job.company }}</span></h2>
+        <span style="display: block;">Job Title: <span id="job_title">{{ job.title }}</span></span>
+        <span>Job Location: <span id="job_location">{{ job.location }}</span></span>
+    </div>
+
+    <p></p>
+</div>
+
+<div class="container {% if error_div or login_error %}hidden{% endif %}" id="simply_apply_main" style="background: #f6f6f6; padding: 25px;">
+  <div class="error">{% get_error_message "DISPLAY_UPLOAD_ERROR" %}</div>
+{% if logged_in %}
+  <div>
+    <div class="error">
+      {% if main_error %}
+      {{ main_error }}
+      {% endif %}
+    </div>
+
+    <div>
+      <h3>Welcome back{% if resume.contact.first_name %}, {{ resume.contact.first_name }}{% endif %}.</h3>
+    </div>
+    <form name="simply_apply" method="post" enctype="multipart/form-data">{% csrf_token %}
+      <label>Name</label>
+      <div name="change_name" {% if not resume.contact.first_name %}style="display: none;"{% endif %}>
+        {% if resume.contact.first_name %}{{ resume.contact.first_name }} {{ resume.contact.last_name }}{% endif %}
+        <a class="edit_name" href="#" style="padding-left:20px;">edit name</a>
+      </div>
+      <div name="change_name" {% if resume.contact.first_name %}style="display: none;"{% endif %}>
+        <input class="input-medium" type="text" name="first_name" placeholder="First Name" {% if resume.contact.first_name %}value="{{ resume.contact.first_name }}"{% endif %}>
+        <input class="input-medium" type="text" name="last_name" placeholder="Last Name" {% if resume.contact.last_name %}value="{{ resume.contact.last_name }}"{% endif %}>
+        {% if resume.contact.first_name %}<a class="edit_name" href="#" style="padding-left:20px;">nevermind</a>{% endif %}
+      </div>
+      <div name="change_resume"{% if not resume %} style="display: none;"{% endif %}>
+        <label>Resume</label>
+        {% for f in resume.content_set.all %}
+        <span>
+        {% if not f.file_name %}
+        LinkedIn
+        {% else %}
+        {{ f.file_name }}
+        {% endif %}
+        </span>
+        <a class="resume_toggle" href="#" style="padding-left: 20px;">change file</a>
+        {% endfor %}
+      </div>
+      <div name="change_resume"{% if resume %} style="display: none;"{% endif %}>
+        <label for="">Select a resume</label>
+        <select id="resume_select" name="simply_apply_uploaded_resume">
+          <option value="">Upload a new resume</option>
+          {% for f in resume.content_set.all %}
+          <option value="resume" selected="selected">
+            {% if not f.file_name %}
+            LinkedIn
+            {% else %}
+            {{ f.file_name }}
+            {% endif %}
+          </option>
+          {% endfor %}
+        </select>
+        <a id="download" href="http://www.simplyhired.com/myresume/get_raw_resume" {% if not resume %}style="display: none;"{% endif %}>Download</a>
+        <label>
+          Upload your Resume
+          <input id="upload_new_resume" type="file" name="resume_file" style="width:260px;"{% if resume %}disabled="disabled"{% endif %}>
+        </label>
+        {#<label>Import via <a id="import_linkedin" target="_parent" href="{% url 'resume_linkedin' %}">LinkedIn</a></label>#}
+        <span class="error" style="display: inline-block; position: relative; margin-bottom: 0px;">{{ upload_error }}</span>
+      </div>
+      <div>
+        <label>Optional Cover Letter to the Hiring Manager</label>
+        <textarea name="message">{{ message }}</textarea>
+      </div>
+      <div class="submit">
+        <input type="submit" onclick="javascript:return !form_has_errors();" class="btn" value="Submit Application" />
+      </div>
+      <input type="hidden" name="{{ job.key_type }}" value="{{ job.key }}">
+    </form>
+  </div>
+
+{% else %}
+
+  <div> {# Container for new user apply. #}
+    <div class="error"></div>
+    <h2>Your Application</h2>
+    {# Create an account form. #}
+    <div class="guest_apply">
+      <form name="no_login_simply_apply" id="simply_apply_no_login" method="post" enctype="multipart/form-data">{% csrf_token %}
+        <input type="hidden" name="{{ job.key_type }}" value="{{ job.key }}">
+        <div id="c_form_input">
+          <label>Name</label>
+          <div class="row">
+            <div class="span2 input-medium">
+              <input name="first_name" id="id_first_name" placeholder="First" type="text" class="input-medium" size="31" />
+              <span class="error"></span>
+            </div>
+            <div class="span2">
+              <input name="last_name" id="id_last_name" placeholder="Last" type="text" class="input-medium" size="31" />
+              <span class="error"></span>
+            </div>
+          </div>
+          <p></p>
+        </div>
+        <div class="row">
+          <div class="span3" style="width:175px">
+            <label style="display: inline-block;">Email</label>
+            <input style="width: 175px;" name="email" id="id_email" type="text" placeholder="Email" class="form-inline" size="31">
+            <span class="error"></span>
+          </div>
+        </div>
+        <div>
+          <label>
+            Upload your Resume
+          </label>
+          <input type="file" name="resume_file">
+          <span class="error"></span>
+        </div>
+        <div style="padding-top:15px;">
+          <label>Optional Cover Letter to the Hiring Manager</label>
+          <textarea name="message">{{ message }}</textarea>
+        </div>
+        <div class="submit">
+          <input type="submit" onclick="javascript:return !form_has_errors();" class="btn" value="Submit Application" />
+        </div>
+      </form>
+    </div>
+  </div>
+{% endif %}
+</div> {# /container #}
+
+{% endblock %}

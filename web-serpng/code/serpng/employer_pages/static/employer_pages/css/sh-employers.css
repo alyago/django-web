@@ -1,0 +1,89 @@
+.employer-2column-left {
+  float: left;
+  position: relative;
+  overflow: hidden;
+  width: 635px;
+  padding-right: 15px;
+}
+.employer-2column-right {
+  float: right;
+  position: relative;
+  overflow: hidden;
+  width: 310px;
+}
+
+.employer-3column-left {
+  float: left;
+  position: relative;
+  overflow: hidden;
+  width: 310px;
+  padding-right: 15px;
+}
+.employer-3column-right {
+  float: right;
+  position: relative;
+  overflow: hidden;
+  width: 310px;
+  padding-left: 15px;
+}
+.employer-3column-middle {
+  float: right;
+  position: relative;
+  overflow: hidden;
+  width: 310px;
+}
+
+.employer-description p {
+  color: black;
+  font-size: 1.3rem;
+  line-height: 1.7rem;
+  margin: 0 0 10px 0;
+  text-align: justify;
+}
+.employer-section-header {
+  width: 100%;
+  background-color: #a0a0a0;
+}
+.employer-section-header h2 {
+  color: white;
+  font-size: 1.2em;
+  font-weight: bold;
+  text-align: center;
+  line-height: 2.4em;
+}
+.employer-section-body {
+  width: 100%;
+/*  border-bottom: 1px solid #e6e6e6; */
+  font-size: 1.2rem;
+  line-height: 1.6rem;
+}
+.employer-section-body a,
+.employer-section-body a:visited {
+  color: #0066cc;
+}
+.employer-section-body a:hover,
+.employer-section-body a:active {
+  color: #444444;
+}
+.employer-section-body-item {
+  padding-top: 10px;
+}
+
+div.employer-snapshot-cat {
+  float: left;
+  overflow: hidden;
+  width: 100px;
+  padding-right: 15px;
+  font-weight: bold;
+}
+
+div.employer-snapshot-txt {
+  float: right;
+  overflow: hidden;
+  width: 175px;
+}
+
+div.employer-clear-float {
+  clear: both;
+  height: 0;
+}

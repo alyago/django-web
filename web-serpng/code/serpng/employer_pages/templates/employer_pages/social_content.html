@@ -1,0 +1,76 @@
+{% load static %}
+{% load get_config %}
+
+<div class="employer-profile-header"
+     style="padding: 10px 0;">
+  <div style="float: left; position: relative; overflow: hidden;">
+    <h1 style="font-size: 3rem; font-weight: normal; line-height: 3.4rem;">
+      {{ emp.name }}
+    </h1>
+  </div>
+  <div style="float: right; position: relative; overflow: hidden;">
+    <a href="{% url 'employer-pages-url:directory' %}">
+      Back to employers directory >
+    </a>
+  </div>
+  <div class="employer-clear-float"></div>
+</div><!-- employer-profile-header -->
+
+
+<!-- employer-left-column -->
+<div class="employer-left-middle-column"
+     style="float: left; position: relative; overflow: hidden; width: 620px; padding-right: 15px;">
+  <ul class="nav nav-tabs">
+  {% for profile in feed_links %}
+    <li {% if forloop.counter == 1 %}class="active"{% endif %}> 
+    <a href="#{{ profile.webprofile_type.code }}{{ forloop.counter }}" data-toggle="tab">
+        {{ profile.webprofile_type.description }}</a></li>
+  {% endfor %}
+  </ul>
+  <div class="tab-content">
+    {% for profile in feed_links %}
+    <div class={% if forloop.counter == 1 %}"tab-pane active"{% else %}"tab-pane"{% endif %}
+    id="{{ profile.webprofile_type.code }}{{ forloop.counter }}">
+      {% if profile.webprofile_type.code == 'fb' %}
+        <fb:like-box href="{{ profile.url }}" width="620" height="700" colorscheme="light"
+            show_faces="false" header="false" stream="true" show_border="true"></fb:like-box>
+      {% elif profile.webprofile_type.code == 'tw' %}
+        <a class="twitter-timeline" href="{{ profile.url }}" data-screen-name="{{ profile.description }}" data-widget-id="396049463145279488"></a>
+      {% endif %}
+    </div>
+    {% endfor %}
+  </div> <!-- tab-content -->
+</div><!-- employer-left-column -->
+
+
+<!-- employer-right-column -->
+<div class="employer-right-column"
+     style="float: right; position: relative; overflow: hidden; width: 310px; padding-left: 15px;">
+  
+  <div class="employer-section-header">
+    <h2>Jobs at {{ emp.get_display_name }}</h2>
+  </div>
+  
+  <div class="employer-section-body">
+    {% for name in employer_names_top_cities_jobs %}
+      <div class="employer-section-body-item">
+        <h4>{{ name.normalized_company_name }} jobs</h4>
+        <div class="employer-top-cities-jobs-list">
+          {% for city in name.top_cities_jobs %}
+            <div style="width: 50%; float: left; overflow: hidden;">
+              <a href="{{ city.serp_url }}">{{ city.name }}</a> ({{ city.count }})
+            </div>
+          {% endfor %}
+          <div class="employer-clear-float"></div>
+        </div><!-- employer-top-cities-jobs-list -->
+      </div><!-- employer-section-body-item -->
+    {% endfor %}
+  </div><!-- employer-section-body -->
+</div><!-- employer-right-column -->
+
+
+<div class="employer-clear-float"></div>
+
+<script type="text/javascript">
+  var emp_link = "{{ emp_link }}";
+</script>

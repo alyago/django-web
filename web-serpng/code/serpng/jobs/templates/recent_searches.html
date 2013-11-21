@@ -1,0 +1,25 @@
+<div class="recent-searches js-recent-searches" style="display:none;">
+  <h2 class="heading">Your Recent Searches</h2>
+  <p class="recent-searches-info js-recent-searches-info" style="display: none;">
+    You have no recent searches.
+  </p>
+  
+  <div class="js-recent-searches-listings" style="display: none;">
+    <ul></ul>
+  </div>
+
+  <div class="rv-controls js-recent-searches-controls">
+    <span class="rv-pagination js-recent-searches-pagination">
+      <span class="rv-next-page js-recent-searches-next-page evti" data-event="recent_searches_next">&gt;</span>
+      <span class="rv-prev-page js-recent-searches-prev-page evti" data-event="recent_searches_prev">&lt;</span>
+    </span>
+    <span class="rv-clear js-clear-recent-searches evti" data-event="recent_searches_clear">Clear</span>
+    <span class="js-clear-recent-searches-tooltip" style="display: none;">Clear all recent searches</span>
+    <span class="rv-results-indicator-container">
+      <span class="rv-results-indicator js-recent-searches-results-indicator"></span>
+    </span>
+  </div>
+
+  {# The following is used to interface with IE7's userData functionality, a fallback to local storage. #}
+  <input type="text" id="js-ie7-user-data-recentSearches" class="ie7-user-data-recentSearches" />
+</div>

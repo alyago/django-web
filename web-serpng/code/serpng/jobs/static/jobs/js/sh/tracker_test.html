@@ -1,0 +1,180 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+    "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>SH.tracker</title>
+    <link rel="stylesheet" href="../test/qunit-1.11.0.css">
+  </head>
+  <body>
+    <!-- Sinon / QUnit boiler-plate -->
+    <h1 id="qunit-header">Tests for SH.tracker</h1>
+    <h2 id="qunit-banner"></h2>
+    <h2 id="qunit-userAgent"></h2>
+    <ol id="qunit-tests"></ol>
+    <script type="text/javascript" src="../../../../../static/js/jquery-1.7.1.min.js"></script>
+    <script type="text/javascript" src="../test/qunit-1.11.0.js"></script>
+    <script type="text/javascript" src="../test/sinon-1.6.0.js"></script>
+    <script type="text/javascript" src="../test/sinon-qunit-1.0.0.js"></script>
+
+    <!-- Code to test -->
+    <script src="tracker.js"></script>
+
+
+    <script>
+      //
+      // Globals
+      //
+      var GA_URL = 'http://www.google-analytics.com/ga.js';
+      var GA_DEFAULT_ACCOUNT = 'UA-1039096-6';
+      var GA_TEST_ACCOUNT = 'GA-TEST-ACCOUNT';
+      var GA_PAGEVIEW = 'GA-TEST-PAGEVIEW';
+
+      var Q_URL = 'http://edge.quantserve.com/quant.js';
+      var Q_DEFAULT_ACCOUNT = 'p-32oLU8PZtWAwo';
+      var Q_TEST_ACCOUNT = 'Q-TEST-ACCOUNT';
+
+
+      //
+      // Helpers
+      //
+      function setUpGoogleAnalytics(opt_pageviewCallback) {
+        // Set up a fake Google Analytics tracker.
+        _gat = {
+          _createTracker: function(account) {
+            gaAccount = account;
+            return {
+              _initData: function() {
+                gaInit = true;
+              },
+              _trackPageview: function(pageview) {
+                opt_pageviewCallback && opt_pageviewCallback(pageview);
+              }
+            };
+          }
+        };
+      }
+
+      function verifyGoogleAnalytics(expectedAccount) {
+        // Fire the callback and verify trackerAccount.
+        jQuery.getScript.getCall(0).args[1]();
+        ok(gaInit);
+        equal(gaAccount, expectedAccount);
+      }
+
+
+      //
+      // Tests
+      //
+      test("SH.tracker.ga.init - default account number", function() {
+        this.spy(jQuery, 'getScript');
+        SH.tracker.ga.init();
+
+        // Verify getScript was called with the correct URL.
+        ok(jQuery.getScript.calledOnce);
+        equal(jQuery.getScript.getCall(0).args[0], GA_URL);
+
+        setUpGoogleAnalytics();
+        verifyGoogleAnalytics(GA_DEFAULT_ACCOUNT);
+      });
+
+      test("SH.tracker.ga.init - specific account number", function() {
+        this.spy(jQuery, 'getScript');
+        SH.tracker.ga.init(GA_TEST_ACCOUNT);
+
+        // Verify getScript was called with the correct URL.
+        ok(jQuery.getScript.calledOnce);
+        equal(jQuery.getScript.getCall(0).args[0], GA_URL);
+
+        setUpGoogleAnalytics();
+        verifyGoogleAnalytics(GA_TEST_ACCOUNT);
+      });
+
+      test("SH.tracker.ga.track - current page", function() {
+        this.spy(jQuery, 'getScript');
+        SH.tracker.ga.init(GA_TEST_ACCOUNT);
+
+        var actualPageview;
+        setUpGoogleAnalytics(function() {
+          actualPageview = GA_PAGEVIEW;
+        });
+        verifyGoogleAnalytics(GA_TEST_ACCOUNT);
+
+        equal(actualPageview, GA_PAGEVIEW);
+      });
+
+      test("SH.tracker.ga.track - pageview", function() {
+        this.spy(jQuery, 'getScript');
+        SH.tracker.ga.init(GA_TEST_ACCOUNT);
+
+        var actualPageview;
+        setUpGoogleAnalytics(function(pageview) {
+          actualPageview = pageview;
+        });
+        verifyGoogleAnalytics(GA_TEST_ACCOUNT);
+
+        SH.tracker.ga.trackPageview(GA_PAGEVIEW);
+        equal(actualPageview, GA_PAGEVIEW);
+      });
+
+      test("SH.tracker.ga.track - pageview before GA is set up", function() {
+        // Set up Google Analytics mock.
+        var actualPageview;
+        setUpGoogleAnalytics(function(pageview) {
+          actualPageview = pageview;
+        });
+
+        // Hack to ensure that SH.tracker.ga.tracker is still undefined.
+        // (in this test suite, SH.tracker.ga.tracker has been initialized by
+        //  previous tests, but in the production code, SH.tracker.ga.tracker
+        //  is initialized only once).
+        SH.tracker.ga.tracker = undefined;
+
+        // Track a page before SH.tracker.ga.tracker is initialized.
+        SH.tracker.ga.trackPageview(GA_PAGEVIEW);
+
+        // Initialize SH.tracker.ga.tracker and spy on its Ajax call.
+        this.spy(jQuery, 'getScript');
+        SH.tracker.ga.init(GA_TEST_ACCOUNT);
+
+        // Verify that the GA account data is correctly populated.
+        verifyGoogleAnalytics(GA_TEST_ACCOUNT);
+
+        // Check that the pageview tracked before initialization has been
+        // correctly propagated to GA.
+        equal(actualPageview, GA_PAGEVIEW);
+      });
+
+      test("SH.tracker.q.init - default account number", function() {
+        this.spy(jQuery, 'getScript');
+        SH.tracker.q.init();
+
+        // Verify getScript was called with the correct URL.
+        ok(jQuery.getScript.calledOnce);
+        equal(jQuery.getScript.getCall(0).args[0], Q_URL);
+
+        // Fire callback
+        jQuery.getScript.getCall(0).args[1]();
+
+        // Verify account number
+        equal(_qacct, Q_DEFAULT_ACCOUNT);
+      });
+
+      test("SH.tracker.q.init - specific account number", function() {
+        this.spy(jQuery, 'getScript');
+        SH.tracker.q.init(Q_TEST_ACCOUNT);
+
+        // Verify getScript was called with the correct URL.
+        ok(jQuery.getScript.calledOnce);
+        equal(jQuery.getScript.getCall(0).args[0], Q_URL);
+
+        // Fire callback
+        jQuery.getScript.getCall(0).args[1]();
+
+        // Verify account number.
+        equal(_qacct, Q_TEST_ACCOUNT);
+      });
+
+    </script>
+  </body>
+</html>

@@ -1,0 +1,94 @@
+body {
+  background: none repeat scroll 0 0 #FFFFFF;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+.logo-container {
+  text-align: left;
+  background: none repeat scroll 0 0 #FFFFFF;
+}
+
+.logo-container img {
+  background: none repeat scroll 0 0 #FFFFFF;
+  padding: 10px;
+}
+
+h1 {
+  background-color: #999999;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.survey-title {
+  color: #FFFFFF;
+  float: none;
+  font: bold large Arial;
+  padding: 10px;
+  text-align: left;
+  text-decoration: none;
+}
+
+.survey-title span {
+  color: #FFFFFF;
+  font-family: Arial;
+}
+
+.thank-you-content {
+  clear: both;
+  height: 200px;
+  margin-left: 50px;
+  margin-right: 50px;
+  margin-top: 100px;
+  position: absolute;
+}
+
+.thank-you-message {
+  text-align: center;
+  width: auto;
+}
+
+.thank-you-message p {
+  font-family: Arial;
+  font-size: 1.3em;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.close-button {
+  text-align: center;
+}
+
+button {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  background: #ff9900;
+  background-image: -ms-linear-gradient(top, #ff9900 0%, #ff6600 100%);
+  background-image: -moz-linear-gradient(top, #ff9900 0%, #ff6600 100%);
+  background-image: -o-linear-gradient(top, #ff9900 0%, #ff6600 100%);
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #ff9900), color-stop(1, #ff6600));
+  background-image: -webkit-linear-gradient(top, #ff9900 0%, #ff6600 100%);
+  background-image: linear-gradient(to bottom, #ff9900 0%, #ff6600 100%);
+  border: 1px solid #ff6600;
+  border-radius: 1px;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.3em;
+  font-weight: bold;
+  height: 40px;
+  line-height: 40px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 150px;
+}
+
+button:hover {
+  background-color: #ff6600;
+  background-image: none;
+  cursor: pointer;
+}

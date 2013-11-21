@@ -1,0 +1,98 @@
+ERROR 2013-08-06 23:47:39,725 middleware 26532 139647852017408 Uncaught exception: Reverse for 'serpng.jobs.views.jobs.jobs' with arguments '('',)' and keyword arguments '{}' not found.
+Traceback (most recent call last):
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/core/handlers/base.py", line 115, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "/home/oleg/code/web-serpng/code/serpng/../serpng/jobs/views/jobs.py", line 323, in jobs
+    context_instance=RequestContext(request))
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/shortcuts/__init__.py", line 29, in render_to_response
+    return HttpResponse(loader.render_to_string(*args, **kwargs), **httpresponse_kwargs)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 177, in render_to_string
+    return t.render(context_instance)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/base.py", line 140, in render
+    return self._render(context)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/base.py", line 134, in _render
+    return self.nodelist.render(context)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/base.py", line 830, in render
+    bit = self.render_node(node, context)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/debug.py", line 74, in render_node
+    return node.render(context)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader_tags.py", line 124, in render
+    return compiled_parent._render(context)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/base.py", line 134, in _render
+    return self.nodelist.render(context)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/base.py", line 830, in render
+    bit = self.render_node(node, context)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/debug.py", line 74, in render_node
+    return node.render(context)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/base.py", line 830, in render
+    bit = self.render_node(node, context)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/debug.py", line 74, in render_node
+    return node.render(context)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader_tags.py", line 156, in render
+    return self.render_template(self.template, context)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader_tags.py", line 138, in render_template
+    output = template.render(context)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/base.py", line 140, in render
+    return self._render(context)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/base.py", line 134, in _render
+    return self.nodelist.render(context)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/base.py", line 830, in render
+    bit = self.render_node(node, context)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/debug.py", line 74, in render_node
+    return node.render(context)
+  File "/home/oleg/code/web-serpng/code/serpng/../serpng/jobs/templatetags/absolute_http_url.py", line 27, in render
+    result = self.url_node.render(context) or context[self.url_node.asvar]
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/defaulttags.py", line 424, in render
+    raise e
+NoReverseMatch: Reverse for 'serpng.jobs.views.jobs.jobs' with arguments '('',)' and keyword arguments '{}' not found.
+ERROR 2013-08-06 23:49:02,098 middleware 26532 139647852017408 Uncaught exception: Reverse for 'serpng.jobs.views.jobs.jobs' with arguments '('',)' and keyword arguments '{}' not found.
+Traceback (most recent call last):
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/core/handlers/base.py", line 115, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "/home/oleg/code/web-serpng/code/serpng/../serpng/jobs/views/jobs.py", line 323, in jobs
+    context_instance=RequestContext(request))
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/shortcuts/__init__.py", line 29, in render_to_response
+    return HttpResponse(loader.render_to_string(*args, **kwargs), **httpresponse_kwargs)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 177, in render_to_string
+    return t.render(context_instance)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/base.py", line 140, in render
+    return self._render(context)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/base.py", line 134, in _render
+    return self.nodelist.render(context)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/base.py", line 830, in render
+    bit = self.render_node(node, context)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/debug.py", line 74, in render_node
+    return node.render(context)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader_tags.py", line 124, in render
+    return compiled_parent._render(context)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/base.py", line 134, in _render
+    return self.nodelist.render(context)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/base.py", line 830, in render
+    bit = self.render_node(node, context)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/debug.py", line 74, in render_node
+    return node.render(context)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/base.py", line 830, in render
+    bit = self.render_node(node, context)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/debug.py", line 74, in render_node
+    return node.render(context)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader_tags.py", line 156, in render
+    return self.render_template(self.template, context)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader_tags.py", line 138, in render_template
+    output = template.render(context)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/base.py", line 140, in render
+    return self._render(context)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/base.py", line 134, in _render
+    return self.nodelist.render(context)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/base.py", line 830, in render
+    bit = self.render_node(node, context)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/debug.py", line 74, in render_node
+    return node.render(context)
+  File "/home/oleg/code/web-serpng/code/serpng/../serpng/jobs/templatetags/absolute_http_url.py", line 27, in render
+    result = self.url_node.render(context) or context[self.url_node.asvar]
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/defaulttags.py", line 424, in render
+    raise e
+NoReverseMatch: Reverse for 'serpng.jobs.views.jobs.jobs' with arguments '('',)' and keyword arguments '{}' not found.

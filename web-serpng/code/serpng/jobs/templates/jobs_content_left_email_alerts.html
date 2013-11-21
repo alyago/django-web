@@ -1,0 +1,85 @@
+{% load staticfiles %}
+{% load i18n %}
+{% load extract_city %}
+{% load get_config %}
+
+{% if not user or not user.is_logged_in and not is_email_alerts_in_maintenance %}
+  <div id="c_alerts_offer" class="alerts-offer" style="display:none;">
+    <div class="alerts-logo"></div>
+    <form action="#" method="post">
+      <div class="message">
+        {{ translations.email_alert_interstitial_heading_text }}
+      </div>
+
+      <div class="envelope">
+        <div class="display">
+          <p class="keywords">{{ lightbox_keywords }}</p>
+          <p class="location">
+            {% if keywords and result.formatted_location %}
+              {{ result.formatted_location }}
+            {% endif %}
+          </p>
+          <a class="edit">{{ translations.email_alert_interstitial_edit_text }}</a>
+        </div>
+
+        <div class="modify">
+          <div>
+            <input class="keywords" type="text" name="q" value="{{ keywords }}" placeholder="{{ translations.email_alert_interstitial_keywords_text }}" autocomplete="off" />
+          </div>
+          <div>
+            {% if result.formatted_location %}
+            <input class="location" type="text" name="l" value="{{ result.formatted_location }}" placeholder="{{ translations.email_alert_interstitial_location_text }}" autocomplete="off" />
+            {% else %}
+            <input class="location" type="text" name="l" value="" placeholder="{{ translations.email_alert_interstitial_location_text }}" autocomplete="off" />
+            {% endif %}
+          </div>
+          <a class="save">{{ translations.email_alert_interstitial_save_text }}</a>
+        </div>
+      </div>
+
+      <div class="create">
+        <input class="email" type="text" name="email" value="" maxlength="80" placeholder="{{ translations.email_alert_interstitial_instruction_text }}" autocomplete="off" />
+        <input class="icon-go-btn" type="submit" value="" />
+      </div>
+
+      <div>
+        <a class="continue" href="#" target="_blank">
+          <b>{{ translations.email_alert_interstitial_continue_text_1 }}</b> {{ translations.email_alert_interstitial_continue_text_2 }}
+        </a>
+      </div>
+    </form>
+  </div><!--alerts-offer-->
+{% endif %}
+
+<div id="create_alert" class="create-alert" style="display:none;">
+{% if is_email_alerts_in_maintenance %}
+    <div class="heading">
+      {{ translations.email_alert_interstitial_maintenance_heading_text }}
+    </div>
+    <p for="f_create_alert_email" class="text" style="margin-bottom: 10px;">
+      {{ translations.email_alert_interstitial_maintenance_description_text }}
+    </p>
+    <p style="margin-bottom: 10px;">
+      {{ translations.email_alert_interstitial_maintenance_apology_text }}
+    </p>
+    <p style="margin-bottom: 10px;">
+      - {{ translations.email_alert_interstitial_maintenance_signature_text }}
+    </p>
+{% else %}
+    <div class="heading">
+      {{ translations.email_alert_subscribe_heading_text }}
+    </div>
+    <label for="f_create_alert_email" class="text">
+      {{ translations.email_alert_subscribe_reason_text }}<br />
+      {{ translations.email_alert_subscribe_cta_text }}
+    </label>
+
+    <form action="#" method="post">
+      <input id="f_create_alert_email" class="text" type="text" name="email" value="{% if user_data.user_email %}{{ user_data.user_email }}{% else %}{{ translations.email_alert_subscribe_instruction_text }}{% endif %}" maxlength="255" /> <input class="button" type="submit" value="Save" />
+    </form>
+
+    <p class="privacy">
+      {{ translations.email_alert_subscribe_info_text }}
+    </p>
+{% endif %}
+  </div><!--create_alert-->

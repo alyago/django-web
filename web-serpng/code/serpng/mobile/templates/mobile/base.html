@@ -1,0 +1,77 @@
+{% spaceless %}
+{% load compressed %}
+{% load staticfiles %}
+
+<!DOCTYPE html> 
+<html>
+  <head>
+    <title>{{ title }}</title>
+    {% block head_meta %}
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="apple-mobile-web-app-title" content="Simply Hired">
+    <meta name="viewport" content="initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,width=device-width,user-scalable=yes" />
+    {% endblock %}
+    {% block head_links %}
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    {% endblock %}
+    {% compressed_css 'mobile-css' %}
+  </head>
+  <body id="{{ page_id }}-content-main">
+    <div id="container">
+{% if enable_menu %}
+      <div id="menu"></div>
+{% endif %}
+      <div id="content">
+        <div id="header">
+          <div id="masthead">
+{% if enable_menu %}
+            <div class="menu-btn btn btn-orange" data-event-name='mobile.serp.manburger.click'><div class="sprite-manburger"></div></div>
+{% endif %}
+            <div class="email-btn btn{% if not enable_email_button %} disabled{% endif %}"><div class="sprite-email-alert"{% if enable_email_button %} data-event-name='mobile.serp.email_alert.click'{% endif %}></div></div>
+            <div class="logo">
+              <a href="/"><div class="sprite-logo"></div></a>
+            </div>
+          </div>
+          <div class="email-box"></div>
+{% if not disable_search %}
+	{% include "mobile/search_box.html" %}
+{% endif %}
+        </div>
+        <div class="content-main">
+          {% block "content" %}{% endblock %}
+        </div>
+{% if not request.is_mobile_app %}
+        <div class="footer">
+          <span>&copy; {% now "Y" %} Simply Hired, Inc. | <a rel="nofollow" href="/a/settings/mobile?m=0">Full site</a></span>
+        </div>
+{% endif %}
+        <div id="menu-overlay" class="overlay"></div>
+        <div id="search-overlay" class="overlay"></div>
+        <div id="image-preloader"></div>
+      </div>
+    </div>
+{% if not request.is_mobile_app %}
+    <div id="loading-overlay" class="overlay">
+      <div class="loading-spinner"></div>
+    </div>
+{% endif %}
+    <script type="text/javascript">
+      var SH = {
+        isLoggedIn: {{ request.user.is_logged_in|lower }},
+{% if request.user.is_logged_in %}
+        username: '{{ request.user.username }}'
+{% endif %}
+      }
+
+      document.addEventListener("touchstart", function(){}, true);
+    </script>
+
+    {% compressed_js 'mobile' %}
+    {% block "scripts" %}{% endblock %}
+    <script type="text/javascript" src="//www.google.com/jsapi" async="true"></script>
+    {% include "mobile/google_analytics.html" %}
+    {% include "mobile/comscore.html" %}
+  </body>
+</html>
+{% endspaceless %}

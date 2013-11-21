@@ -1,0 +1,113 @@
+{% load absolute_http_url %}
+{% load get_mobile_canonical_url %}
+{% load get_config %}
+{% load staticfiles %}
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!--[if lt IE 7]>  <html class="ie6 lte9 lte8 lte7" xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://ogp.me/ns/fb#" xml:lang="{{ current_language_code }}" lang="{{ current_language_code }}"><![endif]-->
+<!--[if IE 7]>     <html class="ie7 lte9 lte8 lte7" xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://ogp.me/ns/fb#" xml:lang="{{ current_language_code }}" lang="{{ current_language_code }}"><![endif]-->
+<!--[if IE 8]>     <html class="ie8 lte9 lte8" xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://ogp.me/ns/fb#" xml:lang="{{ current_language_code }}" lang="{{ current_language_code }}"><![endif]-->
+<!--[if IE 9]>     <html class="ie9 lte9" xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://ogp.me/ns/fb#" xml:lang="{{ current_language_code }}" lang="{{ current_language_code }}"><![endif]-->
+<!--[if gt IE 9]>  <html xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://ogp.me/ns/fb#" xml:lang="{{ current_language_code }}" lang="{{ current_language_code }}"><![endif]-->
+<!--[if !IE]><!--> <html xmlns="http://www.w3.org/1999/xhtml"  xml:lang="{{ current_language_code }}" lang="{{ current_language_code }}"><!--<![endif]-->
+
+  {% comment %} ***** Head ***** {% endcomment %}
+
+  <head>
+    <title>{% block page_title %}{% endblock %} | {{ translations.page_title_text }}</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="description" content="{% if myresume %}{{ keywords }}{% else %}{% if result.total_job_count %}{{ result.total_job_count }}{% if keywords %} {{ keywords }}{% endif %} jobs available. Find your next{% if result.formatted_location %} {{ result.formatted_location }}{% endif %}{% if keywords %} {{ keywords }}{% endif %} job and jump-start your career with Simply Hired's job search engine.{% endif %}{% endif %}" />
+    <meta name="keywords" content="{% if myresume %}{{ keywords }}{% else %}{{ result.meta_keywords }}{% endif %}" />
+{% if meta_noindex %}
+    <meta name="robots" content="noindex,follow" />
+{% endif %}
+    <link rel="shortcut icon" type="image/x-icon" href="{% absolute_http_url "/favicon.ico" %}?{% get_config "DEPLOY_TAG" %}" />
+    <link rel="apple-touch-icon" href="{% absolute_http_url "/apple-touch-icon.png" %}?{% get_config "DEPLOY_TAG" %}" />
+    <link rel="alternate" type="application/rss+xml" title="{% if myresume %}{{ keywords }}{% else %}{{ result.page_title }}{% endif %} | Job Search with Simply Hired" href="{{ result.rss_url }}" />
+{% if result.pagination.current_page == 1 %}
+    <link rel="canonical" href="{% absolute_http_url desktop_canonical_url %}" />
+    <link rel="alternate" media="only screen and (max-width: 640px)" href="{% get_mobile_canonical_url result.canonical_url %}">
+{% endif %}
+{% if result.pagination.num_pages > 1 %}
+    {% if result.pagination.current_page > 1 %}
+    <link rel="prev" href="{{ result.pagination.prev_page_link_url }}">
+    {% endif %}
+    {% if result.pagination.current_page < result.pagination.num_pages and display_rel_next %}
+    <link rel="next" href="{{ result.pagination.next_page_link_url }}">
+    {% endif %}
+{% endif %}
+
+{% block css %}{% endblock %}
+
+{% if google_afs_container %}{% include "google_adsense_analytics.html" %}{% endif %}
+{% include "comscore.html" %}
+  </head>
+
+  {% comment %} ***** Body ***** {% endcomment %}
+  
+  <body id={% block body_id %}{% endblock %} class={% block body_class %}{% endblock %}>
+    <div id="container" class="container"> 
+      {% comment %} ***** Visible HTML ***** {% endcomment %}
+
+      {% block top %}
+        {% include "base/top_header.html" %}
+        {% include "base/top_search.html" %}
+      {% endblock %}
+
+      <div id="content" class="content">
+        {% block content %}{% endblock %}
+      </div><!--content-->
+
+      {% include "content_survey.html" %}
+
+      {% block bottom %}
+        {% include "base/bottom_mobile_link.html" %}
+        {% include "base/bottom_footer.html" %}
+      {% endblock %}
+
+    </div><!--container-->
+
+
+    {% comment %} ***** Hidden HTML ***** {% endcomment %}
+
+    {% block hidden %}{% endblock %}
+
+    {% block ida %}{% endblock %}
+
+    {% comment %} ***** Javascript ***** {% endcomment %}
+
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script type="text/javascript">
+      if(typeof jQuery === 'undefined') {document.write('<script type="text/javascript" src="{% static 'js/jquery-1.7.1.min.js' %}?{% get_config "DEPLOY_TAG" %}"><\/script>');}
+    </script>
+    <script type="text/javascript" src="{% url 'django.views.i18n.javascript_catalog' %}?{% get_config "DEPLOY_TAG" %}"></script>
+
+    {% comment %} ***** Javascript Support ***** {% endcomment %}
+
+    {% block js_support %}{% endblock %}
+
+
+    {% comment %} ***** Google AdSense ***** {% endcomment %}
+
+    {% include "google_adsense_ads_js.html" %}
+
+
+    {% comment %} ***** Retargeting ***** {% endcomment %}
+
+    {% block retargeting %}{% endblock %} 
+
+
+    {% comment %} ***** Tracking ***** {% endcomment %}
+
+    {% block tracking %}{% endblock %}
+
+
+    {% comment %} ***** Autocomplete Support ***** {% endcomment %}
+
+    {% block ac_support %}{% endblock %}
+    
+
+    {% comment %} ***** Request ID for Ajax loading of Serp Link (SEO) ***** {% endcomment %}
+    <div id="request_id" style="display: none;">{{ request_id }}</div>
+  </body>
+</html>

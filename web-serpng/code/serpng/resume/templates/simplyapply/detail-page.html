@@ -1,0 +1,172 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>{{ job.title }}, {{ job.company }} | Simply Hired</title>
+  <link rel="stylesheet" media="screen" href="http://basic.simplyhired.com/c/jbb/styles/common.css" type="text/css" />
+  <link rel="stylesheet" media="screen" href="http://basic.simplyhired.com/c/jbb/styles/candidate-styles-smb-v3.css" type="text/css" />
+  <link rel="stylesheet" media="screen" href="http://basic.simplyhired.com/c/jbb/styles/fancybox/jquery.fancybox-1.3.1.css" type="text/css" />
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="robots" content="noindex" />
+  <link rel="icon" type="image/gif" href="http://basic.simplyhired.com/c/jbb/images/jobamatic_favicon.gif"/>
+
+<style type="text/css">
+#header {
+  background: #66CCFF;
+  background-image: -ms-linear-gradient(top, #66CCFF 0%, #3C9EC2 100%);
+  background-image: -moz-linear-gradient(top, #66CCFF 0%, #3C9EC2 100%);
+  background-image: -o-linear-gradient(top, #66CCFF 0%, #3C9EC2 100%);
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #66CCFF), color-stop(1, #3C9EC2));
+  background-image: -webkit-linear-gradient(top, #66CCFF 0%, #3C9EC2 100%);
+  background-image: linear-gradient(to bottom, #66CCFF 0%, #3C9EC2 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#66CCFF', endColorstr='#3C9EC2',GradientType=0); /* For IE. */
+}
+#header > div #logo { display: inline-block; float: left; padding: 9px 0; }
+#job_container { background-image:none;background-color:rgb(248,249,255);padding-top:50px; padding-bottom: 20px; }
+#c_job { border: 1px solid #8b8878; box-shadow:2px 2px 10px 0 #CCC; }
+</style>
+
+</head>
+<body id="candidate_job_detail">
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<script type="text/javascript">
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
+<div class="body">
+
+<div id="job_container">
+
+<div class="content">
+  <div id="c_job">
+    <div id="c_smb_job_summary">
+
+<div id="smb_job_summary">
+    <div class="job_info">
+        <span class="job_info_label">Company</span>
+        <br>
+        <span class="job_info_data">{{ job.company }}</span>
+    </div>
+    <div class="job_info">
+        <span class="job_info_label">Job Title</span>
+        <br>
+        <span class="job_info_data">{{ job.title }}</span>
+    </div>
+    <div class="job_info">
+        <span class="job_info_label">Location</span>
+        <br>
+        <span class="job_info_data">{{ job.location }}</span>
+    </div><!-- zip?-->
+    <div class="job_info">
+        <span class="job_info_label">Date Posted</span>
+        <br>
+        <span class="job_info_data">{{ job.date_posted|date:"F j, Y" }}</span>
+    </div>
+</div>
+        <div class="s_divider"></div>
+        <div id="smb_social">
+    <div id="smb_fb_like" class="social-icon left">
+    <div class="fb-like" data-send="false" data-layout="button_count" data-width="50" data-show-faces="false"></div>
+  </div>
+    <div id="smb_gg_plus" class="social-icon left">
+    <g:plusone></g:plusone>
+  </div>
+    <div id="smb_tweet" class="social-icon left">
+    <a href="https://twitter.com/share" class="twitter-share-button" data-lang="en">Tweet</a>
+    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+  </div>
+    <div id="smb_li_share" class="social-icon left">    <script src="http://platform.linkedin.com/in.js" type="text/javascript"></script>    <script type="IN/Share" data-counter="right"></script>
+  </div>
+    <div id="smb_em_share" class="social-icon left">
+    <a title="Email this job to a friend in your email client." class="em_share left" href="mailto:?subject=A job you might be interested in {{ job.title }} job&amp;body=I thought you might be interested in this {{ job.title }} job opening at {{ job.company }}%0D%0A%0D%0A {# TODO #}">
+        <span id="em_share_label" >Email</span>
+    </a>
+  </div>
+    <div class="clear"></div>
+</div>
+        <div class="s_divider"></div>
+        <div><a href="{{ job.detail_page_url }}">View Original Job {% if job.source %}on {{ job.source }}{% endif %}</a></div>
+            </div><!-- c_smb_job_summary -->
+    <div id="c_smb_job" class="main"  style="min-height:400px" >
+      <div id="c_post_0" class="sub_detail">
+        <div id="smb_job_title" title="{{ job.refindkey }}">{{ job.title }}</div>
+        <div id="smb_job_company">{{ job.company }}</div>
+        <div class="m_divider"></div>
+        <div id="smb_job_location">
+          <div class="job_detail_info">
+            <span class="location"><strong>{{ job.location }}</strong></span>
+          </div>
+        </div>
+        <div id="smb_job_posted_date">Posted <strong>{{ job.date_posted|timesince }} ago {# TODO #}</strong> on <strong>{{ job.date_posted|date:"l F j, Y" }}</strong></div>
+        <div class="m_divider"></div>
+    </div>
+
+ 	<div id="c_post_1" class="sub_detail">
+    <div class="left">
+      <a id="resume_apply_top" href="{% url 'resume_simplyapply' %}?jobkey={{ job.refindkey }}" class="simply_apply_button iframe" target="_blank" onclick="return false;"><span class="simply">Simply</span> <span class="apply">Apply</span></a>
+    </div>
+    <div class="clear-left"></div>
+  </div>
+
+  <div id="c_post_2" class="sub_detail">
+    <div id="c_job_description" class="jam_body_text"><pre style="font-family: inherit; word-wrap:break-word;white-space:pre-wrap;">{{ formatted_description }}</pre></div>
+  </div>
+
+  <div id="c_post_3" class="sub_detail">
+    <div class="left">
+      <a id="resume_apply_bottom" href="{% url 'resume_simplyapply' %}?jobkey={{ job.refindkey }}" class="iframe" target="_blank" onclick="return false;">Apply Now!</a>
+    </div>
+    <div class="clear-left"></div>
+    </div>
+    </div><!--c_smb_job-->
+  </div><!--c_job-->
+  <div class="clear"></div>
+</div><!-- content -->
+</div><!--job_container -->
+<div id="c_job_footer">
+<div class="footer_legal left">
+    <span class="copyright">&copy; {% now "Y" %} Simply Hired, Inc.</span>
+    <a class="legal" href="http://www.simplyhired.com">Home</a>
+</div>
+<div id="sh_logo_bottom" class="right">
+    <img src="http://basic.simplyhired.com/c/jbb/images/Powered-by-Simply-Hired.png" alt="Powered by Simply Hired" />
+</div>
+</div>
+</div>
+
+<script type="text/javascript" src="http://basic.simplyhired.com/c/jbb/js/jquery-1.4.4.min.js"></script>
+<script type="text/javascript" src="http://basic.simplyhired.com/c/jbb/js/fancybox/jquery.fancybox-1.3.1.pack.js"></script>
+<script type="text/javascript" src="http://basic.simplyhired.com/c/jbb/js/sponsor_job_details.js"></script>
+<script type="text/javascript" src="http://www.simplyhired.com/c/sh/js/common-min.js"></script>
+<script type="text/javascript">
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+    var sh_pageTracker = _gat._getTracker("UA-1039096-6");
+    sh_pageTracker._initData();
+    sh_pageTracker._trackPageview();
+</script>
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-1039096-6']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+</body>
+</html>

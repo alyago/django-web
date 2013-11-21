@@ -1,0 +1,178 @@
+WARNING 2013-11-20 05:03:51,093 tracking 3068 140471391201024 ValueError in sh_sess cookie
+WARNING 2013-11-20 05:13:35,153 tracking 3307 140343487936256 ValueError in sh_sess cookie
+WARNING 2013-11-20 05:33:53,548 tracking 3610 139973157574400 ValueError in sh_sess cookie
+WARNING 2013-11-20 05:42:29,411 tracking 3610 139973147068160 ValueError in sh_sess cookie
+WARNING 2013-11-20 05:42:34,627 tracking 3610 139972877616896 ValueError in sh_sess cookie
+WARNING 2013-11-20 05:42:38,336 tracking 3610 139972894402304 ValueError in sh_sess cookie
+WARNING 2013-11-20 05:42:43,440 tracking 3610 139972869224192 ValueError in sh_sess cookie
+WARNING 2013-11-20 05:42:47,315 tracking 4336 140318330132256 ValueError in sh_sess cookie
+WARNING 2013-11-20 05:42:47,970 tracking 4336 140318330132256 ValueError in sh_sess cookie
+WARNING 2013-11-20 05:42:48,607 tracking 4336 140318330132256 ValueError in sh_sess cookie
+WARNING 2013-11-20 05:42:49,199 tracking 4336 140318330132256 ValueError in sh_sess cookie
+WARNING 2013-11-20 05:42:49,890 tracking 4336 140318330132256 ValueError in sh_sess cookie
+WARNING 2013-11-20 05:42:50,398 jobs 4336 140318330132256 Error in obtaining search results: Bad results from searcher
+WARNING 2013-11-20 05:42:50,399 tracking 4336 140318330132256 ValueError in sh_sess cookie
+WARNING 2013-11-20 05:42:50,672 tracking 4336 140318330132256 ValueError in sh_sess cookie
+WARNING 2013-11-20 05:42:51,313 tracking 4336 140318330132256 ValueError in sh_sess cookie
+WARNING 2013-11-20 05:42:51,877 tracking 4336 140318330132256 ValueError in sh_sess cookie
+WARNING 2013-11-20 05:42:52,455 tracking 4336 140318330132256 ValueError in sh_sess cookie
+WARNING 2013-11-20 05:42:53,093 tracking 4336 140318330132256 ValueError in sh_sess cookie
+WARNING 2013-11-20 05:42:53,669 tracking 4336 140318330132256 ValueError in sh_sess cookie
+WARNING 2013-11-20 05:42:54,394 tracking 4336 140318330132256 ValueError in sh_sess cookie
+WARNING 2013-11-20 05:42:54,963 tracking 4336 140318330132256 ValueError in sh_sess cookie
+WARNING 2013-11-20 05:42:55,573 tracking 4336 140318330132256 ValueError in sh_sess cookie
+WARNING 2013-11-20 05:42:56,223 tracking 4336 140318330132256 ValueError in sh_sess cookie
+WARNING 2013-11-20 05:42:56,817 tracking 4336 140318330132256 ValueError in sh_sess cookie
+ERROR 2013-11-20 05:42:57,651 speed_logging_utils 4336 140318330132256 browser speed log HTTP request keys missing from JSON object
+None
+ERROR 2013-11-20 05:42:57,951 speed_logging_utils 4336 140318330132256 browser speed log HTTP request keys missing from JSON object
+None
+ERROR 2013-11-20 05:42:58,060 speed_logging_utils 4336 140318330132256 browser speed log HTTP request JSON parse failed
+Traceback (most recent call last):
+  File "/home/oleg/code/web-serpng/code/serpng/../serpng/lib/speed_logging_utils.py", line 93, in read_browser_speed_data
+    speed_data = json.loads(request.body)
+  File "/usr/lib64/python2.7/json/__init__.py", line 326, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib64/python2.7/json/decoder.py", line 360, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib64/python2.7/json/decoder.py", line 378, in raw_decode
+    raise ValueError("No JSON object could be decoded")
+ValueError: No JSON object could be decoded
+ERROR 2013-11-20 05:42:58,235 speed_logging_utils 4336 140318330132256 unable to retrieve timestamp from request object for speed logging (django_begins)
+Traceback (most recent call last):
+  File "/home/oleg/code/web-serpng/code/serpng/../serpng/lib/speed_logging_utils.py", line 35, in read
+    value = request.speed[name]
+AttributeError: 'Request' object has no attribute 'speed'
+ERROR 2013-11-20 05:42:58,370 speed_logging_utils 4336 140318330132256 unable to retrieve timestamp from request object for speed logging (php_bridge_begins)
+Traceback (most recent call last):
+  File "/home/oleg/code/web-serpng/code/serpng/../serpng/lib/speed_logging_utils.py", line 35, in read
+    value = request.speed[name]
+AttributeError: 'Request' object has no attribute 'speed'
+ERROR 2013-11-20 05:42:58,501 speed_logging_utils 4336 140318330132256 unable to retrieve timestamp from request object for speed logging (django_begins)
+Traceback (most recent call last):
+  File "/home/oleg/code/web-serpng/code/serpng/../serpng/lib/speed_logging_utils.py", line 35, in read
+    value = request.speed[name]
+KeyError: 'django_begins'
+ERROR 2013-11-20 05:42:58,629 speed_logging_utils 4336 140318330132256 unable to retrieve timestamp from request object for speed logging (php_bridge_begins)
+Traceback (most recent call last):
+  File "/home/oleg/code/web-serpng/code/serpng/../serpng/lib/speed_logging_utils.py", line 35, in read
+    value = request.speed[name]
+KeyError: 'php_bridge_begins'
+ERROR 2013-11-20 05:42:58,757 speed_logging_utils 4336 140318330132256 unable to retrieve timestamp from request object for speed logging (django_begins)
+Traceback (most recent call last):
+  File "/home/oleg/code/web-serpng/code/serpng/../serpng/lib/speed_logging_utils.py", line 35, in read
+    value = request.speed[name]
+AttributeError: 'Request' object has no attribute 'speed'
+ERROR 2013-11-20 05:42:58,889 speed_logging_utils 4336 140318330132256 unable to retrieve timestamp from request object for speed logging (django_ends)
+Traceback (most recent call last):
+  File "/home/oleg/code/web-serpng/code/serpng/../serpng/lib/speed_logging_utils.py", line 35, in read
+    value = request.speed[name]
+AttributeError: 'Request' object has no attribute 'speed'
+ERROR 2013-11-20 05:42:59,022 speed_logging_utils 4336 140318330132256 unable to retrieve timestamp from request object for speed logging (php_bridge_begins)
+Traceback (most recent call last):
+  File "/home/oleg/code/web-serpng/code/serpng/../serpng/lib/speed_logging_utils.py", line 35, in read
+    value = request.speed[name]
+AttributeError: 'Request' object has no attribute 'speed'
+ERROR 2013-11-20 05:42:59,156 speed_logging_utils 4336 140318330132256 unable to retrieve timestamp from request object for speed logging (php_bridge_ends)
+Traceback (most recent call last):
+  File "/home/oleg/code/web-serpng/code/serpng/../serpng/lib/speed_logging_utils.py", line 35, in read
+    value = request.speed[name]
+AttributeError: 'Request' object has no attribute 'speed'
+ERROR 2013-11-20 05:42:59,289 speed_logging_utils 4336 140318330132256 unable to retrieve timestamp from request object for speed logging (php_bridge_begins)
+Traceback (most recent call last):
+  File "/home/oleg/code/web-serpng/code/serpng/../serpng/lib/speed_logging_utils.py", line 35, in read
+    value = request.speed[name]
+KeyError: 'php_bridge_begins'
+ERROR 2013-11-20 05:42:59,415 speed_logging_utils 4336 140318330132256 unable to retrieve timestamp from request object for speed logging (php_bridge_ends)
+Traceback (most recent call last):
+  File "/home/oleg/code/web-serpng/code/serpng/../serpng/lib/speed_logging_utils.py", line 35, in read
+    value = request.speed[name]
+KeyError: 'php_bridge_ends'
+WARNING 2013-11-20 05:44:33,049 tracking 3610 139972869224192 ValueError in sh_sess cookie
+WARNING 2013-11-20 05:44:38,601 tracking 3610 139973157574400 ValueError in sh_sess cookie
+WARNING 2013-11-20 05:44:42,397 tracking 3610 139973157574400 ValueError in sh_sess cookie
+WARNING 2013-11-20 05:44:47,460 tracking 3610 139972877616896 ValueError in sh_sess cookie
+WARNING 2013-11-20 05:44:51,150 tracking 4754 140180066019104 ValueError in sh_sess cookie
+WARNING 2013-11-20 05:44:51,831 tracking 4754 140180066019104 ValueError in sh_sess cookie
+WARNING 2013-11-20 05:44:52,424 tracking 4754 140180066019104 ValueError in sh_sess cookie
+WARNING 2013-11-20 05:44:53,036 tracking 4754 140180066019104 ValueError in sh_sess cookie
+WARNING 2013-11-20 05:44:53,727 tracking 4754 140180066019104 ValueError in sh_sess cookie
+WARNING 2013-11-20 05:44:54,220 jobs 4754 140180066019104 Error in obtaining search results: Bad results from searcher
+WARNING 2013-11-20 05:44:54,220 tracking 4754 140180066019104 ValueError in sh_sess cookie
+WARNING 2013-11-20 05:44:54,493 tracking 4754 140180066019104 ValueError in sh_sess cookie
+WARNING 2013-11-20 05:44:55,148 tracking 4754 140180066019104 ValueError in sh_sess cookie
+WARNING 2013-11-20 05:44:55,705 tracking 4754 140180066019104 ValueError in sh_sess cookie
+WARNING 2013-11-20 05:44:56,284 tracking 4754 140180066019104 ValueError in sh_sess cookie
+WARNING 2013-11-20 05:44:56,962 tracking 4754 140180066019104 ValueError in sh_sess cookie
+WARNING 2013-11-20 05:44:57,516 tracking 4754 140180066019104 ValueError in sh_sess cookie
+WARNING 2013-11-20 05:44:58,243 tracking 4754 140180066019104 ValueError in sh_sess cookie
+WARNING 2013-11-20 05:44:58,812 tracking 4754 140180066019104 ValueError in sh_sess cookie
+WARNING 2013-11-20 05:44:59,426 tracking 4754 140180066019104 ValueError in sh_sess cookie
+WARNING 2013-11-20 05:45:00,109 tracking 4754 140180066019104 ValueError in sh_sess cookie
+WARNING 2013-11-20 05:45:00,677 tracking 4754 140180066019104 ValueError in sh_sess cookie
+ERROR 2013-11-20 05:45:01,510 speed_logging_utils 4754 140180066019104 browser speed log HTTP request keys missing from JSON object
+None
+ERROR 2013-11-20 05:45:01,818 speed_logging_utils 4754 140180066019104 browser speed log HTTP request keys missing from JSON object
+None
+ERROR 2013-11-20 05:45:01,927 speed_logging_utils 4754 140180066019104 browser speed log HTTP request JSON parse failed
+Traceback (most recent call last):
+  File "/home/oleg/code/web-serpng/code/serpng/../serpng/lib/speed_logging_utils.py", line 93, in read_browser_speed_data
+    speed_data = json.loads(request.body)
+  File "/usr/lib64/python2.7/json/__init__.py", line 326, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib64/python2.7/json/decoder.py", line 360, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib64/python2.7/json/decoder.py", line 378, in raw_decode
+    raise ValueError("No JSON object could be decoded")
+ValueError: No JSON object could be decoded
+ERROR 2013-11-20 05:45:02,100 speed_logging_utils 4754 140180066019104 unable to retrieve timestamp from request object for speed logging (django_begins)
+Traceback (most recent call last):
+  File "/home/oleg/code/web-serpng/code/serpng/../serpng/lib/speed_logging_utils.py", line 35, in read
+    value = request.speed[name]
+AttributeError: 'Request' object has no attribute 'speed'
+ERROR 2013-11-20 05:45:02,232 speed_logging_utils 4754 140180066019104 unable to retrieve timestamp from request object for speed logging (php_bridge_begins)
+Traceback (most recent call last):
+  File "/home/oleg/code/web-serpng/code/serpng/../serpng/lib/speed_logging_utils.py", line 35, in read
+    value = request.speed[name]
+AttributeError: 'Request' object has no attribute 'speed'
+ERROR 2013-11-20 05:45:02,363 speed_logging_utils 4754 140180066019104 unable to retrieve timestamp from request object for speed logging (django_begins)
+Traceback (most recent call last):
+  File "/home/oleg/code/web-serpng/code/serpng/../serpng/lib/speed_logging_utils.py", line 35, in read
+    value = request.speed[name]
+KeyError: 'django_begins'
+ERROR 2013-11-20 05:45:02,491 speed_logging_utils 4754 140180066019104 unable to retrieve timestamp from request object for speed logging (php_bridge_begins)
+Traceback (most recent call last):
+  File "/home/oleg/code/web-serpng/code/serpng/../serpng/lib/speed_logging_utils.py", line 35, in read
+    value = request.speed[name]
+KeyError: 'php_bridge_begins'
+ERROR 2013-11-20 05:45:02,614 speed_logging_utils 4754 140180066019104 unable to retrieve timestamp from request object for speed logging (django_begins)
+Traceback (most recent call last):
+  File "/home/oleg/code/web-serpng/code/serpng/../serpng/lib/speed_logging_utils.py", line 35, in read
+    value = request.speed[name]
+AttributeError: 'Request' object has no attribute 'speed'
+ERROR 2013-11-20 05:45:02,744 speed_logging_utils 4754 140180066019104 unable to retrieve timestamp from request object for speed logging (django_ends)
+Traceback (most recent call last):
+  File "/home/oleg/code/web-serpng/code/serpng/../serpng/lib/speed_logging_utils.py", line 35, in read
+    value = request.speed[name]
+AttributeError: 'Request' object has no attribute 'speed'
+ERROR 2013-11-20 05:45:02,887 speed_logging_utils 4754 140180066019104 unable to retrieve timestamp from request object for speed logging (php_bridge_begins)
+Traceback (most recent call last):
+  File "/home/oleg/code/web-serpng/code/serpng/../serpng/lib/speed_logging_utils.py", line 35, in read
+    value = request.speed[name]
+AttributeError: 'Request' object has no attribute 'speed'
+ERROR 2013-11-20 05:45:03,023 speed_logging_utils 4754 140180066019104 unable to retrieve timestamp from request object for speed logging (php_bridge_ends)
+Traceback (most recent call last):
+  File "/home/oleg/code/web-serpng/code/serpng/../serpng/lib/speed_logging_utils.py", line 35, in read
+    value = request.speed[name]
+AttributeError: 'Request' object has no attribute 'speed'
+ERROR 2013-11-20 05:45:03,158 speed_logging_utils 4754 140180066019104 unable to retrieve timestamp from request object for speed logging (php_bridge_begins)
+Traceback (most recent call last):
+  File "/home/oleg/code/web-serpng/code/serpng/../serpng/lib/speed_logging_utils.py", line 35, in read
+    value = request.speed[name]
+KeyError: 'php_bridge_begins'
+ERROR 2013-11-20 05:45:03,285 speed_logging_utils 4754 140180066019104 unable to retrieve timestamp from request object for speed logging (php_bridge_ends)
+Traceback (most recent call last):
+  File "/home/oleg/code/web-serpng/code/serpng/../serpng/lib/speed_logging_utils.py", line 35, in read
+    value = request.speed[name]
+KeyError: 'php_bridge_ends'
+WARNING 2013-11-20 05:52:41,257 tracking 4800 140305864066816 ValueError in sh_sess cookie

@@ -1,0 +1,21 @@
+{% load staticfiles %}
+
+{# This is the modal for the review page. #}
+  <div class="row">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true" style="position:relative; top:20px; right:3px; border:0; background:none;">&times;</button>
+  </div>
+  <div style="width: 651px; margin: 20px auto;">
+    <h3><b>Thanks!</b> Let's take those personalized search results for a spin.</h3>
+    <img src="{% static 'resume/images/popup_image.png' %}">
+  </div>
+
+  <div style="width:600px; margin: 0 auto;">
+{% comment %}
+    <div style="padding-top: 20px; width: 250px; float:left;">
+      <button class="btn" style="width: 200px; height: 45px;" type="button" dismiss="modal" onclick="javascript:$('div#modal').modal('hide'); _gaq.push(['_trackEvent', 'resume_builder_popup', 'popup_cancel']);">Take me back</button>
+    </div>
+{% endcomment %}
+    <div style="padding-top: 20px; width: 350px; float: right;">
+      <button id="review_submit" class="btn btn-info" style="width:350px; height: 45px; font-size:12pt;" type="submit" onClick="_gaq.push(['_trackEvent', 'resume_builder_popup', 'popup_continue']);">Continue to Personalized Search Results</button>
+    </div>
+  </div>

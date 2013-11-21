@@ -1,0 +1,25 @@
+{% load adv_cache %}
+{% load i18n %}
+
+<form id="search" class="search_form form-inline" action="/a/mobile-jobs/search" method="POST" >
+  {% csrf_token %}
+  <div class="collapsed-search-row row-fluid">
+    <div class="search_placeholder_text span9">
+      <span class="search_keywords_placeholder_text"></span>
+      <span class="search_divider_placeholder_text"></span>
+      <span class="search_location_placeholder_text"></span>
+    </div>
+    <button class="collapsed_search_button btn btn-orange span3" type="submit">Search</button>
+  </div>
+  <div class="search-input-row row-fluid">
+    <input id="f_keywords" class="span12" type="text" name="q" value="{{ keywords }}" placeholder="{% trans "Job title, Skills, or Company" %}" autocomplete="off" />
+    <a class="cleartext<?=$keywords_clear_button?'':' hide'?>"></a>
+  </div>
+  <div class="search-input-row row-fluid">
+	<div class="geo-location-cont span9">
+      <input id="f_location" type="text" name="l" value="{{ location }}" placeholder="{% trans "City, State, or ZIP code" %}" autocomplete="off" />
+	  <div class="sprite-icon-geo locate-me" id="locate-me"></div>
+	</div>
+    <button class="span3 btn btn-orange" type="submit">Search</button>
+  </div>
+</form>

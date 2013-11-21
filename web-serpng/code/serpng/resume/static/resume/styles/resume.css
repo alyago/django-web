@@ -1,0 +1,219 @@
+* {
+        margin: 0px;
+        padding: 0px;
+}
+
+body {font-family: Arial, Helvetica, sans-serif;line-height:1.5em;}
+
+img {
+        border: none;
+}
+
+a {
+        color: #0066cc; /*simplyblue*/
+        text-decoration: underline;
+        cursor: pointer;
+}
+
+a:hover {
+        color: #006699;
+}
+
+h1, h2, h3, h4, h5, h6 {
+        color: #333;
+}
+
+h1 {
+        font-size: 150%; /*18pt*/
+        line-height: 150%; /*20pt*/
+        font-weight: normal;
+}
+
+h2 {
+        font-size: 100%;
+        line-height: 150%;
+}
+
+h3, h4, h5, h6 {
+        font-size: 80%;
+        line-height: 150%;
+}
+
+h6 { color: #333 !important; }
+
+p, ul, ol, dl {
+        font-size: 80%;
+        line-height: 150%;
+}
+
+button, input.button {
+        font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+        cursor: pointer;
+}
+
+select {
+        font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/* ***** CONTENT ***** */
+
+.error {
+    display: block;
+    color: red;
+    margin-bottom: 9px;
+}
+
+.left { float: left; }
+.right { float: right; }
+.hidden {display:none !important;}
+
+.sh_header a, .sh_footer a, .sh_header a:visited, .sh_footer a:visited {color: gray;}
+.sh_header_logo {display: block; float: left; width:255px; height:56px;}
+.sh_header_logo_img { height: 48px; width:205px; *overflow: hidden; display: block; }
+
+/* ***** FOOTER ***** */
+
+#sh_footer {
+        clear: both;
+        margin: 0px;
+        border-top: 1px solid #ccc;
+        padding: 10px 0px;
+        color: gray;
+        text-align:center;
+        font-size:9pt;
+}
+
+#sh_footer a, #sh_footer span {
+        white-space: nowrap;
+}
+
+#sh_footer a.site {margin:0 5px;}
+
+#sh_footer a:hover {
+        text-decoration: underline;
+}
+
+#sh_footer span.s {
+        margin: 0px 0.4em;
+        font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+        font-size: 110%;
+        color: #ccc;
+}
+
+.footer_links {font-size:1em;margin-bottom:10px;}
+.footer_legal a { font-size: 9pt !important; text-decoration: none;}
+
+/* ***** PAGE ***** */
+#container {width:861px; min-width:0; margin:0 auto; padding:10px 0;}
+#sh_header {border-bottom:1px solid #ccc;padding-bottom:10px;margin-top:10px;height:56px;}
+#sh_content {margin-top:10px;margin-bottom:20px;} 
+
+p.error
+{
+  color:red;
+}
+.main {margin-bottom:10px;}
+
+/* ***** ADD RESUME ***** */
+#add #sh_content .main{border: 1px solid #CCC; padding: 0 10px 10px;}
+#add h2 { background-color: #D4F1FF;
+    border-bottom: 1px solid #CCC;
+    color: #666;
+    font-size: 1.1em;
+    margin: 0 -10px 10px;
+    padding: 4px 10px; }
+#add .details {margin:20px;font-size:80%;}
+#add .li_img { padding: 2px 0 10px 0;}
+#add .resume_import_btn {width:auto;}
+#add .resume_li_txt {text-decoration:none;line-height:20px;vertical-align:top;}
+#add .upload_btn {font-weight:bold;background-color:#93BF2C;height:2em;cursor:pointer;color:#FBFBFB}
+#add .resume_create_btn {width:105px; height:auto;}
+#add .resume_create_btn a {margin:auto;}
+#add .resume_li_logo {width:16px;height:16px;display:inline-block;vertical-align:middle;background:url("/static/resume/images/li.jpg") no-repeat center left;}
+#add img { cursor: pointer; }
+#add .error { padding-left: 6px; }
+#add .input_wrapper { overflow: hidden; position: relative; cursor: pointer; background: url(/static/resume/images/landing_upload_file_btn.png) no-repeat;
+}
+#add .input_wrapper.clicked { opacity: 0.6; }
+#add .input_wrapper input { width: auto; }
+#add .file_input { cursor: pointer; height: 100%; position: absolute; top: 0px; right: 0; font-size: 50px; }
+#add .hidden_input { opacity: 0; -moz-opacity: 0; filter: progid:DXImageTransform.Microsoft.Alpha(opacity=0); cursor: pointer; }
+
+
+/* ***** RESUME DASHBOARD ***** */
+#home #container {float:left;}
+#home .tbl {margin-right:38px;}
+#home .tbl .head {clear:both;}
+#home .tbl li {display:block;float:left;list-style:none outside none;text-align:left;width:200px;font-size:12px;}
+#home .tbl .title li {text-decoration:underline;font-size:1.4em;}
+#home .tbl .title {line-height:300%;}
+#home .main .msg {display:block;clear:both;}
+#home .note {color:#000000; padding-bottom:15px;}
+#home .main .msg .btn {width:200px; height:30px; line-height: 30px;}
+#home .hrprofile {border:1px solid #ccc;padding:10px;margin:10px 0;float:left;}
+#home h1 {font-size: 2em;font-weight: normal;line-height: 1.5em;margin-bottom:10px;}
+#home h1,#home h2 {color: #333333;display:inline-block;}
+#home h2 {margin-bottom:10px;font-size:1.3em;}
+#home #container {padding:0;}
+#home #sh_content {margin-top:0;}
+#home .tool {color:#0066CC;font-weight:bold;text-decoration:none;white-space:nowrap;}
+#home .tool_spn {padding-left:20px;}
+#home a:hover {text-decoration:underline;}
+#home .job_btn {float:right;line-height:30px;padding:0.2em 0.5em;background-color:#A6CE39;font-weight:bold;}
+#home .job_btn a {color:#fff;text-decoration:none;}
+
+/* ***** LANDING ***** */
+.divider { text-align: center; padding: 6px 3px 0 20px; margin-bottom: 3px; }
+.divider span { width: 30%; padding: 5px 15px 0; line-height: 2.5em; }
+.divider div { height: 1px; width: 150px; border-bottom: 1px solid #ccc; padding-bottom: 3px; margin-bottom: 3px; display: inline-block; zoom: 1; *display: inline; }
+
+.option { box-shadow: 0px 0px 4px #777;-webkit-box-shadow: 0px 0px 2px #777;-moz-box-shadow: 0px 0px 2px #777; border: 4px solid #FFF; padding: 19px; background-color: #F5F5F5; border-radius: 4px; -moz-border-radius: 4px; -webkit-border-radius: 4px; }
+.ie { display: inline-block; zoom: 1; *display: inline; }
+
+/* ***** MANAGE ***** */
+table td { padding: 2px 20px; }
+#beta {font-family:Arial;float:right;margin:30px 0;color:#58595B;font-size:22pt;line-height:24px;font-weight:600;}
+#resume_left { border-right: 1px solid #ddd; padding-right: 25px; width: 208px; display: inline-block; height: 350px; }
+#resume_left .h { display: block; font-weight: bold; }
+#resume_left .alert { margin: -5px 0 10px; }
+#resume_left hr { margin: 10px 0; }
+#resume_left form { margin-top:10px; }
+#manage_save { height: 30px; width: 100px; position: relative;}
+
+/* ***** REVIEW ***** */
+#review_save_top_btn { height: 40px; width: 200px; position: absolute; top: 94px; }
+#review_save_bottom_btn { height: 40px; width: 200px; }
+#review div.modal {background-color:#E7E7E7;}
+#review .modal h3 {font-weight:normal; font-size:16pt; padding-bottom:15px;}
+
+/* Added */
+.inset { border-radius: 4px; background-color: #fbfbfb; border-color: #FAFAFA; box-shadow: 0 0 1px #CCC; padding: 15px 0; margin-bottom: 10px}
+
+#form_edit { padding-bottom: 20px; }
+#form_edit input { margin-bottom: 0px; }
+.edit, .add_form { color: #06c; cursor: pointer; }
+.edit { text-align: right; }
+#job_date { float: right; }
+#register { background-color: #FEF1B5; }
+#register h2 { background-color: #FEF1B5; }
+#modal { width: 845px; min-height: 525px; margin-left: -435px; overflow: none; }
+.summarybar { padding-bottom: 10px; }
+.summarybar a { width: 151px; color: #0066cc; }
+.display pre { background-color: inherit; border: inherit; border-radius: inherit; display: inherit; font-size: inherit; line-height: inherit; padding: inherit; margin: 0; font-family: Arial; color: inherit; word-break: inherit; word-wrap: break-word; } /* overwrite bootstap.css */
+.cb label { margin-left: 5px; font-weight: normal !important; position: relative; top: 4px; display: inline !important; }
+.opt-in { position: absolute; top: 138px; margin: 0 40px;}
+.opt-in label { top: 3px; }
+.close { margin: -10px 10px 0 0; }
+.welcome { display: inline-block; font-size: 13pt; font-weight: bold; padding-top: 5px; }
+.nav-fixed { position: fixed !important; top: 0; width: 100%; z-index: 1000; }
+.instructions { font-color: #aaa; font-size: 11px; margin-left: 7px; position:relative; top:-3px; word-wrap: break-word; word-break: break-all; width: 50px; }
+.toggle { padding-left: 10px; }
+.no-left { margin-left: 0px !important; }
+div#register span.error { margin-top: -5px; }
+div#register em { color: #999; }
+.pad2 { padding-left: 20px; }
+.add_company { font-style: italic; }
+/*.add_company:hover { color: #0088cc; }*/
+div.tbl { width: 1000px; }
+.success { background: url("/static/resume/images/check_2.png") no-repeat scroll 10px 4px transparent; text-indent: 35px; }

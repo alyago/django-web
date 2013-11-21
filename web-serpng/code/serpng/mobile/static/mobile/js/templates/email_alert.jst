@@ -1,0 +1,46 @@
+<div class="search_placeholder_text">
+  <span class="search_keywords_placeholder_text"></span>
+  <span class="search_divider_placeholder_text"></span>
+  <span class="search_location_placeholder_text"></span>
+</div>
+<%
+  switch (mode) {
+    case 'input':
+%>
+<div class="input-dialog">
+  <form class="email-alert-form">
+    <div class="text"><b>Create Email Alert</b>: Send jobs like this to me</div>
+    <input type="email" placeholder="Email Address" autocomplete="on" value="<%= emailAddress %>"></input><button class="btn" type="submit">Send</button>
+  </form>
+</div>
+<div class="email-error">
+  <div class="sprite-icon-bang-black"></div>
+  <span class="email-error-text">Please enter a valid email address</span>
+</div>
+<%
+      break;
+    case 'confirm':
+%>
+<div class="confirm-dialog">
+  <div class="title">Email Alert Created</div>
+  <div class="text">Your Email Alert has been activated.</div>
+  <button class="btn close-btn">Close</button>
+</div>
+<%
+      break;
+    case 'already-exists':
+%>
+<div class="already-exists-dialog">
+  <div class="text">You've already got an Email Alert set up for this job search.</div>
+  <div class="help-text">
+    <div class="menu-btn btn btn-orange">
+      <div class="sprite-manburger"></div>
+      Account Settings
+    </div>
+    You can edit or delete this alert in your
+  </div>
+</div>
+<%
+      break;
+    }
+%>

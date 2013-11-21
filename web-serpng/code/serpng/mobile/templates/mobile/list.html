@@ -1,0 +1,107 @@
+{% extends "mobile/base.html" %}
+
+{% load i18n %}
+{% load staticfiles %}
+
+{% block head_links %}
+  {{ block.super }}
+  {% if results.prev_page_link_url %}
+    <link rel="prev" href="{{ results.prev_page_link_url }}" />
+  {% endif %}
+  {% if results.next_page_link_url %}
+    <link rel="next" href="{{ results.next_page_link_url }}" />
+  {% endif %}
+{% endblock %}
+
+{% block "content" %}
+{% if not request.is_mobile_app and num_top_ads %}
+  <div id="google_ads_top" class="google_ad_unit"></div>
+  <script type="text/javascript" charset="utf-8">
+    var adblock0 = {
+      'minTop' :'{{ num_top_ads }}',
+      'container' : 'google_ads_top',
+    };
+  </script>
+{% endif %}
+  <div id="results">
+{% if results.primary_listings_array %}
+  {% for result in results.primary_listings_array %}
+    <div class="result" data-refind-key="id:{{ result.listing_refind_key }}">
+    {% if result.listing_type == 'sponsored' %}
+      <div class="result-sponsored">Sponsored</div>
+    {% endif %}
+      <div class="result-body">
+    {% if enable_saved_jobs %}
+        <div class="result-save-job {% if result.listing_refind_key in saved_job_refindkeys %}saved{% endif %}"></div>
+    {% endif %}
+        <a href="{{ result.job_url|safe }}" class="result-text" {% if result.listing_type == 'sponsored' %} rel="nofollow"{% endif %}>
+{% if request.active_ab_test_treatment == 'a' %}
+          <div class="result-title">{{ result.title|truncatechars:35 }}</div>
+          <div class="result-company">{{ result.company_name|truncatechars:35 }}</div>
+{% else %}
+          <div class="result-title">{{ result.title }}</div>
+          <div class="result-company">{{ result.company_name }}</div>
+{% endif %}
+          <div class="result-location">{{ result.formatted_location_string }}</div>
+          <div>
+            <span class="result-ago">{{ result.config_specified_ago_string }}</span>
+    {% if result.is_simplyapply_mobile %}
+            <span class="result-mobile-apply">{% trans "Apply by phone" %}
+              <div class="sprite-icon-iphone"></div>
+            </span>
+    {% endif %}
+          </div>
+        </a>
+        <div class="sprite-chevron-white invert-colors"></div>
+      </div>
+    </div>
+  {% endfor %}
+{% else %}
+  <div id="search-error">{{ results.error_text|safe }}</div>
+{% endif %}
+  </div>
+{% if not request.is_mobile_app %}
+  <div>
+    <div id="google_ads" class="google_ad_unit"></div>
+  </div>
+{% endif %}
+ {% comment %}Comment out Phase 1 styling for now. This will probably be reinstated in the future.{% endcomment %}
+ {% comment %}
+{% if results.prev_page_link_url or results.next_page_link_url %}
+  <div class="pagination">
+  {% if results.prev_page_link_url %}
+      <a class="prev-btn btn" href="{{ results.prev_page_link_url }}" rel="nofollow">Prev</a>
+  {% endif %}
+  {% if results.next_page_link_url %}
+      <a class="next-btn btn" href="{{ results.next_page_link_url }}" rel="nofollow">Next</a>
+  {% endif %}
+  </div>
+{% endif %}
+{% endcomment %}
+  <form class="pagination">
+    <div class="row-fluid">
+{% if results.prev_page_link_url %}
+      <button class="span4 {{ results.next_page_link_url|yesno:"offset2,offset4" }} btn" type="button">
+        <a href="{{ results.prev_page_link_url }}">&#x25C0; Back</a>
+      </button>
+{% endif %}
+{% if results.next_page_link_url %}
+      <button class="span4{{ results.prev_page_link_url|yesno:", offset4" }} btn" type="button">
+        <a href="{{ results.next_page_link_url }}">Next &#x25B6;</a>
+      </button>
+{%  endif %}
+    </div>
+  </form>
+{% endblock %}
+
+{% block "scripts" %}
+  <script type="text/javascript">
+    $(function() {
+        window.appView = new ListAppView({ model:new AccountModel(SH), el:'body', initialSavedJobs:{{ saved_jobs|safe }}, userAgent:'{{request.user_agent}}'});
+    });
+  </script>
+{% if not request.is_mobile_app %}
+  {% include "mobile/google_adsense.html" %}
+{% endif %}
+
+{% endblock %}

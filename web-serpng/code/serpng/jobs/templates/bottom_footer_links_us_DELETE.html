@@ -1,0 +1,24 @@
+{% comment %} !!!!! Replaced by base/bottom_footer_links_us.html !!!!! {% endcomment %}
+
+{% load absolute_http_url %}
+
+<div class="footer_site_links">
+  <ul>
+    <li><span class="icon-separator"></span><a rel="nav" class="evtc" data-event="footer_post_job" href="http://employers.simplyhired.com/simplypost">{{ translations.post_a_job_link_text }}</a></li>
+    <li><span class="icon-separator"></span><a href="{% absolute_http_url "/myresume/landing" %}">{{ translations.upload_resume_link_text }}</a></li>
+    <li><span class="icon-separator"></span><a rel="nav" class="evtc" data-event="footer_employers" href="http://employers.simplyhired.com/overview">{{ translations.employer_solutions_link_text }}</a></li>
+    <li><span class="icon-separator"></span><a class="evtc" data-event="footer_publishers" href="{% absolute_http_url "/a/publishers/overview" %}">{{ translations.publisher_solutions_link_text }}</a></li>
+    <li><span class="icon-separator"></span><a rel="nav" class="evtc" data-event="footer_about" href="{% absolute_http_url "/a/our-company/about-us" %}">{{ translations.about_simply_hired_link_text }}</a></li>
+    <li class="intl_dropdown"><a id="l_simplyhired_intl" class="evthi intl" data-event="header_country_dropdown">{{ translations.international_menu_text }} &#9650;</a></li>
+  </ul>
+  <ul>
+    <li><span class="icon-separator"></span><a rel="nav" class="evtc" data-event="footer_browse" href="{% absolute_http_url "/job-search/" %}">{{ translations.browse_jobs_link_text }}</a></li>
+    <li><span class="icon-separator"></span><a rel="nav" class="evtc" data-event="footer_salaries" href="{% absolute_http_url "/salaries.html" %}">{{ translations.job_salaries_link_text }}</a></li>
+    <li><span class="icon-separator"></span><a rel="nav" class="evtc" data-event="footer_local" href="{% absolute_http_url "/local/" %}">{{ translations.local_jobs_link_text }}</a></li>
+    <li><span class="icon-separator"></span><a rel="nav" class="evtc" data-event="footer_trends" href="{% absolute_http_url "/a/trends/national" %}">{{ translations.job_trends_link_text }}</a></li>
+    <li><span class="icon-separator"></span><a rel="nav" class="evtc" data-event="footer_blog" href="{% absolute_http_url "http://blog.simplyhired.com/" %}">{{ translations.get_hired_blog_link_text }}</a></li>
+    <li><span class="icon-separator"></span><a rel="nav" class="evtc" data-event="footer_help" href="{% absolute_http_url "http://support.simplyhired.com/home" %}">{{ translations.help_link_text }}</a></li>
+    <li><span class="icon-separator"></span><a rel="nav" href="{% absolute_http_url "/a/our-company/contact-us" %}">{{ translations.contact_us_link_text }}</a></li>
+    <li><span class="icon-separator"></span><a class="feedback-link" href="https://www.surveymonkey.com/s/simply_hired_feedback" target="persistentFeedbackSurveyWindow" onclick="SH.feedback_survey.openSurveyWindow('https://www.surveymonkey.com/s/simply_hired_feedback')">Send Feedback</a></li>
+  </ul>
+</div><!--footer_site_links-->

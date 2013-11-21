@@ -1,0 +1,30 @@
+{% extends "resume-base.html" %}
+
+{% load i18n %}
+
+{% block page_head_title %}{% trans "Resume Maintenance" %}{% endblock %}
+{% block page_body_id %}Maintenance{% endblock %}
+{% block page_body_class %}Maintenance{% endblock %}
+
+{% block page_body_content %}
+
+{% include "resume-default-header.html" %}
+
+            
+<div id="sh_content" class="sh_content">
+
+<BR>
+<strong>
+The resume service is undergoing temporary maintenance. Please try again later.  
+<BR><BR>Sorry for the inconvenience. Click<a href="http://www.simplyhired.com"> here</a> to continue on Simply Hired.
+</strong>
+<BR>
+</div>
+
+{% include "resume-default-footer.html" %}
+
+{% endblock %}
+
+
+
+

@@ -1,0 +1,108 @@
+<div class="employer-profile-header"
+     style="padding: 10px 0;">
+  <div style="float: left; position: relative; overflow: hidden;">
+    <h1 style="font-size: 3rem; font-weight: normal; line-height: 3.4rem;">
+      Employers Directory
+    </h1>
+    <p>
+      Search for the best employers.  Get the right intel and get hired. 
+    </p>
+  </div>
+  <div style="float: right; position: relative; overflow: hidden;">
+    
+  </div>
+  <div class="employer-clear-float"></div>
+</div><!-- employer-profile-header -->
+
+
+<!-- employer-directory-left-column -->
+<div class="employer-3column-left">
+  
+  <div  class="search" style="display: inline-block;">
+    <form action method="post" >{% csrf_token %}
+      <label style="width: 200px; display: inline-block;">
+        Find an employer
+        <input type="text" name="q" value="{{ search_name }}"
+               style="height: 30px; line-height: 30px; width: 185px;
+                      display: inline-block; font-size: 1rem;" />
+      </label>
+      
+      <input type="submit" class="search_button" value="Search Employers"
+             style="height: 30px; line-height: 30px; width: 100px;
+                    display: inline-block; font-size: 1rem;" />
+      
+    </form>
+  </div>
+  
+  <div class="employer-section-body">
+    
+    <div class="employer-section-body-item">
+      {% for emp in employer_list %}
+        <div style="padding-bottom: 5px;">
+          {% if emp.is_published %}
+            <a href="{% url 'employer-pages-url:profile' emp.get_published_link %}"
+               title="{{ emp.get_published_link }}">
+            {{ emp.name }}
+            </a>
+            <span style="color: gold;"> {{ emp.sh_rating.get.get_rating_stars }}</span>
+          {% else %}
+            {{ emp.get_display_name }}
+          {% endif %}
+        </div>
+      {% empty %}
+        No employer like "{{ search_name }}" found.
+      {% endfor %}
+      <div class="employer-clear-float"></div>
+    </div>
+    
+  </div>
+  
+</div><!-- employer-directory-left-column -->
+
+<!-- employer-3column-right -->
+<div class="employer-3column-right">
+  
+  <div class="employer-section-header">
+    <h2>Jobs by State</h2>
+  </div>
+  
+  <div class="employer-section-body">
+    <div class="employer-section-body-item">
+      
+      <div style="width: 50%; float: left; overflow: hidden;">
+        {% for state in us_states_list|slice:":28" %}
+          <div style="padding-bottom: 5px;">
+            <a href="{% url 'jobs-url:jobs-query' state.get_link %}">{{ state.name }} ({{ state.code }})</a>
+          </div>
+        {% endfor %}
+      </div>
+      
+      <div style="width: 50%; float: left; overflow: hidden;">
+        {% for state in us_states_list|slice:"28:" %}
+          <div style="padding-bottom: 5px;">
+            <a href="{% url 'jobs-url:jobs-query' state.get_link %}">{{ state.name }} ({{ state.code }})</a>
+          </div>
+        {% endfor %}
+      </div>
+      
+      <div class="employer-clear-float"></div>
+      
+    </div><!-- employer-section-body-item -->
+  </div><!-- employer-section-body -->
+  
+</div><!-- employer-3column-right -->
+
+
+<!-- employer-3column-middle -->
+<div class="employer-3column-middle">
+
+  <div class="employer-section-header">
+    <h2>Trending</h2>
+  </div>
+  
+  <div class="employer-section-body">
+
+  </div><!-- employer-section-body -->
+</div><!-- employer-3column-middle -->
+
+<div class="employer-clear-float"></div>

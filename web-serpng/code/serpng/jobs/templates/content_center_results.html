@@ -1,0 +1,197 @@
+{% load absolute_http_url %}
+{% load clip_and_highlite %} 
+{% load get_config %}
+{% load hash_filter %}
+{% load i18n %}
+{% load math_filter %}
+{% load staticfiles %}
+
+<div class="results">
+  <ul id="jobs" class="jobs">
+    {% for job in result.jobs %}
+      <li id="r:{{ job.refind_key }}:{{ job.position }}" class="result{% ifchanged job.is_sponsored %}{% if not forloop.first %} divider{% endif %}{% endifchanged %}{% if job.refind_key in user_data.saved_jobs.keys %} saved{% endif %}{% if job.is_viewed %} viewed{% endif %}">
+
+        {% if current_country_code == 'us' %}
+          {% if request.save_job_abtest_group == 'a' %}
+            {% if user and user.is_logged_in %}
+              <a title="Save this job" rel="nofollow" onmousedown="SH.jobs.toggleSave(this)">
+            {% else %}
+              <a title="Save this job" rel="nofollow" onmousedown="SH.jobs.showLogin('savejob')">
+            {% endif %}
+              <div class="save_job {% if job.refind_key in user_data.saved_jobs.keys %}saved{% endif %}"></div>
+            </a>
+          {% endif %}
+        {% endif %}
+        <div class="job {% if request.save_job_abtest_group == 'a' %}sjabtest{% endif %}" itemscope itemtype="http://schema.org/JobPosting">
+          <h2>
+            <a rel="nofollow" class="title" href="{{ job.url }}" onmousedown="SH.jobs.track('{{ job.is_sponsored|yesno:"1,0" }}','{{ job.position }}', this, {{ job.ida_json_job_data|safe }})" onclick="return SH?SH.jobs.view(this, event):true"
+              {% if not show_job_in_same_tab %}
+                target="_blank"
+              {% endif %} itemprop="title">{{ job.title|safe }}</a>
+          </h2>
+
+          {% if job.is_new %}
+            <span class="new">{{ translations.new_job_text }}</span>
+          {% endif %}
+
+          <div class='company_location' itemprop="hiringOrganization" itemtype="http://schema.org/Organization">
+            {% if job.company %}
+              {% if job.is_simplyapply_web %}
+                {% if request.show_simplyapply %}
+                  <a rel="nofollow" href="{{ job.url }}" onmousedown="SH.jobs.track('{{ job.is_sponsored|yesno:"1,0" }}','{{ job.position }}', this, {{ job.ida_json_job_data|safe }})" onclick="return SH?SH.jobs.view(this, event):true" target="_blank">
+                    <span class="icon-simplyapply-btn evti" data-event="simplyapply_click"></span>
+                  </a>
+                {% endif %}
+              {% endif %}
+              <h4 class="company {% if request.save_job_abtest_group == 'a' %}sjabtest{% endif %}" itemprop="name">{{ job.company|highlite:keywords }}</h4><span class="s"> - </span>
+            {% endif %}
+            <span class="location {% if request.save_job_abtest_group == 'a' %}sjabtest{% endif %}" itemprop="jobLocation">{{ job.location|safe }}</span>
+            {% with locations_count=job.more_locations %}
+              {% if locations_count and job.location and job.cluster_expansion_url %}
+                {% if locations_count == 1 %}
+                  <a rel="nofollow" class="cluster" href="{% absolute_http_url job.cluster_expansion_url %}">+{{ locations_count }} {{ translations.multiple_location_text }}</a>
+                {% else %}
+                  <a rel="nofollow" class="cluster" href="{% absolute_http_url job.cluster_expansion_url %}">+{{ locations_count }} {{ translations.multiple_locations_text }}</a>
+                {% endif %}
+              {% endif %}
+            {% endwith %}
+          </div>
+
+          <p class="description" itemprop="description">{{ job.description|safe }}</p>
+
+          <div class="source {% if request.save_job_abtest_group == 'a' %}sjabtest{% endif %}">
+            <span class="ago {% if request.save_job_abtest_group == 'a' %}sjabtest{% endif %}">{{ job.ago_string }}</span> {{ translations.job_from_text }} {{ job.source }}
+          </div>
+
+          <div class="tools_container{% if current_country_code == 'ca' %} canada{% endif %}">
+            <div class="tools {% if request.save_job_abtest_group == 'a' %}sjabtest{% endif %}">
+              {# Show different sets of job tools for different countries #}
+              {% if current_country_code == 'us' %}
+                {% if request.save_job_abtest_group != 'a' %}
+                  {% if job.refind_key in user_data.saved_jobs.keys %}
+                    <a rel="nofollow" class="save" onclick="SH.jobs.save(this)">{{ translations.saved_text }}</a>
+                  {% else %}
+                    <a rel="nofollow" class="save" onclick="SH.jobs.save(this)">{{ translations.save_text }}</a>
+                  {% endif %}
+                  <span class="s"> - </span>
+                {% endif %}
+              {% endif %}
+              <a rel="nofollow" class="send" onclick="SH.jobs.send(this)">{{ translations.share_text }}</a>
+              <span class="s"> - </span>
+              {% if current_country_code == 'us' %}
+                <a rel="nofollow" class="block evti" data-event="hide_jobs_click" onclick="SH.jobs.block(this)">{{ translations.hide_text }}</a>
+                <span class="s"> - </span>
+                <a rel="nofollow" class="flag" onclick="SH.jobs.flag(this)">{{ translations.report_text }}</a>
+                <span class="s"> - </span>
+              {% endif %}
+              <a rel="nofollow" class="more evti" data-event="results_job_more_tools" onclick="SH.jobs.more(this)">{{ translations.job_tools_text }}</a>
+            </div>
+          </div>
+        </div><!--job-->
+
+        <div class="hidden_tools_divs"></div><!--rate,send,block,flag hidden divs to be loaded via ajax-->
+
+        <div class="more box">
+          <a class="box_close" onclick="SH.jobs.more(this)">
+            <span class="icon-close-small"></span>
+          </a>
+          {% with job.more_tools_info as more_tools_info %}
+            {% if result.search_location_city_state != job.location and more_tools_info.distance_from_search_location %}
+              <div class="search_location_distance">
+                <span class="icon-car"></span>
+                {{ more_tools_info.distance_from_search_location|floor }} mi. - <h3>{{ result.search_location_city_state }}</h3>
+              </div>
+            {% endif %}
+
+            {% if more_tools_info.permalink_url or more_tools_info.apply_url or more_tools_info.also_found_at %}
+              <span class="section section_first">{{ translations.job_summary_text }}</span>
+              <ul class="links">
+                {% if more_tools_info.permalink_url %}
+                  <li class="label"><a class="permalink" href="{% absolute_http_url more_tools_info.permalink_url %}">{{ more_tools_info.permalink_string }}</a></li>
+                  {% comment %} 
+                    TODO(delaney): Figure out if this commented code block is necessary.
+                      if more_tools_info.apply_url
+                      li class={ if more_tools_info.permalink_url }"tab"{ else }"label"{ endif }
+                  {% endcomment %}
+                  {% if more_tools_info.also_found_at %}
+                    <li>{{ translations.also_found_at_text }}
+                      {% for source_name, clickthrough in more_tools_info.also_found_at.items %}{% if forloop.counter > 1 %},{% endif %}
+                      <a rel="nofollow" class="also" onmousedown="SH.jobs.track('{{ job.is_sponsored|yesno:"1,0" }}','{{ job.position }}')" href="{% absolute_http_url clickthrough %}" target="_blank">{{ source_name }}</a>
+                      {% endfor %}
+                    </li>
+                  {% endif %}{% comment %}if more_tools_info.also_found_at{% endcomment %}
+                {% endif %}{% comment %}if more_tools_info.permalink_url{% endcomment %}
+              </ul>
+            {% endif %}{% comment %}if more_tools_info.permalink_url or more_tools_info.apply_url or more_tools_info.also_found_at{% endcomment %}
+
+            {% if more_tools_info.salary_tool or more_tools_info.local_portal_url %}
+              {% if current_country_code == 'us' %}
+                <span class="section">{{ translations.research_tools_text }}</span>
+                <ul class="links">
+                  {% if more_tools_info.tool_urls.salary_tool_url %}
+                    <li>
+                      <a href="{% absolute_http_url more_tools_info.tool_urls.salary_tool_url %}">
+                        {# Translators: Link to information about salaries for the job at the job location. #}
+                        {% blocktrans with title=job.title_unclip city=job.city %}{{ title }} Salaries in {{ city }}{% endblocktrans %}
+                      </a>
+                    </li>
+                  {% endif %}
+                  {% if more_tools_info.local_portal_url %}
+                    <li>More information about
+                      <a href="{% absolute_http_url more_tools_info.local_portal_url %}">
+                        {# Translators: Link to information about the job location. #}
+                        {% blocktrans with location=job.location %} jobs in {{ location }}{% endblocktrans %}
+                      </a>
+                    </li>
+                  {% endif %}
+                </ul>
+              {% endif %}
+            {% endif %}{% comment %}if more_tools_info.tool_urls{% endcomment %}
+
+            {% with more_tools_info.similar_search_urls as search_urls %}
+              {% if search_urls.location_title or search_urls.title or search_urls.company %}
+                <span class="section">{{ translations.similar_searches_text }}</span>
+                <ul class="result_links">
+                  {% if search_urls.location_title %}
+                    <li>
+                      <a href="{% absolute_http_url search_urls.location_title %}">
+                        {% comment %}
+                          The string below is split up into two, instead of being one single blocktrans
+                          tag, because Django doesn't like having the French "à" in a blocktrans translation.
+                        {% endcomment %}
+                        {# Translators: Link to similar jobs at the job location. #}
+                        {% blocktrans with title=job.title_unclip %}{{ title }} jobs{% endblocktrans %} 
+                        {% trans "in" %} {{ job.city }}
+                      </a>
+                    </li>
+                  {% endif %}
+                  {% if search_urls.title %}
+                    <li>
+                      {# Translators: Link to similar jobs. #}
+                      <a href="{% absolute_http_url search_urls.title %}">
+                        {% blocktrans with title=job.title_unclip %}{{ title }} jobs{% endblocktrans %}
+                      </a>
+                    </li>
+                  {% endif %}
+                  {% if search_urls.company %}
+                    <li>
+                      {# Translators: Link to other jobs at the job's company. #}
+                      <a href="{% absolute_http_url search_urls.company %}">
+                        {% blocktrans with company=job.company|safe %}{{ company }} jobs!{% endblocktrans %}
+                      </a>
+                    </li>
+                  {% endif %}
+                </ul>
+              {% endif %}{% comment %}if search_urls{% endcomment %}
+            {% endwith %}{% comment %}with more_tools_info.similar_search_urls as search_urls{% endcomment %}
+          {% endwith %}{% comment %}with job.more_tools_info as more_tools_info{% endcomment %}
+        </div><!--more-->
+      </li><!--result-->
+    {% endfor %}{% comment %}for job in result.jobs{% endcomment %}
+    <div style="clear:both"></div>
+  </ul>
+
+  {% if result.dup_expansion_text %}
+    <p class="expand_search">{{ result.dup_expansion_text|safe }}</p>
+  {% endif %}
+</div><!--results-->

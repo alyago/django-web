@@ -1,0 +1,21 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<title>Logging you in...</title>
+<script type="text/javascript">
+window.onload = function() {
+document.getElementsByName('login')[0].submit();
+}
+</script>
+</HEAD>
+<BODY>
+<div style="display: hidden;">
+Logging you in...
+<form method="post" name="login" action="http://www.simplyhired.com/a/accounts/login">
+<input type="hidden" name="u" value="{{ email }}">
+<input type="hidden" name="p" value="{{ password }}">
+<input type="hidden" name="f" value="{{ redirect }}">
+</form>
+</div>
+</BODY>
+</HTML>

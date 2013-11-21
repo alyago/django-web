@@ -1,0 +1,10 @@
+#!/bin/sh
+
+source ../../.env
+
+NO_WORKERS=54
+
+export PYTHONPATH=$SH_ROOT/configs:$SH_ROOT/code:$SH_ROOT/code/serpng
+export DJANGO_SETTINGS_MODULE=$SH_ENV.settings
+
+exec chpst -o 10000 ~/.virtualenv/bin/gunicorn_django --workers=$NO_WORKERS --bind=ip1:$SH_PORT 2>&1

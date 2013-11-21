@@ -1,0 +1,7 @@
+{% load humanize %}
+
+{% comment %} Note that this line of text is split up into a span tag and an h1 tag for SEO. {% endcomment %}
+<span class="search_title">{% if result.total_job_count > 0 %}{{ result.offset_first_job }} - {{ result.offset_last_job}} {{ translations.of_text }} {{ result.total_job_count|intcomma }}{% endif %}</span>
+<h1 id="search_title" class="search_title">{% if myresume %} {{ translations.personalized_search_results_text }}{% if result.formatted_location %} - {{ result.formatted_location }}{% endif %}{% else %}{% if result.keywords or result.formatted_location %}{% if result.keywords %} {{ result.keywords }}{% endif %} {% if result.total_job_count > 1 %}{{ translations.job_plural_text }}{% else %}{{ translations.job_singular_text }}{% endif %}{% if result.formatted_location %} {{ translations.near_text }} {{ result.formatted_location }}{% endif %}{% else %}{% if not search_myresume %}{{ error_page_search_title }}{% endif %}{% endif %}{% endif %}</h1>
+{% comment %} TODO(delaney): Remove this hack once FutureSERP ships and WebOps updates their health check scripts. {% endcomment %}
+<!-- Jobs {{ result.offset_first_job }} - {{ result.offset_last_job}} -->

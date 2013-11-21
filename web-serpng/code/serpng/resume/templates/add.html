@@ -1,0 +1,39 @@
+{% load i18n %}
+{% load staticfiles %}
+{% load get_message %}
+{# Image upload button method taken from http://stackoverflow.com/a/7691323. #}
+<div id="add">
+  <div class="error">{% get_error_message "DISPLAY_UPLOAD_ERROR" %}</div>
+  <div class="option">
+    <form style="margin-bottom: 0;" enctype="multipart/form-data" id="upload_res" method="POST" action="{% url 'resume_upload' %}">{% csrf_token %}
+{% ifequal source 'manage' %}
+		<input type="hidden" name="source" value="manage">
+{% endifequal %}
+      <h4>OPTION 1: UPLOAD YOUR RESUME</h4>
+      <div class="error"></div>
+      <div class="input_wrapper" style="height:28px; width:190px;">
+        <input class="file_input hidden_input" type="file" name="resume_file" />
+      </div>
+      <div style="padding:12px 0 0;"><span>Please only upload pdf, txt, or Word files.</span></div>
+    </form>
+  </div>
+  <div class="row divider">
+    <div>
+    </div>
+    <span>
+    OR
+    </span>
+    <div>
+    </div>
+  </div>
+  <div class="option">
+    <h4>OPTION 2: IMPORT YOUR LINKEDIN PROFILE</h4>
+    <div class="error">{% get_error_message "DISPLAY_LI_ERROR" %}</div>
+    <div class="li_img">
+      <img src="{% static 'resume/images/connect-with-linkedin.png' %}" onclick="window.top.location='{% url 'resume_linkedin' %}';" />
+    </div>
+    <label class="checkbox inline">
+      <input type="checkbox" name="wdik" checked="checked"/>Show my LinkedIn connections at jobs I view
+    </label>
+  </div>
+</div>

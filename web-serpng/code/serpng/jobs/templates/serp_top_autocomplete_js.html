@@ -1,0 +1,15 @@
+{% comment %}
+  Used with inclusion tag (see 'templatetags/autocomplete.py')
+{% endcomment %}
+
+{% load compressed %}
+{% load staticfiles %}
+
+{% if enable_autocomplete.kw_ac or enable_autocomplete.lc_ac %}
+  <script type="text/javascript">
+    var kw_ac={{ enable_autocomplete.kw_ac }};var lc_ac={{ enable_autocomplete.lc_ac }};
+  </script>
+
+  {% compressed_js 'autocomplete' %}
+  
+{% endif %}

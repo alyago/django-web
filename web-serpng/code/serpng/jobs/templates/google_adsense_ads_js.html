@@ -1,0 +1,16 @@
+{% if google_afs_container %}   
+  <script src="http://www.google.com/adsense/search/ads.js" type="text/javascript"></script> 
+  <script type="text/javascript" charset="utf-8">
+    var afs_page_options = {{ google_afs_container.get_afs_page_options_js|safe }};
+{% if afs_ad_loaded_callback %} /* note that $afs_ad_loaded_callback contains javascript code and should not be escaped */
+    afs_page_options.adLoadedCallback = '';
+{% else %}
+    afs_page_options.adLoadedCallback = function(c,d){if(d){var p=document.getElementById(c).parentNode;
+        p.className='google_ads'+(!!p.className?' '+p.className:'');p.firstChild.style.display='block';}};
+{% endif %}
+    var afs_ad_units = {{ google_afs_container.get_afs_ad_units_js|safe }};
+    var ads_block = '';
+    for (var i=0; i<afs_ad_units.length; i++){ads_block += 'afs_ad_units[' + i + ']'; if (i < afs_ad_units.length - 1) { ads_block += ','; }}
+    eval("new google.ads.search.Ads(afs_page_options, " + ads_block + ")");
+  </script>
+{% endif %}

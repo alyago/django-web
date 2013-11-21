@@ -1,0 +1,16 @@
+{% load get_config %}
+
+<script type="text/javascript">
+  var sh_deploy_tag = '{% get_config "DEPLOY_TAG" %}';
+  var sh_any_default = {% if request.date_filter_abtest_group %}false{% else %}true{% endif %};
+  {% if request.configs.ENABLE_CRAZYEGG and request.adsense_abtest_channel %}
+    var CE_SNAPSHOT_NAME = '{{ request.adsense_abtest_channel|first }}';
+  {% endif %}
+  {% block app_specific_js %} 
+    {# Add application specific javascript here #}
+  {% endblock %}
+</script>
+
+{% block compressed_js %} 
+  {# placeholder to load the compressed js for each application #}
+{% endblock %}

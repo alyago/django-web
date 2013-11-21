@@ -1,0 +1,31 @@
+{% extends "simplyapply/mobile-base.html" %}
+
+{% block page_body_content %}
+<div data-role="page">
+  <div data-role="header" data-theme="b"><h4>{% if logged_in %}You need a resume!{% else %}You need to sign in!{% endif %}</h4></div>
+  <div data-role="content" class="no-resume">
+    {% if logged_in %}
+      {% if job.key %}
+      {# Need the job_postid to redirect back to the apply page. #}
+      <div><p>You don't have a resume setup yet with <a href="http://www.simplyhired.com/">SimplyHired.com</a>. You'll need one to Simply Apply to this job -- but don't worry, we've got you covered!</p></div>
+      <div>
+        <ul>
+          <li>Use <a href="{% url 'mobile_linkedin' %}?{{ job.key_type }}={{ job.key }}" data-ajax="false">LinkedIn</a> profile to setup your resume</li>
+          <li><p>Preview and edit your resume before submiting</p></li>
+        </ul>
+      </div>
+      <div><p>It's quick and easy!</p></div>
+      {% else %}
+      <div>Invalid job.</div>
+      {% endif %}
+    {% else %}
+    <div>
+      Please <a href="http://m.simplyhired.com/a/mobile-jobs/login?f={% autoescape on %}/myresume/mobile/simplyapply?job_post_id={{ job_postid }}{% endautoescape %}" data-ajax="false">sign in</a> to Simply Apply&trade; to this job.
+    </div>
+    {% endif %}
+    <div class="navbuttons">
+      {% if logged_in and job.key %}<a href="{% url 'mobile_linkedin' %}?{{ job.key_type }}={{ job.key }}" data-role="button" data-ajax="false" data-theme="b">Continue to LinkedIn</a>{% endif %}
+    </div>
+  </div>
+</div>
+{% endblock %}

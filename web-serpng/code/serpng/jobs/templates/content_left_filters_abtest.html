@@ -1,0 +1,34 @@
+{% load absolute_http_url %}
+
+{% with display_filters=result.filters.get_filters_for_display %}
+  <div class="filters">
+    {% if result.filters.has_any_applied_filters %}
+      <div class="reset_container">
+        <a class="reset evtc" data-event="filter_clear_all" href="{% absolute_http_url result.filters.get_reset_all_filters_url %}">
+          {{ translations.clear_all_filters_text }}
+        </a>
+      </div>
+    {% endif %}
+
+    <ul class="basic_filters">
+      {% include "content_left_filters_list.html" with filters=basic_filters_abtest %}
+    </ul>
+
+    {% if request.filters_variations_abtest_group == 'c' or request.filters_variations_abtest_group == 'd' %}
+      <ul class="more_filters"></ul>
+    {% else %}
+      <div class="handle more_filters_container {{ display_filters.more_filters_state }}">
+        {% comment %}
+          If no location was given in the search, then there will be no 'basic filters' displayed above
+          the collapsed filters. In this case, just 'Filters' should be used instead of 'More Filters.'
+        {% endcomment %}
+        {% if display_filters.basic_filters.miles_radius %}
+          <a class="toggle"><span class="icon"></span>{{ translations.more_filters_text }}</a>
+        {% else %}
+          <a class="toggle"><span class="icon"></span>{{ translations.filters_text }}</a>
+        {% endif %}
+        <ul class="more_filters"></ul>
+      </div>
+    {% endif %}
+  </div><!--filters-->
+{% endwith %}

@@ -1,0 +1,41 @@
+{% load get_config %}
+{% load staticfiles %}
+
+<div id='email_alert_dialog' class='email_alert_dialog'>
+  <span class="icon-close js-icon-close"></span>
+
+  <p class="dialog_heading">
+    <span class="icon-envelope-small"></span>
+    <span class="unconfirmed" style="display:none;">
+      {{ translations.email_alert_success_heading_text }}
+    </span>
+    <span class="confirmed" style="display:none;">
+      {{ translations.email_alert_success_heading_text }}
+    </span>
+  </p>
+
+  <div class="dialog_content">
+    <p class="dialog_main_msg">
+      <span class="unconfirmed" style="display:none;">
+        {{ translations.email_alert_success_body_text }}
+      </span>
+      <span class="confirmed" style="display:none;">
+        {{ translations.email_alert_success_body_text }}
+      </span>
+    </p>
+
+    <p class="dialog_email_link_msg">
+      <span class="unconfirmed" style="display:none;">
+        {{ translations.email_alert_check_email_text }} <a class="dialog_email_link" target="_blank"></a>
+      </span>
+      <span class="confirmed" style="display:none;">
+        <a class="dialog_close_link">{{ translations.return_to_search_results_link_text }}</a>
+      </span>
+    </p>
+
+    <p class="dialog_info_msg">
+      {{ translations.email_alert_success_info_text }}
+      <span class="dialog_email_address"></span>
+    </p>
+  </div>
+</div>

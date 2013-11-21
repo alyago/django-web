@@ -1,0 +1,87 @@
+{% extends "accounts_base.html" %}
+{% load staticfiles %}
+{% load get_config %}
+{% load compressed %}
+
+{% block css %}
+  {% compressed_css 'accounts-base' %}
+{% endblock %}
+
+{% block content %}
+  <div class="span8">
+    <h3>Find your dream job <em>now</em>.</h3>
+    <div>It's simple, easy, and only takes a few minutes.</div>
+    <ul>
+      <li>Receive personalized search results when you upload your resume</li>
+      <li>SimplyApply&#8482; to thousands of jobs with a single click</li>
+      <li>Keep track of those awesome jobs you saw through your account</li>
+      <li>All this and more, for free.</li>
+    </ul>
+  </div>
+  <div class="span4">
+    <div class="option">
+      <form id="signin-form" method="post">
+        <fieldset>
+          <div class="option-section">
+            <div class="row-fluid">
+              <legend>{{ form_title }}</legend>
+            </div>
+          </div>
+          {% if message %}
+            <div class="option-section">
+              <div class="row-fluid">
+                <div class="alert alert-message{% if message_success %} alert-success{% endif %}">
+                  <p>{{ message|linebreaksbr }}</p>
+                </div>
+              </div>
+            </div>
+          {% endif %}
+          <div class="option-section">
+            <div class="row-fluid form-label">
+              <label for="email">{{ email_label }}</label>
+            </div>
+            <div class="row-fluid">
+              <input id="email" class="span12" type="text" name="email" placeholder="{{ email_placeholder }}" maxlength="{% get_config 'MAX_ACCOUNT_EMAIL_LENGTH' %}" {% if email_value %}value="{{ email_value }}" {% endif %}/>
+            </div>
+          </div>
+          <div class="option-section">
+            <div class="form-label row-fluid">
+              <label class="float-left" for="password">{{ password_label }}</label>
+              <label class="float-right" for="password">{{ password_requirements }}</label>
+            </div>
+            <div class="row-fluid">
+              <input id="password" class="span12" type="password" name="password" placeholder="{{ password_placeholder }}" />
+            </div>
+          </div>
+          <div class="option-section">
+            <div class="form-button-row row-fluid">
+              <button type="submit" class="btn btn-sh float-left">{{ submit_button_text }}</button>
+              <a id="forgot-password-link" class="float-right" href="{{ forgot_password_link }}">{{ forgot_password_text }}</a>
+            </div>
+          </div>
+          <div class="option-section">
+            <div>
+              <div id="success-message" class="alert alert-success" style="display:none">{{ success_message }}</div>
+              <div id="error-message" class="alert alert-error" style="display:none">{{ error_message|linebreaksbr }}</div>
+              <div id="send-email-link" style="display:none">
+                <span class="float-left">Need us to resend the email? Click the link below.</span>
+                <a class="float-right send-email-url" href="{{ send_email_link }}">{{ send_email_text }}</a>
+              </div>
+            </div>
+          </div>
+        </fieldset>
+      </form>
+    </div>
+    <div class="option">
+      <div class="row-fluid">
+        <div class="title float-left">{{ not_a_member_title }}</div>
+        <a id="signup-link" class="float-right" href="{{ signup_link }}">{{ signup_text }}</a>
+      </div>
+    </div>
+  </div>
+{% endblock %}
+
+{% block external_js %}
+  {% compressed_js 'accounts-bootstrap' %}
+  {% compressed_js 'accounts-signin' %}
+{% endblock %}

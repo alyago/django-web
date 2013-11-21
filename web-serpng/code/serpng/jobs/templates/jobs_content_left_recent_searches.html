@@ -1,0 +1,23 @@
+{% load absolute_http_url %}
+
+{% if user_data.recent_searches %}
+<div class="recent_searches{% if request.recent_jobs_abtest_group == 'c' %} rs-top{% endif %}">
+  <div class="heading">
+    {% if request.recent_jobs_abtest_group != None %}
+      Your Recent Searches
+    {% else %}
+      {{ translations.recent_searches_heading_text }}
+    {% endif %}
+  </div>
+  <ul>
+    {% for recent_search in user_data.recent_searches %}
+    <li><a href="{% absolute_http_url recent_search.search_url %}" rel="nofollow" class="evtc" data-event="recent_searches_click" data-name="{{ recent_search.search_name }}">{{ recent_search.search_name }}</a></li>
+    {% endfor %}
+  </ul>
+  <p>
+    <a href="?clear+recent" onclick="return SH.recent_searches.clear()" rel="nofollow">{{ translations.recent_searches_clear_text }}</a>
+    <span class="s">&#9642;</span>
+    <a href="{% absolute_http_url "/a/my-searches/recent" %}" rel="nofollow">{{ translations.recent_searches_see_all_text }}</a>
+  </p>
+</div><!--recent_searches-->
+{% endif %}

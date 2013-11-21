@@ -1,0 +1,93 @@
+{% load preview %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<style type="text/css">
+body { font-family: Helvetica, Arial; }
+ul, li { padding-left: 15px; }
+li { padding-bottom: 2px; }
+.right { float: right; }
+.header { width: 700px; margin: 0 auto; background: InfoBackground; text-align: center; padding: 10px; }
+.container { width: 900px; margin: 0 auto; padding-top:20px }
+.container .headline { text-align: center; }
+.section { border-bottom: 1px solid #ddd; padding-bottom: 20px; }
+.conatiner h2 { }
+.title, .employer { font-weight: bold; }
+</style>
+</head>
+<body>
+{% if not alert %}
+<div class="header">
+  How does this look?  Need to make changes or add additional information?  Use the <a href="/myresume/review">builder!</a>
+</div>
+{% endif %}
+<div class="container">
+  <div class="headline">
+    <h2>{{ resume.contact.first_name }} {{ resume.contact.last_name }}</h2>
+    {% spaceless %}
+    <h4>
+    {% if resume.contact.email %} {{ resume.contact.email }}{% endif %}
+    {% if resume.contact.email and resume.contact.cell_phone %} | {% endif %}
+    {% if resume.contact.cell_phone %} {{ resume.contact.cell_phone }}{% endif %}</h4>
+    {% endspaceless %}
+  </div>
+
+  {% if resume.summary.headline or resume.summary.description %}
+  <div class="section">
+    <h3>Highlights</h3>
+    <ul>
+      {% if resume.summary.headline %}<li>{{ resume.summary.headline }}</li>{% endif %}
+      {% if resume.summary.description %}<li>{{ resume.summary.description }}</li>{% endif %}
+    </ul>
+  </div>
+  {% endif %}
+
+  {% if resume.job_set.count %}
+  <div class="section">
+    <h3>Experience</h3>
+    {% for job in resume.job_set.iterator %}
+    <div>
+      <span class="title">{% if job.title %}{{ job.title }}{% else %}&nbsp;{% endif %}</span>
+      {% if job.start_date or job.end_date %}
+      <span class="right">
+        {{ job.start_date|date:"M Y" }} -
+        {% if job.current %}
+          Present
+        {% else %}
+          {{ job.end_date|date:"M Y" }}
+        {% endif %}
+      </span>
+      {% endif %}
+    </div>
+    <div>
+      <span class="employer">{% if job.employer %}{{ job.employer }}{% endif %}</span>
+    </div>
+    <ul>
+      {{ job.description|bulletize }}
+    </ul>
+    {% endfor %}
+  </div>
+  {% endif %}
+
+  {% if resume.education_set.count %}
+  <div>
+    <h3>Education</h3>
+    {% for edu in resume.education_set.iterator %}
+    <div style="padding-bottom: 5px;">
+      <div>
+        <span>{{ edu.institution }}</span>
+        <span class="right">
+        {% if edu.start_date %}{{ edu.start_date|date:"Y" }}{% endif %}
+        {% if edu.start_date and edu.end_date %} - {% endif %}
+        {% if edu.end_date %}{{ edu.end_date|date:"Y" }}{% endif %}
+        </span>
+      </div>
+      <span>{{ edu.degree }}</span>
+    </div>
+    {% endfor %}
+  </div>
+  {% endif %}
+
+</div>
+</body>
+</html>

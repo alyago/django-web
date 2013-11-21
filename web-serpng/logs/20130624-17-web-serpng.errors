@@ -1,0 +1,1218 @@
+ERROR 2013-06-25 00:21:04,406 middleware 11961 139776998102816 Uncaught exception: 'get_settings' is not a valid tag library: Template library get_settings not found, tried django.templatetags.get_settings,django.contrib.humanize.templatetags.get_settings,django.contrib.staticfiles.templatetags.get_settings,django.contrib.admin.templatetags.get_settings,serpng.jobs.templatetags.get_settings,pipeline.templatetags.get_settings
+Traceback (most recent call last):
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/core/handlers/base.py", line 115, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "/home/oleg/code/web-serpng/code/serpng/../serpng/jobs/views/jobs.py", line 326, in jobs
+    serpng.jobs.translation_strings.translations)
+  File "/home/oleg/code/web-serpng/code/serpng/../serpng/lib/serp_links_utils.py", line 83, in construct_serp_links
+    "translations": translations }))
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 170, in render_to_string
+    t = get_template(template_name)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 146, in get_template
+    template, origin = find_template(template_name)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 135, in find_template
+    source, display_name = loader(name, dirs)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 43, in __call__
+    return self.load_template(template_name, template_dirs)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 49, in load_template
+    template = get_template_from_string(source, origin, template_name)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 157, in get_template_from_string
+    return Template(source, origin, name)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/base.py", line 125, in __init__
+    self.nodelist = compile_string(template_string, origin)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/base.py", line 153, in compile_string
+    return parser.parse()
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/base.py", line 274, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/defaulttags.py", line 1044, in load
+    (taglib, e))
+TemplateSyntaxError: 'get_settings' is not a valid tag library: Template library get_settings not found, tried django.templatetags.get_settings,django.contrib.humanize.templatetags.get_settings,django.contrib.staticfiles.templatetags.get_settings,django.contrib.admin.templatetags.get_settings,serpng.jobs.templatetags.get_settings,pipeline.templatetags.get_settings
+ERROR 2013-06-25 00:21:05,299 middleware 11961 139776998102816 Uncaught exception: 'get_settings' is not a valid tag library: Template library get_settings not found, tried django.templatetags.get_settings,django.contrib.humanize.templatetags.get_settings,django.contrib.staticfiles.templatetags.get_settings,django.contrib.admin.templatetags.get_settings,serpng.jobs.templatetags.get_settings,pipeline.templatetags.get_settings
+Traceback (most recent call last):
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/core/handlers/base.py", line 115, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "/home/oleg/code/web-serpng/code/serpng/../serpng/jobs/views/jobs.py", line 326, in jobs
+    serpng.jobs.translation_strings.translations)
+  File "/home/oleg/code/web-serpng/code/serpng/../serpng/lib/serp_links_utils.py", line 83, in construct_serp_links
+    "translations": translations }))
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 170, in render_to_string
+    t = get_template(template_name)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 146, in get_template
+    template, origin = find_template(template_name)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 135, in find_template
+    source, display_name = loader(name, dirs)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 43, in __call__
+    return self.load_template(template_name, template_dirs)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 49, in load_template
+    template = get_template_from_string(source, origin, template_name)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 157, in get_template_from_string
+    return Template(source, origin, name)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/base.py", line 125, in __init__
+    self.nodelist = compile_string(template_string, origin)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/base.py", line 153, in compile_string
+    return parser.parse()
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/base.py", line 274, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/defaulttags.py", line 1044, in load
+    (taglib, e))
+TemplateSyntaxError: 'get_settings' is not a valid tag library: Template library get_settings not found, tried django.templatetags.get_settings,django.contrib.humanize.templatetags.get_settings,django.contrib.staticfiles.templatetags.get_settings,django.contrib.admin.templatetags.get_settings,serpng.jobs.templatetags.get_settings,pipeline.templatetags.get_settings
+ERROR 2013-06-25 00:21:06,099 middleware 11961 139776998102816 Uncaught exception: 'get_settings' is not a valid tag library: Template library get_settings not found, tried django.templatetags.get_settings,django.contrib.humanize.templatetags.get_settings,django.contrib.staticfiles.templatetags.get_settings,django.contrib.admin.templatetags.get_settings,serpng.jobs.templatetags.get_settings,pipeline.templatetags.get_settings
+Traceback (most recent call last):
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/core/handlers/base.py", line 115, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "/home/oleg/code/web-serpng/code/serpng/../serpng/jobs/views/jobs.py", line 326, in jobs
+    serpng.jobs.translation_strings.translations)
+  File "/home/oleg/code/web-serpng/code/serpng/../serpng/lib/serp_links_utils.py", line 83, in construct_serp_links
+    "translations": translations }))
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 170, in render_to_string
+    t = get_template(template_name)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 146, in get_template
+    template, origin = find_template(template_name)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 135, in find_template
+    source, display_name = loader(name, dirs)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 43, in __call__
+    return self.load_template(template_name, template_dirs)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 49, in load_template
+    template = get_template_from_string(source, origin, template_name)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 157, in get_template_from_string
+    return Template(source, origin, name)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/base.py", line 125, in __init__
+    self.nodelist = compile_string(template_string, origin)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/base.py", line 153, in compile_string
+    return parser.parse()
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/base.py", line 274, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/defaulttags.py", line 1044, in load
+    (taglib, e))
+TemplateSyntaxError: 'get_settings' is not a valid tag library: Template library get_settings not found, tried django.templatetags.get_settings,django.contrib.humanize.templatetags.get_settings,django.contrib.staticfiles.templatetags.get_settings,django.contrib.admin.templatetags.get_settings,serpng.jobs.templatetags.get_settings,pipeline.templatetags.get_settings
+ERROR 2013-06-25 00:21:06,834 middleware 11961 139776998102816 Uncaught exception: 'get_settings' is not a valid tag library: Template library get_settings not found, tried django.templatetags.get_settings,django.contrib.humanize.templatetags.get_settings,django.contrib.staticfiles.templatetags.get_settings,django.contrib.admin.templatetags.get_settings,serpng.jobs.templatetags.get_settings,pipeline.templatetags.get_settings
+Traceback (most recent call last):
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/core/handlers/base.py", line 115, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "/home/oleg/code/web-serpng/code/serpng/../serpng/jobs/views/jobs.py", line 326, in jobs
+    serpng.jobs.translation_strings.translations)
+  File "/home/oleg/code/web-serpng/code/serpng/../serpng/lib/serp_links_utils.py", line 83, in construct_serp_links
+    "translations": translations }))
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 170, in render_to_string
+    t = get_template(template_name)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 146, in get_template
+    template, origin = find_template(template_name)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 135, in find_template
+    source, display_name = loader(name, dirs)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 43, in __call__
+    return self.load_template(template_name, template_dirs)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 49, in load_template
+    template = get_template_from_string(source, origin, template_name)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 157, in get_template_from_string
+    return Template(source, origin, name)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/base.py", line 125, in __init__
+    self.nodelist = compile_string(template_string, origin)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/base.py", line 153, in compile_string
+    return parser.parse()
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/base.py", line 274, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/defaulttags.py", line 1044, in load
+    (taglib, e))
+TemplateSyntaxError: 'get_settings' is not a valid tag library: Template library get_settings not found, tried django.templatetags.get_settings,django.contrib.humanize.templatetags.get_settings,django.contrib.staticfiles.templatetags.get_settings,django.contrib.admin.templatetags.get_settings,serpng.jobs.templatetags.get_settings,pipeline.templatetags.get_settings
+ERROR 2013-06-25 00:21:07,555 middleware 11961 139776998102816 Uncaught exception: 'get_settings' is not a valid tag library: Template library get_settings not found, tried django.templatetags.get_settings,django.contrib.humanize.templatetags.get_settings,django.contrib.staticfiles.templatetags.get_settings,django.contrib.admin.templatetags.get_settings,serpng.jobs.templatetags.get_settings,pipeline.templatetags.get_settings
+Traceback (most recent call last):
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/core/handlers/base.py", line 115, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "/home/oleg/code/web-serpng/code/serpng/../serpng/jobs/views/jobs.py", line 326, in jobs
+    serpng.jobs.translation_strings.translations)
+  File "/home/oleg/code/web-serpng/code/serpng/../serpng/lib/serp_links_utils.py", line 83, in construct_serp_links
+    "translations": translations }))
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 170, in render_to_string
+    t = get_template(template_name)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 146, in get_template
+    template, origin = find_template(template_name)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 135, in find_template
+    source, display_name = loader(name, dirs)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 43, in __call__
+    return self.load_template(template_name, template_dirs)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 49, in load_template
+    template = get_template_from_string(source, origin, template_name)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 157, in get_template_from_string
+    return Template(source, origin, name)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/base.py", line 125, in __init__
+    self.nodelist = compile_string(template_string, origin)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/base.py", line 153, in compile_string
+    return parser.parse()
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/base.py", line 274, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/defaulttags.py", line 1044, in load
+    (taglib, e))
+TemplateSyntaxError: 'get_settings' is not a valid tag library: Template library get_settings not found, tried django.templatetags.get_settings,django.contrib.humanize.templatetags.get_settings,django.contrib.staticfiles.templatetags.get_settings,django.contrib.admin.templatetags.get_settings,serpng.jobs.templatetags.get_settings,pipeline.templatetags.get_settings
+ERROR 2013-06-25 00:21:08,602 middleware 11961 139776998102816 Uncaught exception: 'get_settings' is not a valid tag library: Template library get_settings not found, tried django.templatetags.get_settings,django.contrib.humanize.templatetags.get_settings,django.contrib.staticfiles.templatetags.get_settings,django.contrib.admin.templatetags.get_settings,serpng.jobs.templatetags.get_settings,pipeline.templatetags.get_settings
+Traceback (most recent call last):
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/core/handlers/base.py", line 115, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "/home/oleg/code/web-serpng/code/serpng/../serpng/jobs/views/jobs.py", line 326, in jobs
+    serpng.jobs.translation_strings.translations)
+  File "/home/oleg/code/web-serpng/code/serpng/../serpng/lib/serp_links_utils.py", line 83, in construct_serp_links
+    "translations": translations }))
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 170, in render_to_string
+    t = get_template(template_name)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 146, in get_template
+    template, origin = find_template(template_name)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 135, in find_template
+    source, display_name = loader(name, dirs)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 43, in __call__
+    return self.load_template(template_name, template_dirs)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 49, in load_template
+    template = get_template_from_string(source, origin, template_name)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 157, in get_template_from_string
+    return Template(source, origin, name)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/base.py", line 125, in __init__
+    self.nodelist = compile_string(template_string, origin)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/base.py", line 153, in compile_string
+    return parser.parse()
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/base.py", line 274, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/defaulttags.py", line 1044, in load
+    (taglib, e))
+TemplateSyntaxError: 'get_settings' is not a valid tag library: Template library get_settings not found, tried django.templatetags.get_settings,django.contrib.humanize.templatetags.get_settings,django.contrib.staticfiles.templatetags.get_settings,django.contrib.admin.templatetags.get_settings,serpng.jobs.templatetags.get_settings,pipeline.templatetags.get_settings
+ERROR 2013-06-25 00:21:09,364 middleware 11961 139776998102816 Uncaught exception: 'get_settings' is not a valid tag library: Template library get_settings not found, tried django.templatetags.get_settings,django.contrib.humanize.templatetags.get_settings,django.contrib.staticfiles.templatetags.get_settings,django.contrib.admin.templatetags.get_settings,serpng.jobs.templatetags.get_settings,pipeline.templatetags.get_settings
+Traceback (most recent call last):
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/core/handlers/base.py", line 115, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "/home/oleg/code/web-serpng/code/serpng/../serpng/jobs/views/jobs.py", line 326, in jobs
+    serpng.jobs.translation_strings.translations)
+  File "/home/oleg/code/web-serpng/code/serpng/../serpng/lib/serp_links_utils.py", line 83, in construct_serp_links
+    "translations": translations }))
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 170, in render_to_string
+    t = get_template(template_name)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 146, in get_template
+    template, origin = find_template(template_name)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 135, in find_template
+    source, display_name = loader(name, dirs)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 43, in __call__
+    return self.load_template(template_name, template_dirs)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 49, in load_template
+    template = get_template_from_string(source, origin, template_name)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 157, in get_template_from_string
+    return Template(source, origin, name)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/base.py", line 125, in __init__
+    self.nodelist = compile_string(template_string, origin)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/base.py", line 153, in compile_string
+    return parser.parse()
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/base.py", line 274, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/defaulttags.py", line 1044, in load
+    (taglib, e))
+TemplateSyntaxError: 'get_settings' is not a valid tag library: Template library get_settings not found, tried django.templatetags.get_settings,django.contrib.humanize.templatetags.get_settings,django.contrib.staticfiles.templatetags.get_settings,django.contrib.admin.templatetags.get_settings,serpng.jobs.templatetags.get_settings,pipeline.templatetags.get_settings
+ERROR 2013-06-25 00:21:10,104 middleware 11961 139776998102816 Uncaught exception: 'get_settings' is not a valid tag library: Template library get_settings not found, tried django.templatetags.get_settings,django.contrib.humanize.templatetags.get_settings,django.contrib.staticfiles.templatetags.get_settings,django.contrib.admin.templatetags.get_settings,serpng.jobs.templatetags.get_settings,pipeline.templatetags.get_settings
+Traceback (most recent call last):
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/core/handlers/base.py", line 115, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "/home/oleg/code/web-serpng/code/serpng/../serpng/jobs/views/jobs.py", line 326, in jobs
+    serpng.jobs.translation_strings.translations)
+  File "/home/oleg/code/web-serpng/code/serpng/../serpng/lib/serp_links_utils.py", line 83, in construct_serp_links
+    "translations": translations }))
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 170, in render_to_string
+    t = get_template(template_name)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 146, in get_template
+    template, origin = find_template(template_name)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 135, in find_template
+    source, display_name = loader(name, dirs)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 43, in __call__
+    return self.load_template(template_name, template_dirs)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 49, in load_template
+    template = get_template_from_string(source, origin, template_name)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 157, in get_template_from_string
+    return Template(source, origin, name)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/base.py", line 125, in __init__
+    self.nodelist = compile_string(template_string, origin)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/base.py", line 153, in compile_string
+    return parser.parse()
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/base.py", line 274, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/defaulttags.py", line 1044, in load
+    (taglib, e))
+TemplateSyntaxError: 'get_settings' is not a valid tag library: Template library get_settings not found, tried django.templatetags.get_settings,django.contrib.humanize.templatetags.get_settings,django.contrib.staticfiles.templatetags.get_settings,django.contrib.admin.templatetags.get_settings,serpng.jobs.templatetags.get_settings,pipeline.templatetags.get_settings
+ERROR 2013-06-25 00:21:10,891 middleware 11961 139776998102816 Uncaught exception: 'get_settings' is not a valid tag library: Template library get_settings not found, tried django.templatetags.get_settings,django.contrib.humanize.templatetags.get_settings,django.contrib.staticfiles.templatetags.get_settings,django.contrib.admin.templatetags.get_settings,serpng.jobs.templatetags.get_settings,pipeline.templatetags.get_settings
+Traceback (most recent call last):
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/core/handlers/base.py", line 115, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "/home/oleg/code/web-serpng/code/serpng/../serpng/jobs/views/jobs.py", line 326, in jobs
+    serpng.jobs.translation_strings.translations)
+  File "/home/oleg/code/web-serpng/code/serpng/../serpng/lib/serp_links_utils.py", line 83, in construct_serp_links
+    "translations": translations }))
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 170, in render_to_string
+    t = get_template(template_name)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 146, in get_template
+    template, origin = find_template(template_name)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 135, in find_template
+    source, display_name = loader(name, dirs)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 43, in __call__
+    return self.load_template(template_name, template_dirs)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 49, in load_template
+    template = get_template_from_string(source, origin, template_name)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 157, in get_template_from_string
+    return Template(source, origin, name)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/base.py", line 125, in __init__
+    self.nodelist = compile_string(template_string, origin)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/base.py", line 153, in compile_string
+    return parser.parse()
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/base.py", line 274, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/defaulttags.py", line 1044, in load
+    (taglib, e))
+TemplateSyntaxError: 'get_settings' is not a valid tag library: Template library get_settings not found, tried django.templatetags.get_settings,django.contrib.humanize.templatetags.get_settings,django.contrib.staticfiles.templatetags.get_settings,django.contrib.admin.templatetags.get_settings,serpng.jobs.templatetags.get_settings,pipeline.templatetags.get_settings
+ERROR 2013-06-25 00:21:11,650 middleware 11961 139776998102816 Uncaught exception: 'get_settings' is not a valid tag library: Template library get_settings not found, tried django.templatetags.get_settings,django.contrib.humanize.templatetags.get_settings,django.contrib.staticfiles.templatetags.get_settings,django.contrib.admin.templatetags.get_settings,serpng.jobs.templatetags.get_settings,pipeline.templatetags.get_settings
+Traceback (most recent call last):
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/core/handlers/base.py", line 115, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "/home/oleg/code/web-serpng/code/serpng/../serpng/jobs/views/jobs.py", line 326, in jobs
+    serpng.jobs.translation_strings.translations)
+  File "/home/oleg/code/web-serpng/code/serpng/../serpng/lib/serp_links_utils.py", line 83, in construct_serp_links
+    "translations": translations }))
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 170, in render_to_string
+    t = get_template(template_name)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 146, in get_template
+    template, origin = find_template(template_name)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 135, in find_template
+    source, display_name = loader(name, dirs)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 43, in __call__
+    return self.load_template(template_name, template_dirs)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 49, in load_template
+    template = get_template_from_string(source, origin, template_name)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 157, in get_template_from_string
+    return Template(source, origin, name)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/base.py", line 125, in __init__
+    self.nodelist = compile_string(template_string, origin)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/base.py", line 153, in compile_string
+    return parser.parse()
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/base.py", line 274, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/defaulttags.py", line 1044, in load
+    (taglib, e))
+TemplateSyntaxError: 'get_settings' is not a valid tag library: Template library get_settings not found, tried django.templatetags.get_settings,django.contrib.humanize.templatetags.get_settings,django.contrib.staticfiles.templatetags.get_settings,django.contrib.admin.templatetags.get_settings,serpng.jobs.templatetags.get_settings,pipeline.templatetags.get_settings
+ERROR 2013-06-25 00:21:12,423 middleware 11961 139776998102816 Uncaught exception: 'get_settings' is not a valid tag library: Template library get_settings not found, tried django.templatetags.get_settings,django.contrib.humanize.templatetags.get_settings,django.contrib.staticfiles.templatetags.get_settings,django.contrib.admin.templatetags.get_settings,serpng.jobs.templatetags.get_settings,pipeline.templatetags.get_settings
+Traceback (most recent call last):
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/core/handlers/base.py", line 115, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "/home/oleg/code/web-serpng/code/serpng/../serpng/jobs/views/jobs.py", line 326, in jobs
+    serpng.jobs.translation_strings.translations)
+  File "/home/oleg/code/web-serpng/code/serpng/../serpng/lib/serp_links_utils.py", line 83, in construct_serp_links
+    "translations": translations }))
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 170, in render_to_string
+    t = get_template(template_name)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 146, in get_template
+    template, origin = find_template(template_name)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 135, in find_template
+    source, display_name = loader(name, dirs)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 43, in __call__
+    return self.load_template(template_name, template_dirs)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 49, in load_template
+    template = get_template_from_string(source, origin, template_name)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 157, in get_template_from_string
+    return Template(source, origin, name)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/base.py", line 125, in __init__
+    self.nodelist = compile_string(template_string, origin)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/base.py", line 153, in compile_string
+    return parser.parse()
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/base.py", line 274, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/defaulttags.py", line 1044, in load
+    (taglib, e))
+TemplateSyntaxError: 'get_settings' is not a valid tag library: Template library get_settings not found, tried django.templatetags.get_settings,django.contrib.humanize.templatetags.get_settings,django.contrib.staticfiles.templatetags.get_settings,django.contrib.admin.templatetags.get_settings,serpng.jobs.templatetags.get_settings,pipeline.templatetags.get_settings
+ERROR 2013-06-25 00:21:13,186 middleware 11961 139776998102816 Uncaught exception: 'get_settings' is not a valid tag library: Template library get_settings not found, tried django.templatetags.get_settings,django.contrib.humanize.templatetags.get_settings,django.contrib.staticfiles.templatetags.get_settings,django.contrib.admin.templatetags.get_settings,serpng.jobs.templatetags.get_settings,pipeline.templatetags.get_settings
+Traceback (most recent call last):
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/core/handlers/base.py", line 115, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "/home/oleg/code/web-serpng/code/serpng/../serpng/jobs/views/jobs.py", line 326, in jobs
+    serpng.jobs.translation_strings.translations)
+  File "/home/oleg/code/web-serpng/code/serpng/../serpng/lib/serp_links_utils.py", line 83, in construct_serp_links
+    "translations": translations }))
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 170, in render_to_string
+    t = get_template(template_name)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 146, in get_template
+    template, origin = find_template(template_name)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 135, in find_template
+    source, display_name = loader(name, dirs)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 43, in __call__
+    return self.load_template(template_name, template_dirs)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 49, in load_template
+    template = get_template_from_string(source, origin, template_name)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 157, in get_template_from_string
+    return Template(source, origin, name)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/base.py", line 125, in __init__
+    self.nodelist = compile_string(template_string, origin)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/base.py", line 153, in compile_string
+    return parser.parse()
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/base.py", line 274, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/defaulttags.py", line 1044, in load
+    (taglib, e))
+TemplateSyntaxError: 'get_settings' is not a valid tag library: Template library get_settings not found, tried django.templatetags.get_settings,django.contrib.humanize.templatetags.get_settings,django.contrib.staticfiles.templatetags.get_settings,django.contrib.admin.templatetags.get_settings,serpng.jobs.templatetags.get_settings,pipeline.templatetags.get_settings
+ERROR 2013-06-25 00:21:13,937 middleware 11961 139776998102816 Uncaught exception: 'get_settings' is not a valid tag library: Template library get_settings not found, tried django.templatetags.get_settings,django.contrib.humanize.templatetags.get_settings,django.contrib.staticfiles.templatetags.get_settings,django.contrib.admin.templatetags.get_settings,serpng.jobs.templatetags.get_settings,pipeline.templatetags.get_settings
+Traceback (most recent call last):
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/core/handlers/base.py", line 115, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "/home/oleg/code/web-serpng/code/serpng/../serpng/jobs/views/jobs.py", line 326, in jobs
+    serpng.jobs.translation_strings.translations)
+  File "/home/oleg/code/web-serpng/code/serpng/../serpng/lib/serp_links_utils.py", line 83, in construct_serp_links
+    "translations": translations }))
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 170, in render_to_string
+    t = get_template(template_name)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 146, in get_template
+    template, origin = find_template(template_name)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 135, in find_template
+    source, display_name = loader(name, dirs)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 43, in __call__
+    return self.load_template(template_name, template_dirs)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 49, in load_template
+    template = get_template_from_string(source, origin, template_name)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 157, in get_template_from_string
+    return Template(source, origin, name)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/base.py", line 125, in __init__
+    self.nodelist = compile_string(template_string, origin)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/base.py", line 153, in compile_string
+    return parser.parse()
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/base.py", line 274, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/defaulttags.py", line 1044, in load
+    (taglib, e))
+TemplateSyntaxError: 'get_settings' is not a valid tag library: Template library get_settings not found, tried django.templatetags.get_settings,django.contrib.humanize.templatetags.get_settings,django.contrib.staticfiles.templatetags.get_settings,django.contrib.admin.templatetags.get_settings,serpng.jobs.templatetags.get_settings,pipeline.templatetags.get_settings
+ERROR 2013-06-25 00:21:14,660 middleware 11961 139776998102816 Uncaught exception: 'get_settings' is not a valid tag library: Template library get_settings not found, tried django.templatetags.get_settings,django.contrib.humanize.templatetags.get_settings,django.contrib.staticfiles.templatetags.get_settings,django.contrib.admin.templatetags.get_settings,serpng.jobs.templatetags.get_settings,pipeline.templatetags.get_settings
+Traceback (most recent call last):
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/core/handlers/base.py", line 115, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "/home/oleg/code/web-serpng/code/serpng/../serpng/jobs/views/jobs.py", line 326, in jobs
+    serpng.jobs.translation_strings.translations)
+  File "/home/oleg/code/web-serpng/code/serpng/../serpng/lib/serp_links_utils.py", line 83, in construct_serp_links
+    "translations": translations }))
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 170, in render_to_string
+    t = get_template(template_name)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 146, in get_template
+    template, origin = find_template(template_name)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 135, in find_template
+    source, display_name = loader(name, dirs)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 43, in __call__
+    return self.load_template(template_name, template_dirs)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 49, in load_template
+    template = get_template_from_string(source, origin, template_name)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 157, in get_template_from_string
+    return Template(source, origin, name)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/base.py", line 125, in __init__
+    self.nodelist = compile_string(template_string, origin)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/base.py", line 153, in compile_string
+    return parser.parse()
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/base.py", line 274, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/defaulttags.py", line 1044, in load
+    (taglib, e))
+TemplateSyntaxError: 'get_settings' is not a valid tag library: Template library get_settings not found, tried django.templatetags.get_settings,django.contrib.humanize.templatetags.get_settings,django.contrib.staticfiles.templatetags.get_settings,django.contrib.admin.templatetags.get_settings,serpng.jobs.templatetags.get_settings,pipeline.templatetags.get_settings
+ERROR 2013-06-25 00:21:15,441 middleware 11961 139776998102816 Uncaught exception: 'get_settings' is not a valid tag library: Template library get_settings not found, tried django.templatetags.get_settings,django.contrib.humanize.templatetags.get_settings,django.contrib.staticfiles.templatetags.get_settings,django.contrib.admin.templatetags.get_settings,serpng.jobs.templatetags.get_settings,pipeline.templatetags.get_settings
+Traceback (most recent call last):
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/core/handlers/base.py", line 115, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "/home/oleg/code/web-serpng/code/serpng/../serpng/jobs/views/jobs.py", line 326, in jobs
+    serpng.jobs.translation_strings.translations)
+  File "/home/oleg/code/web-serpng/code/serpng/../serpng/lib/serp_links_utils.py", line 83, in construct_serp_links
+    "translations": translations }))
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 170, in render_to_string
+    t = get_template(template_name)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 146, in get_template
+    template, origin = find_template(template_name)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 135, in find_template
+    source, display_name = loader(name, dirs)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 43, in __call__
+    return self.load_template(template_name, template_dirs)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 49, in load_template
+    template = get_template_from_string(source, origin, template_name)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 157, in get_template_from_string
+    return Template(source, origin, name)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/base.py", line 125, in __init__
+    self.nodelist = compile_string(template_string, origin)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/base.py", line 153, in compile_string
+    return parser.parse()
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/base.py", line 274, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/defaulttags.py", line 1044, in load
+    (taglib, e))
+TemplateSyntaxError: 'get_settings' is not a valid tag library: Template library get_settings not found, tried django.templatetags.get_settings,django.contrib.humanize.templatetags.get_settings,django.contrib.staticfiles.templatetags.get_settings,django.contrib.admin.templatetags.get_settings,serpng.jobs.templatetags.get_settings,pipeline.templatetags.get_settings
+ERROR 2013-06-25 00:21:16,211 middleware 11961 139776998102816 Uncaught exception: 'get_settings' is not a valid tag library: Template library get_settings not found, tried django.templatetags.get_settings,django.contrib.humanize.templatetags.get_settings,django.contrib.staticfiles.templatetags.get_settings,django.contrib.admin.templatetags.get_settings,serpng.jobs.templatetags.get_settings,pipeline.templatetags.get_settings
+Traceback (most recent call last):
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/core/handlers/base.py", line 115, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "/home/oleg/code/web-serpng/code/serpng/../serpng/jobs/views/jobs.py", line 326, in jobs
+    serpng.jobs.translation_strings.translations)
+  File "/home/oleg/code/web-serpng/code/serpng/../serpng/lib/serp_links_utils.py", line 83, in construct_serp_links
+    "translations": translations }))
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 170, in render_to_string
+    t = get_template(template_name)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 146, in get_template
+    template, origin = find_template(template_name)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 135, in find_template
+    source, display_name = loader(name, dirs)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 43, in __call__
+    return self.load_template(template_name, template_dirs)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 49, in load_template
+    template = get_template_from_string(source, origin, template_name)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 157, in get_template_from_string
+    return Template(source, origin, name)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/base.py", line 125, in __init__
+    self.nodelist = compile_string(template_string, origin)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/base.py", line 153, in compile_string
+    return parser.parse()
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/base.py", line 274, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/defaulttags.py", line 1044, in load
+    (taglib, e))
+TemplateSyntaxError: 'get_settings' is not a valid tag library: Template library get_settings not found, tried django.templatetags.get_settings,django.contrib.humanize.templatetags.get_settings,django.contrib.staticfiles.templatetags.get_settings,django.contrib.admin.templatetags.get_settings,serpng.jobs.templatetags.get_settings,pipeline.templatetags.get_settings
+ERROR 2013-06-25 00:21:16,985 middleware 11961 139776998102816 Uncaught exception: 'get_settings' is not a valid tag library: Template library get_settings not found, tried django.templatetags.get_settings,django.contrib.humanize.templatetags.get_settings,django.contrib.staticfiles.templatetags.get_settings,django.contrib.admin.templatetags.get_settings,serpng.jobs.templatetags.get_settings,pipeline.templatetags.get_settings
+Traceback (most recent call last):
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/core/handlers/base.py", line 115, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "/home/oleg/code/web-serpng/code/serpng/../serpng/jobs/views/jobs.py", line 326, in jobs
+    serpng.jobs.translation_strings.translations)
+  File "/home/oleg/code/web-serpng/code/serpng/../serpng/lib/serp_links_utils.py", line 83, in construct_serp_links
+    "translations": translations }))
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 170, in render_to_string
+    t = get_template(template_name)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 146, in get_template
+    template, origin = find_template(template_name)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 135, in find_template
+    source, display_name = loader(name, dirs)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 43, in __call__
+    return self.load_template(template_name, template_dirs)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 49, in load_template
+    template = get_template_from_string(source, origin, template_name)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 157, in get_template_from_string
+    return Template(source, origin, name)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/base.py", line 125, in __init__
+    self.nodelist = compile_string(template_string, origin)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/base.py", line 153, in compile_string
+    return parser.parse()
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/base.py", line 274, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/defaulttags.py", line 1044, in load
+    (taglib, e))
+TemplateSyntaxError: 'get_settings' is not a valid tag library: Template library get_settings not found, tried django.templatetags.get_settings,django.contrib.humanize.templatetags.get_settings,django.contrib.staticfiles.templatetags.get_settings,django.contrib.admin.templatetags.get_settings,serpng.jobs.templatetags.get_settings,pipeline.templatetags.get_settings
+ERROR 2013-06-25 00:21:17,742 middleware 11961 139776998102816 Uncaught exception: 'get_settings' is not a valid tag library: Template library get_settings not found, tried django.templatetags.get_settings,django.contrib.humanize.templatetags.get_settings,django.contrib.staticfiles.templatetags.get_settings,django.contrib.admin.templatetags.get_settings,serpng.jobs.templatetags.get_settings,pipeline.templatetags.get_settings
+Traceback (most recent call last):
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/core/handlers/base.py", line 115, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "/home/oleg/code/web-serpng/code/serpng/../serpng/jobs/views/jobs.py", line 326, in jobs
+    serpng.jobs.translation_strings.translations)
+  File "/home/oleg/code/web-serpng/code/serpng/../serpng/lib/serp_links_utils.py", line 83, in construct_serp_links
+    "translations": translations }))
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 170, in render_to_string
+    t = get_template(template_name)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 146, in get_template
+    template, origin = find_template(template_name)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 135, in find_template
+    source, display_name = loader(name, dirs)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 43, in __call__
+    return self.load_template(template_name, template_dirs)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 49, in load_template
+    template = get_template_from_string(source, origin, template_name)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 157, in get_template_from_string
+    return Template(source, origin, name)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/base.py", line 125, in __init__
+    self.nodelist = compile_string(template_string, origin)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/base.py", line 153, in compile_string
+    return parser.parse()
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/base.py", line 274, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/defaulttags.py", line 1044, in load
+    (taglib, e))
+TemplateSyntaxError: 'get_settings' is not a valid tag library: Template library get_settings not found, tried django.templatetags.get_settings,django.contrib.humanize.templatetags.get_settings,django.contrib.staticfiles.templatetags.get_settings,django.contrib.admin.templatetags.get_settings,serpng.jobs.templatetags.get_settings,pipeline.templatetags.get_settings
+ERROR 2013-06-25 00:21:18,512 middleware 11961 139776998102816 Uncaught exception: 'get_settings' is not a valid tag library: Template library get_settings not found, tried django.templatetags.get_settings,django.contrib.humanize.templatetags.get_settings,django.contrib.staticfiles.templatetags.get_settings,django.contrib.admin.templatetags.get_settings,serpng.jobs.templatetags.get_settings,pipeline.templatetags.get_settings
+Traceback (most recent call last):
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/core/handlers/base.py", line 115, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "/home/oleg/code/web-serpng/code/serpng/../serpng/jobs/views/jobs.py", line 326, in jobs
+    serpng.jobs.translation_strings.translations)
+  File "/home/oleg/code/web-serpng/code/serpng/../serpng/lib/serp_links_utils.py", line 83, in construct_serp_links
+    "translations": translations }))
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 170, in render_to_string
+    t = get_template(template_name)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 146, in get_template
+    template, origin = find_template(template_name)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 135, in find_template
+    source, display_name = loader(name, dirs)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 43, in __call__
+    return self.load_template(template_name, template_dirs)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 49, in load_template
+    template = get_template_from_string(source, origin, template_name)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 157, in get_template_from_string
+    return Template(source, origin, name)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/base.py", line 125, in __init__
+    self.nodelist = compile_string(template_string, origin)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/base.py", line 153, in compile_string
+    return parser.parse()
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/base.py", line 274, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/defaulttags.py", line 1044, in load
+    (taglib, e))
+TemplateSyntaxError: 'get_settings' is not a valid tag library: Template library get_settings not found, tried django.templatetags.get_settings,django.contrib.humanize.templatetags.get_settings,django.contrib.staticfiles.templatetags.get_settings,django.contrib.admin.templatetags.get_settings,serpng.jobs.templatetags.get_settings,pipeline.templatetags.get_settings
+ERROR 2013-06-25 00:21:19,285 middleware 11961 139776998102816 Uncaught exception: 'get_settings' is not a valid tag library: Template library get_settings not found, tried django.templatetags.get_settings,django.contrib.humanize.templatetags.get_settings,django.contrib.staticfiles.templatetags.get_settings,django.contrib.admin.templatetags.get_settings,serpng.jobs.templatetags.get_settings,pipeline.templatetags.get_settings
+Traceback (most recent call last):
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/core/handlers/base.py", line 115, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "/home/oleg/code/web-serpng/code/serpng/../serpng/jobs/views/jobs.py", line 326, in jobs
+    serpng.jobs.translation_strings.translations)
+  File "/home/oleg/code/web-serpng/code/serpng/../serpng/lib/serp_links_utils.py", line 83, in construct_serp_links
+    "translations": translations }))
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 170, in render_to_string
+    t = get_template(template_name)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 146, in get_template
+    template, origin = find_template(template_name)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 135, in find_template
+    source, display_name = loader(name, dirs)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 43, in __call__
+    return self.load_template(template_name, template_dirs)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 49, in load_template
+    template = get_template_from_string(source, origin, template_name)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 157, in get_template_from_string
+    return Template(source, origin, name)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/base.py", line 125, in __init__
+    self.nodelist = compile_string(template_string, origin)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/base.py", line 153, in compile_string
+    return parser.parse()
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/base.py", line 274, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/defaulttags.py", line 1044, in load
+    (taglib, e))
+TemplateSyntaxError: 'get_settings' is not a valid tag library: Template library get_settings not found, tried django.templatetags.get_settings,django.contrib.humanize.templatetags.get_settings,django.contrib.staticfiles.templatetags.get_settings,django.contrib.admin.templatetags.get_settings,serpng.jobs.templatetags.get_settings,pipeline.templatetags.get_settings
+ERROR 2013-06-25 00:21:20,059 middleware 11961 139776998102816 Uncaught exception: 'get_settings' is not a valid tag library: Template library get_settings not found, tried django.templatetags.get_settings,django.contrib.humanize.templatetags.get_settings,django.contrib.staticfiles.templatetags.get_settings,django.contrib.admin.templatetags.get_settings,serpng.jobs.templatetags.get_settings,pipeline.templatetags.get_settings
+Traceback (most recent call last):
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/core/handlers/base.py", line 115, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "/home/oleg/code/web-serpng/code/serpng/../serpng/jobs/views/jobs.py", line 326, in jobs
+    serpng.jobs.translation_strings.translations)
+  File "/home/oleg/code/web-serpng/code/serpng/../serpng/lib/serp_links_utils.py", line 83, in construct_serp_links
+    "translations": translations }))
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 170, in render_to_string
+    t = get_template(template_name)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 146, in get_template
+    template, origin = find_template(template_name)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 135, in find_template
+    source, display_name = loader(name, dirs)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 43, in __call__
+    return self.load_template(template_name, template_dirs)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 49, in load_template
+    template = get_template_from_string(source, origin, template_name)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 157, in get_template_from_string
+    return Template(source, origin, name)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/base.py", line 125, in __init__
+    self.nodelist = compile_string(template_string, origin)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/base.py", line 153, in compile_string
+    return parser.parse()
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/base.py", line 274, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/defaulttags.py", line 1044, in load
+    (taglib, e))
+TemplateSyntaxError: 'get_settings' is not a valid tag library: Template library get_settings not found, tried django.templatetags.get_settings,django.contrib.humanize.templatetags.get_settings,django.contrib.staticfiles.templatetags.get_settings,django.contrib.admin.templatetags.get_settings,serpng.jobs.templatetags.get_settings,pipeline.templatetags.get_settings
+ERROR 2013-06-25 00:27:26,669 middleware 12121 139825717532448 Uncaught exception: 'get_settings' is not a valid tag library: Template library get_settings not found, tried django.templatetags.get_settings,django.contrib.humanize.templatetags.get_settings,django.contrib.staticfiles.templatetags.get_settings,django.contrib.admin.templatetags.get_settings,serpng.jobs.templatetags.get_settings,pipeline.templatetags.get_settings
+Traceback (most recent call last):
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/core/handlers/base.py", line 115, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "/home/oleg/code/web-serpng/code/serpng/../serpng/jobs/views/jobs.py", line 326, in jobs
+    serpng.jobs.translation_strings.translations)
+  File "/home/oleg/code/web-serpng/code/serpng/../serpng/lib/serp_links_utils.py", line 83, in construct_serp_links
+    "translations": translations }))
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 170, in render_to_string
+    t = get_template(template_name)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 146, in get_template
+    template, origin = find_template(template_name)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 135, in find_template
+    source, display_name = loader(name, dirs)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 43, in __call__
+    return self.load_template(template_name, template_dirs)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 49, in load_template
+    template = get_template_from_string(source, origin, template_name)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 157, in get_template_from_string
+    return Template(source, origin, name)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/base.py", line 125, in __init__
+    self.nodelist = compile_string(template_string, origin)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/base.py", line 153, in compile_string
+    return parser.parse()
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/base.py", line 274, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/defaulttags.py", line 1044, in load
+    (taglib, e))
+TemplateSyntaxError: 'get_settings' is not a valid tag library: Template library get_settings not found, tried django.templatetags.get_settings,django.contrib.humanize.templatetags.get_settings,django.contrib.staticfiles.templatetags.get_settings,django.contrib.admin.templatetags.get_settings,serpng.jobs.templatetags.get_settings,pipeline.templatetags.get_settings
+ERROR 2013-06-25 00:27:27,526 middleware 12121 139825717532448 Uncaught exception: 'get_settings' is not a valid tag library: Template library get_settings not found, tried django.templatetags.get_settings,django.contrib.humanize.templatetags.get_settings,django.contrib.staticfiles.templatetags.get_settings,django.contrib.admin.templatetags.get_settings,serpng.jobs.templatetags.get_settings,pipeline.templatetags.get_settings
+Traceback (most recent call last):
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/core/handlers/base.py", line 115, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "/home/oleg/code/web-serpng/code/serpng/../serpng/jobs/views/jobs.py", line 326, in jobs
+    serpng.jobs.translation_strings.translations)
+  File "/home/oleg/code/web-serpng/code/serpng/../serpng/lib/serp_links_utils.py", line 83, in construct_serp_links
+    "translations": translations }))
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 170, in render_to_string
+    t = get_template(template_name)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 146, in get_template
+    template, origin = find_template(template_name)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 135, in find_template
+    source, display_name = loader(name, dirs)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 43, in __call__
+    return self.load_template(template_name, template_dirs)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 49, in load_template
+    template = get_template_from_string(source, origin, template_name)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 157, in get_template_from_string
+    return Template(source, origin, name)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/base.py", line 125, in __init__
+    self.nodelist = compile_string(template_string, origin)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/base.py", line 153, in compile_string
+    return parser.parse()
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/base.py", line 274, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/defaulttags.py", line 1044, in load
+    (taglib, e))
+TemplateSyntaxError: 'get_settings' is not a valid tag library: Template library get_settings not found, tried django.templatetags.get_settings,django.contrib.humanize.templatetags.get_settings,django.contrib.staticfiles.templatetags.get_settings,django.contrib.admin.templatetags.get_settings,serpng.jobs.templatetags.get_settings,pipeline.templatetags.get_settings
+ERROR 2013-06-25 00:27:28,333 middleware 12121 139825717532448 Uncaught exception: 'get_settings' is not a valid tag library: Template library get_settings not found, tried django.templatetags.get_settings,django.contrib.humanize.templatetags.get_settings,django.contrib.staticfiles.templatetags.get_settings,django.contrib.admin.templatetags.get_settings,serpng.jobs.templatetags.get_settings,pipeline.templatetags.get_settings
+Traceback (most recent call last):
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/core/handlers/base.py", line 115, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "/home/oleg/code/web-serpng/code/serpng/../serpng/jobs/views/jobs.py", line 326, in jobs
+    serpng.jobs.translation_strings.translations)
+  File "/home/oleg/code/web-serpng/code/serpng/../serpng/lib/serp_links_utils.py", line 83, in construct_serp_links
+    "translations": translations }))
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 170, in render_to_string
+    t = get_template(template_name)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 146, in get_template
+    template, origin = find_template(template_name)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 135, in find_template
+    source, display_name = loader(name, dirs)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 43, in __call__
+    return self.load_template(template_name, template_dirs)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 49, in load_template
+    template = get_template_from_string(source, origin, template_name)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 157, in get_template_from_string
+    return Template(source, origin, name)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/base.py", line 125, in __init__
+    self.nodelist = compile_string(template_string, origin)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/base.py", line 153, in compile_string
+    return parser.parse()
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/base.py", line 274, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/defaulttags.py", line 1044, in load
+    (taglib, e))
+TemplateSyntaxError: 'get_settings' is not a valid tag library: Template library get_settings not found, tried django.templatetags.get_settings,django.contrib.humanize.templatetags.get_settings,django.contrib.staticfiles.templatetags.get_settings,django.contrib.admin.templatetags.get_settings,serpng.jobs.templatetags.get_settings,pipeline.templatetags.get_settings
+ERROR 2013-06-25 00:27:29,079 middleware 12121 139825717532448 Uncaught exception: 'get_settings' is not a valid tag library: Template library get_settings not found, tried django.templatetags.get_settings,django.contrib.humanize.templatetags.get_settings,django.contrib.staticfiles.templatetags.get_settings,django.contrib.admin.templatetags.get_settings,serpng.jobs.templatetags.get_settings,pipeline.templatetags.get_settings
+Traceback (most recent call last):
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/core/handlers/base.py", line 115, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "/home/oleg/code/web-serpng/code/serpng/../serpng/jobs/views/jobs.py", line 326, in jobs
+    serpng.jobs.translation_strings.translations)
+  File "/home/oleg/code/web-serpng/code/serpng/../serpng/lib/serp_links_utils.py", line 83, in construct_serp_links
+    "translations": translations }))
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 170, in render_to_string
+    t = get_template(template_name)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 146, in get_template
+    template, origin = find_template(template_name)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 135, in find_template
+    source, display_name = loader(name, dirs)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 43, in __call__
+    return self.load_template(template_name, template_dirs)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 49, in load_template
+    template = get_template_from_string(source, origin, template_name)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 157, in get_template_from_string
+    return Template(source, origin, name)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/base.py", line 125, in __init__
+    self.nodelist = compile_string(template_string, origin)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/base.py", line 153, in compile_string
+    return parser.parse()
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/base.py", line 274, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/defaulttags.py", line 1044, in load
+    (taglib, e))
+TemplateSyntaxError: 'get_settings' is not a valid tag library: Template library get_settings not found, tried django.templatetags.get_settings,django.contrib.humanize.templatetags.get_settings,django.contrib.staticfiles.templatetags.get_settings,django.contrib.admin.templatetags.get_settings,serpng.jobs.templatetags.get_settings,pipeline.templatetags.get_settings
+ERROR 2013-06-25 00:27:29,797 middleware 12121 139825717532448 Uncaught exception: 'get_settings' is not a valid tag library: Template library get_settings not found, tried django.templatetags.get_settings,django.contrib.humanize.templatetags.get_settings,django.contrib.staticfiles.templatetags.get_settings,django.contrib.admin.templatetags.get_settings,serpng.jobs.templatetags.get_settings,pipeline.templatetags.get_settings
+Traceback (most recent call last):
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/core/handlers/base.py", line 115, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "/home/oleg/code/web-serpng/code/serpng/../serpng/jobs/views/jobs.py", line 326, in jobs
+    serpng.jobs.translation_strings.translations)
+  File "/home/oleg/code/web-serpng/code/serpng/../serpng/lib/serp_links_utils.py", line 83, in construct_serp_links
+    "translations": translations }))
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 170, in render_to_string
+    t = get_template(template_name)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 146, in get_template
+    template, origin = find_template(template_name)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 135, in find_template
+    source, display_name = loader(name, dirs)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 43, in __call__
+    return self.load_template(template_name, template_dirs)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 49, in load_template
+    template = get_template_from_string(source, origin, template_name)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 157, in get_template_from_string
+    return Template(source, origin, name)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/base.py", line 125, in __init__
+    self.nodelist = compile_string(template_string, origin)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/base.py", line 153, in compile_string
+    return parser.parse()
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/base.py", line 274, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/defaulttags.py", line 1044, in load
+    (taglib, e))
+TemplateSyntaxError: 'get_settings' is not a valid tag library: Template library get_settings not found, tried django.templatetags.get_settings,django.contrib.humanize.templatetags.get_settings,django.contrib.staticfiles.templatetags.get_settings,django.contrib.admin.templatetags.get_settings,serpng.jobs.templatetags.get_settings,pipeline.templatetags.get_settings
+ERROR 2013-06-25 00:27:30,830 middleware 12121 139825717532448 Uncaught exception: 'get_settings' is not a valid tag library: Template library get_settings not found, tried django.templatetags.get_settings,django.contrib.humanize.templatetags.get_settings,django.contrib.staticfiles.templatetags.get_settings,django.contrib.admin.templatetags.get_settings,serpng.jobs.templatetags.get_settings,pipeline.templatetags.get_settings
+Traceback (most recent call last):
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/core/handlers/base.py", line 115, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "/home/oleg/code/web-serpng/code/serpng/../serpng/jobs/views/jobs.py", line 326, in jobs
+    serpng.jobs.translation_strings.translations)
+  File "/home/oleg/code/web-serpng/code/serpng/../serpng/lib/serp_links_utils.py", line 83, in construct_serp_links
+    "translations": translations }))
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 170, in render_to_string
+    t = get_template(template_name)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 146, in get_template
+    template, origin = find_template(template_name)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 135, in find_template
+    source, display_name = loader(name, dirs)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 43, in __call__
+    return self.load_template(template_name, template_dirs)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 49, in load_template
+    template = get_template_from_string(source, origin, template_name)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 157, in get_template_from_string
+    return Template(source, origin, name)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/base.py", line 125, in __init__
+    self.nodelist = compile_string(template_string, origin)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/base.py", line 153, in compile_string
+    return parser.parse()
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/base.py", line 274, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/defaulttags.py", line 1044, in load
+    (taglib, e))
+TemplateSyntaxError: 'get_settings' is not a valid tag library: Template library get_settings not found, tried django.templatetags.get_settings,django.contrib.humanize.templatetags.get_settings,django.contrib.staticfiles.templatetags.get_settings,django.contrib.admin.templatetags.get_settings,serpng.jobs.templatetags.get_settings,pipeline.templatetags.get_settings
+ERROR 2013-06-25 00:27:31,583 middleware 12121 139825717532448 Uncaught exception: 'get_settings' is not a valid tag library: Template library get_settings not found, tried django.templatetags.get_settings,django.contrib.humanize.templatetags.get_settings,django.contrib.staticfiles.templatetags.get_settings,django.contrib.admin.templatetags.get_settings,serpng.jobs.templatetags.get_settings,pipeline.templatetags.get_settings
+Traceback (most recent call last):
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/core/handlers/base.py", line 115, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "/home/oleg/code/web-serpng/code/serpng/../serpng/jobs/views/jobs.py", line 326, in jobs
+    serpng.jobs.translation_strings.translations)
+  File "/home/oleg/code/web-serpng/code/serpng/../serpng/lib/serp_links_utils.py", line 83, in construct_serp_links
+    "translations": translations }))
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 170, in render_to_string
+    t = get_template(template_name)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 146, in get_template
+    template, origin = find_template(template_name)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 135, in find_template
+    source, display_name = loader(name, dirs)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 43, in __call__
+    return self.load_template(template_name, template_dirs)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 49, in load_template
+    template = get_template_from_string(source, origin, template_name)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 157, in get_template_from_string
+    return Template(source, origin, name)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/base.py", line 125, in __init__
+    self.nodelist = compile_string(template_string, origin)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/base.py", line 153, in compile_string
+    return parser.parse()
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/base.py", line 274, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/defaulttags.py", line 1044, in load
+    (taglib, e))
+TemplateSyntaxError: 'get_settings' is not a valid tag library: Template library get_settings not found, tried django.templatetags.get_settings,django.contrib.humanize.templatetags.get_settings,django.contrib.staticfiles.templatetags.get_settings,django.contrib.admin.templatetags.get_settings,serpng.jobs.templatetags.get_settings,pipeline.templatetags.get_settings
+ERROR 2013-06-25 00:27:32,326 middleware 12121 139825717532448 Uncaught exception: 'get_settings' is not a valid tag library: Template library get_settings not found, tried django.templatetags.get_settings,django.contrib.humanize.templatetags.get_settings,django.contrib.staticfiles.templatetags.get_settings,django.contrib.admin.templatetags.get_settings,serpng.jobs.templatetags.get_settings,pipeline.templatetags.get_settings
+Traceback (most recent call last):
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/core/handlers/base.py", line 115, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "/home/oleg/code/web-serpng/code/serpng/../serpng/jobs/views/jobs.py", line 326, in jobs
+    serpng.jobs.translation_strings.translations)
+  File "/home/oleg/code/web-serpng/code/serpng/../serpng/lib/serp_links_utils.py", line 83, in construct_serp_links
+    "translations": translations }))
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 170, in render_to_string
+    t = get_template(template_name)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 146, in get_template
+    template, origin = find_template(template_name)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 135, in find_template
+    source, display_name = loader(name, dirs)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 43, in __call__
+    return self.load_template(template_name, template_dirs)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 49, in load_template
+    template = get_template_from_string(source, origin, template_name)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 157, in get_template_from_string
+    return Template(source, origin, name)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/base.py", line 125, in __init__
+    self.nodelist = compile_string(template_string, origin)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/base.py", line 153, in compile_string
+    return parser.parse()
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/base.py", line 274, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/defaulttags.py", line 1044, in load
+    (taglib, e))
+TemplateSyntaxError: 'get_settings' is not a valid tag library: Template library get_settings not found, tried django.templatetags.get_settings,django.contrib.humanize.templatetags.get_settings,django.contrib.staticfiles.templatetags.get_settings,django.contrib.admin.templatetags.get_settings,serpng.jobs.templatetags.get_settings,pipeline.templatetags.get_settings
+ERROR 2013-06-25 00:27:33,099 middleware 12121 139825717532448 Uncaught exception: 'get_settings' is not a valid tag library: Template library get_settings not found, tried django.templatetags.get_settings,django.contrib.humanize.templatetags.get_settings,django.contrib.staticfiles.templatetags.get_settings,django.contrib.admin.templatetags.get_settings,serpng.jobs.templatetags.get_settings,pipeline.templatetags.get_settings
+Traceback (most recent call last):
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/core/handlers/base.py", line 115, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "/home/oleg/code/web-serpng/code/serpng/../serpng/jobs/views/jobs.py", line 326, in jobs
+    serpng.jobs.translation_strings.translations)
+  File "/home/oleg/code/web-serpng/code/serpng/../serpng/lib/serp_links_utils.py", line 83, in construct_serp_links
+    "translations": translations }))
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 170, in render_to_string
+    t = get_template(template_name)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 146, in get_template
+    template, origin = find_template(template_name)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 135, in find_template
+    source, display_name = loader(name, dirs)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 43, in __call__
+    return self.load_template(template_name, template_dirs)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 49, in load_template
+    template = get_template_from_string(source, origin, template_name)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 157, in get_template_from_string
+    return Template(source, origin, name)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/base.py", line 125, in __init__
+    self.nodelist = compile_string(template_string, origin)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/base.py", line 153, in compile_string
+    return parser.parse()
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/base.py", line 274, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/defaulttags.py", line 1044, in load
+    (taglib, e))
+TemplateSyntaxError: 'get_settings' is not a valid tag library: Template library get_settings not found, tried django.templatetags.get_settings,django.contrib.humanize.templatetags.get_settings,django.contrib.staticfiles.templatetags.get_settings,django.contrib.admin.templatetags.get_settings,serpng.jobs.templatetags.get_settings,pipeline.templatetags.get_settings
+ERROR 2013-06-25 00:27:33,877 middleware 12121 139825717532448 Uncaught exception: 'get_settings' is not a valid tag library: Template library get_settings not found, tried django.templatetags.get_settings,django.contrib.humanize.templatetags.get_settings,django.contrib.staticfiles.templatetags.get_settings,django.contrib.admin.templatetags.get_settings,serpng.jobs.templatetags.get_settings,pipeline.templatetags.get_settings
+Traceback (most recent call last):
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/core/handlers/base.py", line 115, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "/home/oleg/code/web-serpng/code/serpng/../serpng/jobs/views/jobs.py", line 326, in jobs
+    serpng.jobs.translation_strings.translations)
+  File "/home/oleg/code/web-serpng/code/serpng/../serpng/lib/serp_links_utils.py", line 83, in construct_serp_links
+    "translations": translations }))
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 170, in render_to_string
+    t = get_template(template_name)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 146, in get_template
+    template, origin = find_template(template_name)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 135, in find_template
+    source, display_name = loader(name, dirs)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 43, in __call__
+    return self.load_template(template_name, template_dirs)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 49, in load_template
+    template = get_template_from_string(source, origin, template_name)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 157, in get_template_from_string
+    return Template(source, origin, name)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/base.py", line 125, in __init__
+    self.nodelist = compile_string(template_string, origin)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/base.py", line 153, in compile_string
+    return parser.parse()
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/base.py", line 274, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/defaulttags.py", line 1044, in load
+    (taglib, e))
+TemplateSyntaxError: 'get_settings' is not a valid tag library: Template library get_settings not found, tried django.templatetags.get_settings,django.contrib.humanize.templatetags.get_settings,django.contrib.staticfiles.templatetags.get_settings,django.contrib.admin.templatetags.get_settings,serpng.jobs.templatetags.get_settings,pipeline.templatetags.get_settings
+ERROR 2013-06-25 00:27:34,635 middleware 12121 139825717532448 Uncaught exception: 'get_settings' is not a valid tag library: Template library get_settings not found, tried django.templatetags.get_settings,django.contrib.humanize.templatetags.get_settings,django.contrib.staticfiles.templatetags.get_settings,django.contrib.admin.templatetags.get_settings,serpng.jobs.templatetags.get_settings,pipeline.templatetags.get_settings
+Traceback (most recent call last):
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/core/handlers/base.py", line 115, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "/home/oleg/code/web-serpng/code/serpng/../serpng/jobs/views/jobs.py", line 326, in jobs
+    serpng.jobs.translation_strings.translations)
+  File "/home/oleg/code/web-serpng/code/serpng/../serpng/lib/serp_links_utils.py", line 83, in construct_serp_links
+    "translations": translations }))
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 170, in render_to_string
+    t = get_template(template_name)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 146, in get_template
+    template, origin = find_template(template_name)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 135, in find_template
+    source, display_name = loader(name, dirs)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 43, in __call__
+    return self.load_template(template_name, template_dirs)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 49, in load_template
+    template = get_template_from_string(source, origin, template_name)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 157, in get_template_from_string
+    return Template(source, origin, name)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/base.py", line 125, in __init__
+    self.nodelist = compile_string(template_string, origin)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/base.py", line 153, in compile_string
+    return parser.parse()
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/base.py", line 274, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/defaulttags.py", line 1044, in load
+    (taglib, e))
+TemplateSyntaxError: 'get_settings' is not a valid tag library: Template library get_settings not found, tried django.templatetags.get_settings,django.contrib.humanize.templatetags.get_settings,django.contrib.staticfiles.templatetags.get_settings,django.contrib.admin.templatetags.get_settings,serpng.jobs.templatetags.get_settings,pipeline.templatetags.get_settings
+ERROR 2013-06-25 00:27:35,402 middleware 12121 139825717532448 Uncaught exception: 'get_settings' is not a valid tag library: Template library get_settings not found, tried django.templatetags.get_settings,django.contrib.humanize.templatetags.get_settings,django.contrib.staticfiles.templatetags.get_settings,django.contrib.admin.templatetags.get_settings,serpng.jobs.templatetags.get_settings,pipeline.templatetags.get_settings
+Traceback (most recent call last):
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/core/handlers/base.py", line 115, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "/home/oleg/code/web-serpng/code/serpng/../serpng/jobs/views/jobs.py", line 326, in jobs
+    serpng.jobs.translation_strings.translations)
+  File "/home/oleg/code/web-serpng/code/serpng/../serpng/lib/serp_links_utils.py", line 83, in construct_serp_links
+    "translations": translations }))
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 170, in render_to_string
+    t = get_template(template_name)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 146, in get_template
+    template, origin = find_template(template_name)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 135, in find_template
+    source, display_name = loader(name, dirs)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 43, in __call__
+    return self.load_template(template_name, template_dirs)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 49, in load_template
+    template = get_template_from_string(source, origin, template_name)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 157, in get_template_from_string
+    return Template(source, origin, name)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/base.py", line 125, in __init__
+    self.nodelist = compile_string(template_string, origin)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/base.py", line 153, in compile_string
+    return parser.parse()
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/base.py", line 274, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/defaulttags.py", line 1044, in load
+    (taglib, e))
+TemplateSyntaxError: 'get_settings' is not a valid tag library: Template library get_settings not found, tried django.templatetags.get_settings,django.contrib.humanize.templatetags.get_settings,django.contrib.staticfiles.templatetags.get_settings,django.contrib.admin.templatetags.get_settings,serpng.jobs.templatetags.get_settings,pipeline.templatetags.get_settings
+ERROR 2013-06-25 00:27:36,149 middleware 12121 139825717532448 Uncaught exception: 'get_settings' is not a valid tag library: Template library get_settings not found, tried django.templatetags.get_settings,django.contrib.humanize.templatetags.get_settings,django.contrib.staticfiles.templatetags.get_settings,django.contrib.admin.templatetags.get_settings,serpng.jobs.templatetags.get_settings,pipeline.templatetags.get_settings
+Traceback (most recent call last):
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/core/handlers/base.py", line 115, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "/home/oleg/code/web-serpng/code/serpng/../serpng/jobs/views/jobs.py", line 326, in jobs
+    serpng.jobs.translation_strings.translations)
+  File "/home/oleg/code/web-serpng/code/serpng/../serpng/lib/serp_links_utils.py", line 83, in construct_serp_links
+    "translations": translations }))
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 170, in render_to_string
+    t = get_template(template_name)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 146, in get_template
+    template, origin = find_template(template_name)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 135, in find_template
+    source, display_name = loader(name, dirs)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 43, in __call__
+    return self.load_template(template_name, template_dirs)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 49, in load_template
+    template = get_template_from_string(source, origin, template_name)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 157, in get_template_from_string
+    return Template(source, origin, name)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/base.py", line 125, in __init__
+    self.nodelist = compile_string(template_string, origin)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/base.py", line 153, in compile_string
+    return parser.parse()
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/base.py", line 274, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/defaulttags.py", line 1044, in load
+    (taglib, e))
+TemplateSyntaxError: 'get_settings' is not a valid tag library: Template library get_settings not found, tried django.templatetags.get_settings,django.contrib.humanize.templatetags.get_settings,django.contrib.staticfiles.templatetags.get_settings,django.contrib.admin.templatetags.get_settings,serpng.jobs.templatetags.get_settings,pipeline.templatetags.get_settings
+ERROR 2013-06-25 00:27:36,886 middleware 12121 139825717532448 Uncaught exception: 'get_settings' is not a valid tag library: Template library get_settings not found, tried django.templatetags.get_settings,django.contrib.humanize.templatetags.get_settings,django.contrib.staticfiles.templatetags.get_settings,django.contrib.admin.templatetags.get_settings,serpng.jobs.templatetags.get_settings,pipeline.templatetags.get_settings
+Traceback (most recent call last):
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/core/handlers/base.py", line 115, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "/home/oleg/code/web-serpng/code/serpng/../serpng/jobs/views/jobs.py", line 326, in jobs
+    serpng.jobs.translation_strings.translations)
+  File "/home/oleg/code/web-serpng/code/serpng/../serpng/lib/serp_links_utils.py", line 83, in construct_serp_links
+    "translations": translations }))
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 170, in render_to_string
+    t = get_template(template_name)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 146, in get_template
+    template, origin = find_template(template_name)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 135, in find_template
+    source, display_name = loader(name, dirs)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 43, in __call__
+    return self.load_template(template_name, template_dirs)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 49, in load_template
+    template = get_template_from_string(source, origin, template_name)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 157, in get_template_from_string
+    return Template(source, origin, name)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/base.py", line 125, in __init__
+    self.nodelist = compile_string(template_string, origin)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/base.py", line 153, in compile_string
+    return parser.parse()
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/base.py", line 274, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/defaulttags.py", line 1044, in load
+    (taglib, e))
+TemplateSyntaxError: 'get_settings' is not a valid tag library: Template library get_settings not found, tried django.templatetags.get_settings,django.contrib.humanize.templatetags.get_settings,django.contrib.staticfiles.templatetags.get_settings,django.contrib.admin.templatetags.get_settings,serpng.jobs.templatetags.get_settings,pipeline.templatetags.get_settings
+ERROR 2013-06-25 00:27:37,645 middleware 12121 139825717532448 Uncaught exception: 'get_settings' is not a valid tag library: Template library get_settings not found, tried django.templatetags.get_settings,django.contrib.humanize.templatetags.get_settings,django.contrib.staticfiles.templatetags.get_settings,django.contrib.admin.templatetags.get_settings,serpng.jobs.templatetags.get_settings,pipeline.templatetags.get_settings
+Traceback (most recent call last):
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/core/handlers/base.py", line 115, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "/home/oleg/code/web-serpng/code/serpng/../serpng/jobs/views/jobs.py", line 326, in jobs
+    serpng.jobs.translation_strings.translations)
+  File "/home/oleg/code/web-serpng/code/serpng/../serpng/lib/serp_links_utils.py", line 83, in construct_serp_links
+    "translations": translations }))
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 170, in render_to_string
+    t = get_template(template_name)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 146, in get_template
+    template, origin = find_template(template_name)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 135, in find_template
+    source, display_name = loader(name, dirs)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 43, in __call__
+    return self.load_template(template_name, template_dirs)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 49, in load_template
+    template = get_template_from_string(source, origin, template_name)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 157, in get_template_from_string
+    return Template(source, origin, name)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/base.py", line 125, in __init__
+    self.nodelist = compile_string(template_string, origin)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/base.py", line 153, in compile_string
+    return parser.parse()
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/base.py", line 274, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/defaulttags.py", line 1044, in load
+    (taglib, e))
+TemplateSyntaxError: 'get_settings' is not a valid tag library: Template library get_settings not found, tried django.templatetags.get_settings,django.contrib.humanize.templatetags.get_settings,django.contrib.staticfiles.templatetags.get_settings,django.contrib.admin.templatetags.get_settings,serpng.jobs.templatetags.get_settings,pipeline.templatetags.get_settings
+ERROR 2013-06-25 00:27:38,445 middleware 12121 139825717532448 Uncaught exception: 'get_settings' is not a valid tag library: Template library get_settings not found, tried django.templatetags.get_settings,django.contrib.humanize.templatetags.get_settings,django.contrib.staticfiles.templatetags.get_settings,django.contrib.admin.templatetags.get_settings,serpng.jobs.templatetags.get_settings,pipeline.templatetags.get_settings
+Traceback (most recent call last):
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/core/handlers/base.py", line 115, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "/home/oleg/code/web-serpng/code/serpng/../serpng/jobs/views/jobs.py", line 326, in jobs
+    serpng.jobs.translation_strings.translations)
+  File "/home/oleg/code/web-serpng/code/serpng/../serpng/lib/serp_links_utils.py", line 83, in construct_serp_links
+    "translations": translations }))
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 170, in render_to_string
+    t = get_template(template_name)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 146, in get_template
+    template, origin = find_template(template_name)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 135, in find_template
+    source, display_name = loader(name, dirs)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 43, in __call__
+    return self.load_template(template_name, template_dirs)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 49, in load_template
+    template = get_template_from_string(source, origin, template_name)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 157, in get_template_from_string
+    return Template(source, origin, name)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/base.py", line 125, in __init__
+    self.nodelist = compile_string(template_string, origin)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/base.py", line 153, in compile_string
+    return parser.parse()
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/base.py", line 274, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/defaulttags.py", line 1044, in load
+    (taglib, e))
+TemplateSyntaxError: 'get_settings' is not a valid tag library: Template library get_settings not found, tried django.templatetags.get_settings,django.contrib.humanize.templatetags.get_settings,django.contrib.staticfiles.templatetags.get_settings,django.contrib.admin.templatetags.get_settings,serpng.jobs.templatetags.get_settings,pipeline.templatetags.get_settings
+ERROR 2013-06-25 00:27:39,214 middleware 12121 139825717532448 Uncaught exception: 'get_settings' is not a valid tag library: Template library get_settings not found, tried django.templatetags.get_settings,django.contrib.humanize.templatetags.get_settings,django.contrib.staticfiles.templatetags.get_settings,django.contrib.admin.templatetags.get_settings,serpng.jobs.templatetags.get_settings,pipeline.templatetags.get_settings
+Traceback (most recent call last):
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/core/handlers/base.py", line 115, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "/home/oleg/code/web-serpng/code/serpng/../serpng/jobs/views/jobs.py", line 326, in jobs
+    serpng.jobs.translation_strings.translations)
+  File "/home/oleg/code/web-serpng/code/serpng/../serpng/lib/serp_links_utils.py", line 83, in construct_serp_links
+    "translations": translations }))
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 170, in render_to_string
+    t = get_template(template_name)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 146, in get_template
+    template, origin = find_template(template_name)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 135, in find_template
+    source, display_name = loader(name, dirs)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 43, in __call__
+    return self.load_template(template_name, template_dirs)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 49, in load_template
+    template = get_template_from_string(source, origin, template_name)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 157, in get_template_from_string
+    return Template(source, origin, name)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/base.py", line 125, in __init__
+    self.nodelist = compile_string(template_string, origin)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/base.py", line 153, in compile_string
+    return parser.parse()
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/base.py", line 274, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/defaulttags.py", line 1044, in load
+    (taglib, e))
+TemplateSyntaxError: 'get_settings' is not a valid tag library: Template library get_settings not found, tried django.templatetags.get_settings,django.contrib.humanize.templatetags.get_settings,django.contrib.staticfiles.templatetags.get_settings,django.contrib.admin.templatetags.get_settings,serpng.jobs.templatetags.get_settings,pipeline.templatetags.get_settings
+ERROR 2013-06-25 00:27:39,988 middleware 12121 139825717532448 Uncaught exception: 'get_settings' is not a valid tag library: Template library get_settings not found, tried django.templatetags.get_settings,django.contrib.humanize.templatetags.get_settings,django.contrib.staticfiles.templatetags.get_settings,django.contrib.admin.templatetags.get_settings,serpng.jobs.templatetags.get_settings,pipeline.templatetags.get_settings
+Traceback (most recent call last):
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/core/handlers/base.py", line 115, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "/home/oleg/code/web-serpng/code/serpng/../serpng/jobs/views/jobs.py", line 326, in jobs
+    serpng.jobs.translation_strings.translations)
+  File "/home/oleg/code/web-serpng/code/serpng/../serpng/lib/serp_links_utils.py", line 83, in construct_serp_links
+    "translations": translations }))
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 170, in render_to_string
+    t = get_template(template_name)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 146, in get_template
+    template, origin = find_template(template_name)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 135, in find_template
+    source, display_name = loader(name, dirs)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 43, in __call__
+    return self.load_template(template_name, template_dirs)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 49, in load_template
+    template = get_template_from_string(source, origin, template_name)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 157, in get_template_from_string
+    return Template(source, origin, name)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/base.py", line 125, in __init__
+    self.nodelist = compile_string(template_string, origin)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/base.py", line 153, in compile_string
+    return parser.parse()
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/base.py", line 274, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/defaulttags.py", line 1044, in load
+    (taglib, e))
+TemplateSyntaxError: 'get_settings' is not a valid tag library: Template library get_settings not found, tried django.templatetags.get_settings,django.contrib.humanize.templatetags.get_settings,django.contrib.staticfiles.templatetags.get_settings,django.contrib.admin.templatetags.get_settings,serpng.jobs.templatetags.get_settings,pipeline.templatetags.get_settings
+ERROR 2013-06-25 00:27:40,750 middleware 12121 139825717532448 Uncaught exception: 'get_settings' is not a valid tag library: Template library get_settings not found, tried django.templatetags.get_settings,django.contrib.humanize.templatetags.get_settings,django.contrib.staticfiles.templatetags.get_settings,django.contrib.admin.templatetags.get_settings,serpng.jobs.templatetags.get_settings,pipeline.templatetags.get_settings
+Traceback (most recent call last):
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/core/handlers/base.py", line 115, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "/home/oleg/code/web-serpng/code/serpng/../serpng/jobs/views/jobs.py", line 326, in jobs
+    serpng.jobs.translation_strings.translations)
+  File "/home/oleg/code/web-serpng/code/serpng/../serpng/lib/serp_links_utils.py", line 83, in construct_serp_links
+    "translations": translations }))
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 170, in render_to_string
+    t = get_template(template_name)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 146, in get_template
+    template, origin = find_template(template_name)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 135, in find_template
+    source, display_name = loader(name, dirs)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 43, in __call__
+    return self.load_template(template_name, template_dirs)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 49, in load_template
+    template = get_template_from_string(source, origin, template_name)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 157, in get_template_from_string
+    return Template(source, origin, name)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/base.py", line 125, in __init__
+    self.nodelist = compile_string(template_string, origin)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/base.py", line 153, in compile_string
+    return parser.parse()
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/base.py", line 274, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/defaulttags.py", line 1044, in load
+    (taglib, e))
+TemplateSyntaxError: 'get_settings' is not a valid tag library: Template library get_settings not found, tried django.templatetags.get_settings,django.contrib.humanize.templatetags.get_settings,django.contrib.staticfiles.templatetags.get_settings,django.contrib.admin.templatetags.get_settings,serpng.jobs.templatetags.get_settings,pipeline.templatetags.get_settings
+ERROR 2013-06-25 00:27:41,540 middleware 12121 139825717532448 Uncaught exception: 'get_settings' is not a valid tag library: Template library get_settings not found, tried django.templatetags.get_settings,django.contrib.humanize.templatetags.get_settings,django.contrib.staticfiles.templatetags.get_settings,django.contrib.admin.templatetags.get_settings,serpng.jobs.templatetags.get_settings,pipeline.templatetags.get_settings
+Traceback (most recent call last):
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/core/handlers/base.py", line 115, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "/home/oleg/code/web-serpng/code/serpng/../serpng/jobs/views/jobs.py", line 326, in jobs
+    serpng.jobs.translation_strings.translations)
+  File "/home/oleg/code/web-serpng/code/serpng/../serpng/lib/serp_links_utils.py", line 83, in construct_serp_links
+    "translations": translations }))
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 170, in render_to_string
+    t = get_template(template_name)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 146, in get_template
+    template, origin = find_template(template_name)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 135, in find_template
+    source, display_name = loader(name, dirs)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 43, in __call__
+    return self.load_template(template_name, template_dirs)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 49, in load_template
+    template = get_template_from_string(source, origin, template_name)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 157, in get_template_from_string
+    return Template(source, origin, name)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/base.py", line 125, in __init__
+    self.nodelist = compile_string(template_string, origin)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/base.py", line 153, in compile_string
+    return parser.parse()
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/base.py", line 274, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/defaulttags.py", line 1044, in load
+    (taglib, e))
+TemplateSyntaxError: 'get_settings' is not a valid tag library: Template library get_settings not found, tried django.templatetags.get_settings,django.contrib.humanize.templatetags.get_settings,django.contrib.staticfiles.templatetags.get_settings,django.contrib.admin.templatetags.get_settings,serpng.jobs.templatetags.get_settings,pipeline.templatetags.get_settings
+ERROR 2013-06-25 00:27:42,306 middleware 12121 139825717532448 Uncaught exception: 'get_settings' is not a valid tag library: Template library get_settings not found, tried django.templatetags.get_settings,django.contrib.humanize.templatetags.get_settings,django.contrib.staticfiles.templatetags.get_settings,django.contrib.admin.templatetags.get_settings,serpng.jobs.templatetags.get_settings,pipeline.templatetags.get_settings
+Traceback (most recent call last):
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/core/handlers/base.py", line 115, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "/home/oleg/code/web-serpng/code/serpng/../serpng/jobs/views/jobs.py", line 326, in jobs
+    serpng.jobs.translation_strings.translations)
+  File "/home/oleg/code/web-serpng/code/serpng/../serpng/lib/serp_links_utils.py", line 83, in construct_serp_links
+    "translations": translations }))
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 170, in render_to_string
+    t = get_template(template_name)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 146, in get_template
+    template, origin = find_template(template_name)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 135, in find_template
+    source, display_name = loader(name, dirs)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 43, in __call__
+    return self.load_template(template_name, template_dirs)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 49, in load_template
+    template = get_template_from_string(source, origin, template_name)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/loader.py", line 157, in get_template_from_string
+    return Template(source, origin, name)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/base.py", line 125, in __init__
+    self.nodelist = compile_string(template_string, origin)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/base.py", line 153, in compile_string
+    return parser.parse()
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/base.py", line 274, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/oleg/virtualenv/serpng/lib/python2.7/site-packages/django/template/defaulttags.py", line 1044, in load
+    (taglib, e))
+TemplateSyntaxError: 'get_settings' is not a valid tag library: Template library get_settings not found, tried django.templatetags.get_settings,django.contrib.humanize.templatetags.get_settings,django.contrib.staticfiles.templatetags.get_settings,django.contrib.admin.templatetags.get_settings,serpng.jobs.templatetags.get_settings,pipeline.templatetags.get_settings

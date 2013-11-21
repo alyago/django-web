@@ -1,0 +1,31 @@
+{% extends "accounts_base.html" %}
+{% load compressed %}
+{% load get_config %}
+{% load staticfiles %}
+
+{% block css %}
+  {% compressed_css 'accounts-base' %}
+{% endblock %}
+
+{% block content %}
+  <div class="container">
+    <div class="row-fluid">
+      <div class="maintenance">
+        <div class="span2 offset3">
+          <img src="{% static 'images/sh-clock.png' %}?{% get_config "DEPLOY_TAG" %}"></a>
+        </div>
+        <div class="span5">
+          <h2>Our account system is currently being updated.</h2>
+          <p class="lead">Please try again in a few minutes.</p>
+          <p>
+            <a href="javascript:history.back()">Return to previous page</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
+
+{% block external_js %}
+  {% compressed_js 'accounts-bootstrap' %}
+{% endblock %}

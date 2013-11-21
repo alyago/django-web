@@ -1,0 +1,70 @@
+{% extends "mobile/base.html" %}
+
+{% load staticfiles %}
+{% load i18n %}
+
+{% block "content" %}
+
+<div class="buttons-banner">
+  <div class="saved-star {% if saved_job %}saved{% endif %}"></div>
+{% if job.is_simplyapply_mobile %}
+  <button class="simplyapply-link btn" data-url="{{ job.simplyapply_url }}">Apply to Job</a>
+{% else %}
+  <button class="visit-website-link btn" data-url="{{ job.listing_clickthrough_url }}">Visit Website</a>
+{% endif %}
+  <button class="open-email-job btn" id="open-email-job" type="button">Email Job to Me</button>
+  <form class="email-job-form">
+    <div class="input-append">
+      <input class="appendedInputButton" id="appendedInputButton" placeholder="Enter e-mail address" type="email" autofocus>
+      <button class="btn" id="email-job" type="submit">Send</button>
+    </div>
+    <div class="email-error">
+      <div class="sprite-icon-bang-red"></div>
+      <span class="email-error-text">Please enter a valid email address</span>
+    </div>
+  </form>
+</div>
+<div id="title-bar">
+{% if prev_detail_page_url != '' %}
+<a id="arrow-left" href="{{ prev_detail_page_url }}">
+  <i class="icon-chevron-left" ></i>
+</a>
+{% endif %}
+
+{% if next_detail_page_url != '' %}
+<a id="arrow-right" href="{{ next_detail_page_url }}">
+  <i class="icon-chevron-right" id="next-job-arrow" ></i>
+</a>
+{% endif %}
+  <div id="title-company-location" >
+    <div id="title">{{ job.title }}</div>
+    <div><span id="company">{{ job.company_name }}</span> - <span id="location">{{ job.formatted_location_string }}</span></div>
+  </div>
+</div>
+
+<div id="job-description">{{ description }}</div>
+
+<script>refindkey="{{ job.listing_refind_key }}"</script>
+  <div id="emailJob" class="modal hide fade span10 offset1" tabindex="-1" role="dialog" aria-labelledby="emailJobLabel" aria-hidden="true">
+    <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+      <h3 id="emailJobLabel">Email Job to Me</h3>
+    </div>
+    <div class="modal-body">
+      <div class="row-fluid">
+        <form autocomplete="on">
+          <input type="text" id="inputEmail" name="email" placeholder="someone@xyz.com">
+          <button id="submit_button" type="submit"></button>
+        </form>
+      </div>
+    </div>
+  </div>
+{% endblock %}
+
+{% block "scripts" %}
+  <script type="text/javascript">
+    $(function() {
+      window.appView = new JobDetailAppView({ model: new AccountModel(SH), el: 'body' });
+    });
+  </script>
+{% endblock %}

@@ -1,0 +1,60 @@
+{% load get_config %}
+{% load staticfiles %}
+
+<div class="sh_footer">
+  
+  <div class="sh-footer-content"> 
+    <div class="sh-footer-content-container">
+      {# Use different sets of footer links for different countries #}
+      {% if current_country_code == "us" %}
+        {% include "base/bottom_footer_links_us.html" %}
+      {% else %} {# if Canada #}
+        {% include "base/bottom_footer_links_ca.html" %}
+      {% endif %}
+
+      <div class="footer_follow_social_icons">
+        <div class="sh-footer-fb-like" style="margin-right:5px">
+          <fb:like href="https://www.facebook.com/simplyhired" width="90" 
+              layout="button_count" action="like"
+              show_faces="false" share="false"></fb:like>
+        </div>
+
+        <a href="#" target="_blank" id="gplus_img">
+        <img src="{% static 'images/social-icons/gp-icon.png' %}?{% get_config "DEPLOY_TAG" %}"
+             width="24" height="24" alt="" border="0" />
+        </a>
+        <a href="#" target="_blank" id="linkedin_img">
+        <img src="{% static 'images/social-icons/in-icon.png' %}?{% get_config "DEPLOY_TAG" %}"
+             width="24" height="24" alt="" border="0" />
+        </a>
+        <a href="#" target="_blank" id="facebook_img">
+        <img src="{% static 'images/social-icons/fb-icon.png' %}?{% get_config "DEPLOY_TAG" %}"
+             width="24" height="24" alt="" border="0" />
+        </a>
+        <a href="#" target="_blank" id="twitter_img">
+        <img src="{% static 'images/social-icons/tw-icon.png' %}?{% get_config "DEPLOY_TAG" %}"
+             width="24" height="24" alt="" border="0" />
+        </a>
+        <a href="#" target="_blank" id="youtube_img">
+        <img src="{% static 'images/social-icons/yt-icon.png' %}?{% get_config "DEPLOY_TAG" %}"
+             width="24" height="24" alt="" border="0" />
+        </a>
+      </div>
+
+      <div class="legal">
+        <span class="copyright">
+          &copy; {% now "Y" %} Simply Hired, Inc. {{ translations.all_rights_reserved_text }}
+        </span>
+        <a class="legal footer_privacy evtc" rel="nofollow"
+           data-event="footer_privacy" href="#">
+          {{ translations.privacy_link_text }}
+        </a>
+        <a class="legal footer_terms evtc" rel="nofollow"
+           data-event="footer_terms" href="#">
+          {{ translations.terms_link_text }}
+        </a>
+      </div>
+    </div><!--sh_footer_content_container-->
+  </div><!--sh_footer_content-->
+</div><!--sh_footer-->
+

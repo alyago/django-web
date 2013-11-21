@@ -1,0 +1,218 @@
+Comments for Translators#English#Translation#Original File Locations#Original Multiline String
+(1) no comment.#OK##jobs/translation_strings.py:9
+(1) This is a link to a page with information about jobs in various cities.#Local Jobs##jobs/translation_strings.py:16 jobs/templates/bottom/jobs_bottom_footer.html:6
+(1) This is a link to a page with information about salaries for various jobs.#Job Salaries##jobs/translation_strings.py:19 jobs/templates/bottom/jobs_bottom_footer.html:7
+(1) This is a link to a page with information about trends in employment and hiring.#Job Trends##jobs/translation_strings.py:22 jobs/templates/bottom/jobs_bottom_footer.html:8
+(1) This is a link to the Simply Hired blog, which contains information about employment and hiring.#Get Hired Blog##jobs/translation_strings.py:25 jobs/templates/bottom/jobs_bottom_footer.html:9
+(1) This is a link to a page containing information about how advertisers can post jobs on Simply Hired.#Post a Job##jobs/translation_strings.py:28 jobs/templates/bottom/jobs_bottom_footer.html:13
+(1) This is a link to a page containing information about how advertisers can contact Simply Hired sales.#Employer Solutions##jobs/translation_strings.py:31 jobs/templates/bottom/jobs_bottom_footer.html:14
+(1) This is a link to a page containing information about how web site publishers can contact Simply Hired sales.#Publisher Solutions##jobs/translation_strings.py:34 jobs/templates/bottom/jobs_bottom_footer.html:15
+(1) This is a link to a page where users can browse jobs by category.#Browse Jobs##jobs/translation_strings.py:37 jobs/templates/bottom/jobs_bottom_footer.html:17
+(1) This is a link to the Simply Hired corporate page that contains information about Simply Hired.#About Simply Hired##jobs/translation_strings.py:40 jobs/templates/bottom/jobs_bottom_footer.html:18
+(1) This is a link to the Simply Hired support page.#Help##jobs/translation_strings.py:43 jobs/templates/bottom/jobs_bottom_footer.html:19
+(1) This is a link to a page where the user can upload his resume. (2) This is a link in a drop-down menu that takes the user to a page where he can upload a resume.#Upload Resume##jobs/translation_strings.py:46 jobs/translation_strings.py:460
+(1) This is a link to a page where the user can contact Simply Hired.#Contact Us##jobs/translation_strings.py:49
+(1) This activates a drop-down menu that displays links to Simply Hired's international sites.#International##jobs/translation_strings.py:52
+(1) This is a link to a page containing information about Simply Hired's privacy policy.#Privacy##jobs/translation_strings.py:55 jobs/translation_strings.py:693
+(1) This is a link to a page containing information about Simply Hired's terms of service.#Terms##jobs/translation_strings.py:58 jobs/translation_strings.py:696
+(1) This is the text that accompanies Simply Hired's copyright notice.#All Rights Reserved##jobs/translation_strings.py:61
+(1) This text sits right above a form in which users can submit their email addresses.#Email jobs like this to me##jobs/translation_strings.py:69
+(1) This is an abbreviation for "Previous", and links to the previous page of search results.#Prev##jobs/translation_strings.py:76
+(1) This links to the next page of search results.#Next##jobs/translation_strings.py:79
+(1) This is the text of a link next to a short description of a job which, when clicked, allows a user to save the job for viewing later. (2) This is text displayed on a submit button which, when clicked, will save the user's search. (3) This button allows a user to save a job or save notes for a job.#Save##jobs/translation_strings.py:87 jobs/translation_strings.py:421 jobs/translation_strings.py:733 jobs/templates/content/content_center/jobs_content_center_results.html:59 jobs/templates/content/content_left/jobs_content_left_save_search_dialog.html:27
+(1) This is a text next to a short description of a job which indicates that the job has been saved for later viewing. (2) This indicates that the user has successfully saved a job.#Saved##jobs/translation_strings.py:91 jobs/translation_strings.py:714
+(1) This is the text of a link next to a short description of a job which, when clicked, allows a user to share the job with other people, via email, Facebook, Twitter, or LinkedIn.#Share##jobs/translation_strings.py:95 jobs/templates/content/content_center/jobs_content_center_results.html:61
+(1) This is the text of a link next to a short description of a job which, when clicked, allows a user to hide the job from the list of jobs displayed.#Hide##jobs/translation_strings.py:99 jobs/templates/content/content_center/jobs_content_center_results.html:63
+(1) This is the text of a link next to a short description of a job which, when clicked, allows a user to report problems with the job to Simply Hired.#Report##jobs/translation_strings.py:103 jobs/translation_strings.py:721 jobs/templates/content/content_center/jobs_content_center_results.html:65
+(1) This is the text of a link next to a short description of a job which, when clicked, allows a user to view job research tools associated with the job.#Job Tools##jobs/translation_strings.py:107
+(1) This is the text that immediately precedes "My Jobs", which is a link that a user can click to access a page where all his saved jobs are displayed.  The whole line reads "Saved To My Jobs".#Saved To##jobs/translation_strings.py:112
+(1) This is the text that immediately follows "Saved To". "My Jobs" is a link that a user can click to access a page where all his saved jobs are displayed.  The whole line reads "Saved To My Jobs".#My Jobs##jobs/translation_strings.py:117 jobs/templates/content/content_center/jobs_content_center_results.html:73
+(1) This is the text that sits above a box in which the user can edit his notes for a saved job.#Edit Notes:##jobs/translation_strings.py:121
+(1) This is the text of a link that, when clicked, shows a box in which the user can add notes for a saved job.#Add Notes##jobs/translation_strings.py:125
+(1) This is the title of a widget that displays a form that allows the user to email information about a job to a friend.#Email##jobs/translation_strings.py:129 jobs/templates/content/content_center/jobs_content_center_results.html:95
+(1) This is the text of a link under a job description. When this link is clicked, all jobs from the company associated with the job described above the link will be removed from the list of jobs displayed.#Hide all jobs at this company##jobs/translation_strings.py:134 jobs/templates/content/content_center/jobs_content_center_results.html:108
+(1) This is the text of a link under a job description. When this link is clicked, all jobs from the website associated with the job described above the link will be removed from the list of jobs displayed.#Hide all jobs from this site##jobs/translation_strings.py:139 jobs/templates/content/content_center/jobs_content_center_results.html:111
+(1) This is the text of a link under a job description. When this link is clicked, the user is taken to a page where he can choose to view previously hidden jobs.#View all hidden companies and sites.##jobs/translation_strings.py:143 jobs/templates/content/content_center/jobs_content_center_results.html:115
+(1) Text that appears when the user attempts to hide a job from the list of jobs being displayed.#Tired of seeing jobs from this company or website?##jobs/translation_strings.py:147 jobs/templates/content/content_center/jobs_content_center_results.html:120
+(1) Link that takes the user to an account sign-in page.#Sign in##jobs/translation_strings.py:150 jobs/translation_strings.py:690 jobs/templates/content/content_center/jobs_content_center_results.html:122
+(1) This indicates a choice between alternatives.#or##jobs/translation_strings.py:153 jobs/templates/content/content_center/jobs_content_center_results.html:123
+(1) Link that takes the user to an account creation page.#create a free account##jobs/translation_strings.py:156 jobs/templates/content/content_center/jobs_content_center_results.html:124
+(1) Text that appears when the user attempts to hide a job from the list of jobs being displayed, but has not logged in yet. The full sentence reads "Sign in or create a free accont to hide their jobs."#to hide their jobs.##jobs/translation_strings.py:161 jobs/templates/content/content_center/jobs_content_center_results.html:125
+(1) Text that appears when the user attempts to report a problem with ajob to Simply Hired.#Report this job##jobs/translation_strings.py:165 jobs/templates/content/content_center/jobs_content_center_results.html:133
+(1) One of several options to choose from when reporting a problem with a job.#scam/spam##jobs/translation_strings.py:168 jobs/templates/content/content_center/jobs_content_center_results.html:134
+(1) One of several options to choose from when reporting a problem with a job.#expired##jobs/translation_strings.py:171 jobs/templates/content/content_center/jobs_content_center_results.html:135
+(1) One of several options to choose from when reporting a problem with a job.#duplicate##jobs/translation_strings.py:174 jobs/templates/content/content_center/jobs_content_center_results.html:136
+(1) One of several options to choose from when reporting a problem with a job.#inaccurate##jobs/translation_strings.py:177 jobs/templates/content/content_center/jobs_content_center_results.html:137
+(1) Summary of job title, employer name, and location (city) of job.#Job Summary:##jobs/translation_strings.py:180
+(1) This text precedes a link that will take the user to a full description of the job.#Also found at:##jobs/translation_strings.py:183
+(1) "Personalized search" uses a users's resume to search for relevant jobs.#Personalized Search is Great, Isn't It?##jobs/translation_strings.py:190 jobs/templates/content/jobs_content_error.html:7
+(1) This text asks the user to sign in to a Simply Hired account. The full text is Just one catch. You need to sign in to your Simply Hired account first, so we can show you jobs relevant just to you. And not to that guy next to you with the great hair.#Just one catch. You need to ##jobs/translation_strings.py:197 jobs/templates/content/jobs_content_error.html:9
+(1) This text ask the user to sign in to a Simply Hired account. The full text is Just one catch. You need to sign in to your Simply Hired account first, so we can show you jobs relevant just to you. And not to that guy next to you with the great hair.#sign in to your Simply Hired account##jobs/translation_strings.py:204 jobs/templates/content/jobs_content_error.html:9
+(1) This text ask the user to sign in to a Simply Hired account. The full text is Just one catch. You need to sign in to your Simply Hired account first, so we can show you jobs relevant just to you. And not to that guy next to you with the great hair.# first, so we can show you jobs relevant just to you.##jobs/translation_strings.py:211 jobs/templates/content/jobs_content_error.html:9
+(1) This text ask the user to sign in to a Simply Hired account. The full text is Just one catch. You need to sign in to your Simply Hired account first, so we can show you jobs relevant just to you. And not to that guy next to you with the great hair.#And not to that guy next to you with the great hair.##jobs/translation_strings.py:218 jobs/templates/content/jobs_content_error.html:10
+(1) This text appears on a button that, when clicked, takes the user to a sign-in page.#Sign In Now##jobs/translation_strings.py:221 jobs/templates/content/jobs_content_error.html:13
+(1) This is part of a text that asks the user to personalize his search experience by uploading a resume. The full text is Stumble here by accident? No problem! Now that you're here, why not give that personalized search a try? Choosing keywords is hard, we know. Why not give our secret sauce a try? Get started by uploading your resume.#Stumble here by accident?##jobs/translation_strings.py:228 jobs/templates/content/jobs_content_error.html:17
+(1) This is part of a text that asks the user to personalize his search experience by uploading a resume. The full text is Stumble here by accident? No problem! Now that you're here, why not give that personalized search a try? Choosing keywords is hard, we know. Why not give our secret sauce a try? Get started by uploading your resume.#No problem! Now that you're here, why not give that personalized search a try? Choosing keywords is hard, we know.##jobs/translation_strings.py:235 jobs/templates/content/jobs_content_error.html:19#No problem! Now that you're here, why not give that personalized search a ;try? Choosing keywords is hard, we know.
+(1) This is part of a text that asks the user to personalize his search experience by uploading a resume. The full text is Stumble here by accident? No problem! Now that you're here, why not give that personalized search a try? Choosing keywords is hard, we know. Why not give our secret sauce a try? Get started by uploading your resume.#Why not give our secret sauce a try?##jobs/translation_strings.py:242 jobs/templates/content/jobs_content_error.html:20
+(1) This is part of a text that asks the user to personalize his search experience by uploading a resume. The full text is Stumble here by accident? No problem! Now that you're here, why not give that personalized search a try? Choosing keywords is hard, we know. Why not give our secret sauce a try? Get started by uploading your resume.#Get started by ##jobs/translation_strings.py:249 jobs/templates/content/jobs_content_error.html:23
+(1) This is part of a text that asks the user to personalize his search experience by uploading a resume. The full text is Stumble here by accident? No problem! Now that you're here, why not give that personalized search a try? Choosing keywords is hard, we know. Why not give our secret sauce a try? Get started by uploading your resume.#uploading your resume.##jobs/translation_strings.py:256
+(1) This is a heading above job categories.#Find Jobs by Category##jobs/translation_strings.py:259
+(1) This is a link that takes a user to a page with job categories.#Browse Job Listings##jobs/translation_strings.py:262
+(1) This describes a toggle switch which, when clicked, will display more filters that the user can apply to filter job search results (to apply a filter to job search results is to view only jobs that meet certain criteria).#More Filters##jobs/translation_strings.py:271
+(1) This describes a switch that is next to an applied filter. Clicking the switch clears the applied filter (to apply a filter to job search results is to view only jobs that meet certain criteria). (2) This switch, when clicked, will clear the user's history of recently performed searches.#Clear##jobs/translation_strings.py:280 jobs/translation_strings.py:533 jobs/templates/content/content_left/jobs_content_left_filter_feedback.html:7 jobs/templates/content/content_left/jobs_content_left_filters.html:28
+(1) This describes a toggle switch which, when clicked, will allow the user to see more filters that he can apply (to apply a filter to job search results is to view only jobs that meet certain criteria).#See more##jobs/translation_strings.py:285 jobs/templates/content/content_left/jobs_content_left_filters.html:44
+(1) This describes a link that takes the user to a page where he can view previously saved job searches.#See all saved searches##jobs/translation_strings.py:293
+(1) This describes switch that, when clicked, will save the currently active job search to the user's account.#Save this search##jobs/translation_strings.py:297 jobs/templates/content/content_left/jobs_content_left_save_search_link.html:12
+(1) This label describes two radio buttons that, when clicked, display the job search results in different kinds of sorted order.#Sort by##jobs/translation_strings.py:305
+(1) This label is next to a radio button that, when clicked, displays a page where the job search results are sorted in order of relevance to the search keywords.#Relevance##jobs/translation_strings.py:309 jobs/templates/content/content_center/jobs_content_center_results_sort.html:7 jobs/templates/content/content_center/jobs_content_center_results_sort.html:13 jobs/templates/content/content_left/jobs_content_left_sort_by.html:10 jobs/templates/content/content_left/jobs_content_left_sort_by.html:13
+(1) This label is next to a radio button that, when clicked, displays a page where the job search results are sorted in order of date (newest jobs displayed first).#Date##jobs/translation_strings.py:313 jobs/templates/content/content_center/jobs_content_center_results_sort.html:10 jobs/templates/content/content_center/jobs_content_center_results_sort.html:15 jobs/templates/content/content_left/jobs_content_left_sort_by.html:21 jobs/templates/content/content_left/jobs_content_left_sort_by.html:24
+(1) This label describes a radio button that, when clicked, will allow the user to sign in with LinkedIn to see their LinkedIn connections.#Connect with LinkedIn##jobs/translation_strings.py:321
+(1) This label is next to a radio button that, if selected, indicates that the user has turned on his LinkedIn connections.#On##jobs/translation_strings.py:325
+(1) This label is next to a radio button that, if selected, indicates that the user has NOT turned on his LinkedIn connections.#Off##jobs/translation_strings.py:329
+(1) This is the heading for some help text that describes the features of LinkedIn connections.#Unleash the power of your professional network##jobs/translation_strings.py:333
+(1) This describes a reason that a user should turn on his LinkedIn connections.#See all of your connections to interesting jobs##jobs/translation_strings.py:336
+(1) This describes a reason that a user should turn on his LinkedIn connections.#Target companies where you have connections##jobs/translation_strings.py:339
+(1) This describes a reason that a user should turn on his LinkedIn connections.#Make a personal connection when you apply##jobs/translation_strings.py:342
+(1) This is a survey question that asks an user whether he is satisfied with his job search results.#Were you satisfied with these results?##jobs/translation_strings.py:350
+(1) no comment.#Yes##jobs/translation_strings.py:353
+(1) no comment.#No##jobs/translation_strings.py:356
+(1) This is a thank you that is displayed after an user completes a survey.#Thank you for your feedback!##jobs/translation_strings.py:359
+(1) This is the heading in a dialog that is displayed when the user has successfully created an email alert (creating an email alert allows the user to receive daily email notifications of new job openings).#Email Alert created!##jobs/translation_strings.py:368
+(1) This is the body in a dialog that is displayed when the user has successfully created an email alert (creating an email alert allows the user to receive daily email notifications of new job openings).#Congratulations! You have just successfully created a job alert. Please check your inbox for new job matches.##jobs/translation_strings.py:373#Congratulations! You have just successfully created a job alert. Please ;check your inbox for new job matches.
+(1) This precedes a link which, when clicked, takes the user to their personal email page.#Check email at##jobs/translation_strings.py:376
+(1) This is a link that, when clicked, exits a dialog and re-displays a page with job search results.#Return to search results##jobs/translation_strings.py:379
+(1) This is informational text in the dialog that is displayed when the user has successfully created an email alert (creating an email alert allows the user to receive daily email notifications of new job openings).#We'll send daily job notifications to##jobs/translation_strings.py:384
+(1) This is the heading for some help text that describes the features of email alerts (creating an email alert allows the user to receive daily email notifications of new job openings).#Let Simply Hired do the work!##jobs/translation_strings.py:393
+(1) This describes a reason that a user should create an email alert (creating an email alert allows the user to receive daily email notifications of new job openings).#New jobs delivered daily##jobs/translation_strings.py:397
+(1) This describes a reason that a user should create an email alert (creating an email alert allows the user to receive daily email notifications of new job openings).#Only the jobs you want to see##jobs/translation_strings.py:401
+(1) This describes a reason that a user should create an email alert (creating an email alert allows the user to receive daily email notifications of new job openings).#Unsubscribe anytime##jobs/translation_strings.py:405
+(1) This is the heading in a dialog where the user can save a job search.#Saving your search...##jobs/translation_strings.py:412
+(1) This is the text in a dialog in which the user had just saved a job search.#Your search has been saved.##jobs/translation_strings.py:415
+(1) This text is displayed before an input box where the user can name his saved search.#Your current search will be saved as:##jobs/translation_strings.py:418
+(1) This is the heading for an input field where the user enters keywords for a job search. Example keywords#Keywords##jobs/translation_strings.py:429 jobs/templates/content/jobs_content_search_form.html:9 jobs/templates/top/jobs_top_header.html:49
+(1) This is instructional text for an input field where the user enters keywords for a job search. Example keywords (2)  This is instructional text for an input field where the user enters keywords for a job search. Example keywords#job title, skills or company##jobs/translation_strings.py:433 jobs/translation_strings.py:700 jobs/templates/top/jobs_top_header.html:53
+(1) This is the heading for an input field where the user enters location for a job search. Example location#Location##jobs/translation_strings.py:437 jobs/templates/content/jobs_content_search_form.html:16 jobs/templates/top/jobs_top_header.html:58
+(1) This is instructional text for an input field where the user enters location for a job search. Example location#city, state or zip##jobs/translation_strings.py:441 jobs/translation_strings.py:704 jobs/templates/top/jobs_top_header.html:62
+(1) This is text on a submit button which, when clicked, will perform a search for jobs.#Search Jobs##jobs/translation_strings.py:444
+(1) This is a link in a drop-down menu that takes the user to the email alerts he has created (creating an email alert allows the user to receive daily email notifications of new job openings).#Email Alerts##jobs/translation_strings.py:453 jobs/templates/top/jobs_top_header.html:17
+(1) This is a link in a drop-down menu that takes the user to the resume he has uploaded.#Resume##jobs/translation_strings.py:456 jobs/templates/top/jobs_top_header.html:21
+(1) This is a link in a drop-down menu that takes the user to a page where he can view the job searches that he has previously saved.#Saved Searches##jobs/translation_strings.py:464 jobs/templates/top/jobs_top_header.html:19
+(1) This is a link in a drop-down menu that takes the user to a page where he can view the jobs that he has previously saved.#Saved Jobs##jobs/translation_strings.py:468 jobs/templates/top/jobs_top_header.html:18
+(1) This is a link in a drop-down menu that takes the user to a page where he can view information for his user account.#Account##jobs/translation_strings.py:472 jobs/templates/top/jobs_top_header.html:25
+(1) This is link in a drop-down menu that, when clicked, signs the user out from his account.#Sign Out##jobs/translation_strings.py:475 jobs/templates/top/jobs_top_header.html:27
+(1) This is text on a submit button which, when clicked, allows the user to sign in to his account.#Sign In##jobs/translation_strings.py:479
+(1) no comment.#of##jobs/translation_strings.py:486
+(1) no comment.#Personalized search results##jobs/translation_strings.py:489
+(1) singular form of "job", where job refers to a person's employment/occupation.#job##jobs/translation_strings.py:492
+(1) plural form of "job", where job refers to a person's employment/occupation.#jobs##jobs/translation_strings.py:495
+(1) no comment.#near##jobs/translation_strings.py:498
+(1) Informational text for Simply Hired's company logo.#Find Jobs and Careers - SimplyHired.com Job Search##jobs/translation_strings.py:505
+(1) Clicking or hovering over this link will display further search options to the user.#Options##jobs/translation_strings.py:508
+(1) This is a link that takes the user to a page where he can perform a more advanced search for jobs where he can specify many specific criteria for the search.#Advanced Job Search##jobs/translation_strings.py:512
+(1) This is a link that takes the user to a page where he can customize his search (for example, by specifying how many jobs to display on a page).#Search Options##jobs/translation_strings.py:516
+(1) This text indicates that a job has been sponsored (its listing was paid for by an advertiser).#Sponsored##jobs/translation_strings.py:523
+(1) This is the heading for a list of job searches that the user has recently performed.#Recent Job Searches##jobs/translation_strings.py:530
+(1) This link, when clicked, will take the user to a page where he can view all of his recent searches (only a few on shown on the original page).#See all##jobs/translation_strings.py:537
+(1) This is the heading for a list of useful job search links.#Job Search Tools##jobs/translation_strings.py:544
+(1) This is a link to an RSS feed for a job search.#RSS Feed##jobs/translation_strings.py:547
+(1) This is link to an equivalent page rendered for mobile devices.#Mobile site##jobs/translation_strings.py:554
+(1) This is the heading for a dialog box that asks the user to create an email alert. (creating an email alert allows the user to receive daily email notifications of new job openings).#Yes, email me job leads like this one.##jobs/translation_strings.py:563
+(1) This is the text for a button which, when clicked, will allow the user to edit the email alert that he is creating. (creating an email alert allows the user to receive daily email notifications of new job openings).#edit##jobs/translation_strings.py:568
+(1) This is the text for a submit button that'll save an email alert for the user. (creating an email alert allows the user to receive daily email notifications of new job openings).#save##jobs/translation_strings.py:572
+(1) This text tells a user to enter his email address in an input box.#Your email address##jobs/translation_strings.py:575
+(1) This is the first part of a text for a link that will take the user to a job page without creating an email alert. The full text is#Continue##jobs/translation_strings.py:580
+(1) This is the second part of a text for a link that will take the user to a job page without creating an email alert. The full text is#without free email updates##jobs/translation_strings.py:585
+(1) no comment.#Maintenance in progress##jobs/translation_strings.py:588
+(1) no comment.#Our email alert system is currently undergoing routine maintenance. Please try to create or edit your email alert later.##jobs/translation_strings.py:591#Our email alert system is currently undergoing routine maintenance. Please ;try to create or edit your email alert later.
+(1) no comment.#We apologize for any inconvenience.##jobs/translation_strings.py:594
+(1) no comment.#The Simply Hired Team##jobs/translation_strings.py:597
+(1) This is the heading for a dialog box that asks the user to create an email alert. (creating an email alert allows the user to receive daily email notifications of new job openings).#Create a Job Email Alert##jobs/translation_strings.py:601
+(1) This text tells a user what he'll get when he creates an email alert. (creating an email alert allows the user to receive daily email notifications of new job openings).#Get new jobs for this search delivered to your inbox!##jobs/translation_strings.py:605
+(1) This text asks a user to create an email alert. (creating an email alert allows the user to receive daily email notifications of new job openings).#Create a free job alert by entering your email address:##jobs/translation_strings.py:609
+(1) This text tells a user to enter his email address in an input box. (2) No comment.#Enter email address...##jobs/translation_strings.py:612 jobs/translation_strings.py:824 jobs/templates/content/content_center/jobs_content_center_email_alert_form.html:9
+(1) This text tells a user that he can unsubscribe from email alerts. (creating an email alert allows the user to receive daily email notifications of new job openings).#You can unsubscribe anytime.  We respect your privacy.##jobs/translation_strings.py:616
+(1) This is a heading for searches that are similar to and related to the search that the user just performed.#Related Searches##jobs/translation_strings.py:623 jobs/templates/content/content_center/jobs_content_center_related_searches.html:8
+(1) This error heading is displayed when the user did not enter any search terms.#Hmm. A minimalist, eh?##jobs/translation_strings.py:629
+(1) This error message is displayed when the user did not enter any search terms. Note A tag is anything between < and >, inclusive. For example, "<p>a girl</p><p>the apples</p>" should translate to "<p>une fille</p><p>les pommes</p>" in French.#<p>Sorry, we can't show you <em>every</em> job. Please enter a keyword and/or location and try again.</p><p>Or, browse for jobs using the links below.</p>##jobs/translation_strings.py:636#<p>Sorry, we can't show you <em>every</em> job. Please enter a keyword and/;or location and try again.</p><p>Or, browse for jobs using the links below.</;p>
+(1) This text appears inside an input box to instruct the user to enter his email address.#Email address##jobs/translation_strings.py:707
+(1) This is an error message that is displayed when the user has entered an invalid email address.#Please enter a valid email address.##jobs/translation_strings.py:711
+(1) This indicates that the user has successfully reported a bad job to Simply Hired.#Reported##jobs/translation_strings.py:717
+(1) This is a link that allows a user to add notes to a job that he has saved.#Add notes##jobs/translation_strings.py:724 jobs/templates/content/content_center/jobs_content_center_results.html:82 jobs/templates/content/content_center/jobs_content_center_results.html:87
+(1) This is a link that allows a user to edit previously saved notes.#Edit notes: ##jobs/translation_strings.py:727
+(1) Notes refer to notes that the user added to saved jobs.#your notes are only visible to you##jobs/translation_strings.py:730
+(1) No comment.#Cancel##jobs/translation_strings.py:736
+(1) No comment.#Email sent! Use this form to email another friend.##jobs/translation_strings.py:739
+(1) No comment.#Please correct the errors below.##jobs/translation_strings.py:742
+(1) No comment.#Unable to send email.  Please try again.##jobs/translation_strings.py:745
+(1) No comment.#Send##jobs/translation_strings.py:748
+(1) No comment.#Send this job to a friend##jobs/translation_strings.py:751
+(1) No comment.#Your name: ##jobs/translation_strings.py:754
+(1) No comment.#Your email address: ##jobs/translation_strings.py:757
+(1) No comment.#Friend's email address: ##jobs/translation_strings.py:760
+(1) A link which, when clicked, displays a job's location on a mpa.#View Mapped Jobs##jobs/translation_strings.py:763
+(1) A link which, when clicked, closes a dialog box or menu.#close##jobs/translation_strings.py:766 jobs/templates/content/content_center/jobs_content_center_results.html:94 jobs/templates/content/content_center/jobs_content_center_results.html:103 jobs/templates/content/content_center/jobs_content_center_results.html:131 jobs/templates/content/content_center/jobs_content_center_results.html:142
+(1) No comment.#Sorry, but we need some more information.##jobs/translation_strings.py:769
+(1) No comment.#Please enter keywords or a location.##jobs/translation_strings.py:772
+(1) No comment.#Your email address didn't work.##jobs/translation_strings.py:775
+(1) No comment.#We aren't sure where the location {{location}} is.##jobs/translation_strings.py:778
+(1) No comment.#Unable to create alert.  Please try again.##jobs/translation_strings.py:781
+(1) No comment.#Check your inbox for a confirmation email.<br/>Click the link in the email to start receiving jobs.##jobs/translation_strings.py:784#Check your inbox for a confirmation email.<br/>Click the link in the email ;to start receiving jobs.
+(1) No comment.#Your email alert is created.<br/>No further action is necessary.##jobs/translation_strings.py:787
+(1) No comment.#Enter keywords:  job title, skills or company##jobs/translation_strings.py:796
+(1) No comment.#Enter a location:  city, state or zip##jobs/translation_strings.py:799
+(1) No comment.#{{search}} Jobs##jobs/translation_strings.py:802
+(1) A link that allows a user to edit the email alert he created (creating an email alert allows the user to receive daily email notifications of new job openings).#edit email alert##jobs/translation_strings.py:807
+(1) (creating an email alert allows the user to receive daily email notifications of new job openings).#You're all set up to receive email alerts for this search!  <a rel=\")nofollow\" href=\"/a/my-alerts/email\">Manage your alerts.</a>##jobs/translation_strings.py:811#You're all set up to receive email alerts for this search!  <a rel=\");nofollow\" href=\"/a/my-alerts/email\">Manage your alerts.</a>
+(1) (creating a job alert allows the user to receive daily email notifications of new job openings).#To activate your job alert, please check your email now and click the confirmation link.##jobs/translation_strings.py:815#To activate your job alert, please check your email now and click the ;confirmation link.
+(1) No comment.#Receive updates with the latest relevant jobs: ##jobs/translation_strings.py:818
+(1) No comment.#Please enter a valid email address!##jobs/translation_strings.py:821
+(1) No comment.#Check email at %s##jobs/translation_strings.py:827
+(1) No comment.#Edit this search##jobs/translation_strings.py:830 jobs/templates/content/content_left/jobs_content_left_save_search_link.html:8
+(1) No comment.#Unable to save search.  Please try again.##jobs/translation_strings.py:833
+(1) No comment.#You already saved 100 searches.  Saving this search will override an existing search.  Do you want to continue?##jobs/translation_strings.py:836#You already saved 100 searches.  Saving this search will override an ;existing search.  Do you want to continue?
+(1) Users can specify a name for a search that he has saved.#name this search##jobs/translation_strings.py:839
+(1) Indicates the "connections" (people that the user knows) that the user has at LinkedIn, a social network.#Connections##jobs/translation_strings.py:843
+(1) Indicates that a person knows someone else. E.g., Joe knows Mary from college.#knows##jobs/translation_strings.py:846
+(1) A link which, when clicked, displays the details of several "connections". "Connections" are people that the user knows on LinkedIn, a social network.#View connections##jobs/translation_strings.py:854
+(1) A link which, when clicked, displays the details of all "connections". "Connections" are people that the user knows on LinkedIn, a social network.#View all connections##jobs/translation_strings.py:862
+(1) No comment.#Sorry, there is no one in your social network at this company.##jobs/translation_strings.py:865
+(1) No comment.#Sorry, this feature is currently unavailable.  Please try again later.##jobs/translation_strings.py:868
+(1) No comment.#Sorry, we were unable to determine the company name for this job.##jobs/translation_strings.py:871
+(1) No comment.#From LinkedIn##jobs/translation_strings.py:874
+(1) No comment.#From Viadeo##jobs/translation_strings.py:877
+(1) No comment.#Improve your chances of finding a job##jobs/translation_strings.py:880
+(1) No comment.#50% of job seekers find their job through friends. Login to get started.##jobs/translation_strings.py:883#50% of job seekers find their job through friends. Login to get started.
+(1) Link to information about salaries for the job at the job location.#%(title)s Salaries in %(city)s##jobs/templates/content/content_center/jobs_content_center_results.html:179 jobs/templates/refreshed/content_center_results.html:188
+(1) Link to similar jobs at the job location.#%(title)s jobs in %(city)s##jobs/templates/content/content_center/jobs_content_center_results.html:196 jobs/templates/refreshed/content_center_results.html:212
+(1) Link to similar jobs.#%(title)s jobs##jobs/templates/content/content_center/jobs_content_center_results.html:201 jobs/templates/refreshed/content_center_results.html:218
+(1) Link to other jobs at the job's company.#%(company)s jobs!##jobs/templates/content/content_center/jobs_content_center_results.html:207 jobs/templates/refreshed/content_center_results.html:224
+(1) Link to information about the job location.# jobs in %(location)s##jobs/templates/refreshed/content_center_results.html:196
+(1) These are links to Simply Hired's job search sites in non-U.S. countries.#%(country_name)s Jobs##jobs/templates/refreshed/intl_dropdown.html:18 jobs/templates/serp_common/serp_top_intl_dropdown.html:17 jobs/templates/top/jobs_top_intl_dropdown.html:17
+(1) country name.#South Africa##lib/international.py:37
+(1) country name.#Austria##lib/international.py:40
+(1) country name.#Belgium##lib/international.py:43
+(1) country name.#Switzerland##lib/international.py:46
+(1) country name.#Germany##lib/international.py:49
+(1) country name.#Spain##lib/international.py:52
+(1) country name.#France##lib/international.py:55
+(1) country name.#UK##lib/international.py:58
+(1) country name.#Ireland##lib/international.py:61
+(1) country name.#Italy##lib/international.py:64
+(1) country name.#Netherlands##lib/international.py:67
+(1) country name.#Portugal##lib/international.py:70
+(1) country name.#Russia##lib/international.py:73
+(1) country name.#Sweden##lib/international.py:76
+(1) country name.#Argentina##lib/international.py:79
+(1) country name.#Brazil##lib/international.py:82
+(1) country name.#Canada##lib/international.py:85
+(1) country name.#Mexico##lib/international.py:88
+(1) country name.#USA##lib/international.py:91
+(1) country name.#Australia##lib/international.py:94
+(1) country name.#India##lib/international.py:97
+(1) country name.#Japan##lib/international.py:100
+(1) country name.#China##lib/international.py:103
+(1) country name.#Korea##lib/international.py:106
+(1) region/continent name.#Africa##lib/international.py:138
+(1) region/continent name.#Americas##lib/international.py:141
+(1) region/continent name.#Asia/Pacific##lib/international.py:144
+(1) region/continent name.#Europe##lib/international.py:147

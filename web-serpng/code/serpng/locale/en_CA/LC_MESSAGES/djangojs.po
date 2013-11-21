@@ -1,0 +1,5 @@
+msgid "city, state or zip"
+msgstr "city or province"
+
+msgid "Enter a location:  city, state or zip"
+msgstr "Enter a location: city or province"

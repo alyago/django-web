@@ -1,0 +1,23 @@
+{
+  "default_locale" : "en",
+  "description" : "Wondering where to find a job? Search millions of full and part-time job listings at Simply Hired. Simply Hired will help you find employment opportunities. Find career advice, top employers and salary info too. Upload your resume and apply from your phone. New jobs added hourly.",
+  "developer" :
+  {
+    "name" : "Simply Hired -- Simply Hired is the leading job search engine, offering the largest selection of jobs on your mobile phone",
+    "url" : "http://www.simplyhired.com"
+  },
+  "icons" :
+  {
+    "30" : "/static/mobile/firefox-marketplace/ff-30x30.png",
+    "60" : "/static/mobile/firefox-marketplace/ff-60x60.png",
+    "128" : "/static/mobile/firefox-marketplace/ff-128x128.png"
+  },
+  "name" : "Jobs, Employment Search and Find your next Job.",
+  "permissions" :
+  {
+    "geolocation" :
+    {
+      "description" : "Required for populating the location input field with the user's current location."
+    }
+  }
+}

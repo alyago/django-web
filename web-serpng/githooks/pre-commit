@@ -1,0 +1,79 @@
+#!/bin/bash
+
+SERPNG_ROOT=$(git rev-parse --show-toplevel)
+
+# Split on newlines, not spaces.
+IFS=$(echo -en "\n\b")
+DIFF_FILES=$(git diff --cached --name-only)
+for SUBMODULE_STATS in $(git submodule 2>/dev/null); do
+  SUBMODULE_PATH=$(echo $SUBMODULE_STATS | awk '{print $2}')
+
+  # If git diff shows submodule changes.
+  if [[ ${DIFF_FILES[*]} =~ $SUBMODULE_PATH ]]; then
+    echo "ERROR: You have pending commits in the $SUBMODULE_PATH submodule."
+    echo -n "Continue with commit? [y/N] "
+    read -n 1 reply </dev/tty
+    echo
+    if [[ "$reply" != "y" && "$reply" != "Y" ]]; then
+      echo "Aborted commit."
+      exit 1
+    fi
+  fi
+done
+
+# Run pylint on all changed python files.
+#
+# The --generated-members parameter requests that pylint not flag those members as being
+# missing, which is especially important for Django models and forms.
+#
+files_modified=$(git diff-index --name-only HEAD)
+for f in $files_modified; do
+  if [[ $f == *.py ]]; then
+    pylint --generated-members=objects,is_valid,cleaned_data,MultipleObjectsReturned,DoesNotExist,hashlib._hashlib.HASH.update -E $f 
+    if [ $? != 0 ]; then
+      echo "Found pylint errors, aborting."
+      exit 1
+    fi
+  fi
+done 
+
+# Run JSHint on all changed Javascript files
+$SERPNG_ROOT/code/serpng/tools/run-jshint.sh
+if [ $? != 0 ]; then
+  echo "Found jshint errors, aborting."
+  exit 1 
+fi
+
+# Make sure the user intends to check in to one of the main branches.
+git branch | grep '^\* \(master\|tabs-master\)$' > /dev/null
+if [ $? == 0 ]; then
+  read -p "You are on a master branch. Are you positive you want to check in here (type 'YES' in all caps to confirm)? "
+  if [ "$REPLY" != "YES" ]; then
+    exit 1;
+  fi
+fi 
+
+#
+# Run tests
+#
+
+# Run JavaScript unit tests using PhantomJS.
+$SERPNG_ROOT/code/serpng/tools/testing/phantomjs-runner.sh
+if [ $? != 0 ]; then
+  exit 1 
+fi
+
+# Run headless integration tests using CasperJS.
+$SERPNG_ROOT/code/serpng/tools/testing/casperjs-runner.sh
+if [ $? != 0 ]; then
+  exit 1 
+fi
+
+# Run Python unit tests.
+if [ "$VIRTUAL_ENV" != "" ]; then
+  python $SERPNG_ROOT/code/serpng/manage.py test jobs --settings=test_settings --noinput
+  exit $?
+else
+  echo "You are not running in a virtualenv. This is necessary for running unit tests. Aborting commit..."
+  exit 1
+fi

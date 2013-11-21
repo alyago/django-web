@@ -1,0 +1,8 @@
+<div class="edit_detail">
+  {{ forms_manager.awardformset.management_form }}
+  {% for form in forms_manager.awardformset %}
+  <div id="edit_awards">
+  {{ form.as_p }}
+  </div>
+  {% endfor %}
+</div>

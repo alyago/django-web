@@ -1,0 +1,70 @@
+{% extends "resume-base.html" %}
+
+{% load staticfiles %}
+{% load i18n %}
+{% block page_body_id %}home{% endblock %}
+{% block page_body_class %}home{% endblock %}
+{% block page_head_title %}{% trans "My Resume" %} {% endblock %}
+{% block page_body_content %}
+    
+<div id="sh_content" class="sh_content">
+    <div class="main">
+        <div class="tbl">
+        {% if resume %}
+            <div id="resume_left" class="left ie">
+                {% if message %}<div class="alert alert-success">{{ message }}</div>{% endif %}
+
+            {% if forms_manager %}<form name="manage_tab" method="post">{% csrf_token %}{% endif %}
+                <span class="h ie">Date Added</span>
+                <span>{% if resume.add_date_time %} {{ resume.add_date_time }} {% endif %}</span>
+              <p></p>
+                <span class="h ie">Source</span>
+                <span>{% if resume.source %} {% if resume.source == 'Linkedin' %}LinkedIn{% else %}{{ resume.source }}{% endif %} {% else %} {% trans "unknown" %} {% endif %}</span>
+              <p></p>
+                <span class="h ie">Actions</span>
+                <span>
+                  <a href="{% url 'resume_review' %}?rfr=manage" class="tool" target="_parent" onClick="_gaq.push(['_trackEvent', 'manage_tab', 'edit']);">{% trans "Edit" %}</a>
+                  <span class="s">&nbsp;</span>|<span class="s">&nbsp;</span>
+                  <a id="DISABLE-delete_resume_link" class="tool" {% if resume %} href="{% url 'resume_delete_with_id' resume.id %}"{% else %} style="color:#000; text-decoration:none" {% endif %} onClick="if(!confirm('Are you sure you want to delete this resume?')) return false; _gaq.push(['_trackEvent', 'manage_tab', 'delete']);">{% trans "Delete" %}</a>
+                </span>
+              <p></p>
+                <hr>
+              {% if resume %}<a class="btn btn-info" style="color: #fff" href="/myresume/manage_tab_search" target="_parent" onClick="_gaq.push(['_trackEvent', 'manage_tab', 'view_search']);">{% trans "View Personalized Jobs" %}</a>{% endif %}
+
+                <hr>
+                <p class="cb" style="padding-bottom:10px;">{% if forms_manager %}{{ forms_manager.resume_form.employer_opt_in }}{{ forms_manager.resume_form.employer_opt_in.label_tag }}{% endif %}<a rel="tooltip" href="#" class="icon-question-sign" style="margin: 5px 0 0 4px;"></a></p>
+            {% if forms_manager %}
+                <input id="manage_save" class="btn" type="submit" value="Save"></input>
+            </form>
+            {% endif %}
+        </div>
+
+        <div class="left" style="margin-left: 25px;"> {# Right side. #}
+          <h1 style="margin-bottom:5px;">How to Use your Simply Hired Resume</h1>
+          <img src="{% static 'resume/images/popup_image.png' %}" style="display: block;">
+        </div>
+        <div style="clear:both"></div>
+        {% endif %}
+	 </div><!--tbl-->
+	 {% if not resume %}
+	 <div class="msg">
+	    <div class="note">{% trans "You currently do not have a resume uploaded." %}</div>
+	    <p><a class="btn btn-info" style="color: #fff" href="{% url 'resume_landing' %}?rfr=manage" target="_parent">{% trans "Upload Resume" %}</a></p>
+	 </div><!--msg-->
+	 {% endif %}
+	
+	 
+	</div><!--main-->
+</div><!--sh_content-->
+
+
+{% endblock %}
+
+{% block page_specific_js_script %}
+<script src="{% static 'resume/js/bootstrap-tooltip.js' %}"></script>
+<script type="text/javascript">
+$(function(e) {
+  $('p.cb').tooltip({selector: "a[rel=tooltip]", title: "Your resume may be shared with employers looking to fill roles for people who have the skills you do. These employers may contact you about job opportunities.", placement: "right"});
+});
+</script>
+{% endblock %}

@@ -1,0 +1,39 @@
+{% comment %} !!!!! Replaced by base/bottom_footer.html !!!!! {% endcomment %}
+
+{% load get_config %}
+{% load staticfiles %}
+
+<div class="sh_footer">
+  <div class="footer-top-container">
+    <map name="social">
+      <area coords="0,0,23,23" alt="" href="https://www.facebook.com/simplyhired" />
+      <area coords="27,0,49,23" alt="" href="https://twitter.com/SimplyHired" />
+      <area coords="54,0,76,23" alt="" href="http://www.youtube.com/user/simplyhired" />
+      <area coords="80,0,102,23" alt="" href="http://www.linkedin.com/company/simply-hired" />
+      <area coords="107,0,129,23" alt="" href="http://pinterest.com/simplyhired/" />
+    </map>
+  </div>
+  <div class="sh-footer-content"> 
+    <div class="sh-footer-content-container">
+      {# Use different sets of footer links for different countries #}
+      {% if current_country_code == "us" %}
+        {% include "bottom_footer_links_us.html" %}
+      {% else %} {# if Canada #}
+        {% include "bottom_footer_links_ca.html" %}
+      {% endif %}
+
+      <div class="footer_follow_social_icons">
+        <div class="sh-footer-fb-like">
+          <iframe src="//www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2Fsimplyhired&amp;send=false&amp;layout=button_count&amp;width=90&amp;show_faces=false&amp;font=lucida+grande&amp;colorscheme=light&amp;action=like&amp;height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:90px; height:21px;" allowTransparency="true"></iframe>
+        </div>
+        <img src="{% static 'images/sh_footer_socialmedia.png' %}?{% get_config "DEPLOY_TAG" %}" width="129" height="23" alt="" border="0" usemap="#social" />
+      </div>
+
+      <div class="legal">
+        <span class="copyright">&copy; {% now "Y" %} Simply Hired, Inc. {{ translations.all_rights_reserved_text }}</span>
+        <a class="legal footer_privacy evtc" rel="nofollow" data-event="footer_privacy" href="#">{{ translations.privacy_link_text }}</a>
+        <a class="legal footer_terms evtc" rel="nofollow" data-event="footer_terms" href="#">{{ translations.terms_link_text }}</a>
+      </div>
+    </div><!--sh_footer_content_container-->
+  </div><!--sh_footer_content-->
+</div><!--sh_footer-->

@@ -1,0 +1,41 @@
+@import "sh_colors";
+@import "mobile_variables";
+
+#mobile-home-content-main {
+
+  .searchListTitle {
+    padding:2*$mobile-padding 3*$mobile-padding 0;
+    font:bold 18px helvetica;
+  }
+
+  .content-main ul {
+    margin:5px 20px;
+    list-style-type:none;
+    border:1px solid $sh-light-grey;
+    border-radius:5px;
+  }
+  
+  .content-main ul li {
+      border-top:1px solid $sh-light-grey;
+      position:relative;
+      width:100%;
+      
+      a {
+        display:block;
+        font-size:16px;
+        color:$sh-link-blue;
+        padding:8px 2px 8px 12px;
+        line-height: 20px;
+      }
+
+      span {
+        display:block;
+        overflow:hidden;
+        width:90%;
+      }
+  }
+
+  .footer {
+    border:0;
+  }
+}

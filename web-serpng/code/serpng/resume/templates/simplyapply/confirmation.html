@@ -1,0 +1,23 @@
+{% extends "simplyapply/simply_apply_base.html" %}
+
+{% block page_body_content %}
+<div class="container confirmation">
+  <div class="success">
+    <div class="image"><img src="/c/hiring/images/check_2.png" /></div>
+    <div class="message">Your application has been successfully submitted. Thanks for applying!</div>
+    <div class="clear"></div>
+  </div>
+  <div class="list">
+    <ul>
+      <li><a href="http://www.simplyhired.com/" target="_parent">Take me back to my search</a></li>
+      <li>Try out <a href="/a/linkedin/activate?f=http://www.simplyhired.com/" target="_parent">'Who Do I Know?'</a> and discover friends and contacts who can help you land your next job</li>
+    </ul>
+  </div>
+</div>
+
+{% if advertiser_id %}
+<img height="1" width="1" style="border-style:none;" alt="" src="http://www.simplyhired.com/a/track/conversion/?u={{ advertiser_id }}&type=sponsored"/>
+{% else %}
+<img height="1" width="1" style="border-style:none;" alt="" src="http://www.simplyhired.com/a/track/conversion/?u=SFxAQAE%3D&type=organic"/>
+{% endif %}
+{% endblock %}

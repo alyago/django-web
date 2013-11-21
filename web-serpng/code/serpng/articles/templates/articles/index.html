@@ -1,0 +1,37 @@
+{% extends "base/base.html" %}
+
+
+{% comment %} ***** Head ***** {% endcomment %}
+
+{% block page_title %}
+  Articles Directory
+{% endblock page_title %}
+
+{% block css %}
+  {% include "css_support.html" %}
+  {% include "articles/css.html" %}
+{% endblock %}
+
+{% comment %} ***** Body ***** {% endcomment %}
+
+{% block body_id %}"article-index"{% endblock body_id %}
+
+{% block body_class %}
+  "article-index{% if linkedin_login %} contacts{% endif %}"
+{% endblock body_class %}
+
+{% comment %} ***** Visible HTML ***** {% endcomment %}
+      
+  {% block content %}
+   {% include "articles/index_content.html" %}
+  {% endblock content %}
+
+{% comment %} ***** Hidden HTML ***** {% endcomment %}
+
+{% comment %} ***** Javascript Support ***** {% endcomment %}
+
+  {% block js_support %}
+    {% include "articles/js_support.html" %}
+  {% endblock js_support %}
+
+{% comment %} ***** Tracking ***** {% endcomment %}

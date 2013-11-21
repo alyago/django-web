@@ -1,0 +1,112 @@
+{% load absolute_http_url %}
+{% load get_config %}
+{% load staticfiles %}
+
+<div class="sh_header js_sh_header">
+  <div class="sh_header_container">
+    <div class="sh_header_right">
+      {% if current_country_code != "us" %}
+        <span class="{{ current_country_code }}"><span class='flag'></span></span>
+      {% endif %}
+      
+      {% if language_selector %}
+        <span class="language">{{ translations.language_selector_text }}
+          {% for language_link in language_selector %}
+            {% if current_language_code != language_link.language_code %}
+              <a class="link"
+                 href="{{ language_link.link_url }}{% get_config 'SERP_PAGE_URL' %}{{ request_query }}">
+                {{ language_link.link_text }}
+              </a>
+            {% else %}
+              <span class="selected">{{ language_link.link_text }}</span>
+            {% endif %}
+          {% endfor %}
+        </span>
+        <span class="pipe"> | </span>
+      {% endif %}
+     
+      <a class="link find_job evtc" href='/'> {{ translations.find_a_job_link_text }}</a> 
+      <span class="pipe"> | </span>
+
+      <a class="link post_job evtc" data-event="header_user_post_job"
+        {% if current_country_code == "ca" %} 
+          href="http://employers.simplyhired.com/enterprise-ca"
+        {% else %}
+          href="http://employers.simplyhired.com/simplypost"
+        {% endif %}>
+          {{ translations.post_a_job_link_text }}
+      </a>
+      <span class="pipe"> | </span>
+
+      {% if current_country_code == "us" %}
+        {% if user and user.is_logged_in %}
+          <span class="account_menu menu">
+            <span class="user_login">{{ user.username|escape }}</span> &#9660;
+          </span>
+          <div class="account_menu_content" style="display: none;">
+            <a class="link myjobs evtc" data-event="header_user_email_alerts"
+               href="{% absolute_http_url "/a/my-alerts/email" %}">
+              {{ translations.menu_email_alerts_text }}
+            </a><br>
+            {% if has_resume %}
+              <a class="link myjobs evtc" data-event="header_user_resume_edit"
+                 href="{% absolute_http_url "/a/my-resume/manage" %}">
+                {{ translations.menu_resume_text }}
+              </a><br>
+            {% else %}
+              <a class="link myjobs evtc" data-event="header_user_resume_post"
+                 href="{% absolute_http_url "http://www.simplyhired.com/myresume/landing" %}">
+                {{ translations.menu_upload_resume_text }}
+              </a><br>
+            {% endif %}
+            <a class="link myjobs evtc" data-event="header_user_saved_searches"
+               href="{% absolute_http_url "/a/my-searches/saved" %}">
+              {{ translations.menu_saved_searches_text }}
+            </a><br>
+            <a class="link myjobs evtc" data-event="header_user_saved_jobs"
+               href="{% absolute_http_url "/a/my-jobs/saved" %}">
+              {{ translations.menu_saved_jobs_text }}
+            </a><br>
+            <a class="link myjobs evtc" data-event="header_user_profile"
+               href="{% absolute_http_url "/a/my-account/profile" %}">
+              {{ translations.menu_account_text }}
+            </a><br>
+            <hr>
+            <a class="link logout evtc" data-event="header_user_signout"
+               href="{% absolute_http_url "/a/accounts/logout" %}">
+              {{ translations.menu_sign_out_text }}
+            </a><br>
+          </div>
+          {% if request.save_job_abtest_group == 'a' %}
+            <span class="pipe"> | </span>
+            <a class="link evtc" title="View saved jobs" data-event="header_user_saved_jobs"
+               href="{% absolute_http_url "/a/my-jobs/saved" %}">
+              <span class="saved_job_star"></span>
+              <span class="saved_job_count"></span>
+            </a>
+          {% endif %}
+        {% else %}
+          <a class="link user_login evtc" data-event="header_user_signin" href="#">
+            {{ translations.menu_sign_in_text }}
+          </a>
+        {% endif %}
+        <span class='pipe'>|</span>
+      {% endif %}
+      
+      <div class="options_menu menu"></div>
+      
+      <div class="options_menu_content" style="display:none;">
+        <a href="{% absolute_http_url "/a/jobs/advanced-search" %}"
+           class="link evtc" data-event="header_advanced_search">
+          {{ translations.advanced_job_search_text }}
+        </a><br>
+        <a href="{% absolute_http_url "/a/jobs/preferences" %}"
+           class="link evtc" data-event="header_advanced_search">
+          {{ translations.search_options_text }}
+        </a><br>
+      </div>
+      
+    </div><!--sh_header_right-->
+  </div><!--sh_header_container-->
+</div><!--sh_header-->
+

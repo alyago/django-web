@@ -1,0 +1,34 @@
+{% load get_config %}
+{% load i18n %}
+{% load staticfiles %}
+
+<div id="save_search_dialog" class="save_search_dialog">
+  <span class="icon-close js-icon-close"></span>
+
+  <p class="dialog_heading">
+    <span class="icon-save-this-search"></span>
+    <span class="before_save">
+      {{ translations.saving_search_text }}
+    </span>
+    <span class="after_save" style="display:none;">
+      {{ translations.saved_search_success_text }}
+    </span>
+  </p>
+
+  <div class="dialog_content">
+    <p class="dialog_main_msg before_save">
+      <span>
+        {{ translations.save_search_name_direction_text }}
+      </span>
+    </p>
+
+    <form class="dialog_form before_save" action="#" method="post">
+      <input id="f_save_search_name" class="save_search_name" type="text" name="name" value="{{ result.title }}" maxlength="{{ max_saved_search_length }}" />
+      <button id="save_search_submit" class="save_search_btn">{{ translations.save_search_button_text }}</button>
+    </form>
+
+    <div class="after_save" style="display:none;">
+      <button id="save_search_ok" class="save_search_btn save-search-ok">{{ translations.OK_text }}</button>
+    </div>
+  </div>
+</div><!--save_search_dialog-->

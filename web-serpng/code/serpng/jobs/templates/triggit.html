@@ -1,0 +1,15 @@
+{% load get_config %}
+
+<script type="text/javascript">
+  triggit_advertiser = '{% get_config 'TRIGGIT_PROVIDER_ID' %}';
+  triggit_segments = ['{% get_config 'TRIGGIT_CLIENT_NAME' %}', '{% get_config 'TRIGGIT_CLIENT_NAME' %}{{ triggit_page_type }}'];
+  triggit_data = {"ppk": "{% get_config 'TRIGGIT_PROVIDER_ID' %}{{ triggit_product_id }}", "loc":"{{ result.formatted_location|urlencode:""}}"};
+
+  (function() {
+    var ta = document.createElement('script');
+    ta.type = 'text/javascript';
+    ta.async = true;
+    ta.src = '//dgy6rx5roq02d.cloudfront.net/triggit-analytics.min.js';
+    document.getElementsByTagName('head')[0].appendChild(ta);
+  })();
+</script>

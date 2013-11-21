@@ -1,0 +1,16 @@
+#!/bin/bash
+
+GIT_ROOT=`git rev-parse --show-toplevel`
+
+# Ensure the correct ruby gems are installed.
+export BUNDLE_GEMFILE="$GIT_ROOT/configs/production/Gemfile"
+bundle install
+
+python ${GIT_ROOT}/code/serpng/manage.py build
+python ${GIT_ROOT}/code/serpng/manage.py minify off
+
+mkdir -p ${GIT_ROOT}/code/serpng/static-root
+python ${GIT_ROOT}/code/serpng/manage.py collectstatic --clear --noinput
+
+echo Starting serpng service...
+python ${GIT_ROOT}/code/serpng/manage.py runserver 0:15000

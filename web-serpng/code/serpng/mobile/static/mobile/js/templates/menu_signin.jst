@@ -1,0 +1,39 @@
+<ul class="menu-signin">
+  <li class="title">
+    <div class="sprite-icon-account"></div>
+    Account: Sign In
+    <button class="cancel-button btn btn-mini">Cancel</button>
+  </li>
+  <li>
+<% if (just_confirmed) { %>
+    <div class="headline">Your account has been activated!</div>
+    <div>To get started, please sign in below.</div>
+<% } %>
+    <form>
+      <label>Email Address</label>
+      <input class="email" type="email" value="<%= username %>" autocomplete="on" />
+      <label>Password<span class="password-help-text small-text">6-12 letters + numbers</span></label>
+      <input class="password" type="password" autocomplete="on" />
+      <div class="error-message"></div>
+<% if (needs_confirmation) { %>
+    <div class="headline">Account activation required</div>
+  <% if (!!username) { %>
+    <div>Before you can sign in, please click the link in the email we sent to <span class="email"><%= username %></div></div>
+  <% } else { %>
+    <div>Before you can sign in, please click the link in the email we sent to you.</div>
+  <% } %>
+<% } %>
+      <button class="submit-button btn btn-orange">Sign In</button>
+    </form>
+  </li>
+<% if (needs_confirmation) { %>
+  <li>
+    <span class="small-text">Need us to <span class="resend-confirmation-link soft-link">resend the activation email<span/>?</span>
+  </li>
+<% } else { %>
+  <li class="goto-signin-signup-message">
+    <span class="small-text">Don't have an account?</span>
+    <button class="goto-signup-button btn">Sign Up</button>
+  </li>
+<% } %>
+</ul>

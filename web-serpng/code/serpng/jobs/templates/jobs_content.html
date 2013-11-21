@@ -1,0 +1,80 @@
+{% load related_searches %}
+
+<div id="search_results" class="search_results">
+  <div id="column_center" class="column-center">
+    {% include "top_navbar.html" %}
+    {% include "jobs_content_center_breadcrumbs.html" %}
+    <div id="c_messaging" class="messaging" style="display:none;"></div>
+    {% include "jobs_content_center_google_ads_top.html" %}
+    <div class="column_center_inner">
+      {### For SJ Ads A/B test. ###}
+      {% if result_sj.jobs_top %}
+        <div class="sj-jobs-top">
+          {% include "content_center_sponsored_results.html" with jobs=result_sj.jobs_top %}
+        </div>
+      {% endif %}
+
+      {% include "jobs_content_center_sponsored_link.html" %}
+      {% include "content_center_results.html" %}
+
+      {### For SJ Ads A/B test. ###}
+      {% if result_sj.jobs_bottom %}
+        <div class="sj-jobs-bottom">
+          {% include "content_center_sponsored_results.html" with jobs=result_sj.jobs_bottom %}
+        </div>
+      {% endif %}
+      
+      {% related_searches result.related_searches translations.related_searches_heading_text %}
+      <div class="pagination_placeholder"></div>
+    </div>
+    {% include "content_center_search_form.html" %}
+    {% include "content_center_google_ads_bottom.html" %}
+  </div><!-- column_center -->
+
+  <div class="column-left">
+    {% if request.recent_jobs_abtest_group == 'c' %}
+      {% include "jobs_content_left_recent_searches.html" %}
+    {% else %}
+      {% include "content_left_email_alert_form.html" %}
+    {% endif %}
+
+    {% include "content_left_sort.html" %}
+    {% if request.filters_variations_abtest_group != None and request.filters_variations_abtest_group != 'control' %}
+      {% include "content_left_filters_abtest.html" %}
+    {% else %}
+      {% include "content_left_filters.html" %}
+    {% endif %}
+
+    {% include "content_left_save_search_link.html" %}
+
+    {% if request.recent_jobs_abtest_group != 'b' and request.recent_jobs_abtest_group != 'c' %}
+      {% include "jobs_content_left_recent_searches.html" %}
+    {% endif %}
+
+    {% include "jobs_content_left_search_tools.html" %}
+  </div><!-- column_left -->
+      
+  <div class="column-right">
+    {% if request.recent_jobs_abtest_group == 'b' %}
+      {% include "recent_searches.html" %}
+    {% endif %}
+
+    {% if request.recent_jobs_abtest_group == 'c' %}
+      {% include "content_left_email_alert_form.html" %}
+    {% endif %}
+
+    {% if request.recent_jobs_abtest_group != None %}
+      {% include "recently_viewed_jobs.html" %}
+    {% endif %}
+
+    {% if request.recent_jobs_abtest_group == None %}
+      {% include "content_right_wdik.html" %}
+      {% include "jobs_content_right_google_ads.html" %}
+    {% else %}
+      {% include "jobs_content_right_google_ads.html" %}
+      {% include "content_right_wdik.html" %}
+    {% endif %}
+
+  </div><!-- column_right -->
+
+</div><!-- search_results -->

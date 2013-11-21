@@ -1,0 +1,24 @@
+{% load staticfiles %}
+
+<!DOCTYPE html PUBLIC "-//WAPFORUM//DTD XHTML Mobile 1.2//EN" "http://www.openmobilealliance.org/tech/DTD/xhtml-mobile12.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<title>Simply Apply&trade;</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="{% static 'resume/styles/bootstrap.min.css' %}" type="text/css" rel="stylesheet" />
+<link href="{% static 'resume/styles/mobile_simplyapply.css' %}" type="text/css" rel="stylesheet" />
+<link href="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.css" type="text/css" rel="stylesheet" />
+</head>
+
+<body>
+{% block page_body_content %}{% endblock %}
+</body>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js"></script>
+<script src="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.js"></script>
+<script src="{% static 'resume/js/bootstrap.min.js' %}"></script>
+<script src="{% static 'resume/js/simply_apply.js' %}"></script>
+{% block page_specific_js %}
+{% endblock %}
+</html>

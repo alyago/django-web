@@ -1,0 +1,331 @@
+{% extends "accounts_base.html" %}
+{% load staticfiles %}
+{% load compressed %}
+
+{% block css %}
+  {% compressed_css 'accounts-base' %}
+{% endblock %}
+
+{% block navbar %}
+  <div class="navbar span12">
+    <div class="navbar-inner">
+      <ul class="nav">
+        <li><a href="#l_alert">Email Alerts</a></li>
+        <li class="divider-vertical"></li>
+        <li><a href="#l_resume">Resume</a></li>
+        <li class="divider-vertical"></li>
+        <li><a href="#l_searches">Searches</a></li>
+        <li class="divider-vertical"></li>
+        <li><a href="#l_jobs">Jobs</a></li>
+        <li class="divider-vertical"></li>
+        <li><a href="#l_account">Account</a></li>
+      </ul>
+    </div>
+  </div><!--navbar-->
+{% endblock %}
+
+{% block content %}
+        <div id="account_content" class="span12">
+
+        <section id="l_alert">
+          <h3>Email Alerts</h3>
+          {% if is_email_alerts_in_maintenance %}
+          <div class="alert alert-block"><i class="icon-warning-sign"></i> Our email alert system is currently undergoing routine maintenance. Please try again in a little while.</div>
+          {% endif %}
+          {% if user or user.is_logged_in %}
+            {% if not email_alerts %}<!--TODO-->
+            <div>Did you know? You can create job alerts and get regular email updates on brand new jobs. ({% if is_email_alerts_in_maintenance %}<span style="color:#999999;">Great! Let's get started...</span>{% else %}<a href="/a/job-alerts/create">Great! Let's get started...</a>{% endif %})</div>
+            {% else %}
+          <div class="row">
+          <table id="c_email_alerts" class="table table-hover table-condensed span9">
+            <thead>
+              <tr>
+                <td colspan="3">1 - {{ email_alerts|length }} of {{ email_alerts|length }}</td>{% comment %}<!--TODO-->{% endcomment %}
+                {% if is_email_alerts_in_maintenance %}
+                <td colspan="" style="color:#999999;">[ clear list ]</td>
+                {% else %}
+                <td colspan="">[ <a class="cancel_all" href="#cancel_alert_modal">clear list</a> ]</td>
+                {% endif %}
+              </tr>
+            </thead>
+            <tbody>
+              {% for alert in email_alerts %}
+              <tr>
+                <td class="search">
+                  <a href="{{ alert.search_url }}">{{ alert.search_feedback }}</a>
+                  {% if alert.filter_feedback %}<p>Filters: {{ alert.filter_feedback }}</p>{% endif %}
+                </td>
+                <td class="email">{{ alert.email }}</td>
+                {% if is_email_alerts_in_maintenance %}
+                <td style="color:#999999;">{{ alert.frequency }}</td>
+                <td style="color:#999999;">stop alert</td>
+                {% else %}
+                <td class="frequency"><a href="#{{ alert.alert_id|stringformat:"i" }}">{{ alert.frequency }}</a></td>
+                <td class="cancel"><a id="{{ alert.alert_id|stringformat:"i" }}" class="cancel_alert">stop alert</a></td>
+                {% endif %}
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+          </div><!--row-->
+          <!--
+          <form id="f_alert_format" class="alert_format" action="/a/my-alerts/email" method="get">I would like to receive emails in:<select class="input-medium" name="format"><option value="html" selected="selected">pretty html</option><option value="text" >plain text</option></select>
+            <noscript><input class="button" type="submit" value="Update" /></noscript>
+          </form>-->
+            {% endif %}
+          {% else %}
+            <p>Hi there! Please <a href="/account/signin">login</a> to access this page. Don't have an account yet? <a href="/account/signup">Create a free account now.</a></p>
+          {% endif %}
+        <div id="cancel_alert_modal" class="modal hide">
+          <div class="modal-header"><h3>Email Alerts</h3></div>
+          <div class="modal-body">
+            <p class="message">Are you sure you want to stop all of your alerts?</p>
+          </div>
+          <div class="modal-footer">
+            <a class="btn" data-dismiss="modal">Cancel</a>
+            <a class="confirm_cancel btn btn-sh">OK</a>
+          </div>
+        </div><!--modal-->
+        </section><!--l_alert-->
+
+        <section id="l_resume">
+          <h3>Resume</h3>
+          <iframe src="http://www.simplyhired.com/myresume/manage" class="resume_iframe" scrolling="no" frameborder="0"></iframe>
+        </section>
+
+        <section id="l_searches">
+          <h3>Saved Searches</h3>
+          <ul class="nav nav-tabs">
+            <li class="active"><a href="#t_saved_searches" data-toggle="tab">Saved Searches</a></li>
+            <li><a href="#t_recent_searches" class="t_recent_searches" data-toggle="tab">Recent Searches</a></li>
+          </ul>
+
+          <div class="tab-content row">
+            <div class="tab-pane active span8" id="t_saved_searches">
+              <h4>Saved Searches</h4>
+              {% if saved_searches %}
+              <table class="table table-hover table-condensed">
+                <thead>
+                  <tr>
+                    <td colspan="2">1 - {{ saved_searches|length }} of {{ saved_searches|length }}</td>{% comment %}<!--TODO-->{% endcomment %}
+                    <td colspan="2" class="pull-right">[ <a class="clear_saved" href="#">clear list</a> ]</td>
+                  </tr>
+                </thead>
+                <tbody>
+                {% for search in saved_searches %}
+                  <tr>
+                    <td><a class="view" href="/a/jobs/list/{{ search.query }}">{{ search.name }}</a> - <a class="remove_saved" href="#delete?id={{ search.id }}">delete</a></td>
+                    <td><a href="/a/job-alerts/create/{{ search.query }}">create job alert</a></td>
+                    <td><a href="/a/job-feed/rss/{{ search.query }}">rss feed</a></td>
+                  </tr>
+                {% endfor %}
+                </tbody>
+              </table>
+              {% else %}
+              <div>Hey, we're all looking for something. Save your favorite searches here, then set up an email alert or RSS feed, and we'll notify you when new jobs you might like become available. (<a href="/a/jobs/list/q-part+time">Good idea! I'd like to go and save a search...</a>)</div>
+              {% endif %}
+            </div><!--tab_pane-->
+            <div class="tab-pane span8" id="t_recent_searches">
+              {% comment %}<!-- dynamic content -->{% endcomment %}
+            </div><!--tab_pane-->
+            {% if user and not user.is_logged_in %}
+            <div class="alert span7">
+              <p>Tip: <a href="/account/signin">Login</a> to manage all your searches from any computer.</p>
+              <p>Don't have an account yet?  <a href="/account/signup">Create a free account now.</a></p>
+            </div>
+            {% endif %}
+          </div><!--tab-content-->
+        </section>
+
+        <section id="l_jobs">
+          <h3>Saved Jobs</h3>
+          {% if expired_saved_jobs > 0 %}
+            <div class='expired_saved_jobs'>
+              <img class='expired_jobs_icon' src='{% static 'images/alert-yellow.png' %}'/>
+              {% if expired_saved_jobs == 1 %}
+                <span class='expired_jobs'>Since your last visit, {{ expired_saved_jobs }} job could not be detected and has been removed.</span>
+              {% else %}
+                <span class='expired_jobs'>Since your last visit, {{ expired_saved_jobs }} jobs could not be detected and have been removed.</span>
+              {% endif %}
+            </div>
+          {% endif %}
+          <ul class="nav nav-tabs">
+            <li class="active"><a href="#t_saved_jobs" data-toggle="tab">Saved Jobs</a></li>
+            <li><a href="#t_viewed_jobs" class="t_viewed_jobs" data-toggle="tab">Viewed Jobs</a></li>
+          </ul>
+
+          <div class="tab-content row">
+            <div class="tab-pane active span8" id="t_saved_jobs">
+              <div class="saved_jobs_results">
+              {% if saved_jobs %}
+                <h4>Saved Jobs</h4>
+                <div>
+                  <span class="pull-right">[ <a href="#" class="clear_saved">clear list</a> ]</span>
+                </div>
+                <ul class="unstyled">
+                  {% for saved_job in saved_jobs %}
+                    <li id="{{ saved_job.refind_key }}">
+                      <div class="job">
+                        <a rel="nofollow" class="job_title" href="{{ saved_job.url }}" target="_blank">{{ saved_job.title }}</a> - <span class="added">added {{ saved_job.created_date }}</span>
+                        <div>
+                          {% if saved_job.company %}
+                          <span class="company">{{ saved_job.company }}</span> - 
+                          {% endif %}
+                          <span class="location">{{ saved_job.location }}</span>
+                        </div>
+                        <div>
+                          <span class="source">from {{ saved_job.source }}</span>
+                          <span class="ago"> - {{ saved_job.ago }}</span>
+                          <a href="#" class="unsave">remove</a>
+                        </div>
+                        <div class="job_notes">
+                          <div class="job_notes_display">
+                            <a href="#" class="job_notes_edit_link">
+                              {% if saved_job.notes %}Edit Notes:{% else %}Add Notes{% endif %}
+                            </a>
+                            <span class="job_notes_text">{{ saved_job.notes }}</span>
+                          </div>
+                          <div class="job_notes_edit">
+                            <textarea class="job_notes_edit_area" rows="4" cols="50">{{ saved_job.notes }}</textarea><br>
+                            <button type="button" class="job_notes_edit_save_btn">Save</button>
+                            <a href="#" class="job_notes_edit_cancel_link">Cancel</a>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                  {% endfor %}
+                </ul>
+              {% endif %}
+              </div>
+              <div class="empty_saved_jobs" {% if saved_jobs %}style="display:none"{% endif %}>
+                <p>You currently have no saved jobs.</p>
+              </div>
+            </div><!--tab-pane-->
+            <div class="tab-pane span8" id="t_viewed_jobs">
+              {% comment %}<!-- dynamic content -->{% endcomment %}
+            </div><!--t_viewed_jobs-->
+            {% if user and not user.is_logged_in %}
+              <div class="alert span7">
+                <p>Tip: <a href="/account/signin">Login</a> to manage all your jobs from any computer.</p>
+                <p>Don't have an account yet?  <a href="/account/signup">Create a free account now.</a></p>
+              </div>
+            {% endif %}
+          </div><!--tab-content-->
+        </section>
+
+        <section id="l_account">
+          <h3>Profile</h3>
+          {% if user and user.is_logged_in %}
+          <ul class="nav nav-tabs">
+            <li class="active"><a href="#t_profile" data-toggle="tab">Profile</a></li>
+            <li><a href="#t_email" data-toggle="tab">Change Email</a></li>
+            <li><a href="#t_password" data-toggle="tab">Change Password</a></li>
+            <li><a href="#t_close_account" data-toggle="tab">Close Account</a></li>
+            <li><a href="#t_email_prefs" data-toggle="tab">Change Email Preferences</a></li>
+          </ul>
+
+          <div class="tab-content">
+            <div class="tab-pane active" id="t_profile">
+              <h4>Update your personal information.</h4>
+              <form id="f_profile" action="" method="post">
+                <label for="f_first">first name</label>
+                <input id="f_first" type="text" name="fn" value="{% if user_profile %}{{ user_profile.fn|default_if_none:"" }}{% endif %}" maxlength="36" />
+                <label for="f_last" class="text">last name</label>
+                <input id="f_last" class="text" type="text" name="ln" value="{% if user_profile %}{{ user_profile.ln|default_if_none:"" }}{% endif %}" maxlength="36" />
+                <label for="f_zipcode" class="text">zip code</label>
+                <input id="f_zipcode" class="text" type="text" name="zc" value="{% if user_profile %}{{ user_profile.zc|default_if_none:"" }}{% endif %}" maxlength="5" />
+                <button class="btn" type="submit">Save</button>
+                <div class="messages"></div>
+              </form><!--f_profile-->
+
+              <div class="preferences">
+                <div class="title">Preferences</div>
+                <p>Visit the <a href="/a/jobs/preferences">Search Preferences</a> page to customize your job search display options.</p>
+              </div><!--preferences-->
+            </div><!--t_profile-->
+
+            <div class="tab-pane" id="t_email">
+              <h4>Change Email</h4>
+              <form id="f_email" action="/a/my-account/email" method="post">
+                <p>Change your contact email address.</p>
+                <label for="f_current_email" class="text">current email address</label>
+                <input id="f_current_email" class="text disabled" type="text" name="e" value="{{ user_email }}" readonly="readonly" />
+
+                <label for="f_new_email" class="text">new email address</label>
+                <input id="f_new_email" class="text" type="text" name="e1" value="" maxlength="255" />
+
+                <label for="f_confirm_email" class="text">confirm email address</label>
+                <input id="f_confirm_email" class="text" type="text" name="e2" value="" maxlength="255" />
+                <button class="btn" type="submit">Change</button>
+                <div class="messages"></div>
+              </form><!--f_email-->
+            </div><!--t_email-->
+
+            <div class="tab-pane" id="t_password">
+              <h4>Change Password</h4>
+              <form id="f_password" action="/a/my-account/password" method="post" autocomplete="off">
+                <p id="m_password" class="message">Good passwords have at least six characters, with at least one letter and one number. Passwords are case-sensitive: EMPLOYABL1 is a different password than employabl1.</p>
+                <label for="f_current_password" class="text">current password</label>
+                <input id="f_current_password" class="text" type="password" name="p" value="" />
+                <label for="f_new_password" class="text">new password</label>
+                <input id="f_new_password" class="text" type="password" name="p1" value="" />
+                <label for="f_confirm_password" class="text">confirm new password</label>
+                <input id="f_confirm_password" class="text" type="password" name="p2" value="" />
+                <button class="btn change" type="submit">Change</button>
+                <div class="messages"></div>
+              </form><!--f_password-->
+            </div><!--t_password-->
+
+            <div class="tab-pane" id="t_close_account">
+              <h4>Close My Account</h4>
+              <div id="c_close">
+                <p class="warning">Closing your account will permanently remove any personalized features and profile information associated with your account.</p>
+                <p>The following features will be removed if you close your account:</p>
+                <ul>
+                  <li>any email alerts you've created</li>
+                  <li>any saved searches, saved jobs, saved notes, and/or saved ratings on jobs</li>
+                  <li>any personal information saved in your account</li>
+                </ul>
+                <p>If you'd only like to unsubscribe from our email alerts, visit the email alerts tab and select the "stop alert" link next to any email alerts you don't wish to receive.</p>
+              </div><!--c_close-->
+
+              <form id="f_close" class="form-inline" action="" method="post" autocomplete="off">
+                <h5>Delete Account</h5>
+                <p id="m_close" class="message">If you still wish to <strong>permanently</strong> close your Simply Hired account, please enter your password to continue.</p>
+                <label for="f_close_password" class="text">password</label>
+                <input id="f_close_password" class="text" type="password" name="p" value="" maxlength="" />
+                <button class="btn" type="submit">Yes, I'm sure. Delete my account.</button>
+                <div class="messages"></div>
+              </form><!--f_close-->
+            </div><!--t_close_account-->
+
+            <div class="tab-pane" id="t_email_prefs">
+              <h4>Update My Email Preferences</h4>
+                <form id="f_email_prefs" action="" method="post">
+                <p id="m_email_prefs" class="message">
+                  Update your preferences for receiving promotional emails (don't worry, these
+                  preferences don't affect the <a href="#l_alert">job alerts emails</a> that you receive).
+                </p>
+                {% csrf_token %}
+                {{ form_email_prefs.opt_out_all }}
+                <span class="checkbox_text">Do not send me any promotional emails</span>
+                <br>
+                {{ form_email_prefs.opt_out_personalization }}
+                <span class="checkbox_text">Do not send me promotional emails about personalization</span>
+                <button name="submit_email_prefs" class="btn change" type="submit">Update</button>
+              </form><!--f_password-->
+            </div><!--t_email_prefs-->
+
+          </div><!--tab-content-->
+          {% else %}{% comment %}<!--Not logged in-->{% endcomment %}
+          <p>Hi there! Please <a href="/account/signin">login</a> to access this page. Don't have an account yet? <a href="/account/signup">Create a free account now.</a></p>
+          {% endif %}
+        </section>
+        </div><!--well-->
+
+{% endblock %}
+
+{% block external_js %}
+  {% compressed_js 'accounts-bootstrap' %}
+  {% compressed_js 'accounts-base' %}
+{% endblock %}

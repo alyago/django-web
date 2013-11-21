@@ -1,0 +1,35 @@
+{% load absolute_http_url %}
+<div class="sort_jobs">
+  <span class="heading">{{ translations.sort_by_text }}</span>
+  <ul>
+    <input type="radio" id="sort_by_relevance" name="sort_by" value="relevance"
+      class="evtc" data-event="results_sort_relevance"
+      {% if sort_by_relevance_query %}
+        {% url 'serpng.jobs.views.jobs' sort_by_relevance_query as sort_by_relevance_url %}
+        onclick="window.location.href = '{% absolute_http_url sort_by_relevance_url %}'"
+      {% else %}
+        checked="checked"
+        disabled
+      {% endif %} />
+    <label for="sort_by_relevance" {% if sort_by_relevance_query %}class="link"{% endif %}>
+      <span><span>
+      </span></span>
+      {{ translations.sort_by_relevance_radio_button_text }}
+    </label>
+
+    <input type="radio" id="sort_by_date" name="sort_by" value="date"
+      class="evtc" data-event="results_sort_date"
+      {% if sort_by_date_query %}
+        {% url 'serpng.jobs.views.jobs' sort_by_date_query as sort_by_date_url %}
+        onclick="window.location.href = '{% absolute_http_url sort_by_date_url %}'"
+      {% else %}
+        checked="checked"
+        disabled
+      {% endif %} />
+    <label for="sort_by_date" {% if sort_by_date_query %}class="link"{% endif %}>
+      <span><span>
+      </span></span>
+      {{ translations.sort_by_date_radio_button_text }}
+    </label>
+  </ul>
+</div>
